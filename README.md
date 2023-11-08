@@ -97,9 +97,13 @@ Increased compute, increased reproducibility, increased inclusion, software inst
   * [numpy tutorials](https://github.com/IPAC-SW/ipac-sp-notebooks/blob/main/cosmosims/CosmoDC2_Parquet.ipynb)
   * [Scipy lecture notes](https://scipy-lectures.org/)
   * [Data science handbook](https://jakevdp.github.io/PythonDataScienceHandbook/)
-* Guide to documenting python functions
+* [Guide](https://developer.lsst.io/python/numpydoc.html#numpydoc-sections-in-docstrings) to documenting python functions
 * [Github](https://docs.github.com/en/get-started/quickstart)
 * [Debugging](https://jakevdp.github.io/PythonDataScienceHandbook/01.06-errors-and-debugging.html#Debugging:-When-Reading-Tracebacks-Is-Not-Enough)
 * Each Archive’s homepage
-* Jupyterlab
-* Jupyter notebooks
+   * [IRSA](https://www.ipac.caltech.edu/project/irsa)
+   * [HEASARC](https://heasarc.gsfc.nasa.gov)
+   * [MAST](https://archive.stsci.edu)
+* Project [Jupyter](https://jupyter.org)
+  * Jupyterlab
+  * Jupyter notebooks
