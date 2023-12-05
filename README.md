@@ -14,13 +14,27 @@ Increased compute, increased reproducibility, increased inclusion, software inst
 
 ## Getting started
 * How do I get an account?
-* Logging in and logging out: link to the website
-* How to choose which SMCE SP size to open upon login
-  * Make sure to use small size for writing/debugging/testing before switching to larger sizes
+* How to Log in?
+ * Log in at  https://daskhub.fornaxdev.mysmce.com/
+* How to log out?
+ *  go to `File` Menu: `hub control panel` and `stop my server`.  This insures the server is not still running when you logout which would be a waste of resources
+ *  then logout in the upper right
+* How to choose which server to open upon login
+ * This depends on which type of science you want to do.  THe   
+* How to choose which size server to open upon login?
+  * Make sure to use `mini` size for writing/debugging/testing before switching to larger sizes
   * On demand:  starts when the user asks for it (e.g., start your Fornax server), runs as long as you continue to use and pay for it.
   * Spot:  starts when you ask for it, might be given back to AWS at any time, and is thus cheap.  (What happens to user’s session when this happens in the middle of it?)
-  * Reserved:  (not currently used?) started by admin and available and costing money regardless of use.
+  * 128 core: do not use unless given permission
 * Navigating jupyter lab
+  * How do I start a new notebook?
+   * The blue `+` in the upper left brings you to the launcher where you can start a new notebook or open a terminal window
+  * How do I get a terminal window?
+   * The blue `+` in the upper left brings you to the launcher where you can start a new notebook or open a terminal window
+  * How to upload data into the platform?
+   * The uparrow in the upper left allows you to upload data
+  *  How to download data from the plaltform to my local machine?
+   * If it is a small file, you can right click on the file name in the file browser and scroll to `Download`
 * [Home Directory](https://outerspace.stsci.edu/display/MASTDOCS/Getting+Started#GettingStarted-HomeDirectory)
   * Do those files persist between sessions?
   * Who can see my home directory?
@@ -42,7 +56,10 @@ Increased compute, increased reproducibility, increased inclusion, software inst
 * How do I know what my usage is?
 
 ## Data Access
-* How do I add my own data? = upload button, and where to store that?
+* How do I add my own data?
+ * small files can be added with the upload button, which is an `uparrow` in the upper right
+ * large file transfers??
+* Where should I store my data in the SP? 
 * How to access data in the cloud?
   * [STScI](https://github.com/spacetelescope/tike_content/blob/main/content/notebooks/data-access/data-access.ipynb) tutorial
   * Can I see that directly in the terminal?
@@ -98,7 +115,7 @@ Increased compute, increased reproducibility, increased inclusion, software inst
   * [numpy tutorials](https://github.com/IPAC-SW/ipac-sp-notebooks/blob/main/cosmosims/CosmoDC2_Parquet.ipynb)
   * [Scipy lecture notes](https://scipy-lectures.org/)
   * [Data science handbook](https://jakevdp.github.io/PythonDataScienceHandbook/)
-* Guide to documenting python functions
+* [Guide to documenting python functions](https://developer.lsst.io/python/numpydoc.html#numpydoc-sections-in-docstrings)
 * [Github](https://docs.github.com/en/get-started/quickstart)
 * [Debugging](https://jakevdp.github.io/PythonDataScienceHandbook/01.06-errors-and-debugging.html#Debugging:-When-Reading-Tracebacks-Is-Not-Enough)
 * Each Archive’s homepage
