@@ -54,7 +54,8 @@ Increased compute, increased reproducibility, increased inclusion, software inst
 * [Pre-installed Software](https://outerspace.stsci.edu/display/MASTDOCS/Managing+Software#ManagingSoftware-Pre-installedSoftwareandTemporaryAdditions): can I get a list of what is already there?
 * How do I install my own software?
   * [Persistent User-Installed Software](https://outerspace.stsci.edu/display/MASTDOCS/Managing+Software#ManagingSoftware-PersistentUser-InstalledSoftware)
-  * Non-persistent User-Installed Software (!pip install)
+  * Non-persistent User-Installed Software 
+    * you can !pip install your favorite software from inside a notebook.  This installed software will stay through kernel restarts, but will not be persistent if you stop your server and restart it (logging out and back in). 
   * [From a Notebook cell:](https://outerspace.stsci.edu/display/MASTDOCS/Managing+Software#ManagingSoftware-FromaNotebookcell:)
   * [From a terminal window:](https://outerspace.stsci.edu/display/MASTDOCS/Managing+Software#ManagingSoftware-Fromaterminalwindow:)
 * Terminal command to list package version info using pip
