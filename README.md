@@ -117,10 +117,9 @@ Increased compute, increased reproducibility, increased inclusion, software inst
 * User contributions: open issue or PR on Github (which Github repo?)
 
 ## Troubleshooting
-* If users internet connection goes away - what happens to the running notebook?
+* If my internet connection goes away or is intermittent - what happens to the running notebook?
 * Restart kernel
 * Restart SP - will solve version issues if packages with different versions were loaded since these won’t persist across SP restarts
-* [Known Issues](https://github.com/IPAC-SW/ipac-sp-notebooks/blob/main/cosmosims/CosmoDC2_Parquet.ipynb)
 * helpdesk
 
 ## Getting Help
