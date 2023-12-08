@@ -135,6 +135,9 @@ Increased compute, increased reproducibility, increased inclusion, software inst
 * [Guide to documenting python functions](https://developer.lsst.io/python/numpydoc.html#numpydoc-sections-in-docstrings)
 * [Github](https://docs.github.com/en/get-started/quickstart)
 * [Debugging](https://jakevdp.github.io/PythonDataScienceHandbook/01.06-errors-and-debugging.html#Debugging:-When-Reading-Tracebacks-Is-Not-Enough)
-* Each Archive’s homepage
-* Jupyterlab
-* Jupyter notebooks
+* Three NASA archives are involved in this work
+  * [IRSA](https://irsa.ipac.caltech.edu/frontpage/)
+  * [HEASARC](https://heasarc.gsfc.nasa.gov)
+  * [MAST](https://archive.stsci.edu)
+* [Jupyterlab](https://jupyter.org)
+
