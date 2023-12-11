@@ -3,10 +3,17 @@ fornax-platform.
 
 ## What is the NASA Astrophysics Science Platform?
 
-Increased compute, increased reproducibility, increased inclusion, software installs done for users
+A compute system in the cloud near to NASA data in the cloud which provides a place where astronomers can do data intensive research with reduced barriers.  Kernels with pre-installed astronomy software are provided upon login to Jupyterlab.  This greatly simplifies the setup and startup for any astronomer who now no longer needs to worry about setting up a python working environment.  
 
 * What does it do? (Basic Capabilities)
+  * Increased compute,
+  * Increased memory,
+  * Increased reproducibility,
+  * Increased inclusion,
+  * Increased ease of use
+
 * Who is it for?
+  * US based astronomers
 * Limits: What does it not do?
   * How much compute do I get?
   * [Limits](https://heasarc.gsfc.nasa.gov/docs/sciserver/#limits) on diskspace, lifetime of containers etc.
