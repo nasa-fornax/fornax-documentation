@@ -75,8 +75,8 @@ Fornax is a compute system in the cloud near to NASA data in the cloud which pro
 
 ## Data Access
 * How do I add my own data?
- * small files can be added with the upload button, which is an `uparrow` in the upper right
- * large file transfers??
+  * small files can be added with the upload button, which is an `uparrow` in the upper right
+  * large file transfers??
 * Where should I store my data in the SP? 
 * How to access images in the cloud?
   * [Tutorial](https://github.com/spacetelescope/tike_content/blob/main/content/notebooks/data-access/data-access.ipynb) notebook on STScI data
