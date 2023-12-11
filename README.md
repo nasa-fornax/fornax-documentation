@@ -3,7 +3,7 @@ fornax-platform.
 
 ## What is the NASA Astrophysics Science Platform?
 
-A compute system in the cloud near to NASA data in the cloud which provides a place where astronomers can do data intensive research with reduced barriers.  Kernels with pre-installed astronomy software are provided upon login to Jupyterlab.  This greatly simplifies the setup and startup for any astronomer who now no longer needs to worry about setting up a python working environment.  
+Fornax is a compute system in the cloud near to NASA data in the cloud which provides a place where astronomers can do data intensive research with reduced barriers.  The first barrier we remove is the need to install software and deal with packages on your personal computer.  This greatly simplifies the setup and startup for any astronomer who now no longer needs to worry about setting up a python working environment.  Kernels with pre-installed astronomy software are provided upon login to Jupyterlab for all users of Fornax.  The second barrier we remove is the need for every astronomer to buy compute/memory commensurate to data science level projects.  You will no longer need to buy the fastest/ most memory  personal computer.  When you need those capabilities, we will have it ready for you.  When you need to just write code, we have smaller compute ready for that too.  These two things (increased compute/memory and ease of use) should lower the barrier of entry to data science projects for all NASA astronomers.  You no longer need to have an expensive computer, you no longer need to be an expert at installing software, you just need to have an idea!  Lastly, by lowering the barrier to entry, we also increase the potential for reproducibility of large data results in astronomy.  Before, if you were wanting to reproduce some data intensive work done in the literature, it would have been challenging to to have the right compute and setup, now you just need a login....  
 
 * What does it do? (Basic Capabilities)
   * Increased compute,
@@ -11,13 +11,12 @@ A compute system in the cloud near to NASA data in the cloud which provides a pl
   * Increased reproducibility,
   * Increased inclusion,
   * Increased ease of use
-
 * Who is it for?
   * US based astronomers
 * Limits: What does it not do?
-  * How much compute do I get?
-  * [Limits](https://heasarc.gsfc.nasa.gov/docs/sciserver/#limits) on diskspace, lifetime of containers etc.
-  * [Download](https://heasarc.gsfc.nasa.gov/docs/sciserver/#limits) restrictions to prevent egress charges
+  * How many cores/RAM do I get?
+  * How much disk space do I have access to?
+  * what restrictions are there to prevent egress charges?
 
 ## Getting started
 * How do I get an account?
