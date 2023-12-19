@@ -57,6 +57,12 @@ The Fornax Science Console is a compute system in the cloud near to NASA data in
 * How to share files from inside the SP with collaborators
   * Download them to favorite storage place (university box account) or put in cloud (put $$ in your proposals to cover this)
 * How do I know what computing resources are available to me?
+  * in jupyter hub - open a terminal window by going to the file folder in the upper left, clicking on the plus sign
+    * `nproc` will give you the number of processors
+    * `cat /proc/cpuinfo` will give you more detailed info on the processors
+    * `free` will give the amount of RAM available/used
+    * `cat /proc/meminfo` will give the amount of RAM available/used
+    * ??is this even true for the AWS instances?
 * How do I save my notebook as a python script?
 * Save your work!
    * the Fornax Science Console will cull servers after a user is inactive for a certain amount of time - what is that time limit??
@@ -77,7 +83,8 @@ The Fornax Science Console is a compute system in the cloud near to NASA data in
 * How do I add my own data?
   * small files can be added with the upload button, which is an `uparrow` in the upper right
   * large file transfers??
-* Where should I store my data in the SP? 
+* Where should I store my data in the SP?
+  * In your home directory???
 * How to access images in the cloud?
   * [Tutorial](https://github.com/spacetelescope/tike_content/blob/main/content/notebooks/data-access/data-access.ipynb) notebook on STScI data
   * Where is Abdu's similar notebook with pyvo tools that was used for the July2023 HQ demo?
@@ -96,10 +103,12 @@ The Fornax Science Console is a compute system in the cloud near to NASA data in
   * Non-persistent User-Installed Software 
     * you can !pip install your favorite software from inside a notebook.  This installed software will stay through kernel restarts, but will not be persistent if you stop your server and restart it (logging out and back in).
     * For the tutorial notebooks we tend to have a requirements.txt file in the repo which lists all the software dependencies.  Then the first line in the notebook is `!pip install -r requirements.txt`  That way other people can run the notebook and will know which software is involved.
-* What is the terminal command to list package version info using pip
+* What is the terminal command to list package version info using pip?
   * `pip show packagname`
 * Can I launch apps from icons? Like MOPEX or SPICE
+  * no
 * Can I run licensed software (IDL) in the SP?
+  * no
 * Can I bring my own docker image?
 * Can I run the container from the SP on my own personal computer/laptop?
 
@@ -109,7 +118,19 @@ The Fornax Science Console is a compute system in the cloud near to NASA data in
 * Image cutouts
 * Optimizing code for fast processing
   * By looking inside the code for slow pieces (CPU profiling)
-  * By looking inside the code for memory troubles (memory profiling)
+    * profiliing within the SP is possible, however vizualizing the profile is not yet possible
+    * profiling needs to be done on a .py script, and not a jupyter notebook
+    * sample command on the SP command line: `python -m cProfile -o output_profile_name.prof  code_name.py`
+    * Then download the .prof file
+    * On your local computer command line: `python -m snakeviz output_profile_name.prof`
+    * documentation for snakeviz: https://jiffyclub.github.io/snakeviz/
+    * This really only looks at CPU usage
+  * By looking inside the code for memory troubles [memory profiling](https://towardsdatascience.com/profile-memory-consumption-of-python-functions-in-a-single-line-of-code-6403101db419)
+    * inside the notebook:
+      * `pip install -U memory_profiler`
+      * `from memory_profiler import profile`
+      * above the function you want to check add this line: @profile
+      * run the script: python -m memory_profiler <filename>.py > mem_prof.txt
   * By parallelization
     * Python built in [multiprocessing](https://github.com/IPAC-SW/ipac-sp-notebooks/tree/main/parallelize)
     * Daskhub gateway
@@ -124,7 +145,8 @@ The Fornax Science Console is a compute system in the cloud near to NASA data in
 
 ## Troubleshooting
 * If my internet connection goes away or is intermittent - what happens to the running notebook?
-* Restart kernel
+* Restart kernel will solve some problems, especially if the cells were run out of order
+  * Under the `kernel` menu: `restart kernel...`
 * Restart SP - will solve version issues if packages with different versions were loaded since these won’t persist across SP restarts
 * helpdesk
 
