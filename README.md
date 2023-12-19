@@ -64,6 +64,7 @@ The Fornax Science Console is a compute system in the cloud near to NASA data in
     * `cat /proc/meminfo` will give the amount of RAM available/used
     * ??is this even true for the AWS instances?
 * How do I save my notebook as a python script?
+  * `jupyter nbconvert --to script notebookname.ipynb`
 * Save your work!
    * the Fornax Science Console will cull servers after a user is inactive for a certain amount of time - what is that time limit??
 * How do I run a notebook non-interactively?
@@ -95,7 +96,8 @@ The Fornax Science Console is a compute system in the cloud near to NASA data in
 ## Managing Software
 * Making a conda environment that persists across sessions
   * If the pre-installed environments don't have the software you need, you can create your own persistent environment available across multiple sessions.
-  * need instructions on how to do this.
+  * follow [conda documentation](https://docs.conda.io/projects/conda/en/latest/user-guide/getting-started.html)
+  * specifically [managing environments](https://docs.conda.io/projects/conda/en/latest/user-guide/getting-started.html#managing-envs)
 * Can I get a list of what software is already pre-installed on the Fornax Science Console?
 * How do I install my own software?
   * Persistent User-Installed Software
