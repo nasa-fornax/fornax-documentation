@@ -79,6 +79,12 @@ The Fornax Science Console is a compute system in the cloud near to NASA data in
 * Do I need to worry about costs when working in the SP?
   * NASA will pay for the work that you do, but please be mindful of those costs.
 * How do I know what costs I am incurring?
+* Is there a way to share my data with international collaborators?
+* Can I do code development in emacs or vi or some other IDE?
+  * Emacs or vi is possible from the terminal
+* Is there a limit to the number of packages a user can install?
+  * There is a limit on the space a user has access to, but not the number of packages, and packages are usually small.
+
 
 ## Data Access
 * How do I add my own data?
