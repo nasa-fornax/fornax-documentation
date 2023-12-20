@@ -12,11 +12,12 @@ The Fornax Science Console is a compute system in the cloud near to NASA data in
   * Increased inclusion,
   * Increased ease of use
 * Who is it for?
-  * US based astronomers
+  * US based astronomers??  is this true??  all astronomers??
 * Limits: What does it not do?
   * How many cores/RAM do I get?
+    * In JK's understanding (which needs to be updated) you get what the numbers say when you choose a server upon login, but for a limited time if you need slightly more, the code will not crash but will have access to slightly more. 
   * How much disk space do I have access to?
-  * what restrictions are there to prevent egress charges?
+  * What restrictions are there to prevent egress charges?
 
 ## Getting started
 * How do I get an account?
@@ -25,11 +26,9 @@ The Fornax Science Console is a compute system in the cloud near to NASA data in
 * How to log out?
   *  go to `File` Menu: `hub control panel` and `stop my server`.  This insures the server is not still running when you logout which would be a waste of resources
   *  then logout in the upper right
-* How to choose which server to open upon login
-  * This depends on which type of science you want to do. Placeholder to fill this in once server names stabilize.
 * How to choose which size server to open upon login?
-  * Make sure to use `mini` size for writing/debugging/testing before switching to larger sizes
-  * On demand means an AWS server that starts when the user asks for it (e.g., start your Fornax server), runs as long as you continue to use and pay for it.
+  * Make sure to use `mini` or `standard` size for writing/debugging/testing before switching to larger sizes for full runs of code at scale
+  * `On demand` means an AWS server that starts when the user asks for it, and runs as long as you continue to use and pay for it.  This is in contrast to the `spot` servers at AWS which are used for short runs and are cheaper, but can be revoked at any time (per AWS needs)
   * 128 core: do not use unless given permission
 * Navigating jupyter lab
   * How do I start a new notebook?
@@ -39,7 +38,7 @@ The Fornax Science Console is a compute system in the cloud near to NASA data in
   * How to upload data into the Fornax Science Console?
     * The uparrow in the upper left allows you to upload data
     * if it is a large amount of data, consider creating a zip or tar archive first
-    * You can also from within your Jupyter Lab use the shell to 'scp' or 'git pull' from external sites that are publicly visible.
+    * From within Jupyter Lab, you can also use the shell to 'scp' or 'git pull' from external sites that are publicly visible.
     * What are our storage limits for uploaded data?
     * How will I know if I run into a storage limit?
   *  How to download data from the plaltform to my local machine?
@@ -54,8 +53,10 @@ The Fornax Science Console is a compute system in the cloud near to NASA data in
   * What is the info at the bottom of the jupyterlab window
     * The github branch is listed as well as the name of the kernel in use
     * the kernel is listed as either 'idle' or 'busy' which is useful to know if your kernel is working or has crashed.
-* How to share files from inside the SP with collaborators
-  * Download them to favorite storage place (university box account) or put in cloud (put $$ in your proposals to cover this)
+* How do I share large amounts of data from inside the SP with (international) collaborators?
+  * Download them to favorite storage place (university Box account) or put in AWS cloud (put $$ in your proposals to cover this)
+* Is there a way to go directly from Fornax to my University's Box account?
+* Is there a way to go directly from Fornax into a different AWS bucket that my project may pay for?
 * How do I know what computing resources are available to me?
   * in jupyter hub - open a terminal window by going to the file folder in the upper left, clicking on the plus sign
     * `nproc` will give you the number of processors
@@ -79,7 +80,6 @@ The Fornax Science Console is a compute system in the cloud near to NASA data in
 * Do I need to worry about costs when working in the SP?
   * NASA will pay for the work that you do, but please be mindful of those costs.
 * How do I know what costs I am incurring?
-* Is there a way to share my data with international collaborators?
 * Can I do code development in emacs or vi or some other IDE?
   * Emacs or vi is possible from the terminal
 * Is there a limit to the number of packages a user can install?
