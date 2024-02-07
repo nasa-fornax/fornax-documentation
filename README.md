@@ -16,14 +16,22 @@ The Fornax Science Console is a compute system in the cloud near to NASA data in
 * Limits: What does it not do?
   * How many cores/RAM do I get?
     * In JK's understanding (which needs to be updated) you get what the numbers say when you choose a server upon login, but for a limited time if you need slightly more, the code will not crash but will have access to slightly more. 
+    * Raen has seen some evidence of this "bursting" behavior, but doesn't have direct knowledge of the actual configuration. It would be good to know.
   * How much disk space do I have access to?
+    * Current default is 10GB (Feb 2024).
   * What restrictions are there to prevent egress charges?
+    * Raen's understanding is:
+        * Users ought to be able to access any data they both want and have permissions/credentials for, regardless of where it is (AWS S3, Google's GCS, NASA archive, personal computer, etc.).
+        * Any applicable egress charges are generally outside the purview of Fornax (more in the "aside" below). The exception would be egress on data that the user exports from the platform (download to local machine, send to a bucket, etc.). I don't know the Fornax configuration to know specifics, or whether it's something that developers and users need to be aware of.
+            * Aside:  Historically, the data holder (e.g., IRSA) typically covers the cost (e.g., egress) of delivering the data to the user, but cloud storage buckets are starting to change both the workflows and the cost models. Buckets support large-scale data access in ways that an archive like IRSA cannot support from on-premise. This is great, but also means more data requests and larger (and less predictable) costs. Data holders can often get the costs covered through grants, arrangements with the cloud provider (e.g., AWS), etc. But, in some cases they will decide that the best option is to make the data available in a bucket under what I would call the "cloud-pricing model" and sum up as "everyone pays for what *they* use". In particular, this means the data holder will pay the *storage* costs (which they can predict and easily control), and the requestor/end user will pay the *access* costs including egress (which the data holder cannot easily predict or control, but the requestor can). Individual charges are generally small and reasonable when spread around in this way, and the the cloud provider often offers free access up to some small but reasonable limit. However, egress is a particular fee that often does not apply at all, but in other cases can balloon to $$$ very quickly. So it is absolutely something to be considered, planned for, and controlled. Lastly, who pays the access/egress costs is determined by a setting on the bucket. If the bucket is "requestor pays", the user/requestor will need (e.g.,) AWS credentials to access it -- charges are then billed to the AWS account that owns the credentials.
+        * As far as I can tell, the best (AWS) option for actual controls -- beyond just "monitoring" support -- is [AWS Budgets Actions](https://aws.amazon.com/blogs/aws-cloud-financial-management/get-started-with-aws-budgets-actions/).
+        * AWS may charge *ingress* fees to bring data into an SMCE pod or user instance. This would be completely separate from any egress fees. There Someone working more directly on Fornax Daskhub would need to answer whether/how ingress applies.
 
 ## Getting started
 * How do I get an account?
 * How to Log in?
   * Log in at  https://daskhub.fornaxdev.mysmce.com/
-* How to log out?
+* How to end a session?
   *  go to `File` Menu: `hub control panel` and `stop my server`.  This insures the server is not still running when you logout which would be a waste of resources
   *  then logout in the upper right
 * How to choose which size server to open upon login?
@@ -46,6 +54,10 @@ The Fornax Science Console is a compute system in the cloud near to NASA data in
      * if it is a large amount of data, consider creating a zip or tar archive first
   * Home Directory
     * When you log into the science console, the active directory is your $HOME directory.  This directory is unique to you: edits and uploads are not visible to other users.  
+        * Raen thinks there are directories in $HOME that are shared (e.g., `efs` and `s3`), and perhaps just mirrored or symlinked into $HOME. It would be nice to get clarification. Specifically:
+            * Which directories are/aren't shared?
+            * Which directories does the user have write access to, and are there any restrictions/considerations for putting stuff there (other than disk size)?
+            * Which directories can/should the user look in to discover data they have access to? (e.g., `s3` has various archive data, `efs` has some data shared by users, anything else?)
   * Does my work persist between sessions?
     * Files in your home directory will persist between sessions.
     * pip installs will persist across kernel restarts, but not across logging out and back in.
@@ -91,7 +103,7 @@ The Fornax Science Console is a compute system in the cloud near to NASA data in
   * small files can be added with the upload button, which is an `uparrow` in the upper right
   * large file transfers??
 * Where should I store my data in the SP?
-  * In your home directory???
+  * In your home directory??? (Would be nice to be more specific. See "Home Directory" comments above.)
 * How to access images in the cloud?
   * [Tutorial](https://github.com/spacetelescope/tike_content/blob/main/content/notebooks/data-access/data-access.ipynb) notebook on STScI data
   * Where is Abdu's similar notebook with pyvo tools that was used for the July2023 HQ demo?
@@ -122,7 +134,8 @@ The Fornax Science Console is a compute system in the cloud near to NASA data in
 
 ## Examples and Tutorials
 * Cloud ([STScI](https://github.com/spacetelescope/tike_content/blob/main/content/notebooks/data-access/data-access.ipynb))
-* [Parquet](https://github.com/IPAC-SW/ipac-sp-notebooks/blob/main/aws-open-data-catalogs/wise-allwise-catalog-demo.ipynb)
+* [IRSA Cloud Access Introduction](https://irsa.ipac.caltech.edu/docs/notebooks/cloud-access-intro.html)
+* [Parquet](https://irsa.ipac.caltech.edu/docs/notebooks/wise-allwise-catalog-demo.html)
 * Image cutouts
 * Optimizing code for fast processing
   * By looking inside the code for slow pieces (CPU profiling)
@@ -140,15 +153,15 @@ The Fornax Science Console is a compute system in the cloud near to NASA data in
       * above the function you want to check add this line: @profile
       * run the script: python -m memory_profiler <filename>.py > mem_prof.txt
   * By parallelization
-    * Python built in [multiprocessing](https://github.com/IPAC-SW/ipac-sp-notebooks/tree/main/parallelize)
+    * Python built in [multiprocessing](https://irsa.ipac.caltech.edu/docs/notebooks/Parallelize_Convolution.html)
     * Daskhub gateway
 * [MAST](https://github.com/spacetelescope/tike_content/blob/main/markdown/science-examples.md)
 * HEASARC [sciserver_cookbooks](https://github.com/HEASARC/sciserver_cookbooks/blob/main/Introduction.md)
 * [Cross matching two large catalogs](https://github.com/IPAC-SW/ipac-sp-notebooks/blob/main/gaia_cross_SEIP/gaia_cross_SEIP.ipynb)
-* [Work with theoretical catalogs](https://github.com/IPAC-SW/ipac-sp-notebooks/blob/main/cosmosims/CosmoDC2_Parquet.ipynb)
+* [Work with theoretical catalogs](https://irsa.ipac.caltech.edu/data/theory/Cosmosims/gator_docs/CosmoDC2_Mock_V1_Catalog.html)
 * Fully worked science use cases
-  * [Forced photometry](https://github.com/IPAC-SW/ipac-sp-notebooks/blob/main/cosmosims/CosmoDC2_Parquet.ipynb)
-  * [Light curves](https://github.com/IPAC-SW/ipac-sp-notebooks/blob/main/cosmosims/CosmoDC2_Parquet.ipynb)
+  * [Forced photometry](https://github.com/fornax-navo/fornax-demo-notebooks/blob/f9306846777541feeddb53572c0469fc09869a9a/forced_photometry/)
+  * [Light curves](https://github.com/fornax-navo/fornax-demo-notebooks/blob/f9306846777541feeddb53572c0469fc09869a9a/light_curves/)
 * User contributions: open issue or PR on Github (which Github repo?)
 
 ## Troubleshooting
@@ -164,7 +177,7 @@ The Fornax Science Console is a compute system in the cloud near to NASA data in
 
 ## Additional Resources
 * New to Python? -
-  * [numpy tutorials](https://github.com/IPAC-SW/ipac-sp-notebooks/blob/main/cosmosims/CosmoDC2_Parquet.ipynb)
+  * [numpy tutorials](?)
   * [Scipy lecture notes](https://scipy-lectures.org/)
   * [Data science handbook](https://jakevdp.github.io/PythonDataScienceHandbook/)
 * [Guide to documenting python functions](https://developer.lsst.io/python/numpydoc.html#numpydoc-sections-in-docstrings)
@@ -175,4 +188,3 @@ The Fornax Science Console is a compute system in the cloud near to NASA data in
   * [HEASARC](https://heasarc.gsfc.nasa.gov)
   * [MAST](https://archive.stsci.edu)
 * [Jupyterlab](https://jupyter.org)
-
