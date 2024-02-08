@@ -160,8 +160,8 @@ The Fornax Science Console is a compute system in the cloud near to NASA data in
 * [Cross matching two large catalogs](https://github.com/IPAC-SW/ipac-sp-notebooks/blob/main/gaia_cross_SEIP/gaia_cross_SEIP.ipynb)
 * [Work with theoretical catalogs](https://irsa.ipac.caltech.edu/data/theory/Cosmosims/gator_docs/CosmoDC2_Mock_V1_Catalog.html)
 * Fully worked science use cases
-  * [Forced photometry](https://github.com/fornax-navo/fornax-demo-notebooks/blob/f9306846777541feeddb53572c0469fc09869a9a/forced_photometry/)
-  * [Light curves](https://github.com/fornax-navo/fornax-demo-notebooks/blob/f9306846777541feeddb53572c0469fc09869a9a/light_curves/)
+  * [Forced photometry](https://github.com/fornax-navo/fornax-demo-notebooks/tree/main/forced_photometry/)
+  * [Light curves](https://github.com/fornax-navo/fornax-demo-notebooks/tree/main/light_curves/)
 * User contributions: open issue or PR on Github (which Github repo?)
 
 ## Troubleshooting
@@ -174,6 +174,50 @@ The Fornax Science Console is a compute system in the cloud near to NASA data in
 ## Getting Help
 * We need to setup a helpdesk!!
 
+## Parallel and Distributed Processing
+
+### Terminology
+
+* CPU
+  * Processing chip. Quality and number of CPU determines compute power -- the rate at which computations can be performed.
+* Node
+  * A single machine within a network of machines used for distributed processing.
+* Parallel or Distributed Processing
+  * Parallel: Running >1 process/job concurrently. Distributed: Running a set of processes/jobs by farming them out to a network of compute nodes; Many of these jobs may run in parallel. (Distinction between parallel and distributed and is not deeply important here.)
+* RAM
+  * Working memory in a machine, node, or network. Amount of RAM determines how much data can be loaded in-memory simultaneously.
+* Worker
+  * An entity that completes a chunk of work (data + instructions). It runs in the background and must be managed using (e.g.,) python ``multiprocessing`` or Dask.
+
+### When to use distributed or parallel processing?
+
+1. Your dataset is very large, but could be split into subsets that can be processed individually.
+  * The [forced photometry notebook](https://github.com/fornax-navo/fornax-demo-notebooks/blob/main/forced_photometry/multiband_photometry.md) is an example of this. It gathers a large number of images and then processes them all using the same piece of code (photometry extraction). The pipeline is parallelized by running workers that execute the same code on different images.
+
+2. Your computations/operations take a long time, but can be split into subsets that are independent from each other (the input to one does not depend on the output of another).
+  * The [light curve generator notebook](https://github.com/fornax-navo/fornax-demo-notebooks/blob/main/light_curves/light_curve_generator.md) is an example of this. It gathers a sample of objects and then runs several, independent pieces of code (calls to different archives to retrieve light curves) on the full sample. The pipeline is parallelized by running workers that execute different pieces of code on the same object sample.
+
+### Distributed processing with Dask DataFrames -- basic concepts
+
+* Dask:
+  * Dask is a python library to manage parallel and distributed computing. Its responsibilities include:
+    * Farm out chunks of work (data + instructions) to be completed in the background.
+    * Manage the workers, the memory usage, etc.
+    * Collect and consolidate worker results and return them to the user.
+
+* Pandas DataFrames:
+  * There is no inherent size limit for a Pandas DataFrame other than the amount of RAM available.
+  * Some operations that are trivial on a small-ish DataFrame (e.g., sorting) become costly when the DataFrame is large. In addition to DataFrame size, an essential factor will be the quality and number of CPU.
+
+* Dask DataFrame:
+  * You can think of this as a wrapper for Pandas DataFrames:
+    * Pandas handles the actual data (in memory) and most of the computations. Each worker uses it's own Pandas DataFrame.
+    * Dask orchestrates the process. It tells each worker which chunk of the full dataset (which is not in memory) to use, and which Pandas operations to execute.
+    * The user gives instructions to Dask (by calling Dask methods), not to Pandas.
+  * There are Dask-equivalents of many Pandas methods, though they sometimes behave differently due to the need to handle very large datasets or datasets that are not in-memory.
+  * Performance implications to be aware of:
+    * The Dask DataFrame index can make a big difference in efficiency. For large datasets, it can be highly advantageous to determine the "right" index (based on the desired chunking and/or computations). Set and sort the index before performing the computations, and don't change it later on unless really necessary.
+    * (others?)
 
 ## Additional Resources
 * New to Python? -
