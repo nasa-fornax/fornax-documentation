@@ -12,23 +12,25 @@ The Fornax Science Console is a compute system in the cloud near to NASA data in
   * Increased inclusion,
   * Increased ease of use
 * Who is it for?
-  * US based astronomers??  is this true??  all astronomers??
+  * All astronomers, particularly those interested in analysis of NASA astrophysics data. 
 * Limits: What does it not do?
   * How many cores/RAM do I get?
+    * There are several options for the size of the compute.  Please select the smallest that you can use for testing and exploration.  Do not use the larger images unless you have already tested a smaller subset of the analysis on a smaller compute instance.    
     * In JK's understanding (which needs to be updated) you get what the numbers say when you choose a server upon login, but for a limited time if you need slightly more, the code will not crash but will have access to slightly more. 
     * Raen has seen some evidence of this "bursting" behavior, but doesn't have direct knowledge of the actual configuration. It would be good to know.
   * How much disk space do I have access to?
     * Current default is 10GB (Feb 2024).
+    * This can be increased on request.  
   * What restrictions are there to prevent egress charges?
-    * Raen's understanding is:
         * Users ought to be able to access any data they both want and have permissions/credentials for, regardless of where it is (AWS S3, Google's GCS, NASA archive, personal computer, etc.).
-        * Any applicable egress charges are generally outside the purview of Fornax (more in the "aside" below). The exception would be egress on data that the user exports from the platform (download to local machine, send to a bucket, etc.). I don't know the Fornax configuration to know specifics, or whether it's something that developers and users need to be aware of.
+        * Any data downloaded (or pushed out) from the Fornax compute will incur egress costs to Fornax.  This should be limited to small analysis results only.  
             * Aside:  Historically, the data holder (e.g., IRSA) typically covers the cost (e.g., egress) of delivering the data to the user, but cloud storage buckets are starting to change both the workflows and the cost models. Buckets support large-scale data access in ways that an archive like IRSA cannot support from on-premise. This is great, but also means more data requests and larger (and less predictable) costs. Data holders can often get the costs covered through grants, arrangements with the cloud provider (e.g., AWS), etc. But, in some cases they will decide that the best option is to make the data available in a bucket under what I would call the "cloud-pricing model" and sum up as "everyone pays for what *they* use". In particular, this means the data holder will pay the *storage* costs (which they can predict and easily control), and the requestor/end user will pay the *access* costs including egress (which the data holder cannot easily predict or control, but the requestor can). Individual charges are generally small and reasonable when spread around in this way, and the the cloud provider often offers free access up to some small but reasonable limit. However, egress is a particular fee that often does not apply at all, but in other cases can balloon to $$$ very quickly. So it is absolutely something to be considered, planned for, and controlled. Lastly, who pays the access/egress costs is determined by a setting on the bucket. If the bucket is "requestor pays", the user/requestor will need (e.g.,) AWS credentials to access it -- charges are then billed to the AWS account that owns the credentials.
         * As far as I can tell, the best (AWS) option for actual controls -- beyond just "monitoring" support -- is [AWS Budgets Actions](https://aws.amazon.com/blogs/aws-cloud-financial-management/get-started-with-aws-budgets-actions/).
         * AWS may charge *ingress* fees to bring data into an SMCE pod or user instance. This would be completely separate from any egress fees. There Someone working more directly on Fornax Daskhub would need to answer whether/how ingress applies.
 
 ## Getting started
 * How do I get an account?
+ * The platform is currently available by invitation only.  
 * How to Log in?
   * Log in at  https://daskhub.fornaxdev.mysmce.com/
 * How to end a session?
@@ -68,7 +70,9 @@ The Fornax Science Console is a compute system in the cloud near to NASA data in
 * How do I share large amounts of data from inside the SP with (international) collaborators?
   * Download them to favorite storage place (university Box account) or put in AWS cloud (put $$ in your proposals to cover this)
 * Is there a way to go directly from Fornax to my University's Box account?
+ * Any publicly accessible web service can be reached from Fornax through the HTTPS protocol, e.g., APIs, wget, etc.  
 * Is there a way to go directly from Fornax into a different AWS bucket that my project may pay for?
+ * Any publicly available bucket is visible from Fornax as it would be on your laptop.  If you require an access key to see into the bucket from your laptop, you will also need that on Fornax.  
 * How do I know what computing resources are available to me?
   * in jupyter hub - open a terminal window by going to the file folder in the upper left, clicking on the plus sign
     * `nproc` will give you the number of processors
@@ -81,6 +85,7 @@ The Fornax Science Console is a compute system in the cloud near to NASA data in
 * Save your work!
    * the Fornax Science Console will cull servers after a user is inactive for a certain amount of time - what is that time limit??
 * How do I run a notebook non-interactively?
+ * We are working on providing a job queue.  
 * How to open a plot (png, pdf, etc.) either generated by a notebook or uploaded ?
   * double clicking on them in the file browser will open them in a new tab
 * What is a kernel and how do I choose one?
@@ -92,8 +97,11 @@ The Fornax Science Console is a compute system in the cloud near to NASA data in
 * Do I need to worry about costs when working in the SP?
   * NASA will pay for the work that you do, but please be mindful of those costs.
 * How do I know what costs I am incurring?
+ *  We are working on a cost dashboard.  
 * Can I do code development in emacs or vi or some other IDE?
   * Emacs or vi is possible from the terminal
+  * The JupyterLab interface also has its own editor.
+  * If you prefer to develop elsewhere, you can push your changes to a publicly available repo (e.g., GitHub) and synchronize that to a location on your home directory on Fornax. 
 * Is there a limit to the number of packages a user can install?
   * There is a limit on the space a user has access to, but not the number of packages, and packages are usually small.
 
@@ -117,11 +125,12 @@ The Fornax Science Console is a compute system in the cloud near to NASA data in
   * follow [conda documentation](https://docs.conda.io/projects/conda/en/latest/user-guide/getting-started.html)
   * specifically [managing environments](https://docs.conda.io/projects/conda/en/latest/user-guide/getting-started.html#managing-envs)
 * Can I get a list of what software is already pre-installed on the Fornax Science Console?
+ * Software is installed in miniconda environments.  You can use "[conda list](https://conda.io/projects/conda/en/latest/commands/list.html)"  to list the contents of each.  
 * How do I install my own software?
   * Persistent User-Installed Software
     *  See "making a conda environment that persists across sessions" above 
   * Non-persistent User-Installed Software 
-    * you can !pip install your favorite software from inside a notebook.  This installed software will stay through kernel restarts, but will not be persistent if you stop your server and restart it (logging out and back in).
+    * you can !pip install your favorite software from inside a notebook.  This installed software will stay through kernel restarts, but will not be persistent if you stop your server and restart it (logging out and back in) unless you specify the - - user option, which will put the software in your home directory.  Note that an install done in one compute environment may or may not work in a container opened using another environment, even if the directory is still there.  Conda environments are useful to manage these.  
     * For the tutorial notebooks we tend to have a requirements.txt file in the repo which lists all the software dependencies.  Then the first line in the notebook is `!pip install -r requirements.txt`  That way other people can run the notebook and will know which software is involved.
 * What is the terminal command to list package version info using pip?
   * `pip show packagname`
@@ -130,7 +139,9 @@ The Fornax Science Console is a compute system in the cloud near to NASA data in
 * Can I run licensed software (IDL) in the SP?
   * no
 * Can I bring my own docker image?
+ * This is not currently possible. 
 * Can I run the container from the SP on my own personal computer/laptop?
+ * Yes.  The images are all on the AWS Elastic Container Registry.  **Need a link and more instructions** 
 
 ## Examples and Tutorials
 * Cloud ([STScI](https://github.com/spacetelescope/tike_content/blob/main/content/notebooks/data-access/data-access.ipynb))
