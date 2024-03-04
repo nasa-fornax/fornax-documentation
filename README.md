@@ -125,7 +125,7 @@ The Fornax Science Console is a compute system in the cloud near to NASA data in
   * follow [conda documentation](https://docs.conda.io/projects/conda/en/latest/user-guide/getting-started.html)
   * specifically [managing environments](https://docs.conda.io/projects/conda/en/latest/user-guide/getting-started.html#managing-envs)
 * Can I get a list of what software is already pre-installed on the Fornax Science Console?
- * Software is installed in miniconda environments.  You can use the usual conda commands to list the contents of each.  
+ * Software is installed in miniconda environments.  You can use "[conda list](https://conda.io/projects/conda/en/latest/commands/list.html)"  to list the contents of each.  
 * How do I install my own software?
   * Persistent User-Installed Software
     *  See "making a conda environment that persists across sessions" above 
