@@ -3,39 +3,41 @@ Fornax Science Console
 
 ## What is the Fornax Science Console?
 
-The Fornax Science Console is a compute system in the cloud near to NASA data in the cloud which provides a place where astronomers can do data intensive research with reduced barriers.  The first barrier we remove is the need to install software and deal with packages on your personal computer.  This greatly simplifies the setup and startup for any astronomer who now no longer needs to worry about setting up a python working environment.  Kernels with pre-installed astronomy software are provided upon login to Jupyterlab for all users of Fornax.  The second barrier we remove is the need for every astronomer to buy compute/memory commensurate to data science level projects.  You will no longer need to buy the fastest/ most memory  personal computer.  When you need those capabilities, we will have it ready for you.  When you need to just write code, we have smaller compute ready for that too.  These two things (increased compute/memory and ease of use) should lower the barrier of entry to data science projects for all NASA astronomers.  You no longer need to have an expensive computer, you no longer need to be an expert at installing software, you just need to have an idea!  Lastly, by lowering the barrier to entry, we also increase the potential for reproducibility of large data results in astronomy.  Before, if you were wanting to reproduce some data intensive work done in the literature, it would have been challenging to to have the right compute and setup, now you just need a login....  
+The Fornax Science Console is a compute system in the cloud near to NASA data in the cloud which provides a place where astronomers can do data intensive research with reduced barriers.  The first barrier we remove is the need to install software and deal with packages on your personal computer.  This greatly simplifies the setup and startup for any astronomer who now no longer needs to worry about setting up and maintaining a python working environment.  Environments with pre-installed python software tailored to astronomers are provided upon login to Jupyterlab for all users of Fornax.  The second barrier we remove is the need for every astronomer to buy compute/memory commensurate to data science level projects.  You will no longer need to buy the fastest/ most memory intensive personal computer.  When you need those capabilities, we will have it ready for you.  When you need to just write or debug code, we have smaller compute ready for that too.  These two things (increased compute/memory and ease of use) should lower the barrier of entry to data science projects for all NASA astronomers.  You no longer need to have an expensive computer, you no longer need to be an expert at installing software, you just need to have an idea!  Lastly, by lowering the barrier to entry, we also increase the potential for reproducibility of big data results in astronomy. Before, if you were wanting to reproduce some data intensive work done in the literature, it would have been challenging to to have the right compute and setup, now you just need a login....  
 
 * What does it do? (Basic Capabilities)
-  * Increased compute,
+  * Increased ease of use,
+  * Increased number of CPUs,
   * Increased memory,
-  * Increased reproducibility,
   * Increased inclusion,
-  * Increased ease of use
+  * Increased reproducibility
+ 
 * Who is it for?
   * All astronomers, particularly those interested in analysis of NASA astrophysics data. 
+
 * Limits: What does it not do?
-  * How many cores/RAM do I get?
+  * Limits on cores/RAM:
     * There are several options for the size of the compute.  Please select the smallest that you can use for testing and exploration.  Do not use the larger images unless you have already tested a smaller subset of the analysis on a smaller compute instance.    
     * In JK's understanding (which needs to be updated) you get what the numbers say when you choose a server upon login, but for a limited time if you need slightly more, the code will not crash but will have access to slightly more. 
     * Raen has seen some evidence of this "bursting" behavior, but doesn't have direct knowledge of the actual configuration. It would be good to know.
-  * How much disk space do I have access to?
+  * Limits on disk space:
     * Current default is 10GB (Feb 2024).
     * This can be increased on request.  
-  * What restrictions are there to prevent egress charges?
-        * Users ought to be able to access any data they both want and have permissions/credentials for, regardless of where it is (AWS S3, Google's GCS, NASA archive, personal computer, etc.).
-        * Any data downloaded (or pushed out) from the Fornax compute will incur egress costs to Fornax.  This should be limited to small analysis results only.  
-            * Aside:  Historically, the data holder (e.g., IRSA) typically covers the cost (e.g., egress) of delivering the data to the user, but cloud storage buckets are starting to change both the workflows and the cost models. Buckets support large-scale data access in ways that an archive like IRSA cannot support from on-premise. This is great, but also means more data requests and larger (and less predictable) costs. Data holders can often get the costs covered through grants, arrangements with the cloud provider (e.g., AWS), etc. But, in some cases they will decide that the best option is to make the data available in a bucket under what I would call the "cloud-pricing model" and sum up as "everyone pays for what *they* use". In particular, this means the data holder will pay the *storage* costs (which they can predict and easily control), and the requestor/end user will pay the *access* costs including egress (which the data holder cannot easily predict or control, but the requestor can). Individual charges are generally small and reasonable when spread around in this way, and the the cloud provider often offers free access up to some small but reasonable limit. However, egress is a particular fee that often does not apply at all, but in other cases can balloon to $$$ very quickly. So it is absolutely something to be considered, planned for, and controlled. Lastly, who pays the access/egress costs is determined by a setting on the bucket. If the bucket is "requestor pays", the user/requestor will need (e.g.,) AWS credentials to access it -- charges are then billed to the AWS account that owns the credentials.
-        * As far as I can tell, the best (AWS) option for actual controls -- beyond just "monitoring" support -- is [AWS Budgets Actions](https://aws.amazon.com/blogs/aws-cloud-financial-management/get-started-with-aws-budgets-actions/).
-        * AWS may charge *ingress* fees to bring data into an SMCE pod or user instance. This would be completely separate from any egress fees. There Someone working more directly on Fornax Daskhub would need to answer whether/how ingress applies.
+  * Limits on incurred costs:
+    * Users ought to be able to access any data they both want and have permissions/credentials for, regardless of where it is (AWS S3, Google's GCS, NASA archive, personal computer, etc.).
+    * Any data downloaded (or pushed out) from the Fornax compute will incur egress costs to Fornax.  This should be limited to small analysis results only.  
+    * Aside:  Historically, the data holder (e.g., IRSA) typically covers the cost (e.g., egress) of delivering the data to the user, but cloud storage buckets are starting to change both the workflows and the cost models. Buckets support large-scale data access in ways that an archive like IRSA cannot support from on-premise. This is great, but also means more data requests and larger (and less predictable) costs. Data holders can often get the costs covered through grants, arrangements with the cloud provider (e.g., AWS), etc. But, in some cases they will decide that the best option is to make the data available in a bucket under what I would call the "cloud-pricing model" and sum up as "everyone pays for what *they* use". In particular, this means the data holder will pay the *storage* costs (which they can predict and easily control), and the requestor/end user will pay the *access* costs including egress (which the data holder cannot easily predict or control, but the requestor can). Individual charges are generally small and reasonable when spread around in this way, and the the cloud provider often offers free access up to some small but reasonable limit. However, egress is a particular fee that often does not apply at all, but in other cases can balloon to $$$ very quickly. So it is absolutely something to be considered, planned for, and controlled. Lastly, who pays the access/egress costs is determined by a setting on the bucket. If the bucket is "requestor pays", the user/requestor will need (e.g.,) AWS credentials to access it -- charges are then billed to the AWS account that owns the credentials.
+    * As far as I can tell, the best (AWS) option for actual controls -- beyond just "monitoring" support -- is [AWS Budgets Actions](https://aws.amazon.com/blogs/aws-cloud-financial-management/get-started-with-aws-budgets-actions/).
+    * AWS may charge *ingress* fees to bring data into an SMCE pod or user instance. This would be completely separate from any egress fees. There Someone working more directly on Fornax Daskhub would need to answer whether/how ingress applies.
 
 ## Getting started
 * How do I get an account?
- * The platform is currently available by invitation only.  
+  * The platform is currently available by invitation only.  
 * How to Log in?
   * Log in at  https://daskhub.fornaxdev.mysmce.com/
 * How to end a session?
-  *  go to `File` Menu: `hub control panel` and `stop my server`.  This insures the server is not still running when you logout which would be a waste of resources
-  *  then logout in the upper right
+  *  go to `File` Menu: `hub control panel` and `stop my server`.  This is an important step which insures the server you are using shuts down before you logout.  It is possible to 'logout' and keep the server running which would be a waste of resources if unintentional.
+  *  then logout in the upper right of the jupyterhub window.
 * How to choose which size server to open upon login?
   * Make sure to use `mini` or `standard` size for writing/debugging/testing before switching to larger sizes for full runs of code at scale
   * `On demand` means an AWS server that starts when the user asks for it, and runs as long as you continue to use and pay for it.  This is in contrast to the `spot` servers at AWS which are used for short runs and are cheaper, but can be revoked at any time (per AWS needs)
