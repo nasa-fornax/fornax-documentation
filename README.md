@@ -36,7 +36,7 @@ The Fornax Science Console is a compute system in the cloud near to NASA data in
 * How to Log in?
   * Log in at  https://daskhub.fornaxdev.mysmce.com/
 * How to end a session?
-  *  go to `File` Menu: `hub control panel` and `stop my server`.  This is an important step which insures the server you are using shuts down before you logout.  It is possible to 'logout' and keep the server running which would be a waste of resources if unintentional.
+  *  go to `File` Menu and click on `hub control panel` which will bring up the option to `stop my server`(in red).  This is an important step which insures the server you are using shuts down before you logout.  It is possible to 'logout' and keep the server running which would be a waste of resources if unintentional.
   *  ![ ](./hub_control_panel.png)
   *  then logout in the upper right of the jupyterhub window.
 * How to choose which size server to open upon login?
