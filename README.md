@@ -5,17 +5,17 @@ Fornax Science Console
 
 The Fornax Science Console is a compute system in the cloud near to NASA data in the cloud which provides a place where astronomers can do data intensive research with reduced barriers.  The first barrier we remove is the need to install software and deal with packages on your personal computer.  This greatly simplifies the setup and startup for any astronomer who now no longer needs to worry about setting up and maintaining a python working environment.  Environments with pre-installed python software tailored to astronomers are provided upon login to Jupyterlab for all users of Fornax.  The second barrier we remove is the need for every astronomer to buy compute/memory commensurate to data science level projects.  You will no longer need to buy the fastest/ most memory intensive personal computer.  When you need those capabilities, we will have it ready for you.  When you need to just write or debug code, we have smaller compute ready for that too.  These two things (increased compute/memory and ease of use) should lower the barrier of entry to data science projects for all NASA astronomers.  You no longer need to have an expensive computer, you no longer need to be an expert at installing software, you just need to have an idea!  Lastly, by lowering the barrier to entry, we also increase the potential for reproducibility of big data results in astronomy. Before, if you were wanting to reproduce some data intensive work done in the literature, it would have been challenging to to have the right compute and setup, now you just need a login....  
 
-* What does it do? (Basic Capabilities)
+### What does it do? (Basic Capabilities)
   * Increased ease of use,
   * Increased number of CPUs,
   * Increased memory,
   * Increased inclusion,
   * Increased reproducibility
  
-* Who is it for?
+### Who is it for?
   * All astronomers, particularly those interested in analysis of NASA astrophysics data. 
 
-* Limits: What does it not do?
+### Limits: What does it not do?
   * Limits on cores/RAM:
     * There are several options for the size of the compute.  Please select the smallest that you can use for testing and exploration.  Do not use the larger images unless you have already tested a smaller subset of the analysis on a smaller compute instance.    
     * In JK's understanding (which needs to be updated) you get what the numbers say when you choose a server upon login, but for a limited time if you need slightly more, the code will not crash but will have access to slightly more. 
@@ -31,26 +31,26 @@ The Fornax Science Console is a compute system in the cloud near to NASA data in
     * AWS may charge *ingress* fees to bring data into an SMCE pod or user instance. This would be completely separate from any egress fees. There Someone working more directly on Fornax Daskhub would need to answer whether/how ingress applies.
 
 ## Getting started
-* How do I get an account?
+### How do I get an account?
   * The platform is currently available by invitation only.  
-* How to Log in?
+### How to Log in?
   * Log in at  https://daskhub.fornaxdev.mysmce.com/
-* How to end a session?
+### How to end a session?
   *  go to `File` Menu and click on `hub control panel` which will bring up the option to `stop my server`(in red).  This is an important step which insures the server you are using shuts down before you logout.  It is possible to 'logout' and keep the server running which would be a waste of resources if unintentional.
   *  ![ ](./hub_control_panel.png)
   *  then logout in the upper right of the jupyterhub window.
-* How to choose which size server to open upon login?
+### How to choose which size server to open upon login?
   * Make sure to use `mini` or `standard` size for writing/debugging/testing before switching to larger sizes for full runs of code at scale
   * `On demand` means an AWS server that starts when the user asks for it, and runs as long as you continue to use and pay for it.  This is in contrast to the `spot` servers at AWS which are used for short runs and are cheaper, but can be revoked at any time (per AWS needs)
   * 128 core: do not use unless given permission
-* Navigating jupyter lab
-  * How do I start a new notebook?
+### Navigating jupyter lab
+  #### How do I start a new notebook?
     * The blue `+` in the upper left brings you to the launcher where you can start a new, empty notebook or open a terminal window
     * ![new launcher](./new_launcher.png)
-  * How do I get a terminal window?
+  #### How do I get a terminal window?
     * The blue `+` in the upper left brings you to the launcher where you can start a new notebook or open a terminal window
     * ![terminal](./terminal.png)
-  * How to upload data into the Fornax Science Console?
+  #### How to upload data into the Fornax Science Console?
     * The `uparrow` in the upper left allows you to upload data
     * ![upload_button](./upload_button.png)
     * if it is a large amount of data, consider creating a zip or tar archive first
@@ -59,98 +59,97 @@ The Fornax Science Console is a compute system in the cloud near to NASA data in
       *  Current default is 10GB (Feb 2024)
     * How will I know if I run into a storage limit?
 
-  *  How to download data from the plaltform to my local machine?
+  ####  How to download data from the plaltform to my local machine?
      * If it is a small file, you can right click on the file name in the file browser and scroll to `Download`
      * ![right_click_download](./right_click_download.png)
      * if it is a large amount of data, consider creating a zip or tar archive first
-  * Home Directory
+  #### Home Directory
     * When you log into the science console, the active directory is your $HOME directory.  This directory is unique to you: edits and uploads are not visible to other users.  
         * Raen thinks there are directories in $HOME that are shared (e.g., `efs` and `s3`), and perhaps just mirrored or symlinked into $HOME. It would be nice to get clarification. Specifically:
             * Which directories are/aren't shared?
             * Which directories does the user have write access to, and are there any restrictions/considerations for putting stuff there (other than disk size)?
             * Which directories can/should the user look in to discover data they have access to? (e.g., `s3` has various archive data, `efs` has some data shared by users, anything else?)
-  * Does my work persist between sessions?
+  #### Does my work persist between sessions?
     * Files in your home directory will persist between sessions.
     * pip installs will persist across kernel restarts, but not across logging out and back in.
       * If you want software installs to be persistent, consider setting up an environment: See below under "Making a conda environment that persists across sessions"
-  * What is the info at the bottom of the jupyterlab window
+  #### What is the info at the bottom of the jupyterlab window
     * The github branch is listed as well as the name of the kernel in use
     * the kernel is listed as either 'idle' or 'busy' which is useful to know if your kernel is working or has crashed.
       
-* How do I share data from inside the SP with (international) collaborators?
+### How do I share data from inside the SP with (international) collaborators?
   * Download them to favorite storage place (university Box account) or put in AWS cloud (put $$ in your proposals to cover this)
-* Is there a way to go directly from Fornax to my University's Box account?
+### Is there a way to go directly from Fornax to my University's Box account?
   * Any publicly accessible web service can be reached from Fornax through the HTTPS protocol, e.g., APIs, wget, etc.  
-* Is there a way to go directly from Fornax into a different AWS bucket that my project may pay for?
+### Is there a way to go directly from Fornax into a different AWS bucket that my project may pay for?
   * Any publicly available bucket is visible from Fornax as it would be on your laptop.  If you require an access key to see into the bucket from your laptop, you will also need that on Fornax.  
-* How do I know what computing resources are available to me?
+### How do I know what computing resources are available to me?
   * in jupyter hub - open a terminal window by going to the file folder in the upper left, clicking on the plus sign
     * `nproc` will give you the number of processors
     * `cat /proc/cpuinfo` will give you more detailed info on the processors
     * `free -h` will give the amount of RAM available/used
     * `cat /proc/meminfo` will give  more detailed info on the amount of RAM available/used
-* How do I save my notebook as a python script?
+### How do I save my notebook as a python script?
   * from the command line: `jupyter nbconvert --to script notebookname.ipynb`
-* Save your work!
+### Save your work!
    * the Fornax Science Console will cull servers after a user is inactive for a certain amount of time -
-* How long will my server stay active if I am not using it?
-* How do I run a notebook non-interactively?
+### How long will my server stay active if I am not using it?
+### How do I run a notebook non-interactively?
    * We are working on providing a job queue.  
-* How to open a plot (png, pdf, etc.) either generated by a notebook or uploaded ?
+### How to open a plot (png, pdf, etc.) either generated by a notebook or uploaded ?
    * double clicking on them in the file browser will open them in a new tab
-* What is a kernel and how do I choose one?
+### What is a kernel and how do I choose one?
   * In Jupyter, kernels are the background processes that execute cells and return results for display.
   * To select the kernel on which you want to run your Notebook, go to the Kernel menu and choose Change Kernel. You can also click directly on the name of the active kernel to switch to another.
-* Will notebooks that I run on Fornax also work on my laptop?
+### Will notebooks that I run on Fornax also work on my laptop?
   * In general, yes, but you need to have a python environment setup in the same way as on it is on Fornax.  
   * see below under "Can I run the container from the SP on my own personal computer/laptop?"
-* Do I need to worry about costs when working in the SP?
+### Do I need to worry about costs when working in the SP?
   * NASA will pay for the work that you do, but please be mindful of those costs.
-* How do I know what costs I am incurring?
+### How do I know what costs I am incurring?
   *  We are working on a cost dashboard.  
-* Can I do code development in emacs or vi or some other IDE?
+### Can I do code development in emacs or vi or some other IDE?
   * Emacs or vi is possible from the terminal
   * The JupyterLab interface also has its own editor.
   * If you prefer to develop elsewhere, you can push your changes to a publicly available repo (e.g., GitHub) and synchronize that to a location on your home directory on Fornax. 
-* Is there a limit to the number of packages a user can install?
+### Is there a limit to the number of packages a user can install?
   * There is a limit on the space a user has access to, but not the number of packages, and packages are usually small.
 
 
 ## Data Access
-* How do I add my own data?
-  * small files can be added with the upload button, which is an `uparrow` in the upper right (see example image above)
-  * large file transfers??
-* Where should I store my data in the SP?
+### How do I add my own data?
+  * see [above](#How-to-upload-data-into-the-Fornax-Science-Console?)
+### Where should I store my data in the SP?
   * In your home directory??? (Would be nice to be more specific. See "Home Directory" comments above.)
-* How to access images in the cloud?
+### How to access images in the cloud?
   * [Tutorial](https://github.com/spacetelescope/tike_content/blob/main/content/notebooks/data-access/data-access.ipynb) notebook on STScI data
   * Where is Abdu's similar notebook with pyvo tools that was used for the July2023 HQ demo?
   * placeholder for Brigitta's SIA access notebook
-* How to access catalogs in the cloud?
-  * placeholder for Troy's parquet access notebook
+### How to access catalogs in the cloud?
+  * [Tutorials](https://irsa.ipac.caltech.edu/docs/notebooks/)
 
 ## Managing Software
-* Making a conda environment that persists across sessions
+### Making a conda environment that persists across sessions
   * If the pre-installed environments don't have the software you need, you can create your own persistent environment available across multiple sessions.
   * follow [conda documentation](https://docs.conda.io/projects/conda/en/latest/user-guide/getting-started.html)
   * specifically [managing environments](https://docs.conda.io/projects/conda/en/latest/user-guide/getting-started.html#managing-envs)
-* Can I get a list of what software is already pre-installed on the Fornax Science Console?
+### Can I get a list of what software is already pre-installed on the Fornax Science Console?
  * Software is installed in miniconda environments.  You can use "[conda list](https://conda.io/projects/conda/en/latest/commands/list.html)"  to list the contents of each.  
-* How do I install my own software?
+### How do I install my own software?
   * Persistent User-Installed Software
     *  See "making a conda environment that persists across sessions" above 
   * Non-persistent User-Installed Software 
     * you can !pip install your favorite software from inside a notebook.  This installed software will stay through kernel restarts, but will not be persistent if you stop your server and restart it (logging out and back in) unless you specify the - - user option, which will put the software in your home directory.  Note that an install done in one compute environment may or may not work in a container opened using another environment, even if the directory is still there.  Conda environments are useful to manage these.  
     * For the tutorial notebooks we tend to have a requirements.txt file in the repo which lists all the software dependencies.  Then the first line in the notebook is `!pip install -r requirements.txt`  That way other people can run the notebook and will know which software is involved.
-* What is the terminal command to list package version info using pip?
+### What is the terminal command to list package version info using pip?
   * `pip show packagname`
-* Can I launch apps from icons? Like MOPEX or SPICE
+### Can I launch apps from icons? Like MOPEX or SPICE
   * no
-* Can I run licensed software (IDL) in the SP?
+### Can I run licensed software (IDL) in the SP?
   * no
-* Can I bring my own docker image?
+### Can I bring my own docker image?
  * This is not currently possible. 
-* Can I run the container from the SP on my own personal computer/laptop?
+### Can I run the container from the SP on my own personal computer/laptop?
  * Yes.  The images are all on the AWS Elastic Container Registry.  **Need a link and more instructions** 
 
 ## Examples and Tutorials
@@ -187,7 +186,7 @@ The Fornax Science Console is a compute system in the cloud near to NASA data in
 
 ## Troubleshooting
 * If my internet connection goes away or is intermittent - what happens to the running notebook?
-* Restart kernel will solve some problems, especially if the cells were run out of order
+ Restart kernel will solve some problems, especially if the cells were run out of order
   * Under the `kernel` menu: `restart kernel...`
 * Restart SP - will solve version issues if packages with different versions were loaded since these won’t persist across SP restarts
 * helpdesk
