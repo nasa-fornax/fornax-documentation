@@ -16,7 +16,8 @@ The Fornax Science Console is a compute system in the cloud near to NASA data in
 
 ### Limits: What does it not do?
   * Limits on cores/RAM:
-    * There are several options for the size of the compute.  Please select the smallest that you can use for testing and exploration.  Do not use the larger images unless you have already tested a smaller subset of the analysis on a smaller compute instance.    
+    * There are several options for the size of the compute.  Please select the smallest that you can use for testing and exploration.  Do not use the larger images unless you have already tested a smaller subset of the analysis on a smaller compute instance.
+    * There are currently no GPUs available.
     * In JK's understanding (which needs to be updated) you get what the numbers say when you choose a server upon login, but for a limited time if you need slightly more, the code will not crash but will have access to slightly more. 
     * Raen has seen some evidence of this "bursting" behavior, but doesn't have direct knowledge of the actual configuration. It would be good to know.
   * Limits on disk space:
@@ -28,7 +29,13 @@ The Fornax Science Console is a compute system in the cloud near to NASA data in
     * Aside:  Historically, the data holder (e.g., IRSA) typically covers the cost (e.g., egress) of delivering the data to the user, but cloud storage buckets are starting to change both the workflows and the cost models. Buckets support large-scale data access in ways that an archive like IRSA cannot support from on-premise. This is great, but also means more data requests and larger (and less predictable) costs. Data holders can often get the costs covered through grants, arrangements with the cloud provider (e.g., AWS), etc. But, in some cases they will decide that the best option is to make the data available in a bucket under what I would call the "cloud-pricing model" and sum up as "everyone pays for what *they* use". In particular, this means the data holder will pay the *storage* costs (which they can predict and easily control), and the requestor/end user will pay the *access* costs including egress (which the data holder cannot easily predict or control, but the requestor can). Individual charges are generally small and reasonable when spread around in this way, and the the cloud provider often offers free access up to some small but reasonable limit. However, egress is a particular fee that often does not apply at all, but in other cases can balloon to $$$ very quickly. So it is absolutely something to be considered, planned for, and controlled. Lastly, who pays the access/egress costs is determined by a setting on the bucket. If the bucket is "requestor pays", the user/requestor will need (e.g.,) AWS credentials to access it -- charges are then billed to the AWS account that owns the credentials.
     * As far as I can tell, the best (AWS) option for actual controls -- beyond just "monitoring" support -- is [AWS Budgets Actions](https://aws.amazon.com/blogs/aws-cloud-financial-management/get-started-with-aws-budgets-actions/).
     * AWS may charge *ingress* fees to bring data into an SMCE pod or user instance. This would be completely separate from any egress fees. There Someone working more directly on Fornax Daskhub would need to answer whether/how ingress applies.
-
+### The SP will be most beneficial to use cases which:
+  * can be significantly parallelized to make use of large numbers of CPUs
+  * require access to large amounts of data
+  * require access to cloud based data (AWS only?)
+### The SP will be least beneficial to use cases which:
+  * run codes which are not parallelized
+  * Some CPUs are more efficient than others. ie., the M1 is a very powerful CPU compared to what is on the SP. (Is this true?) A user might expect a few tens of percent speed decrease when going from M1 to the SP if there are no gains to be made from multiprocessing or cloud access
 
 ## Getting started
 ### How do I get an account?
@@ -36,8 +43,9 @@ The Fornax Science Console is a compute system in the cloud near to NASA data in
 ### How to Log in?
   * Log in at  https://daskhub.fornaxdev.mysmce.com/
 ### How to end a session?
-  *  go to `File` Menu and click on `hub control panel` 
-  *  ![ ](./hub_control_panel.png)  which will bring up the option to `stop my server`(in red).  This is an important step which insures the server you are using shuts down before you logout.  It is possible to 'logout' and keep the server running which would be a waste of resources if unintentional.
+  *  Before loggin out, please shut down your server.  This is an important step which insures the server you are using doesn't keep running in the background, thereby wasting resources.
+  *  Go to `File` Menu and click on `hub control panel` 
+     ![ ](./hub_control_panel.png)  which will bring up the option to `stop my server`(in red).  
   *  then logout in the upper right of the jupyterhub window.
 ### How to choose which size server to open upon login?
   * Make sure to use `mini` or `standard` size for writing/debugging/testing before switching to larger sizes for full runs of code at scale
