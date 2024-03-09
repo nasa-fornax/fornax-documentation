@@ -62,7 +62,7 @@ The Fornax Science Console is a compute system in the cloud near to NASA data in
 ### How do I get a terminal window?
   * The blue `+` in the upper left brings you to the launcher where you can start a new notebook or open a terminal window
   * ![terminal](./terminal.png)
-### How to upload data into the Fornax Science Console?
+### How to upload data into Fornax?
   * The `uparrow` in the upper left allows you to upload data
   * ![upload_button](./upload_button.png)
   * if it is a large amount of data, consider creating a zip or tar archive first
@@ -125,7 +125,7 @@ The Fornax Science Console is a compute system in the cloud near to NASA data in
 
 ## Data Access
 ### How do I add my own data?
-  * see [above](#How-to-upload-data-into-the-Fornax-Science-Console?)
+  * see [above](#How-to-upload-data-into-Fornax?)
 ### Where should I store my data in the SP?
   * See "Home Directory" [above](#Home-directory)
 ### How to access images in the cloud?
