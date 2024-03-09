@@ -125,7 +125,7 @@ The Fornax Science Console is a compute system in the cloud near to NASA data in
 
 ## Data Access
 ### How do I add my own data?
-  * see [above](#How-to-upload-data-into-Fornax?)
+  * see [above](#How-to-upload-data-into-fornax?)
 ### Where should I store my data in the SP?
   * See "Home Directory" [above](#Home-directory)
 ### How to access images in the cloud?
