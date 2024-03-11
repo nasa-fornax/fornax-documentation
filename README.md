@@ -2,17 +2,18 @@
 
 ## What is the Fornax Science Console?
 
-The Fornax Science Console is a compute system in the cloud near to NASA data in the cloud which provides a place where astronomers can do data intensive research with reduced barriers.  
-The first barrier we remove is the need to install software and deal with packages on your personal computer.  
-This greatly simplifies the setup and startup for any astronomer who now no longer needs to worry about setting up and maintaining a python working environment.  
-Environments with pre-installed python software tailored to astronomers are provided upon login to Jupyterlab for all users of Fornax.  
-The second barrier we remove is the need for every astronomer to buy compute/memory commensurate to data science level projects.  
-You will no longer need to buy the fastest/ most memory intensive personal computer.  When you need those capabilities, we will have it ready for you.  
-When you need to just write or debug code, we have smaller compute ready for that too.  
-These two things (increased compute/memory and ease of use) should lower the barrier of entry to data science projects for all NASA astronomers.  
-You no longer need to have an expensive computer, you no longer need to be an expert at installing software, you just need to have an idea!  
-Lastly, by lowering the barrier to entry, we also increase the potential for reproducibility of big data results in astronomy. 
-Before, if you were wanting to reproduce some data intensive work done in the literature, it would have been challenging to to have the right compute and setup, now you just need a login....  
+The Fornax Science Console is a compute system in the cloud near to NASA data in the cloud which provides a place where astronomers can do data intensive research with reduced barriers.
+The first barrier we remove is the need to install software and deal with packages on your personal computer.
+This greatly simplifies the setup and startup for any astronomer who now no longer needs to worry about setting up and maintaining a python working environment.
+Environments with pre-installed python software tailored to astronomers are provided upon login to Jupyterlab for all users of Fornax.
+The second barrier we remove is the need for every astronomer to buy compute/memory commensurate to data science level projects.
+You will no longer need to buy the fastest/ most memory intensive personal computer.
+When you need those capabilities, we will have it ready for you.
+When you need to just write or debug code, we have smaller compute ready for that too.
+These two things (increased compute/memory and ease of use) should lower the barrier of entry to data science projects for all NASA astronomers.
+You no longer need to have an expensive computer, you no longer need to be an expert at installing software, you just need to have an idea!
+Lastly, by lowering the barrier to entry, we also increase the potential for reproducibility of big data results in astronomy.
+Before, if you were wanting to reproduce some data intensive work done in the literature, it would have been challenging to to have the right compute and setup, now you just need a login....
 
 ### What does it do? (Basic Capabilities)
   * Increased ease of use,
@@ -54,9 +55,8 @@ Before, if you were wanting to reproduce some data intensive work done in the li
   * Log in at  https://daskhub.fornaxdev.mysmce.com/
 ### How to end a session?
   *  Before loggin out, please shut down your server.  This is an important step which insures the server you are using doesn't keep running in the background, thereby wasting resources.
-  *  Go to `File` Menu and click on `hub control panel` 
-     ![ ](./hub_control_panel.png)  which will bring up the option to `stop my server`(in red).  
-  *  then logout in the upper right of the jupyterhub window.
+  *  Go to `File` Menu and click on `hub control panel` as in the below image, which will bring up the option to `stop my server`(in red).  After stopping the server, please `logout` in the upper right of the jupyterhub window.
+     ![ ](./hub_control_panel.png)
 ### How to choose which size server to open upon login?
   * Make sure to use `mini` or `standard` size for writing/debugging/testing before switching to larger sizes for full runs of code at scale
   * `On demand` means an AWS server that starts when the user asks for it, and runs as long as you continue to use and pay for it.  This is in contrast to the `spot` servers at AWS which are used for short runs and are cheaper, but can be revoked at any time (per AWS needs)
@@ -68,21 +68,19 @@ Before, if you were wanting to reproduce some data intensive work done in the li
 ## Navigating jupyter lab
 ### How to start a new notebook?
   * The blue `+` in the upper left brings you to the launcher where you can start a new, empty notebook or open a terminal window
-  * * ![new launcher](./new_launcher.png)
+ ![new launcher](./new_launcher.png)
 ### How to get a terminal window?
   * The blue `+` in the upper left brings you to the launcher where you can start a new notebook or open a terminal window
-  * ![terminal](./terminal.png)
+   ![terminal](./terminal.png)
 ### How to upload data into Fornax?
-  * The `uparrow` in the upper left allows you to upload data
-  * ![upload_button](./upload_button.png)
-  * if it is a large amount of data, consider creating a zip or tar archive first
-  * From within Jupyter Lab, you can also use the shell to 'scp' or 'git pull' from external sites that are publicly visible.
+  * The `uparrow` in the upper left allows you to upload data.  If it is a large amount of data, consider creating a zip or tar archive first.
+   ![upload_button](./upload_button.png)
+  * From within Jupyter Lab, you can also use a terminal to transfer data with the usual methods (`scp`, `wget`, `curl` should all work).
 ### What are our storage limits for uploaded data?
   *  Current default is 10GB (Feb 2024)
 ###  How to download data from the plaltform to my local machine?
-  * If it is a small file, you can right click on the file name in the file browser and scroll to `Download`
-  * ![right_click_download](./right_click_download.png)
-  * if it is a large amount of data, consider creating a zip or tar archive first
+  * If it is a large amount of data, consider creating a zip or tar archive first.  If it is a small file, you can right click on the file name in the file browser and scroll to `Download`  
+  ![right_click_download](./right_click_download.png)
 ### Home directory
   * When you log into the science console, the active directory is your $HOME directory.  This directory is unique to you: edits and uploads are not visible to other users.
   * Raen thinks there are directories in $HOME that are shared (e.g., `efs` and `s3`), and perhaps just mirrored or symlinked into $HOME. It would be nice to get clarification. Specifically:
