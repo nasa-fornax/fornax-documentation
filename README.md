@@ -28,18 +28,16 @@ Before, if you were wanting to reproduce some data intensive work done in the li
 ### Limits: What does it not do?
   * Limits on cores/RAM:
     * There are several options for the size of the compute.  Please select the smallest that you can use for testing and exploration.  Do not use the larger images unless you have already tested a smaller subset of the analysis on a smaller compute instance.
+    * If your workload exceeds your server size, your server may be allowed to use additional resources temporarily. This can be convenient but should not be relied on. In particular, be aware that your job may be killed automatically and without warning if its RAM needs exceed the alloted memory. This behavior is not specific to Fornax or AWS, but users may encounter it more often on the science console due to the flexible machine sizing options. (Your laptop needs to have the max amount of memory that you will ever use while working on it. On the science console, you can choose a different server size every time you start it up -- this is much more efficient, but also requires you to be more aware of how much CPU and RAM your tasks need.)
     * There are currently no GPUs available.
-    * In JK's understanding (which needs to be updated) you get what the numbers say when you choose a server upon login, but for a limited time if you need slightly more, the code will not crash but will have access to slightly more. 
-    * Raen has seen some evidence of this "bursting" behavior, but doesn't have direct knowledge of the actual configuration. It would be good to know.
   * Limits on disk ace:
     * Current default is 10GB (Feb 2024).
     * This can be increased on request.  
-  * Limits on incurred costs:
-    * Users ought to be able to access any data they both want and have permissions/credentials for, regardless of where it is (AWS S3, Google's GCS, NASA archive, personal computer, etc.).
-    * Any data downloaded (or pushed out) from the Fornax compute will incur egress costs to Fornax.  This should be limited to small analysis results only.  
-    * Aside:  Historically, the data holder (e.g., IRSA) typically covers the cost (e.g., egress) of delivering the data to the user, but cloud storage buckets are starting to change both the workflows and the cost models. Buckets support large-scale data access in ways that an archive like IRSA cannot support from on-premise. This is great, but also means more data requests and larger (and less predictable) costs. Data holders can often get the costs covered through grants, arrangements with the cloud provider (e.g., AWS), etc. But, in some cases they will decide that the best option is to make the data available in a bucket under what I would call the "cloud-pricing model" and sum up as "everyone pays for what *they* use". In particular, this means the data holder will pay the *storage* costs (which they can predict and easily control), and the requestor/end user will pay the *access* costs including egress (which the data holder cannot easily predict or control, but the requestor can). Individual charges are generally small and reasonable when read around in this way, and the the cloud provider often offers free access up to some small but reasonable limit. However, egress is a particular fee that often does not apply at all, but in other cases can balloon to $$$ very quickly. So it is absolutely something to be considered, planned for, and controlled. Lastly, who pays the access/egress costs is determined by a setting on the bucket. If the bucket is "requestor pays", the user/requestor will need (e.g.,) AWS credentials to access it -- charges are then billed to the AWS account that owns the credentials.
-    * As far as I can tell, the best (AWS) option for actual controls -- beyond just "monitoring" support -- is [AWS Budgets Actions](https://aws.amazon.com/blogs/aws-cloud-financial-management/get-started-with-aws-budgets-actions/).
-    * AWS may charge *ingress* fees to bring data into an SMCE pod or user instance. This would be completely separate from any egress fees. There Someone working more directly on Fornax Daskhub would need to answer whether/how ingress applies.
+### How does it impact data access?
+  * Fornax does not restrict data access. Users ought to be able to access any data they both want and have permissions for regardless of where it is (NASA archive, personal computer, AWS S3, Google's GCS, etc.).
+  * Data access through popular tools like astroquery, curl, TAP, etc. should work the same when used on the science console as they do locally.
+  * One difference that may occur is speed of data retrieval, either slower or faster. This can be caused by factors like bandwidth and how far away the data is.
+  * AWS S3 buckets with data curated by the Fornax archives are mounted under `s3/` in the user's `$HOME` directory and are browsable as if they were on the local filesystem.
 ### Fornax will be most beneficial to use cases which:
   * can be significantly parallelized to make use of large numbers of CPUs
   * require access to large amounts of data
@@ -82,11 +80,7 @@ Before, if you were wanting to reproduce some data intensive work done in the li
   * If it is a large amount of data, consider creating a zip or tar archive first.  If it is a small file, you can right click on the file name in the file browser and scroll to `Download`  
   ![right_click_download](./static/images/right_click_download.png)
 ### Home directory
-  * When you log into the science console, the active directory is your $HOME directory.  This directory is unique to you: edits and uploads are not visible to other users.
-  * Raen thinks there are directories in $HOME that are shared (e.g., `efs` and `s3`), and perhaps just mirrored or symlinked into $HOME. It would be nice to get clarification. Specifically:
-    * Which directories are/aren't shared?
-    * Which directories does the user have write access to, and are there any restrictions/considerations for putting stuff there (other than disk size)?
-    * Which directories can/should the user look in to discover data they have access to? (e.g., `s3` has various archive data, `efs` has some data shared by users, anything else?)
+  * When you log into the science console for the first time, the active directory is your `$HOME` directory. It contains preexisting folders like `efs/` and `s3/` with shared data. You may also create your own directories and files here. Your edits outside of the shared folders are not visible to other users.
 ### Does work persist between sessions?
   * Files in your home directory will persist between sessions.
   * pip installs will persist across kernel restarts, but not across logging out and back in.
