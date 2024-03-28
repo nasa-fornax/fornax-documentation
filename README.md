@@ -17,8 +17,8 @@ The Fornax Science Console supports many astronomical use cases, but users will 
 
 Users of the Fornax Science Console will have access to data curated and published by data repositories around the world.
    * AWS S3 buckets with data curated by the NASA Astrophysics Mission Archives (HEASARC, IRSA, MAST) are mounted under `s3/` in the user's `$HOME` directory and are browsable as if they were on the local filesystem.
-   * Users can access data in other AWS S3 buckets through standard methods.
-   * Many data repositories provide data access through application program interfaces (APIs), which can be invoked by users of the Fornax Science Console through standard Python libraries (e.g. astroquery, pyvo) or through the command line (e.g. wget, curl).
+   * Many data repositories provide data access through application program interfaces (APIs), which can be invoked by users of the Fornax Science Console through standard Python (e.g. astroquery, pyvo) or command line methods (e.g. wget, curl).
+   * Users can upload a limited amount of datasets to AWS and interact with them as though they were on the local filesystem.
 
 ## Getting started
 ### How to get an account?
