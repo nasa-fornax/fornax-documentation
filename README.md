@@ -26,31 +26,36 @@ Users of the Fornax Science Console will have access to data curated and publish
 
 Under construction: How can users get a list of pre-installed software without logging into the Fornax Science Console?
 
-## Getting started
+## Quick Start Guide
 
-### How can I get an account on the Fornax Science Console?
+### Get an account on the Fornax Science Console
 
 The platform is currently available by invitation only.
       
-### How do I log into the Fornax Science Console?
+### Log into the Fornax Science Console
 
 Once you have your login credentials, enter them at:
 
 https://daskhub.fornaxdev.mysmce.com/
  
-You will be offered several options for the size of the compute. Please use `mini` or `standard` size for writing, debugging, or testing code before switching to larger sizes for full runs of code at scale. `On demand` means an AWS server that starts when the user asks for it, and runs as long as you continue to use and pay for it.  This is in contrast to the `spot` servers at AWS which are used for short runs and are cheaper, but can be revoked at any time (per AWS needs). Some of the options are marked as "Use with approval". Please contact the person that invited you to the platform to obtain permission to use these instances.
+* <b>Choose a software container image</b>: You will be given the option of choosing from a menu of software container images. Currently we offer to two images:
+   * Astrophysics Default Image
+   * High Energy Astrophysics Image
 
-### How do I end a JupyterHub session?
+Most users should choose the default image.
+
+* <b>Choose a compute instance</b>: You will be offered several options for the size of the compute. Please use `mini` or `standard` size for writing, debugging, or testing code before switching to larger sizes for full runs of code at scale. Some of the options are marked as "Use with approval". Please contact the person that invited you to the platform to obtain permission to use these instances.
+
+* Click "Start". In a few moments, you will find yourself in JupyterLab.
+
+### Start a new notebook.
+  * Click on the the blue `+` in the upper left of the Jupyterlab window to open the launcher. Choose the "science_demo" kernal under "Notebook". This will open a new notebook that you can start coding in and run on the platform.
+ ![new launcher](./static/images/new_launcher.png)
+
+### End your JupyterHub session.
   *  Before logging out, please shut down your server.  This is an important step which insures the server you are using doesn't keep running in the background, thereby wasting resources.
   *  Go to the `File` Menu and click on `hub control panel` as in the below image, which will bring up the option to `stop my server`(in red).  After stopping the server, please `logout` in the upper right of the JupyterHub window.
      ![ ](./static/images/hub_control_panel.png)
-
-### What is a kernel and how to choose one?
-  * In Jupyter, kernels are the background processes that execute cells and return results for display.
-  * To select the kernel on which you want to run your Notebook, go to the Kernel menu and choose Change Kernel. You can also click directly on the name of the active kernel to switch to another.
-
-### How will my analysis be limited by Memory?
- *If your workload exceeds your server size, your server may be allowed to use additional resources temporarily. This can be convenient but should not be relied on. In particular, be aware that your job may be killed automatically and without warning if its RAM needs exceed the alloted memory. This behavior is not specific to Fornax or AWS, but users may encounter it more often on the science console due to the flexible machine sizing options. (Your laptop needs to have the max amount of memory that you will ever use while working on it. On the science console, you can choose a different server size every time you start it up -- this is much more efficient, but also requires you to be more aware of how much CPU and RAM your tasks need.)
     
 ## Navigating JupyterLab
 
@@ -61,6 +66,10 @@ You will be offered several options for the size of the compute. Please use `min
 ### How do I open a terminal window?
   * The blue `+` in the upper left brings you to the launcher where you can start a new notebook or open a terminal window
    ![terminal](./static/images/terminal.png)
+
+### What is a kernel and how to choose one?
+  * In Jupyter, kernels are the background processes that execute cells and return results for display.
+  * To select the kernel on which you want to run your Notebook, go to the Kernel menu and choose Change Kernel. You can also click directly on the name of the active kernel to switch to another.
 
 ### How do I upload data into Fornax?
   * The `uparrow` in the upper left allows you to upload data.  If it is a large amount of data, consider creating a zip or tar archive first.
@@ -76,7 +85,10 @@ You will be offered several options for the size of the compute. Please use `min
 
 ### Home directory
   * When you log into the science console for the first time, the active directory is your `$HOME` directory. It contains preexisting folders like `efs/` and `s3/` with shared data. You may also create your own directories and files here. Your edits outside of the shared folders are not visible to other users.
-    
+
+### How will my analysis be limited by Memory?
+ *If your workload exceeds your server size, your server may be allowed to use additional resources temporarily. This can be convenient but should not be relied on. In particular, be aware that your job may be killed automatically and without warning if its RAM needs exceed the alloted memory. This behavior is not specific to Fornax or AWS, but users may encounter it more often on the science console due to the flexible machine sizing options. (Your laptop needs to have the max amount of memory that you will ever use while working on it. On the science console, you can choose a different server size every time you start it up -- this is much more efficient, but also requires you to be more aware of how much CPU and RAM your tasks need.)
+
 ### Does work persist between sessions?
   * Files in your home directory will persist between sessions.
   * pip installs will persist across kernel restarts, but not across logging out and back in.
