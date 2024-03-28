@@ -14,10 +14,11 @@ The Fornax Science Console supports many astronomical use cases, but users will 
   * <b>GPUs</b>:  There are currently no GPUs available.
       
 ### Data access within the Fornax Science Console
-  * Fornax does not restrict data access. Users ought to be able to access any data they both want and have permissions for regardless of where it is (NASA archive, personal computer, AWS S3, Google's GCS, etc.).
-  * Data access through popular tools like astroquery, curl, TAP, etc. should work the same when used on the science console as they do locally.
-  * One difference that may occur is speed of data retrieval, either slower or faster. This can be caused by factors like bandwidth and how far away the data is.
-  * AWS S3 buckets with data curated by the Fornax archives are mounted under `s3/` in the user's `$HOME` directory and are browsable as if they were on the local filesystem.
+
+Users of the Fornax Science Console will have access to data curated and published by data repositories around the world.
+   * AWS S3 buckets with data curated by the NASA Astrophysics Mission Archives (HEASARC, IRSA, MAST) are mounted under `s3/` in the user's `$HOME` directory and are browsable as if they were on the local filesystem.
+   * Users can access data in other AWS S3 buckets through standard methods.
+   * Many data repositories provide data access through application program interfaces (APIs), which can be invoked by users of the Fornax Science Console through standard Python libraries (e.g. astroquery, pyvo) or through the command line (e.g. wget, curl).
 
 ## Getting started
 ### How to get an account?
