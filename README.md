@@ -7,14 +7,11 @@ The Fornax Science Console supports many astronomical use cases, but users will 
  * that require complicated software pre-installed on the platform; or
  * that are parallelizable and require more compute than they currently have access to.
    
-### Fornax Science Console cloud computing capabilities
-  * CPUs:  
-  * GPUs:  There are currently no GPUs available.
-  * User Storage:
-    * Current default is 10GB (Feb 2024).
-    * This can be increased on request.
-  * Limits on cores/RAM:
-    * There are several options for the size of the compute.  Please select the smallest that you can use for testing and exploration.  Do not use the larger images unless you have already tested a smaller subset of the analysis on a smaller compute instance.
+### Fornax Science Console basic capabilities
+  * <b>CPUs</b>:  Upon logging in, users will have access to 4 CPUs provided by AWS. These are useful for smaller analyses and to test out larger analyses. Once a user has completed testing and is ready to scale up an analysis, they can request up to 128 CPUs.
+  * <b>RAM</b>: Upon logging in, users will have access to up to 16 GB of RAM. Up to 512 GB of RAM are available upon request.
+  * <b>User Storage</b>: Upon logging in, users will have access to 10 GB of storage; additional storage is available upon request.
+  * <b>GPUs</b>:  There are currently no GPUs available.
       
 ### Data access within the Fornax Science Console
   * Fornax does not restrict data access. Users ought to be able to access any data they both want and have permissions for regardless of where it is (NASA archive, personal computer, AWS S3, Google's GCS, etc.).
@@ -27,6 +24,8 @@ The Fornax Science Console supports many astronomical use cases, but users will 
   * The platform is currently available by invitation only.  
 ### How to Log in?
   * Log in at  https://daskhub.fornaxdev.mysmce.com/
+  ### How to choose an instance?
+   There are several options for the size of the compute.  Please select the smallest that you can use for testing and exploration.  Do not use the larger images unless you have already tested a smaller subset of the analysis on a smaller compute instance.
 ### How to end a session?
   *  Before loggin out, please shut down your server.  This is an important step which insures the server you are using doesn't keep running in the background, thereby wasting resources.
   *  Go to `File` Menu and click on `hub control panel` as in the below image, which will bring up the option to `stop my server`(in red).  After stopping the server, please `logout` in the upper right of the jupyterhub window.
