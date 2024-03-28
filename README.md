@@ -63,9 +63,9 @@ The JupyterLab User Guide provides information on how to navigate the interface:
 
 https://jupyterlab.readthedocs.io/en/stable/user/interface.html
 
-The Fornax Science Platform contains a JupyterLab extension:
+The Fornax Science Platform additionally contains a JupyterLab extension:
 
-* BXPlorer provides a UI to manage the cloud-hosted data in the Fornax Science Platform (https://github.com/Navteca/jupyterlab-bxplorer) 
+* BXPlorer additonally provides a UI to manage the cloud-hosted data in the Fornax Science Platform (https://github.com/Navteca/jupyterlab-bxplorer) 
 
 ### Home directory
   * When you log into the science console for the first time, the active directory is your `$HOME` directory. It contains preexisting folders like `efs/` and `s3/` with shared data. You may also create your own directories and files here. Your edits outside of the shared folders are not visible to other users.
