@@ -28,11 +28,11 @@ Under construction: How can users get a list of pre-installed software without l
 
 ## Quick Start Guide
 
-### Get an account on the Fornax Science Console
+### 1. Get an account on the Fornax Science Console
 
 The platform is currently available by invitation only.
       
-### Log into the Fornax Science Console
+### 2. Log into the Fornax Science Console
 
 Once you have your login credentials, enter them at:
 
@@ -48,108 +48,93 @@ Most users should choose the default image.
 
 * Click "Start". In a few moments, you will find yourself in JupyterLab.
 
-### Start a new notebook.
+### 3. Start a new notebook.
   * Click on the the blue `+` in the upper left of the Jupyterlab window to open the launcher. Choose the "science_demo" kernal under "Notebook". This will open a new notebook that you can start coding in and run on the platform.
  ![new launcher](./static/images/new_launcher.png)
 
-### End your JupyterHub session.
+### 4. End your JupyterHub session.
   *  Before logging out, please shut down your server.  This is an important step which insures the server you are using doesn't keep running in the background, thereby wasting resources.
   *  Go to the `File` Menu and click on `hub control panel` as in the below image, which will bring up the option to `stop my server`(in red).  After stopping the server, please `logout` in the upper right of the JupyterHub window.
      ![ ](./static/images/hub_control_panel.png)
     
 ## Navigating JupyterLab
 
-### How do I start a new notebook?
+### Home directory
+  * When you log into the science console for the first time, the active directory is your `$HOME` directory. It contains preexisting folders like `efs/` and `s3/` with shared data. You may also create your own directories and files here. Your edits outside of the shared folders are not visible to other users.
+    
+### How do I start a new notebook or terminal window?
   * The blue `+` in the upper left brings you to the launcher where you can start a new, empty notebook or open a terminal window
  ![new launcher](./static/images/new_launcher.png)
 
-### How do I open a terminal window?
-  * The blue `+` in the upper left brings you to the launcher where you can start a new notebook or open a terminal window
-   ![terminal](./static/images/terminal.png)
+ ![terminal](./static/images/terminal.png)
 
 ### What is a kernel and how to choose one?
   * In Jupyter, kernels are the background processes that execute cells and return results for display.
   * To select the kernel on which you want to run your Notebook, go to the Kernel menu and choose Change Kernel. You can also click directly on the name of the active kernel to switch to another.
 
-### How do I upload data into Fornax?
+### How do I upload data that I want to access from the Fornax Science Console?
   * The `uparrow` in the upper left allows you to upload data.  If it is a large amount of data, consider creating a zip or tar archive first.
    ![upload_button](./static/images/upload_button.png)
-  * From within Jupyter Lab, you can also use a terminal to transfer data with the usual methods (`scp`, `wget`, `curl` should all work).
-    
-### What is the storage limit for uploaded data?
-  *  Current default is 10GB (Feb 2024)
+  * From within JupyterLab, you can also use a terminal to transfer data with the usual methods (`scp`, `wget`, `curl` should all work).
+  *  The current (Feb 2024) default storage limit for uploaded data is 10GB (Feb 2024)
     
 ###  How do I download data from the Fornax Science Console to my local machine?
   * If it is a large amount of data, consider creating a zip or tar archive first.  If it is a small file, you can right click on the file name in the file browser and scroll to `Download`  
   ![right_click_download](./static/images/right_click_download.png)
 
-### Home directory
-  * When you log into the science console for the first time, the active directory is your `$HOME` directory. It contains preexisting folders like `efs/` and `s3/` with shared data. You may also create your own directories and files here. Your edits outside of the shared folders are not visible to other users.
+### What is the information at the bottom of the JupterLab window?
+  * The github branch is listed as well as the name of the kernel in use
+  * the kernel is listed as either 'idle' or 'busy' which is useful to know if your kernel is working or has crashed.
 
-### How will my analysis be limited by Memory?
- *If your workload exceeds your server size, your server may be allowed to use additional resources temporarily. This can be convenient but should not be relied on. In particular, be aware that your job may be killed automatically and without warning if its RAM needs exceed the alloted memory. This behavior is not specific to Fornax or AWS, but users may encounter it more often on the science console due to the flexible machine sizing options. (Your laptop needs to have the max amount of memory that you will ever use while working on it. On the science console, you can choose a different server size every time you start it up -- this is much more efficient, but also requires you to be more aware of how much CPU and RAM your tasks need.)
+### How can I open a plot (e.g. png, pdf) that I generated in a notebook or uploaded?
+  * Double clicking on them in the file browser will open them in a new tab.
+
+## Managing Fornax Science Console Sessions
+
+### Save your work!
+The Fornax Science Console will cull servers after a user is inactive for a certain amount of time.
+
+Under construction: how long?
 
 ### Does work persist between sessions?
   * Files in your home directory will persist between sessions.
   * pip installs will persist across kernel restarts, but not across logging out and back in.
   * If you want software installs to be persistent, consider setting up an environment: See below under "Making a conda environment that persists across sessions"
-    
-### What is the information at the bottom of the JupterLab window?
-  * The github branch is listed as well as the name of the kernel in use
-  * the kernel is listed as either 'idle' or 'busy' which is useful to know if your kernel is working or has crashed.
-    
-### How do I share data from inside Fornax with collaborators?
 
-Download them to favorite storage place (university Box account) or put in AWS cloud.
-    
-### Is there a way to go directly from Fornax to a University's Box account?
-  * Any publicly accessible web service can be reached from Fornax through the HTTPS protocol, e.g., APIs, wget, etc.
-    
-### Is there a way to go directly from Fornax into a different AWS bucket that a project may pay for?
-  * Any publicly available bucket is visible from Fornax as it would be on your laptop.  If you require an access key to see into the bucket from your laptop, you will also need that on Fornax.
-     
-### How to know what computing resources are available on Fornax?
+### How to know what computing resources are available on the Fornax Science Platform?
   * in jupyter hub - open a terminal window by going to the file folder in the upper left, clicking on the plus sign
     * `nproc` will give you the number of processors
     * `cat /proc/cpuinfo` will give you more detailed info on the processors
     * `free -h` will give the amount of RAM available/used
     * `cat /proc/meminfo` will give  more detailed info on the amount of RAM available/used
-      
+
+### How will my analysis be affected by memory limitations?
+ 
+If your workload exceeds your server size, your server may be allowed to use additional resources temporarily. This can be convenient but should not be relied on. In particular, be aware that your job may be killed automatically and without warning if its RAM needs exceed the alloted memory. This behavior is not specific to Fornax or AWS, but users may encounter it more often on the science console due to the flexible machine sizing options. (Your laptop needs to have the max amount of memory that you will ever use while working on it. On the science console, you can choose a different server size every time you start it up -- this is much more efficient, but also requires you to be more aware of how much CPU and RAM your tasks need.)
+
+### How can I tell if I am close to using up my allocation of compute and storage resources?
+
+Under construction.
+
+## Software Development
+
 ### How can I save my notebook as a Python script?
   * from the command line: `jupyter nbconvert --to script notebookname.ipynb`
-    
-### Save your work!
-  * the Fornax Science Console will cull servers after a user is inactive for a certain amount of time.
-    
-### How long will the server stay active if not in use?
-
-Under Construction.
 
 ### How can I run a notebook non-interactively?
-
 Under Construction.
     
-### How can I open a plot (e.g. png, pdf) that I generated in a notebook or uploaded?
-  * double clicking on them in the file browser will open them in a new tab
-    
 ### Will notebooks that run on Fornax also work on my laptop?
-  * In general, yes, but you need to have a python environment setup in the same way as on it is on Fornax.  
-  * see below under "Can I run the container from Fornax on my own personal computer/laptop?"
-    
-### Who covers costs when working in Fornax?
-  * NASA will pay for the work that you do, but please be mindful of those costs.
-    
-### How to know what costs are being incurred?
-  *  We are working on a cost dashboard.
+  * In general, yes, but you need to have a Python environment setup in the same way as on it is on Fornax.
+  * See below under "Can I run the container from Fornax on my own personal computer/laptop?"
     
 ### Is it possible to do code development in emacs or vi or some other IDE?
-  * Emacs or vi is possible from the terminal
+  * Emacs or vi is possible from the terminal.
   * The JupyterLab interface also has its own editor.
   * If you prefer to develop elsewhere, you can push your changes to a publicly available repo (e.g., GitHub) and synchronize that to a location on your home directory on Fornax.
     
 ### Is there a limit to the number of packages I can install?
   * There is a limit on the space a user has access to, but not the number of packages, and packages are usually small.
-
 
 ## Data Access
 
@@ -166,6 +151,16 @@ Under Construction.
     
 ### How can I access cloud-hosted catalogs?
   * [Tutorials on IRSA](https://irsa.ipac.caltech.edu/docs/notebooks/)
+
+### How do I share data from inside Fornax with collaborators?
+
+Download them to favorite storage place (university Box account) or put in AWS cloud.
+    
+### Is there a way to go directly from Fornax to a University's Box account?
+  * Any publicly accessible web service can be reached from Fornax through the HTTPS protocol, e.g., APIs, wget, etc.
+    
+### Is there a way to go directly from Fornax into a different AWS bucket that a project may pay for?
+  * Any publicly available bucket is visible from Fornax as it would be on your laptop.  If you require an access key to see into the bucket from your laptop, you will also need that on Fornax.
 
 
 ## Managing Software
