@@ -1,5 +1,7 @@
 # Fornax Science Console
 
+##What is the Fornax Science Console?
+
 The Fornax Science Console is a NASA-funded web-based application that provides access to a limited amount of cloud computing via JupyterLab, which offers access to Jupyter Notebooks, Jupyter Console, and the terminal (command line). Users will need to register to login to the system, but usage is free. Once logged in, users will have access to data sets curated by repositories around the world, and can upload moderate amounts of private data. To get started quickly, users can choose from a variety of example Jupyter notebooks as well as pre-installed software environments. These can be modified to suit user needs. 
 
 The Fornax Science Console supports many astronomical use cases, but users will find it especially beneficial for analyses
@@ -19,6 +21,10 @@ Users of the Fornax Science Console will have access to data curated and publish
    * AWS S3 buckets with data curated by the NASA Astrophysics Mission Archives (HEASARC, IRSA, MAST) are mounted under `s3/` in the user's `$HOME` directory and are browsable as if they were on the local filesystem.
    * Many data repositories provide data access through application program interfaces (APIs), which can be invoked by users of the Fornax Science Console through standard Python (e.g. astroquery, pyvo) or command line methods (e.g. wget, curl).
    * Users can upload a limited amount of datasets to AWS and interact with them as though they were on the local filesystem.
+
+### Software pre-installed on the Fornax Science Console
+
+Under construction: How can users get a list of pre-installed software without logging into the Fornax Science Console?
 
 ## Getting started
 ### How to get an account?
