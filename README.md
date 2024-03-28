@@ -1,50 +1,26 @@
 # Fornax Science Console
 
-## What is the Fornax Science Console?
+The Fornax Science Console is a NASA-funded web-based application that provides access to a limited amount of cloud computing via JupyterLab, which offers access to Jupyter Notebooks, Jupyter Console, and the terminal (command line). Users will need to register to login to the system, but usage is free. Once logged in, users will have access to data sets curated by repositories around the world, and can upload moderate amounts of private data. To get started quickly, users can choose from a variety of example Jupyter notebooks as well as pre-installed software environments. These can be modified to suit user needs. 
 
-The Fornax Science Console is a compute system in the cloud near to NASA data in the cloud which provides a place where astronomers can do data intensive research with reduced barriers.
-The first barrier we remove is the need to install software and deal with packages on your personal computer.
-This greatly simplifies the setup and startup for any astronomer who now no longer needs to worry about setting up and maintaining a python working environment.
-Environments with pre-installed python software tailored to astronomers are provided upon login to Jupyterlab for all users of Fornax.
-The second barrier we remove is the need for every astronomer to buy compute/memory commensurate to data science level projects.
-You will no longer need to buy the fastest/ most memory intensive personal computer.
-When you need those capabilities, we will have it ready for you.
-When you need to just write or debug code, we have smaller compute ready for that too.
-These two things (increased compute/memory and ease of use) should lower the barrier of entry to data science projects for all NASA astronomers.
-You no longer need to have an expensive computer, you no longer need to be an expert at installing software, you just need to have an idea!
-Lastly, by lowering the barrier to entry, we also increase the potential for reproducibility of big data results in astronomy.
-Before, if you were wanting to reproduce some data intensive work done in the literature, it would have been challenging to to have the right compute and setup, now you just need a login....
-
-### What does it do? (Basic Capabilities)
-  * Increased ease of use,
-  * Increased number of CPUs,
-  * Increased memory,
-  * Increased inclusion,
-  * Increased reproducibility
- 
-### Who is it for?
-  * All astronomers, particularly those interested in analysis of NASA astrophysics data. 
-
-### Limits: What does it not do?
+The Fornax Science Console supports many astronomical use cases, but users will find it especially beneficial for analyses
+ * on large cloud-hosted data sets that would be cumbersome to download;
+ * that require complicated software pre-installed on the platform; or
+ * that are parallelizable and require more compute than they currently have access to.
+   
+### Fornax Science Console cloud computing capabilities
+  * CPUs:  
+  * GPUs:  There are currently no GPUs available.
+  * User Storage:
+    * Current default is 10GB (Feb 2024).
+    * This can be increased on request.
   * Limits on cores/RAM:
     * There are several options for the size of the compute.  Please select the smallest that you can use for testing and exploration.  Do not use the larger images unless you have already tested a smaller subset of the analysis on a smaller compute instance.
-    * If your workload exceeds your server size, your server may be allowed to use additional resources temporarily. This can be convenient but should not be relied on. In particular, be aware that your job may be killed automatically and without warning if its RAM needs exceed the alloted memory. This behavior is not specific to Fornax or AWS, but users may encounter it more often on the science console due to the flexible machine sizing options. (Your laptop needs to have the max amount of memory that you will ever use while working on it. On the science console, you can choose a different server size every time you start it up -- this is much more efficient, but also requires you to be more aware of how much CPU and RAM your tasks need.)
-    * There are currently no GPUs available.
-  * Limits on disk ace:
-    * Current default is 10GB (Feb 2024).
-    * This can be increased on request.  
-### How does it impact data access?
+      
+### Data access within the Fornax Science Console
   * Fornax does not restrict data access. Users ought to be able to access any data they both want and have permissions for regardless of where it is (NASA archive, personal computer, AWS S3, Google's GCS, etc.).
   * Data access through popular tools like astroquery, curl, TAP, etc. should work the same when used on the science console as they do locally.
   * One difference that may occur is speed of data retrieval, either slower or faster. This can be caused by factors like bandwidth and how far away the data is.
   * AWS S3 buckets with data curated by the Fornax archives are mounted under `s3/` in the user's `$HOME` directory and are browsable as if they were on the local filesystem.
-### Fornax will be most beneficial to use cases which:
-  * can be significantly parallelized to make use of large numbers of CPUs
-  * require access to large amounts of data
-  * require access to cloud based data (AWS only?)
-### The Fornax will be least beneficial to use cases which:
-  * run codes which are not parallelized
-  * Some CPUs are more efficient than others. ie., the M1 is a very powerful CPU compared to what is on Fornax. (Is this true?) A user might expect a few tens of percent speed decrease when going from M1 to Fornax if there are no gains to be made from multiprocessing or cloud access
 
 ## Getting started
 ### How to get an account?
@@ -62,6 +38,8 @@ Before, if you were wanting to reproduce some data intensive work done in the li
 ### What is a kernel and how to choose one?
   * In Jupyter, kernels are the background processes that execute cells and return results for display.
   * To select the kernel on which you want to run your Notebook, go to the Kernel menu and choose Change Kernel. You can also click directly on the name of the active kernel to switch to another.
+### How will my analysis be limited by Memory?
+ *If your workload exceeds your server size, your server may be allowed to use additional resources temporarily. This can be convenient but should not be relied on. In particular, be aware that your job may be killed automatically and without warning if its RAM needs exceed the alloted memory. This behavior is not specific to Fornax or AWS, but users may encounter it more often on the science console due to the flexible machine sizing options. (Your laptop needs to have the max amount of memory that you will ever use while working on it. On the science console, you can choose a different server size every time you start it up -- this is much more efficient, but also requires you to be more aware of how much CPU and RAM your tasks need.)
     
 ## Navigating jupyter lab
 ### How to start a new notebook?
