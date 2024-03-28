@@ -57,7 +57,15 @@ Most users should choose the default image.
   *  Go to the `File` Menu and click on `hub control panel` as in the below image, which will bring up the option to `stop my server`(in red).  After stopping the server, please `logout` in the upper right of the JupyterHub window.
      ![ ](./static/images/hub_control_panel.png)
     
-## Navigating JupyterLab
+## Navigating JupyterLab in the Fornax Science Console
+
+The JupyterLab User Guide provides information on how to navigate the interface:
+
+https://jupyterlab.readthedocs.io/en/stable/user/interface.html
+
+The Fornax Science Platform contains a JupyterLab extension:
+
+* BXPlorer provides a UI to manage the cloud-hosted data in the Fornax Science Platform (https://github.com/Navteca/jupyterlab-bxplorer) 
 
 ### Home directory
   * When you log into the science console for the first time, the active directory is your `$HOME` directory. It contains preexisting folders like `efs/` and `s3/` with shared data. You may also create your own directories and files here. Your edits outside of the shared folders are not visible to other users.
