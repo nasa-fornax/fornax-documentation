@@ -97,7 +97,7 @@ Under Construction: In Jupyter, kernels are the background processes that execut
 
 ### Save your work!
 The Science Console is primarily intended for interactive use and will cull sessions which appear to be inactive.  Archive calls appear to Fornax as periods of inactivity (we see the irony in this too!), so might lead to your session being dropped from Fornax.
-If you want a notebook or script to run for longer than about 30 minutes and you will not be interacting with the Console, running `top` during that time can help keep the session active.
+If you want a notebook or script to run for longer than about 60 minutes and you will not be interacting with the Console, running `top` during that time can help keep the session active.
 
 Under construction: how long is the period of inactivity that gets culled?
 
