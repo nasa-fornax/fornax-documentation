@@ -18,15 +18,14 @@ For authors: consider these checklists requirements for your code.
       - if not, is that justified
 - Does it include work linked to a buzzword:
 	- big data, spectroscopy, time domain, forced photometry, cloud
-
-
+- Has each NASA archive been given option to comment on modules for their relevant data access?\
+	- Is archival data accessed in the most efficient way according to that archive?
 ## Tech Review Checklist
 - Is every function documented?
 - Does it follow the style guide? https://github.com/spacetelescope/style-guides/blob/master/guides/jupyter-notebooks.md
 - Is everything that gets done more than once turned into a function?
 - Are errors handled appropriately?
 - Are most lines of code commented?
-- Is archival data accessed in the most efficient way according to that archive?
 - Is data accessed from the cloud where possible?
 - Is the code parallelized where possible?
 - If the notebook is intended to be scaled up, does it do that efficiently?
