@@ -32,6 +32,7 @@ For authors: consider these checklists requirements for your code.
 - Is memory usage optimized where possible? 
 - Does the code give warnings that need to be followed up without a a blanket ignore of all warnings?
 - Is the requirements.txt file complete and not include un-used libraries?
+- Do the notebook and code directory have any non-used code that is commented out as obsolete or unused? If yes, clean-up those.
 
 ```python
 
