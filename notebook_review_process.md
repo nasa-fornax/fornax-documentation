@@ -25,7 +25,7 @@ For authors: consider these checklists requirements for your code.
 - Does it follow the style guide? https://github.com/spacetelescope/style-guides/blob/master/guides/jupyter-notebooks.md
 - Is everything that gets done more than once turned into a function?
 - Are errors handled appropriately?
-- Are most lines of code commented?
+- Have all code cells have corresponding narratives/comments?
 - Is data accessed from the cloud where possible?
 - Is the code parallelized where possible?
 - If the notebook is intended to be scaled up, does it do that efficiently?
