@@ -30,7 +30,7 @@ For authors: consider these checklists requirements for your code.
 - Is the code parallelized where possible?
 - If the notebook is intended to be scaled up, does it do that efficiently?
 - Is memory usage optimized where possible? 
-- Does the code give warnings that need to be followed up?
+- Does the code give warnings that need to be followed up without a a blanket ignore of all warnings?
 - Is the requirements.txt file complete and not include un-used libraries?
 
 ```python
