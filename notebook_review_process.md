@@ -1,7 +1,7 @@
 # How Does Fornax Review Notebooks?
 ***
 
-This is a sort of requirements document for notebooks contributed to Fornax by Fornax team members.  When a notebook is deemed "finished" by its authors, it should go through a two part review; a science review and a tech review.  Suggested checklists for those reviews are below. Checklists have been written and maintained by the distributed Fornax team.
+This is a sort of requirements document for notebooks contributed to Fornax by Fornax team members.  When a notebook is deemed "finished" by its authors, it should go through a two part review; a science review and a tech review.  Suggested checklists for those reviews are below.  These should be applied within reason to notebooks, and especially lightly to contributed notebooks. Checklists have been written and maintained by the distributed Fornax team.
 
 For authors: consider these checklists requirements for your code.
 
@@ -19,20 +19,26 @@ For authors: consider these checklists requirements for your code.
 - Does it include work linked to a buzzword:
 	- big data, spectroscopy, time domain, forced photometry, cloud
 - Has each NASA archive been given option to comment on modules for their relevant data access?\
+  	- TODO: a preferred contact method for each archive should be listed here, ie., archive helpdesk, NN slack channel #fornaxdev-daskhub? ??? 	
 	- Is archival data accessed in the most efficient way according to that archive?
 ## Tech Review Checklist
-- Is every function documented?
-- Does it follow the style guide? https://github.com/spacetelescope/style-guides/blob/master/guides/jupyter-notebooks.md
-- Is everything that gets done more than once turned into a function?
-- Are errors handled appropriately?
-- Have all code cells have corresponding narratives/comments?
-- Is data accessed from the cloud where possible?
-- Is the code parallelized where possible?
-- If the notebook is intended to be scaled up, does it do that efficiently?
-- Is memory usage optimized where possible? 
-- Does the code give warnings that need to be followed up without a a blanket ignore of all warnings?
-- Is the requirements.txt file complete and not include un-used libraries?
-- Do the notebook and code directory have any non-used code that is commented out as obsolete or unused? If yes, clean-up those.
+- Documentation:
+	- Is every function documented?
+	- Does it follow the style guide? https://github.com/spacetelescope/style-guides/blob/master/guides/jupyter-notebooks.md
+   	- Do all code cells have corresponding narratives/comments?
+- Notebook execution, error handling, etc.:
+	- Does the notebook run end-to-end, out of the box?
+ 	- Are errors handled appropriately, with `try`/`except` statements that are narrow in scope?
+	- Have warnings been dealt with appropriately, preferably by updating the code to avoid them (i.e., not by simply silencing them)?
+- Efficiency:
+	- Is data accessed from the cloud where possible?
+	- Is the code parallelized where possible?
+	- If the notebook is intended to be scaled up, does it do that efficiently?
+	- Is memory usage optimized where possible? 
+- Cleanup:
+	- Have blocks of code that need to be re-used been turned into functions (rather than being duplicated)?
+	- Have un-used libraries been removed from the requirements.txt file and the `import` statements?
+	- Has un-used code been removed (e.g., unused functions and commented-out lines)? 
 
 ```python
 
