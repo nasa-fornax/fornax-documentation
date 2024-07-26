@@ -40,7 +40,9 @@ For authors: consider these checklists requirements for your code.
 - Cleanup:
 	- Have blocks of code that need to be re-used been turned into functions (rather than being duplicated)?
 	- Have un-used libraries been removed from the requirements.txt file and the `import` statements?
-	- Has un-used code been removed (e.g., unused functions and commented-out lines)? 
+	- Has un-used code been removed (e.g., unused functions and commented-out lines)?
+   	- Are comment lines wrapped so all fit within a max of 90 - 100 characters per line?
+   	- Are code lines reasonably short where possible? some code lines can't easily be wrapped and that is ok
 
 ```python
 
