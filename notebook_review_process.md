@@ -27,6 +27,7 @@ For authors: consider these checklists requirements for your code.
 	- Does it follow the style guide? https://github.com/spacetelescope/style-guides/blob/master/guides/jupyter-notebooks.md
    	- Do all code cells have corresponding narratives/comments?
    	- Include information about runtime on fiducial Fornax server
+   	- Include information about which "image" the notebook uses when loggin into Fornax, ie., "Astrophysics default image"
 - Notebook execution, error handling, etc.:
 	- Does the notebook run end-to-end, out of the box?
  	- Are errors handled appropriately, with `try`/`except` statements that are narrow in scope?
