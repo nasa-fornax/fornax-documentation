@@ -227,6 +227,36 @@ Software is installed in miniconda environments.  You can use "[conda list](http
 ### How can I contribute to existing Open-Source Fornax notebook tutorials?
   * open issue or PR on Fornax Github [repo](https://github.com/nasa-fornax/fornax-demo-notebooks)
 
+## Using Fornax Software Environments Outside Fornax
+The Fornax software environments are available as docker container images. To use them on your computer, you will need to install
+[docker](https://docs.docker.com/engine/install/). The following are the steps needed to run the notebooks locally using the Fornax images:
+
+- Start in a empty working direcotry that will be used used for the notebooks and any data generated during the analysis:
+```sh
+mkdir work
+cd work
+```
+- Clone the notebook repo: `git clone https://github.com/nasa-fornax/fornax-demo-notebooks.git`.
+- Download the relevant Fornax image. In this case, we are using the `tractor-develop` image. `docker pull public.ecr.aws/f6e2z3b0/fornax-images:tractor-develop`.
+- Run the image with:
+```
+docker run --rm -p 8888:8888 \
+    -v $(pwd):/opt/workspace:rw \
+    -w /opt/workspace \
+    --user root -e NB_UID=$(id -u) -e NB_GID=$(id -g) \
+    -e CHOWN_HOME=yes -e CHOWN_HOME_OPTS='-R' \
+    public.ecr.aws/f6e2z3b0/fornax-images:tractor-develop \
+    start-notebook.sh --NotebookApp.token=''
+```
+
+This will launch Jupyterlab inside the container. You can access it by going to `http://127.0.0.1:8888/lab` in your browser.
+the `-v` option mounts the `work` folder directory as `/opt/workspace` inside the container. The `-w` options sets `/opt/workspace`
+as the working directory when jupyterlab launches. The next two lines ensures the right write permission are set so you can edit
+the notebooks and save the results.
+
+Any files edited or created under `/opt/workspace` will be available outside the container in the `work` directory.
+Any other files or changes will disapper once the running container is stopped.
+
 ## Troubleshooting
 * If my internet connection goes away or is intermittent - what happens to the running notebook?
 * Restart kernel will solve some problems, especially if the cells were run out of order
