@@ -10,6 +10,6 @@ jobs:
         uses: scientific-python/circleci-artifacts-redirector-action@4e13a10d89177f4bfc8007a7064bdbeda848d8d1  # v1.0.0
         with:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
-          api-token: ${{ secrets.FORNAX_NOTEBOOKS_CIRCLE_TOKEN }}
+          api-token: ${{ secrets.FORNAX_DOCUMENTATION_CIRCLE_TOKEN }}
           artifact-path: 0/_build/html/index.html
           circleci-jobs: build-docs
