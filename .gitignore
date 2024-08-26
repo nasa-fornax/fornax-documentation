@@ -1,0 +1,4 @@
+# Jupyter Notebook and sphinx renderings
+.ipynb_checkpoints
+*.ipynb
+_build/
