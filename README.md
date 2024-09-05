@@ -237,7 +237,7 @@ mkdir work
 cd work
 ```
 - Clone the notebook repo: `git clone https://github.com/nasa-fornax/fornax-demo-notebooks.git`.
-- Download the relevant Fornax image. In this case, we are using the `tractor-develop` image. `docker pull public.ecr.aws/f6e2z3b0/fornax-images:tractor-develop`.
+- Download the relevant Fornax image. In this case, we are using the `tractor-stable` image. `docker pull public.ecr.aws/f6e2z3b0/fornax-images:tractor-stable`.
 - Run the image with:
 ```
 docker run --rm -p 8888:8888 \
@@ -245,7 +245,7 @@ docker run --rm -p 8888:8888 \
     -w /opt/workspace \
     --user root -e NB_UID=$(id -u) -e NB_GID=$(id -g) \
     -e CHOWN_HOME=yes -e CHOWN_HOME_OPTS='-R' \
-    public.ecr.aws/f6e2z3b0/fornax-images:tractor-develop \
+    public.ecr.aws/f6e2z3b0/fornax-images:tractor-stable \
     start-notebook.sh --NotebookApp.token=''
 ```
 
