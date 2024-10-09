@@ -11,7 +11,7 @@ The Fornax Science Console supports many astronomical use cases, but users will 
 
 ### Fornax Science Console basic capabilities and selection guidelines
 
-After logging in, users will be presented with choices for their working environment.  
+After logging in, users will be presented with choices for their working environment.
 
 * <b>Compute size</b>:  the amount of compute (CPUs) and memory (RAM) available is configurable.  Options are briefly described below.
 * <b>Compute environment</b>: the software environment including the operating system, system library versions, and pre-installed software selections.
@@ -19,10 +19,10 @@ After logging in, users will be presented with choices for their working environ
 The compute size you select largely determines the costs you will accrue while it is running.  We therefore need our users to be more conscious of the compute you are using than you would be on your own hardware. We ask users to follow these guidelines:
 
 * You will have a choice of server types. Please test your use case on the smallest server that can serve as a test, and run tests with a limited scope (e.g., number of sources, iterations, etc.). Only expand the scope and/or select a larger server when you have successfully tested the smaller case.
-* Please also note that if you start an instance, closing your browser window does not necessarily stop the instance you started.  Especially with the larger instances, **please explicitly use the “Stop My Server” button** (under File->Hub Control Panel)  when done. 
+* Please also note that if you start an instance, closing your browser window does not necessarily stop the instance you started.  Especially with the larger instances, **please explicitly use the “Stop My Server” button** (under File->Hub Control Panel)  when done.
 * Any time you need to use the biggest 128-core compute instance, please reach out to the Help Desk for explicit permission _before_ starting it. This will help us to be aware of resource usage for this development system, which does not yet have fully automated resource usage guardrails. Give us a brief idea of what the science use case is and an estimate for the _total_ run time. Note that if your job (or jobs) runs significantly longer than we expect, we may contact you about terminating it. If you need to stop and restart your instance, you don’t need to get permission every time as long as you are still within the original estimated total run time. If you need more time than expected, please write to the help desk with a brief justification. Our review process is more about visibility than control, so you’ll probably be approved.
 
-The compute options: 
+The compute options:
 
   * <b>CPUs</b>:  By default, users will have access to 4 CPUs provided by AWS. These are useful for smaller analyses and to test out larger analyses. Once a user has completed testing and is ready to scale up an analysis, they can request up to 128 CPUs.
   * <b>RAM</b>: Upon logging in, users will have access to up to 16 GB of RAM. Up to 512 GB of RAM are available upon request.
@@ -34,7 +34,7 @@ Software environment options:
 * A base environment contains common astronomy libraries such as Astropy.
 * The forced photometry tool called Tractor is available in a customized environment.
 * The HEASoft high-energy astrophysics software is available in another customized environment.
-* More environments will be created as need.  
+* More environments will be created as need.
 
 ### Data access within the Fornax Science Console
 
@@ -118,7 +118,10 @@ If you want a notebook or script to run for longer than about 60 minutes and you
 Under construction: how long is the period of inactivity that gets culled?
 
 ### How can I save my notebook as a Python script?
-  * from the command line: `jupyter nbconvert --to script notebookname.ipynb`
+There are multiple ways to convert a notebook to a script, these are the two easiest ways to use on Fornax:
+
+  * in Jupyter, use the File menu > Export Notebook As...
+  * from the command line: `jupytext --to script <your_notebook_file>`
 
 ### How can I run a notebook non-interactively?
 Under Construction.
