@@ -118,10 +118,9 @@ If you want a notebook or script to run for longer than about 60 minutes and you
 Under construction: how long is the period of inactivity that gets culled?
 
 ### How can I save my notebook as a Python script?
-There are multiple ways to convert a notebook to a script, these are the two easiest ways to use on Fornax:
+There are multiple ways to convert a notebook to a Python script, the easiest is to use `jupytext` on the command line. It is installed on Fornax, but if you work on your local computer, you may need to pip install it first:
 
-  * in Jupyter, use the File menu > Export Notebook As...
-  * from the command line: `jupytext --to script <your_notebook_file>`
+  * `jupytext --to script <your_notebook_file>`
 
 ### How can I run a notebook non-interactively?
 Under Construction.
