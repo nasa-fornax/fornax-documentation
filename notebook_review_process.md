@@ -43,6 +43,7 @@ For authors: consider these checklists requirements for your code.
 	- Has un-used code been removed (e.g., unused functions and commented-out lines)?
    	- Are comment lines wrapped so all fit within a max of 90 - 100 characters per line?
    	- Are code lines reasonably short where possible? some code lines can't easily be wrapped and that is ok
+   	- Do plots use color-blind friendly palettes for plotting? try this [simulator](https://www.color-blindness.com/coblis-color-blindness-simulator/#google_vignette) for visual check
 
 ```python
 
