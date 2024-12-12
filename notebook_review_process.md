@@ -26,8 +26,8 @@ For authors: consider these checklists requirements for your code.
 	- Is every function documented?
 	- Does it follow the style guide? https://github.com/spacetelescope/style-guides/blob/master/guides/jupyter-notebooks.md
    	- Do all code cells have corresponding narratives/comments?
-   	- Include information about runtime on the fiducial Fornax server
-   	- Include information about which "image" the notebook uses when logging into Fornax, ie., "Astrophysics default image"
+   	- Include information about which server type and environment to choose when logging in to Fornax and the notebook's expected runtime given that setup. For example: 
+   	- "As of 2024 August, this notebook takes about 3 minutes to run to completion on Fornax using Server Type: 'Standard - 8GB RAM/4 CPU' and Environment: 'Default Astrophysics' (image)."
 - Notebook execution, error handling, etc.:
 	- Does the notebook have a corresponding `requirements_<notebook_filename>.txt` file listing all its direct dependencies? Is it used in a commented-out cell in the notebook  with `pip install -r <filename>`?
 	- Does the notebook run end-to-end, out of the box?
