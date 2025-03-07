@@ -94,6 +94,23 @@ The Fornax Science Platform additionally contains a JupyterLab extension called 
 
 Under construction: It appears that sometimes we are allowed to use more CPU than listed for a short amount of time.  Is this true? and what are the parameters of when and for what sizes that will be allowed?
 
+### Please use .md markdown files instead of .ipynb for Jupyter notebooks 
+Using .md (Markdown) files for Jupyter notebooks in GitHub repositories offers significant advantages over traditional .ipynb files, particularly for astronomers and researchers collaborating on code-intensive projects. The primary benefit is vastly improved readability during code reviews and version control. Unlike .ipynb files, which store output, metadata, and code in a convoluted JSON format, .md files present code, text, and outputs in a clean, diff-friendly format. This makes it easier to track changes in pull requests, compare versions, and conduct meaningful code reviews, which is essential for maintaining high-quality, reproducible research code. Additionally, Markdown files integrate seamlessly with Jupytext, allowing them to function as fully interactive notebooks within JupyterLab, offering the same user experience without the drawbacks of .ipynb files.
+
+Furthermore, using .md files promotes best practices for open science and educational resources. Many organizations, including NumPy are using Markdown-based notebooks to enhance accessibility and collaboration. Markdown is a lightweight format that supports rich formatting, code execution, and the inclusion of outputs while remaining easily editable in any text editor. This ensures that research notebooks remain both human-readable and machine-readable, enabling astronomers to share code and results more effectively with collaborators and the wider scientific community.
+
+Instructions for Using .md Files in JupyterLab
+1. Starting a New Notebook as a .md File:
+   * In JupyterLab, when creating a new notebook, choose .md instead of .ipynb to ensure better version control and code reviewability.
+2. Opening an Existing .md File as a Jupyter Notebook:
+   * Navigate to the .md file in the JupyterLab file browser.
+   * Right-click the file, select `Open With`, and choose `Notebook` or `Jupytext Notebook`.
+   * This will open the Markdown file in a notebook interface with cells and execution capabilities, just like a traditional .ipynb notebook.
+3. Converting an Existing .ipynb Notebook to .md:
+   * If you have an existing .ipynb file that you want to add to the repository, convert it to .md using Jupytext:
+   * `jupytext --to md notebook.ipynb`
+By following these instructions, you can leverage the benefits of Markdown files while maintaining the full functionality of Jupyter notebooks.
+
 ### How can I tell if I am close to using up my allocation of compute and storage resources?
 
 Under construction.
