@@ -37,7 +37,7 @@ these guidelines:
 The compute options depend upon `Server type` selected:
 
   * <b>CPUs</b>:  Users can choose between 4 - 16 CPUs. These are useful for smaller analyses and to test out larger analyses. Once a user has completed testing and is ready to scale up an analysis, they can request up to 128 CPUs.
-  * <b>RAM</b>:  Users can choose between 8 - 64 GB of RAM. Up to 512 GB of RAM is available upon request.
+  * <b>RAM</b>:  Users can choose between 8 - 64 GB of RAM. Up to 512 GB of RAM is available upon request (instructions below).
   * <b>User Storage</b>: Upon logging in, users will have access to 10 GB of storage; additional storage is available upon request.
   * <b>GPUs</b>:  There are currently no GPUs available.
 
