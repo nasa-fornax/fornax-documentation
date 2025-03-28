@@ -181,7 +181,7 @@ Quick-start instructions:
 ### Save your work!
 The Science Console is primarily intended for interactive use and will cull 
 sessions which appear to be inactive. Your session will not be culled if there 
-s CPU activity. Keeping your computer from sleeping will also keep your 
+is CPU activity. Keeping your computer from sleeping will also keep your 
 session active; regardless of any interactivity.
 If you want a notebook or script to run longer than about 15 minutes and 
 there is no processing in your notebook or you will not be interacting with the 
