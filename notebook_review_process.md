@@ -30,11 +30,10 @@ For authors: consider these checklists requirements for your code.
    	- "As of 2024 August, this notebook takes about 3 minutes to run to completion on Fornax using Server Type: 'Standard - 8GB RAM/4 CPU' and Environment: 'Default Astrophysics' (image)."
 - Dependencies and imports:
         - Does the notebook have a corresponding `requirements_<notebook_filename>.txt` file listing all its direct dependencies?
-        - Are all dependencies listed in the requirements file in fact required? Do revisit the list as the notebook evolve.
-        - Is the requirements file used in a commented-out cell in the notebook  with `pip install -r <filename>`; and has the notebook no onther installation related cells?
+        - Are all dependencies listed in the requirements file in fact required? Please revisit the list as the notebook evolves.
+        - Is the requirements file used in a commented-out cell in the notebook  with `# !pip install -r <filename>`; and has the notebook no other installation related cells?
         - Are dependencies kept to a minimum? E.g. no new library introduced for minimal usage while another library that is already a dependency can do the same functionality?
           (e.g. do not introduce pandas to print out a line from a FITS table for which we already need to use astropy for IO; add dependencies when their functionality is unique or required for efficiency, etc.)
-        - Are all imports used? Do not import functionality, modules, and packages that are not used in the notebook.
 - Notebook execution, error handling, etc.:
 	- Does the notebook run end-to-end, out of the box?
  	- Are errors handled appropriately, with `try`/`except` statements that are narrow in scope?
