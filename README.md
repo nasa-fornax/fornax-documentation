@@ -179,16 +179,16 @@ Quick-start instructions:
   * If you want software installs to be persistent, consider setting up an environment: See below under "Making a conda environment that persists across sessions"
 
 ### Save your work!
-The Science Console is primarily intended for interactive use and will cull 
-sessions which appear to be inactive. Your session will not be culled if there 
-is CPU activity. Keeping your computer from sleeping will also keep your 
-session active; regardless of any interactivity.
-If you want a notebook or script to run longer than about 15 minutes and 
-there is no processing in your notebook or you will not be interacting with the 
-Console, running `top` during that time can help keep the session active.
+The Science Console is primarily intended for interactive use and will cull sessions which appear to be inactive. 
+Under construction: update for November 2024 updates
 
-Under construction: how long is the period of inactivity that gets culled? 15 
-minutes.
+We encourage you to use github or some other way to save your code so that you have backups.  
+
+### Shutdown Policy
+Fornax has put in place a set of policies to guide shutting down the system when work is not being done.  This guards against 
+incurring costs when the system is idle. Our policy is the following:
+ * If there is CPU activity, the system will not be stopped, even if the browser is disconnected or closed.
+ * If there is no activity (e.g. the notebook or browser tab is closed) with no CPU activity, the system terminates after 15 min.
 
 ### How can I save my notebook as a Python script?
 There are multiple ways to convert a notebook to a Python script, the easiest 
