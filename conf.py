@@ -13,8 +13,8 @@
 
 # -- Project information -----------------------------------------------------
 
-project = 'Fornax Documentation'
-copyright = '2023-2024, Fornax developers'
+project = 'Fornax User Documentation'
+copyright = '2023-2025, Fornax developers'
 author = 'Fornax developers'
 
 
@@ -36,6 +36,13 @@ templates_path = ['_templates']
 # This pattern also affects html_static_path and html_extra_path.
 exclude_patterns = ['_build', 'notes', '.tox', '.tmp', '.pytest_cache']
 
+# Top level README file's sole purpose is for the repo.
+exclude_patterns += ['README.md',]
+
+# Not yet included in the rendering:
+exclude_patterns += ['notebook_review_process.md',]
+
+
 # MyST-NB configuration
 nb_execution_timeout = 900
 
@@ -45,8 +52,9 @@ nb_execution_timeout = 900
 # a list of builtin themes.
 #
 html_theme = 'sphinx_book_theme'
-html_title = 'Fornax Demo Notebooks'
+html_title = 'Fornax User Documentation'
 html_logo = '_static/fornax_logo.png'
+html_favicon = '_static/fornax_favicon.ico'
 html_theme_options = {
     "github_url": "https://github.com/nasa-fornax/fornax-documentation",
     "repository_url": "https://github.com/nasa-fornax/fornax-documentation",
