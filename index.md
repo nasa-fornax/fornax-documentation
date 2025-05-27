@@ -3,26 +3,12 @@
 ```{toctree}
 ---
 maxdepth: 2
+numbered:
+titlesonly:
 ---
 
 introduction
-
-```
-
-```{toctree}
----
-maxdepth: 2
----
-
 fornax_science_console
-
-```
-
-```{toctree}
----
-maxdepth: 1
----
-
 documentation/python_notebooks
 documentation/compute_environments
 documentation/data_access
