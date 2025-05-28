@@ -2,8 +2,11 @@
 
 The purpose of the Fornax Science Console Dashboard is to provide users the status of their compute and storage resource consumption. The image below shows a screenshot of the Dashboard.
 
-![image](https://hackmd.io/_uploads/BysRhZSZlg.png)
+```{figure} ../_static/fsc_dashboard.png
+:alt: The Fornax Science Platform Dashboard listing spending categorized by resource.
 
+The Fornax Science Console Dashboard
+```
 
 - **Total Spend** tracks the total number of dollars spent on egress, storage, and compute so far this calendar year.
 
