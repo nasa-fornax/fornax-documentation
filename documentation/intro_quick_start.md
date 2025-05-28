@@ -11,11 +11,11 @@ Once you receive your credentials, log into the Fornax Science Console at:
 
 ## 3. Select JupyterHub
 
-After logging in, you will see a Resource Dashboard. You can learn more about it in [Section 2.2](https://hackmd.io/@9aCJQ5QcQU6XtmRUX4HNwg/ByrORwGlle#Dashboard). For now, go to the left-hand menu and choose JupyterHub under Compute.
+After logging in, you will see a Resource Dashboard. You can learn more about it in the {ref}`fsc-dashboard` section.
+For now, go to the left-hand menu and choose JupyterHub under Compute.
 
 ## 4. Select a Server Type
-You’ll be prompted to select the size of the compute instance. Please choose **Standard** until you have carefully read [Section 1.2 - Fornax Resources and Best Practices](https://hackmd.io/ejQ6DQWUTiuim5LZjXclSw#Fornax-Resources-and-Best-Practices).
-
+You’ll be prompted to select the size of the compute instance. Please choose **Standard** until you have carefully read the {ref}`intro-best-practices` section.
 
 ## 5. Select a Software Environment
 
@@ -26,7 +26,7 @@ Choose the **Astrophysics Default Image**.
 Click **Start** to launch the environment. It is normal for Jupyterlab to take a couple of minutes to start. At this point, the server you have chosen will begin accruing cost, even though you have not started any computations. Since you have chosen the **Standard** service, this cost will be low.
 
 ## 7. Open a New Notebook
-In JupyterLab, you will see a main menu at the top, your persistent home directory on the left, and a work area on the right. 
+In JupyterLab, you will see a main menu at the top, your persistent home directory on the left, and a work area on the right.
 
 - Click the **blue +** just under the main menu. This will open a new Launcher tab in the work area.
 

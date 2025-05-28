@@ -32,7 +32,7 @@ The **Launcher** will open a panel in the main area that provides clickable tile
 
 **Visual Studio Code (VS Code)** is a code editor widely used for programming in many languages—including Python, JavaScript, C++, and more.
 
-**Firefly** is a visualization platform designed to facilitate interactive exploration of astronomical data, including images, catalogs, and plots, through a modern, browser-based interface. 
+**Firefly** is a visualization platform designed to facilitate interactive exploration of astronomical data, including images, catalogs, and plots, through a modern, browser-based interface.
 
 **Terminal** provides a command line, which allows users to run Emacs or vi .
 
@@ -40,7 +40,7 @@ The **Launcher** will open a panel in the main area that provides clickable tile
 
 2. **Dask**
 
-Dask is a Python library for parallel computing. The Fornax Science Console includes the Dask JupyterLab Extension which can be used to manage a Dask cluster and monitor the progress of submitted functions. The charts that make up Dask’s monitoring dashboard are embedded directly in JupyterLab panes which can be moved around into custom arrangements. 
+Dask is a Python library for parallel computing. The Fornax Science Console includes the Dask JupyterLab Extension which can be used to manage a Dask cluster and monitor the progress of submitted functions. The charts that make up Dask’s monitoring dashboard are embedded directly in JupyterLab panes which can be moved around into custom arrangements.
 
 After clicking on Dask in the left sidebar, scroll down in the left column and click “+NEW” next to “CLUSTERS” to start a new cluster. Once the cluster starts, you’ll see a column of yellow buttons appear with the names of available charts. Click on any of them and a new tab will open showing the selected chart. You can drag and drop the tab to move it somewhere else on the screen.
 

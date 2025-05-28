@@ -1,4 +1,5 @@
-### Fornax Resources and Best Practices
+(intro-best-practices)=
+# Fornax Resources and Best Practices
 
 The Fornax Science Console offers three choices for compute capacity:
 
@@ -17,6 +18,3 @@ Fornax also offers three types of storage:
 - **Extended temporary storage:** For project work lasting several months, users can request up to 5 TB of object storage on S3, intended for data that doesn’t require fast file system access and won’t be stored permanently.
 
 Cloud compute is billed to NASA on an hourly basis—even when resources are idle. Likewise, storage is charged based on the amount allocated, not the amount actively used. To ensure efficient allocation of these limited resources across the community, users are encouraged to use the least amount of compute and storage necessary to accomplish their tasks.
-
-
-

@@ -1,4 +1,5 @@
-## Dashboard
+(fsc-dashboard)=
+# Dashboard
 
 The purpose of the Fornax Science Console Dashboard is to provide users the status of their compute and storage resource consumption. The image below shows a screenshot of the Dashboard.
 
@@ -14,7 +15,7 @@ The Fornax Science Console Dashboard
 
 - **Egress Spend** tracks total number of dollars spent on egress so far this calendar year. Egress refers to data that is transferred out of a cloud provider's system to somewhere else, like your local computer or another cloud.
 
-- **Total Egress** tracks the volume of data in GB egressed so far this calendar year. 
+- **Total Egress** tracks the volume of data in GB egressed so far this calendar year.
 
 - **Storage Spend** tracks the total number of dollars spent on storage so far this calendar year.
 
@@ -23,4 +24,3 @@ The Fornax Science Console Dashboard
 - **Compute Spend** tracks the total number of dollars spent on compute so far this calendar year.
 
 - **Running Jupyter Servers**
-
