@@ -1,8 +1,8 @@
-# Data Access
+# Data Access from within Fornax
 
-Astrophysical analyses typically begin with public or proprietary datasets obtained from space-based or ground-based observatories. The Fornax Science Console provides multiple data access pathways, including direct file uploads, Amazon S3 access, and support for IVOA-compliant APIs. Users can also leverage Python libraries such as Astroquery and PyVO to programmatically access major astrophysics archives, including the NASA Astrophysics Archives: HEASARC, and MAST.  By combining these data access options with Fornax's integrated compute resources, users can streamline the process of retrieving, analyzing, and processing astrophysical data, making complex analyses more efficient and accessible.
+The Fornax Science Console provides multiple data access pathways, including direct file uploads, direct cloud access, and support for IVOA-compliant application program interfaces(APIs). Users can also leverage Python libraries such as Astroquery and PyVO to programmatically access major astrophysics archives, including the NASA Astrophysics Archives: HEASARC, IRSA, and MAST.  By combining these data access options with Fornax's integrated compute resources, users can streamline the process of retrieving, analyzing, and processing astrophysical data, making complex analyses more efficient and accessible.
 
-## Upload Data
+## Direct File Uploads
 
 The **JupyterLab File Browser** includes an **Upload File** option, allowing users to transfer data files from their local machine directly into your Fornax Science Console home directory. Once uploaded, these files are available for immediate use in your analysis, whether in Jupyter Notebooks or other tools. You can organize and manage files through the File Browser interface, view directory structures, and access the uploaded datasets for use with Python libraries, APIs, or the compute resources provided by Fornax.
 

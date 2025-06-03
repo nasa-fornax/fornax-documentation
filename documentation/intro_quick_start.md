@@ -15,7 +15,7 @@ After logging in, you will see a Resource Dashboard. You can learn more about it
 For now, go to the left-hand menu and choose JupyterHub under Compute.
 
 ## 4. Select a Server Type
-You’ll be prompted to select the size of the compute instance. Please choose **Standard** until you have carefully read the {ref}`intro-best-practices` section.
+You’ll be prompted to select the size of the compute instance. Please choose **Small** until you have carefully read the {ref}`intro-best-practices` section.
 
 ## 5. Select a Software Environment
 
@@ -23,7 +23,7 @@ Choose the **Astrophysics Default Image**.
 
 ## 6. Launch JupyterLab
 
-Click **Start** to launch the environment. It is normal for Jupyterlab to take a couple of minutes to start. At this point, the server you have chosen will begin accruing cost, even though you have not started any computations. Since you have chosen the **Standard** service, this cost will be low.
+Click **Start** to launch the environment. It is normal for Jupyterlab to take a couple of minutes to start. At this point, the server you have chosen will begin accruing cost, even though you have not started any computations. Since you have chosen the **Small** server, this cost will be low.
 
 ## 7. Open a New Notebook
 In JupyterLab, you will see a main menu at the top, your persistent home directory on the left, and a work area on the right.

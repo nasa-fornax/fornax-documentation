@@ -1,6 +1,6 @@
 # Fornax Community Forum
 
-The [Fornax Community Forum](https://discourse.fornax.smce.nasa.gov/) is a platform dedicated to fostering collaboration and knowledge-sharing among Fornax users. It serves as a hub for discussions related to the initiative’s mission to leverage cloud resources to accelerate research with data from NASA's Astrophysics missions.
+The [Fornax Community Forum](https://discourse.fornax.smce.nasa.gov/) is a platform dedicated to fostering collaboration and knowledge-sharing among Fornax users. Specifically, the community forum serves as the Fornax helpdesk, and as a hub for discussions related to using NASA's Astrophysics missions cloud resources to accelerate scientific research.
 
 The forum is designed to facilitate collaboration on the use of cloud computing tools, data access, and data analysis. Members can engage in discussions, ask questions, share ideas, and collaborate on topics such as data integration, cloud-based resources, astrophysics analysis, and more.
 

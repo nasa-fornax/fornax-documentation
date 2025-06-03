@@ -20,17 +20,17 @@ This contains dropdown menus like File, Edit, View, Run, Kernel, Git, Tabs, Sett
 
 ## Left Sidebar
 
-The left sidebar is a vertical strip of icons, each representing a tool or panel that will open up in the left column of the interface.
+The left sidebar is a vertical strip of icons, each representing a tool or extension that will open up in the left column of the interface.
 
 1. **File Browser (📁)**
 
-Lets you navigate and open files and folders. Double-click a notebook or file to open it in the main area.
+Lets you navigate and open files and folders. Double-click a file or .ipynb notebook to open it in the main area.  Opening .md files as notebooks should be done by right clicking on the file -> "Open With" -> "Notebook" so that they display in the expected format with cells of runable code.
 
-This includes the **Launcher**, **New Folder**, and **Upload Files** icons.
+This includes the **Launcher**(blue plus sign), **New Folder** (folder symbol with plus sign), and **Upload Files** (up arrow) icons.
 
-The **Launcher** will open a panel in the main area that provides clickable tiles for quickly starting new tools, such as notebooks and terminals. Below we discuss some of the tools available via the **Launcer**.
+The **Launcher** will open a panel in the main area that provides clickable tiles for quickly starting new tools, such as notebooks and terminals. Below we discuss some of the tools available via the **Launcher**.
 
-**Visual Studio Code (VS Code)** is a code editor widely used for programming in many languages—including Python, JavaScript, C++, and more.
+**Visual Studio Code (VS Code)** is an integrated development environment(IDE) widely used for programming in many languages—including Python, JavaScript, C++, and more.
 
 **Firefly** is a visualization platform designed to facilitate interactive exploration of astronomical data, including images, catalogs, and plots, through a modern, browser-based interface.
 
@@ -48,10 +48,10 @@ Start or restart the kernel for the notebook you’re working in so that it will
 
 3. **Git**
 
-Adds Git version control features.
+This extension integrates Git version control into the JupyterLab interface, enabling you to stage, commit, push, and pull notebook and code changes without leaving the environment.  It provides visual diffs, branch management, and history browsing, making collaborative development and reproducibility seamless.
 
 4. **Table of Contents**
-
+Automatically generates a sidebar outline of all headings in your notebook or document, allowing you to quickly navigate between sections.
 5. **Extensions Manager**
 
 Shows installed extensions and lets you manage them.

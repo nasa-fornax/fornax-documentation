@@ -23,4 +23,4 @@ The Fornax Science Console Dashboard
 
 - **Compute Spend** tracks the total number of dollars spent on compute so far this calendar year.
 
-- **Running Jupyter Servers**
+- **Running Jupyter Servers** this is 0 if you are not running a compute environment, or 1 if you are.  Note there is a delay in this value of about 1-2 minutes, so if you shut down your server, you will have to wait a bit before this number shows the update. 

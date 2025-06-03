@@ -47,7 +47,7 @@ If you prefer to develop your code outside the Fornax Science Console, you can p
 
 ## Other NASA Astrophysics Notebooks
 
-The Fornax Tutorial Notebooks showcase science that can be carried out by combining data across the NASA Astrophysics Archives, and have been tested using the software environments offered in the Fornax Science Console. Each of the NASA Astrophysics Archives also offer notebook tutorials more focused on single-archive use cases:
+The [Fornax Tutorial Notebooks](https://nasa-fornax.github.io/fornax-demo-notebooks/) showcase science that can be carried out by combining data across the NASA Astrophysics Archives, and have been tested using the software environments offered in the Fornax Science Console. Each of the NASA Astrophysics Archives also offer notebook tutorials more focused on single-archive use cases:
 
 [MAST Science Tutorials](https://github.com/spacetelescope/tike_content/blob/main/markdown/science-examples.md)
 

@@ -36,7 +36,7 @@
 
 ## 6. Optimize code for CPU usage (CPU profiling)
 
-**CPU profiling** is the process of measuring how much time your code spends running each part of your program, so you can find and fix performance bottlenecks. In Python, this means tracking which functions are slow or use a lot of CPU so you can make your code run faster—especially useful when working with large datasets or running analyses in the cloud. It is best to carry out CPU profiling:
+**CPU profiling** is the process of measuring how much time your code spends running each part of your program, so you can find and fix performance bottlenecks. In Python, this means tracking which functions are slow or use a lot of CPU so you can make your code run faster—especially useful when working with large datasets or running analyses in the cloud.
 
 ### CPU Profiling Methods in Jupyter Notebooks
 

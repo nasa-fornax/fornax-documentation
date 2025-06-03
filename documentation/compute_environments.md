@@ -1,6 +1,6 @@
 # Compute Environments
 
-The Fornax Science Console offers two Software environments:
+The Fornax Science Console offers a few Software environments, the most relevant of which are:
 
 - **Default Astrophysics** (recommended for most use cases)
 - **High-Energy Astrophysics**
