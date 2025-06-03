@@ -6,4 +6,4 @@ The Fornax Science Console supports many astronomical use cases, but users will 
 
 * on large cloud-hosted data sets that would be cumbersome to download;
 * that require complicated software pre-installed on the platform; or
-* that are parallelizable and require more compute than they currently have access to.
+* that are parallelizable and require a large number of CPUs.
