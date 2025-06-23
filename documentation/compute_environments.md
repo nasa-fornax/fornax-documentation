@@ -1,21 +1,23 @@
 # Compute Environments
 
-The Fornax Science Console offers a few Software environments, the most relevant of which are:
+The Fornax Science Console offers several Software environments, they are currently grouped into two containers:
 
-- **Default Astrophysics** (recommended for most use cases)
-- **High-Energy Astrophysics**
-
-
-To view the software pre-installed in each environment:
-
-1. Open a terminal in the Fornax Science Console JupyterLab.
-2. Activate the environment you want to inspect using:
-   ```conda activate <environment-name>```
-3. Run the following command to list all installed packages:
-    ```conda list```
+- **Default Astrophysics** (recommended for most use cases) contain many common astronomy software, including those required to run the demo notebooks. This container image is referred to as **fornax-main**.
+- **High-Energy Astrophysics** contains high-energy software, which currently includes HEASoft. Plans exist to add CIAO, XMM-SAS and Fermitools. This container image is referred to as **fornax-hea**.
 
 
-For more details, see the official [conda list documentation](https://docs.conda.io/projects/conda/en/latest/commands/list.html).
+There are two ways to view the software pre-installed in the containers:
+
+- **Inside the Console**:
+The list of environment files (`.yml` for conda and requirements.txt for pip) of all the installed environments can be found in the folder `$LOCK_DIR` (defaults to /opt/lock). Each environment in the container has a corresponding file there. For instance:
+    - *requirements-python3.txt*: is the pip requirement file for the `python3` environment.
+
+    - *base-lock.yml*: is the conda environment file for the base conda environment running jupyter-lab
+
+
+- **Outside the Console**: The same environment files are also available for every release of the container images on github. They are grouped by image name and available in the [container images release page](https://github.com/nasa-fornax/fornax-images/releases).
+
+
 
 ## Installing additional software on the Fornax Science Console
 
