@@ -33,6 +33,13 @@ and the following to deactivate it.
 deactivate
 ```
 
+There are two types of environments, **uv**-based and **conda**-based:
+- **uv**-based:
+The **uv**-based environments use [uv](https://docs.astral.sh/uv/) to manage the packages. These environments contain `pip`-installable pakcages and are used in most cases. The default enivronment are installed under `$ENV_DIR`. The are activated as indicated above with `source $ENV_DIR/{env-name}/bin/activate`.
+
+- **conda**-based:
+The `conda`-based environments are used when packages that are not `pip`-installable. Examples this include `heasoft` and `ciao` in the high-energy container image. These are activated with `conda activate {env-name}` and deactivated with `conda deactivate`. These are installed under `$CONDA_DIR/envs`
+
 ## Installing additional software on the Fornax Science Console
 
 There are two basic ways to install software that you would like to use in the Fornax Science Console, if the offereed environments do not meet your needs.
