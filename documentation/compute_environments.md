@@ -17,7 +17,21 @@ The list of environment files (`.yml` for conda and requirements.txt for pip) of
 
 - **Outside the Console**: The same environment files are also available for every release of the container images on github. They are grouped by image name and available in the [container images release page](https://github.com/nasa-fornax/fornax-images/releases).
 
+## Environment Selection
+`python3` is the default python environment. It has general astronomy and plotting software.
 
+Each of the Fornax demo notebooks has its own environment with name of the `py-{notebook-name}` (e.g. `py-light_curve_generator` and `py-multiband_photometry`). When opening the notebook, the corresponding kernel should start automatically. You can also select it from the drop down kernel menu at the top-right of an open notebook.
+
+To activate a specific environment from the terminal, run: `source $ENV_DIR/{environment-name}/bin/activate`.
+
+For example, to activate the `py-light_curve_classifier` environment, run: 
+```sh
+source $ENV_DIR/py-light_curve_classifier/bin/activate
+```
+and the following to deactivate it.
+```sh
+deactivate
+```
 
 ## Installing additional software on the Fornax Science Console
 
