@@ -60,3 +60,8 @@ To check the version and metadata for a specific installed package, use the foll
 
 ```pip show package-name```
 
+## Installing Extensions on the Fornax Science Console
+
+There are two types Jupyerlab extensions. Front-end (menus etc), and server extensions. Most extensions include both components.
+The front-end extension can be installed after jupyterlab starts, and can show up if you refresh the page, as long they are installed in the environment running jupyterlab.
+The server extension part however needs to be installed before jupyterlab starts, and hence a user cannot add them.
