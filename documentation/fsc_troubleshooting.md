@@ -4,7 +4,7 @@
 If you are using git for the first time, you will need to set up your git.
 Before starting these steps, make sure you have a git account and an access 
 token.  Then from within the Fornax Science Console, open a terminal and run 
-the forllowing commands:
+the following commands:
 ```bash
 git config --global credential.helper cache
 git clone https://your repo/

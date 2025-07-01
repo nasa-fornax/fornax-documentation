@@ -20,7 +20,7 @@ For more details, see the official [conda list documentation](https://docs.conda
 ## Installing additional software on the Fornax Science Console
 
 There are two basic ways to install software that you would like to use in the 
-Fornax Science Console, if the offereed environments do not meet your needs.
+Fornax Science Console, if the offered environments do not meet your needs.
 
 ### Create your own Conda Environment
 
