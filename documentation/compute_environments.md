@@ -9,7 +9,7 @@ The Fornax Science Console offers several Software environments, they are curren
 There are two ways to view the software pre-installed in the containers:
 
 - **Inside the Console**:
-The list of environment files (`.yml` for conda and requirements.txt for pip) of all the installed environments can be found in the folder `$LOCK_DIR` (defaults to /opt/lock). Each environment in the container has a corresponding file there. For instance:
+The list of environment files (`*.yml` for conda and `requirements-*.txt` for uv) of all the installed environments can be found in the folder `$LOCK_DIR`. Each environment in the container has a corresponding file there. For instance:
     - *requirements-python3.txt*: is the pip requirement file for the `python3` environment.
 
     - *base-lock.yml*: is the conda environment file for the base conda environment running jupyter-lab
@@ -20,7 +20,7 @@ The list of environment files (`.yml` for conda and requirements.txt for pip) of
 ## Environment Selection
 `python3` is the default python environment. It has general astronomy and plotting software.
 
-Each of the Fornax demo notebooks has its own environment with name of the `py-{notebook-name}` (e.g. `py-light_curve_generator` and `py-multiband_photometry`). When opening the notebook, the corresponding kernel should start automatically. You can also select it from the drop down kernel menu at the top-right of an open notebook.
+Each of the Fornax demo notebooks has its own environment with a name of the form `py-{notebook-name}` (e.g. `py-light_curve_generator` and `py-multiband_photometry`). Each environment has the packages required to run the notebook  pre-installed. When opening the notebook, the corresponding kernel should automatically start. You can also select it from the drop down kernel menu at the top-right of an open notebook.
 
 To activate a specific environment from the terminal, run: `source $ENV_DIR/{environment-name}/bin/activate`.
 
