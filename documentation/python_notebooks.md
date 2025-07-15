@@ -6,6 +6,13 @@ The notebooks in this repository are tested frequently and automatically to guar
 
 Once tested, these notebooks are [rendered into HTML](https://nasa-fornax.github.io/fornax-demo-notebooks/) for easy reading.
 
+## Notebooks in the Console
+When you login to the console, the notebooks available in `/opt/notebooks`, which is linked in the user's home directory as `~/fornax-notebook`.
+
+As the notebooks are continuously developed, the clone in the console can lag behind. To get the latest version of the notebooks, run the `update-notebooks.sh` script from the terminal.
+
+Note that the notebooks directory is reset with every session. if you want to make modifications to the notebooks, make you own copy or clone and modify it.
+
 ## Running Fornax Markdown Notebook Tutorials outside the Fornax Science Console
 
 Fornax Notebooks can be downloaded in `.md` (Markdown) format. While many astronomers are familiar with the `.ipynb` format, Markdown was chosen for its superior readability, ease of version control through diffing, simpler testing workflows, and smooth rendering to HTML. To read more about the differences between .md and .ipynb, we refer to the [MyST Markdown documentation](https://mystmd.org/guide/md-vs-ipynb).
