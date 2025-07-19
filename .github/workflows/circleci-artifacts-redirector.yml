@@ -7,9 +7,10 @@ jobs:
     name: Run CircleCI artifacts redirector
     steps:
       - name: GitHub Action step
-        uses: scientific-python/circleci-artifacts-redirector-action@4e13a10d89177f4bfc8007a7064bdbeda848d8d1  # v1.0.0
+        uses: scientific-python/circleci-artifacts-redirector-action@6b0ee99678fb003bba8202536e861f74ab6ff364  # v1.2.dev
         with:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
           api-token: ${{ secrets.FORNAX_DOCUMENTATION_CIRCLE_TOKEN }}
           artifact-path: 0/_build/html/index.html
           circleci-jobs: build-docs
+          domain: circle.scientific-python.dev
