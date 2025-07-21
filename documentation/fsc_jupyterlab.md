@@ -78,12 +78,14 @@ Monitors and manages active processes in your JupyterLab environment, such as ru
 
 Allows you to step through your code to identify bugs, understand the flow of execution, and troubleshoot issues in real-time by providing features like breakpoints, variable inspection, and call stacks.
 
+(jupyterlab-session-information)=
 # Jupyterlab Session Information
+
 To allow for efficient use of resources, idle sessions will be stopped (or culled).  Fornax has the following guidelines for session culling:
 1. All sessions have a hard upper limit of 48 hours.
 2. If session contains running jobs with CPU activity up to the hard limit, it will not be culled.
 3. A session is stopped after 15 minutes of no activity.
-4. The user can override the 15 min limit by using the Keep-Alive feature under the Foranx menu. 
+4. The user can override the 15 min limit by using the Keep-Alive feature under the Foranx menu.
     - Start a session: You can request the session to stay alive by selecting: `Fornax -> Keep-alive -> Start Keep-alive Session`. Pick a time using the abbreviated notation such as '2d' for two days, '3h45m' for 3 hours and 45 minutes, or the time in seconds as an integer.
     - Stop a session: end a previously started session by `Fornax -> Keep-alive -> Start Keep-alive Session`.
     - The time remaining in the currently requested session is shown in the status bar at the bottom left, e.g. 'Keepalive: 35m'.

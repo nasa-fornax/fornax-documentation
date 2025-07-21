@@ -10,6 +10,6 @@ If your workload exceeds your server size, your server may be allowed to use add
 
 ## Save your work!
 The Science Console is currently intended for interactive use and will cull sessions which appear to be inactive. The team is working on tools to enable users to submit jobs to run asynchronously. For efficient resource usage, idle interactive sessions will be culled automatically. If you want to keep your session running for longer, you can use the Keep-alive feature in the Fornax menu.
-See the [fsc_jupyterlab.html#jupyterlab-session-information](session information) section for details.
+See the {ref}`jupyterlab-session-information` section for details.
 
 how long is the period of inactivity that gets culled? 15 minutes.
