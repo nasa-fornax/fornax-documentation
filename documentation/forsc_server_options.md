@@ -2,10 +2,10 @@
 
 Once you have logged in to the Fornax Science Console, you will be asked to specify a **Server Type** and an **Environment**, as shown in the screenshot below.
 
-```{figure} ../_static/fsc_jupyterlab_servers.png
+```{figure} ../_static/forsc_jupyterlab_servers.png
 :alt: JupyterLab server options menu as deployed in the Fornax Science Console
 
-JupyterLab Server options on FSC.
+JupyterLab Server options on ForSC.
 ```
 
 ## Server Type

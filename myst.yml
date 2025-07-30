@@ -12,15 +12,15 @@ project:
     - file: index.md
     - title: Introduction
       children:
-        - file: documentation/intro_FSC.md
+        - file: documentation/intro_forsc.md
         - file: documentation/intro_fornax_resources.md
         - file: documentation/intro_quick_start.md
     - title: Fornax Science Console
       children:
-        - file: documentation/fsc_server_options.md
-        - file: documentation/fsc_dashboard.md
-        - file: documentation/fsc_jupyterlab.md
-        - file: documentation/fsc_troubleshooting.md
+        - file: documentation/forsc_server_options.md
+        - file: documentation/forsc_dashboard.md
+        - file: documentation/forsc_jupyterlab.md
+        - file: documentation/forsc_troubleshooting.md
 
     - file: documentation/python_notebooks.md
     - file: documentation/compute_environments.md
