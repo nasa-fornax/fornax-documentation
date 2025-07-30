@@ -2,7 +2,7 @@
 
 ## If my internet connection goes away or is intermittent - what happens to the running notebook?
 
-If you have a running job and your internet is disrupted, the job should continue to run as long as the session does not expire (See [fsc_jupyterlab.html#jupyterlab-session-information](session information) section). You can connect to a running session using the same browser or different browser. You can even connect to the same session from different machines.
+If you have a running job and your internet is disrupted, the job should continue to run as long as the session does not expire (See [forsc_jupyterlab.html#jupyterlab-session-information](session information) section). You can connect to a running session using the same browser or different browser. You can even connect to the same session from different machines.
 
 
 ## How will my analysis be affected by memory limitations?

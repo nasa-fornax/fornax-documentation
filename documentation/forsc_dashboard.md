@@ -1,9 +1,9 @@
-(fsc-dashboard)=
+(forsc-dashboard)=
 # Dashboard
 
 The purpose of the Fornax Science Console Dashboard is to provide users the status of their compute and storage resource consumption. The image below shows a screenshot of the Dashboard.
 
-```{figure} ../_static/fsc_dashboard.png
+```{figure} ../_static/forsc_dashboard.png
 :alt: The Fornax Science Platform Dashboard listing spending categorized by resource.
 
 The Fornax Science Console Dashboard
@@ -23,4 +23,4 @@ The Fornax Science Console Dashboard
 
 - **Compute Spend** tracks the total number of dollars spent on compute so far this calendar year.
 
-- **Running Jupyter Servers** this is 0 if you are not running a compute environment, or 1 if you are.  Note there is a delay in this value of about 1-2 minutes, so if you shut down your server, you will have to wait a bit before this number shows the update. 
+- **Running Jupyter Servers** this is 0 if you are not running a compute environment, or 1 if you are.  Note there is a delay in this value of about 1-2 minutes, so if you shut down your server, you will have to wait a bit before this number shows the update.
