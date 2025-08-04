@@ -2,7 +2,7 @@
 
 The Fornax Science Console offers a lightly customized version of JupyterLab that many Python users will find familiar. We refer readers to the [JupyterLab documentation](https://jupyterlab.readthedocs.io/en/stable/user/interface.html) for details of the interface. Here we define the major components of this interface that we will refer to throughout the User Guide.
 
-```{figure} ../_static/fsc_jupyterlab.png
+```{figure} ../_static/forsc_jupyterlab.png
 :alt: JupyterLab opening page with some customisation as deployed in the Fornax Science Console
 
 JupyterLab deployed in the Fornax Science Console
