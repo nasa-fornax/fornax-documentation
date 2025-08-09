@@ -73,3 +73,36 @@ The front-end extension can be installed after jupyterlab starts, and can show u
 Note: Extensions that include a server-side component cannot be installed by individual users because they must be installed before JupyterLab starts. In that case, please open a request in the [Fornax Community Forum](https://discourse.fornax.sciencecloud.nasa.gov/) "Support" category.
 To install additional software, there are two options:
 
+## How can I use git?
+
+If you are using git for the first time, you will need to set up your git.
+Before starting these steps, make sure you have a git account and an access token.
+Then from within the Fornax Science Console, open a terminal and run the following commands:
+
+```sh
+git config --global credential.helper cache
+git clone https://your repo/
+
+# << make changes >>
+
+git add changed.file
+git commit -m "testing"
+
+enter git username:
+enter git token:
+
+git push
+```
+
+### Can I use ssh instead of https?
+
+We are sorry, but ssh is not supported in the Fornax Science Console.
+
+## I am trying to access a web service and it is not working
+
+If you are trying to access a web service and it is not working, it may be due to it not running on standard http or https ports.
+The Fornax ScienceConsole only allows access to web services running on ports 80 and 443.
+
+## How do I access a web service running on a different port?
+
+You can raise an issue in the Fornax Helpdesk and we will try to help you.
