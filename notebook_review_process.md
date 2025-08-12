@@ -38,6 +38,7 @@ For authors: consider these checklists requirements for your code.
 	- Does the notebook run end-to-end, out of the box?
  	- Are errors handled appropriately, with `try`/`except` statements that are narrow in scope?
 	- Have warnings been dealt with appropriately, preferably by updating the code to avoid them (i.e., not by simply silencing them)?
+   	- no manual table of contents
 - Efficiency:
 	- Is data accessed from the cloud where possible?
 	- Is the code parallelized where possible?
