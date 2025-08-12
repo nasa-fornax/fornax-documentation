@@ -41,9 +41,6 @@ The **uv**-based environments use [uv](https://docs.astral.sh/uv/) to manage the
 The `conda`-based environments are used when packages that are not `pip`-installable. Examples this include `heasoft` and `ciao` in the high-energy container image. These are activated with `conda activate {env-name}` and deactivated with `conda deactivate`. These are installed under `$CONDA_DIR/envs`
 
 ## Installing additional software on the Fornax Science Console
-
-To install additional software, there are two options:
-
 1. Add to a current environment:
 To add packages to a currently installed environment, you install them with `pip` (or the faster `uv pip`) after activating the relevant environment.
     - Inside a notebook running the relevant environment, run `!uv pip install ...`, passing the extra packaged needed.
@@ -68,3 +65,11 @@ python -m ipykernel install --name myenv --user
 The kernel should show up in the jupyterlab main launcher page and in the kernel selection dropdown menu inside a running notebook.
 
 **Note**: It is recommended that you remove user environments that are no longer needed, as they may deplete you home storage.
+
+## Installing Extensions on the Fornax Science Console
+
+There are two types Jupyerlab extensions. Front-end (menus etc), and server extensions. Most extensions include both components.  Instructions on how to find and install extensions can be found at [JupyterLab: Extensions](https://jupyterlab.readthedocs.io/en/stable/user/extensions.html). 
+The front-end extension can be installed after jupyterlab starts, and can show up if you refresh the page, as long they are installed in the environment running jupyterlab.
+Note: Extensions that include a server-side component cannot be installed by individual users because they must be installed before JupyterLab starts. In that case, please open a request in the [Fornax Community Forum](https://discourse.fornax.sciencecloud.nasa.gov/) "Support" category.
+To install additional software, there are two options:
+
