@@ -62,6 +62,6 @@ To check the version and metadata for a specific installed package, use the foll
 
 ## Installing Extensions on the Fornax Science Console
 
-There are two types Jupyerlab extensions. Front-end (menus etc), and server extensions. Most extensions include both components.
+There are two types Jupyerlab extensions. Front-end (menus etc), and server extensions. Most extensions include both components.  Instructions on how to find and install extensions can be found at [JupyterLab: Extensions](https://jupyterlab.readthedocs.io/en/stable/user/extensions.html). 
 The front-end extension can be installed after jupyterlab starts, and can show up if you refresh the page, as long they are installed in the environment running jupyterlab.
-The server extension part however needs to be installed before jupyterlab starts, and hence a user cannot add them.
+Note: Extensions that include a server-side component cannot be installed by individual users because they must be installed before JupyterLab starts. In that case, please open a request in the [Fornax Community Forum](https://discourse.fornax.sciencecloud.nasa.gov/) "Support" category.
