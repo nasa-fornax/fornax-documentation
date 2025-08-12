@@ -101,7 +101,7 @@ We are sorry, but ssh is not supported in the Fornax Science Console.
 ## I am trying to access a web service and it is not working
 
 If you are trying to access a web service and it is not working, it may be due to it not running on standard http or https ports.
-The Fornax ScienceConsole only allows access to web services running on ports 80 and 443.
+The Fornax Science Console only allows access to web services running on ports 80 and 443.
 
 ## How do I access a web service running on a different port?
 
