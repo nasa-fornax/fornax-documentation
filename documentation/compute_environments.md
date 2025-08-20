@@ -67,7 +67,7 @@ python -m ipykernel install --name myenv --user
 ```
 The kernel should show up in the jupyterlab main launcher page and in the kernel selection dropdown menu inside a running notebook.
 
-**Note**: It is recommended that you remove user environments that are no longer needed, as they may deplete you home storage.
+**Note**: It is recommended that you remove user environments that are no longer needed, as they may deplete your home storage.
 
 ## Installing Extensions on the Fornax Science Console
 
@@ -75,36 +75,17 @@ There are two types Jupyerlab extensions. Front-end (menus etc), and server exte
 The front-end extension can be installed after jupyterlab starts, and can show up if you refresh the page, as long they are installed in the environment running jupyterlab.
 Note: Extensions that include a server-side component cannot be installed by individual users because they must be installed before JupyterLab starts. In that case, please open a request in the [Fornax Community Forum](https://discourse.fornax.sciencecloud.nasa.gov/) "Support" category.
 
-## How can I use git?
+## Using Git
 
-If you are using git for the first time, you will need to set up your git.
-Before starting these steps, make sure you have a git account and an access token.
-Then from within the Fornax Science Console, open a terminal and run the following commands:
+You must use HTTPS to authenticate with `git` on the Fornax Science Console.
+SSH is not supported.
+This means you will need to enter your username and password (or token) when interacting with a remote.
+To reduce the number of times you need to enter them, you can configure `git` to cache them by opening a terminal and running the following command:
 
 ```sh
+# Tell git to cache your credentials for all repos.
+# To do this for a single repo instead, cd into the repo directory and remove '--global' before running the command.
 git config --global credential.helper cache
-git clone https://your repo/
-
-# << make changes >>
-
-git add changed.file
-git commit -m "testing"
-
-enter git username:
-enter git token:
-
-git push
 ```
 
-### Can I use ssh instead of https?
-
-We are sorry, but ssh is not supported in the Fornax Science Console.
-
-## I am trying to access a web service and it is not working
-
-If you are trying to access a web service and it is not working, it may be due to it not running on standard http or https ports.
-The Fornax Science Console only allows access to web services running on ports 80 and 443.
-
-## How do I access a web service running on a different port?
-
-You can raise an issue in the Fornax Helpdesk and we will try to help you.
+For more information about using `git`, see https://git-scm.com/docs/gittutorial.
