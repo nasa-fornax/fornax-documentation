@@ -7,7 +7,7 @@ The Fornax Science Console is currently available by invitation only. To get sta
 
 ## 2. Log In
 Once you receive your credentials, log into the Fornax Science Console at:
-🔗 [https://science-console.fornax.smce.nasa.gov/](https://science-console.fornax.smce.nasa.gov/)
+🔗 [https://science-console.fornax.sciencecloud.nasa.gov/](https://science-console.fornax.sciencecloud.nasa.gov/)
 
 ## 3. Select JupyterHub
 
