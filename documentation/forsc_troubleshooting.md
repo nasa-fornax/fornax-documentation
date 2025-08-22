@@ -13,3 +13,16 @@ The Science Console is currently intended for interactive use and will cull sess
 See the {ref}`jupyterlab-session-information` section for details.
 
 how long is the period of inactivity that gets culled? 15 minutes.
+
+## Can I use SSH instead of HTTPS?
+
+SSH is not supported on the Fornax Science Console at this time.
+
+## I am trying to access a web service and it is not working
+
+If you are trying to access a web service and it is not working, it may be due to it not running on standard HTTP or HTTPS ports.
+The Fornax Science Console only allows access to web services running on ports 80 and 443.
+
+## How do I access a web service running on a different port?
+
+Please open a new topic in the Fornax Community Forum "Support" category to ask for help.
