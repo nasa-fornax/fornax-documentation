@@ -9,7 +9,6 @@ Members can engage in discussions, ask questions, share ideas, and collaborate o
 The Fornax Community Forum also serves as a space for announcements, updates, and user-driven initiatives.
 Whether you're a professional researcher or a newcomer to the field, the forum aims to support open and constructive dialogue, ensuring the continued success of the initiative’s efforts to advance astrophysics through cloud-based data platforms.
 
-
 ## Reporting Bugs
 
 To help us quickly diagnose and resolve any issues you're experiencing, please provide as much of the following information as possible when reporting a problem or suspected bug in the [Fornax Community Forum Support Category](https://discourse.fornax.smce.nasa.gov/c/support/6).

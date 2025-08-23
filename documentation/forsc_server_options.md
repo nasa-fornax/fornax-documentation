@@ -33,12 +33,10 @@ You do not need approval for stopping and restarting your instance as long as yo
 However, if you require additional time beyond your estimate, please notify the Help Desk with a brief justification.
 If your analysis exceeds the estimated runtime, we may reach out to discuss potential termination.
 
-
 ## Environment
 
 The Fornax Science Console offers a number of software environments to choose from.
 These include:
-
 
 - **Astrophysics Default Image** *(recommended for most users)* This software environment
 - **High Energy Astrophysics Image**

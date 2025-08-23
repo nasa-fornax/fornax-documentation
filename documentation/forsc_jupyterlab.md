@@ -42,8 +42,6 @@ Below we discuss some of the tools available via the **Launcher**.
 
 **Terminal** provides a command line, which allows users to run Emacs or vi .
 
-
-
 2. **Dask**
 
 Dask is a Python library for parallel computing.
@@ -64,6 +62,7 @@ It provides visual diffs, branch management, and history browsing, making collab
 
 4. **Table of Contents**
 Automatically generates a sidebar outline of all headings in your notebook or document, allowing you to quickly navigate between sections.
+
 5. **Extensions Manager**
 
 Shows installed extensions and lets you manage them.
@@ -96,6 +95,7 @@ Allows you to step through your code to identify bugs, understand the flow of ex
 
 To allow for efficient use of resources, idle sessions will be stopped (or culled).
 Fornax has the following guidelines for session culling:
+
 1. All sessions have a hard upper limit of 48 hours.
 2. If session contains running jobs with CPU activity up to the hard limit, it will not be culled.
 3. A session is stopped after 15 minutes of no activity.

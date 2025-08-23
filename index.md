@@ -2,7 +2,6 @@
 
 [The Fornax Initiative](https://pcos.gsfc.nasa.gov/Fornax/) is NASA Astrophysics' cloud-based system that brings together data, software, and computing so that researchers can focus on science.
 
-
 Fornax is a modern, cloud-native platform for reproducible astronomy, purpose-built to support scientific discovery in the era of petascale data.
 It is developed through a collaboration between NASA’s science archives; HEASARC, IRSA, and MAST; to transform how astronomers interact with large-scale datasets.
 
