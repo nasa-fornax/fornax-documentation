@@ -26,17 +26,17 @@ These tools allow seamless and scalable analysis of large datasets without manua
 Application Programming Interfaces (APIs) are powerful tools that allow users to programmatically access and retrieve astronomical data from remote repositories or cloud-hosted archives.
 In astrophysics, APIs are crucial for:
 
-1. **Efficient Data Search and Querying**
-With APIs, users can perform specific queries to retrieve data, such as images, catalogs, and spectra.
-By specifying parameters like wavelength, object type, or time range, users can quickly narrow down datasets from vast collections.
-This is especially helpful when working with large archives, as it minimizes the need for manual searches and enables automated retrieval of relevant data.
-2. **Integration with worldwide Astrophysics Archives**
-Many worldwide astrophysics archives use standardized IVOA-based APIs to provide access to astronomical data, allowing users to interact with multiple data repositories consistently, regardless of the underlying storage or architecture.
-For instance, you can query data from different NASA archives (such as HEASARC, IRSA, and MAST) through the same IVOA-compliant services.
-Explore astronomy data access services through the [NAVO Directory](https://vao.stsci.edu/directory/keywordsearch.aspx), which aggregates available IVOA services.
-3. **Broad API Support from General Repositories**
-In addition to specialized astronomical archives, more general data repositories such as **Box** and **Google Cloud Storage** also offer APIs for retrieving and managing data.
-These APIs provide flexibility for integrating astronomical datasets stored in these platforms with other data services or workflows.
+1.  **Efficient Data Search and Querying**
+    With APIs, users can perform specific queries to retrieve data, such as images, catalogs, and spectra.
+    By specifying parameters like wavelength, object type, or time range, users can quickly narrow down datasets from vast collections.
+    This is especially helpful when working with large archives, as it minimizes the need for manual searches and enables automated retrieval of relevant data.
+2.  **Integration with worldwide Astrophysics Archives**
+    Many worldwide astrophysics archives use standardized IVOA-based APIs to provide access to astronomical data, allowing users to interact with multiple data repositories consistently, regardless of the underlying storage or architecture.
+    For instance, you can query data from different NASA archives (such as HEASARC, IRSA, and MAST) through the same IVOA-compliant services.
+    Explore astronomy data access services through the [NAVO Directory](https://vao.stsci.edu/directory/keywordsearch.aspx), which aggregates available IVOA services.
+3.  **Broad API Support from General Repositories**
+    In addition to specialized astronomical archives, more general data repositories such as **Box** and **Google Cloud Storage** also offer APIs for retrieving and managing data.
+    These APIs provide flexibility for integrating astronomical datasets stored in these platforms with other data services or workflows.
 
 ## Python Libraries
 

@@ -51,14 +51,14 @@ In Python, this means tracking which functions are slow or use a lot of CPU so y
 
 ### CPU Profiling Methods in Jupyter Notebooks
 
-- **[%prun magic command](https://ipython.readthedocs.io/en/stable/interactive/magics.html#magic-prun)** – Quick function-level profiling.
-- **[cProfile module](https://docs.python.org/3/library/profile.html)** – Built-in Python profiler for detailed performance stats.
-- **[line_profiler with `%lprun`](https://github.com/pyutils/line_profiler)** – Line-by-line timing; requires installation.
-- **[@profile decorator](https://github.com/pyutils/line_profiler#usage)** – Used with `line_profiler` for marking functions.
-- **[SnakeViz](https://jiffyclub.github.io/snakeviz/)** – Visualizes profiling output interactively.
-- **[Py-Spy](https://github.com/benfred/py-spy)** – Low-overhead sampling profiler (typically used outside notebooks).
-- **[Scalene](https://github.com/plasma-umass/scalene)** – Advanced profiler with CPU, memory, and line-level stats.
-- **[JupyterLab Profiler extensions](https://github.com/jupyterlab-contrib/jupyterlab-profiling)** – Optional profiling tools for enhanced visualization in notebooks.
+-   **[%prun magic command](https://ipython.readthedocs.io/en/stable/interactive/magics.html#magic-prun)** – Quick function-level profiling.
+-   **[cProfile module](https://docs.python.org/3/library/profile.html)** – Built-in Python profiler for detailed performance stats.
+-   **[line_profiler with `%lprun`](https://github.com/pyutils/line_profiler)** – Line-by-line timing; requires installation.
+-   **[@profile decorator](https://github.com/pyutils/line_profiler#usage)** – Used with `line_profiler` for marking functions.
+-   **[SnakeViz](https://jiffyclub.github.io/snakeviz/)** – Visualizes profiling output interactively.
+-   **[Py-Spy](https://github.com/benfred/py-spy)** – Low-overhead sampling profiler (typically used outside notebooks).
+-   **[Scalene](https://github.com/plasma-umass/scalene)** – Advanced profiler with CPU, memory, and line-level stats.
+-   **[JupyterLab Profiler extensions](https://github.com/jupyterlab-contrib/jupyterlab-profiling)** – Optional profiling tools for enhanced visualization in notebooks.
 
 ## 7. Optimize for Memory Usage (Memory Profiling)
 
@@ -67,10 +67,10 @@ By identifying memory bottlenecks, you can optimize your code to handle larger d
 
 ### Memory Profiling Methods for Jupyter Notebooks
 
-1. **[memory_profiler](https://pypi.org/project/memory-profiler/)** – Tracks memory usage line-by-line in notebooks.
-2. **[objgraph](https://mg.pov.lt/objgraph/)** – Visualizes memory usage and helps identify memory leaks in notebooks.
-3. **[tracemalloc](https://docs.python.org/3/library/tracemalloc.html)** – Built-in Python library to trace memory allocation over time in notebooks.
-4. **[psutil](https://psutil.readthedocs.io/en/latest/)** – Provides information on system and process memory usage, works interactively in notebooks.
-5. **[guppy3](https://pypi.org/project/guppy3/)** – A Python memory profiler with heap analysis, usable in notebooks.
-6. **[pympler](https://pympler.readthedocs.io/en/latest/)** – Advanced memory profiling tool that tracks memory usage of Python objects, works in notebooks.
-7. **[dask](https://docs.dask.org/en/stable/)** – For handling large datasets in parallel and optimizing memory usage in distributed analyses in notebooks.
+1.  **[memory_profiler](https://pypi.org/project/memory-profiler/)** – Tracks memory usage line-by-line in notebooks.
+2.  **[objgraph](https://mg.pov.lt/objgraph/)** – Visualizes memory usage and helps identify memory leaks in notebooks.
+3.  **[tracemalloc](https://docs.python.org/3/library/tracemalloc.html)** – Built-in Python library to trace memory allocation over time in notebooks.
+4.  **[psutil](https://psutil.readthedocs.io/en/latest/)** – Provides information on system and process memory usage, works interactively in notebooks.
+5.  **[guppy3](https://pypi.org/project/guppy3/)** – A Python memory profiler with heap analysis, usable in notebooks.
+6.  **[pympler](https://pympler.readthedocs.io/en/latest/)** – Advanced memory profiling tool that tracks memory usage of Python objects, works in notebooks.
+7.  **[dask](https://docs.dask.org/en/stable/)** – For handling large datasets in parallel and optimizing memory usage in distributed analyses in notebooks.

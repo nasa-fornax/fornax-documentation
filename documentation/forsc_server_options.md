@@ -38,5 +38,5 @@ If your analysis exceeds the estimated runtime, we may reach out to discuss pote
 The Fornax Science Console offers a number of software environments to choose from.
 These include:
 
-- **Astrophysics Default Image** *(recommended for most users)* This software environment
-- **High Energy Astrophysics Image**
+-   **Astrophysics Default Image** *(recommended for most users)* This software environment
+-   **High Energy Astrophysics Image**

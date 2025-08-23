@@ -27,26 +27,26 @@ To read more about the differences between .md and .ipynb, we refer to the [MyST
 On the Fornax Science Console all required dependencies for using Makdown in JupyterLab are pre-installed.
 To use Markdown notebooks in JupyterLab locally, ensure the following tools are installed:
 
-- [`jupytext`](https://github.com/mwouts/jupytext) Python library
-- [`jupyterlab-myst`](https://github.com/executablebooks/jupyterlab-myst) JupyterLab extension
+-   [`jupytext`](https://github.com/mwouts/jupytext) Python library
+-   [`jupyterlab-myst`](https://github.com/executablebooks/jupyterlab-myst) JupyterLab extension
 
 ### Opening `.md` Files in JupyterLab
 
-1. Navigate to the `.md` file in the JupyterLab file browser.
-2. Right-click the file, select **Open With**, and choose **Notebook** or **Jupytext Notebook**.
-3. The Markdown file will open in an interactive notebook interface with cells and execution capabilities—just like a traditional `.ipynb` notebook.
+1.  Navigate to the `.md` file in the JupyterLab file browser.
+2.  Right-click the file, select **Open With**, and choose **Notebook** or **Jupytext Notebook**.
+3.  The Markdown file will open in an interactive notebook interface with cells and execution capabilities—just like a traditional `.ipynb` notebook.
 
 ## Converting `.md` Markdown Notebooks to `.py` Scripts
 
 It is easy to convert from `.md` Markdown to a `.py` script, if that fits better into your workflow:
 
-1. Open a terminal.
-2. Install **jupytext** if necessary (it is pre-installed in the Fornax Science Console):
+1.  Open a terminal.
+2.  Install **jupytext** if necessary (it is pre-installed in the Fornax Science Console):
 
     ```pip install jupytext```
 
-3. Navigate to the directory containing your `.md` notebook file.
-4. Run the following command to convert it to a Python script:
+3.  Navigate to the directory containing your `.md` notebook file.
+4.  Run the following command to convert it to a Python script:
 
    ```jupytext --to script <your_notebook_file>.md```
 

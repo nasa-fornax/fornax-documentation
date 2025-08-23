@@ -7,10 +7,10 @@ It is developed through a collaboration between NASA’s science archives; HEASA
 
 Designed to transform how astronomers interact with large-scale datasets, Fornax addresses four key goals:
 
- *  providing robust computing resources,
- *  broadening scientific opportunity through enhanced access and reproducibility,
- *  delivering targeted training on data-intensive astronomical research,
- *  co-locating compute power with the data itself to enable efficient, cloud-native workflows.
+-   providing robust computing resources,
+-   broadening scientific opportunity through enhanced access and reproducibility,
+-   delivering targeted training on data-intensive astronomical research,
+-   co-locating compute power with the data itself to enable efficient, cloud-native workflows.
 
 To achieve these goals, the Fornax project comprises three integrated components.
 First is the science console itself, a scalable, cloud-based research environment grounded in open-source tools and infrastructure.

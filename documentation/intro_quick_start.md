@@ -39,13 +39,13 @@ Since you have chosen the **Small** server, this cost will be low.
 
 In JupyterLab, you will see a main menu at the top, your persistent home directory on the left, and a work area on the right.
 
-- Click the **blue +** just under the main menu.
-This will open a new Launcher tab in the work area.
-- In the Launcher tab, select **notebook** under the **Notebook** section.
-A new notebook tab will open in the work area.
-- When you are ready to save your work to your Fornax home directory, click on the **Save** icon in the notebook tab.
-- To download your notebook to your local machine, click on your notebook in your home directory on the left side of the screen.
-Then go to the main menu and select **File-->Download**.
+-   Click the **blue +** just under the main menu.
+    This will open a new Launcher tab in the work area.
+-   In the Launcher tab, select **notebook** under the **Notebook** section.
+    A new notebook tab will open in the work area.
+-   When you are ready to save your work to your Fornax home directory, click on the **Save** icon in the notebook tab.
+-   To download your notebook to your local machine, click on your notebook in your home directory on the left side of the screen.
+    Then go to the main menu and select **File-->Download**.
 
 ## 8. Shut Down Your Server
 
