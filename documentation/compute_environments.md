@@ -34,7 +34,7 @@ You can also select it from the drop down kernel menu at the top-right of an ope
 
 To activate a specific environment from the terminal, run: `source $ENV_DIR/{environment-name}/bin/activate`.
 
-For example, to activate the `py-light_curve_classifier` environment, run: 
+For example, to activate the `py-light_curve_classifier` environment, run:
 ```sh
 source $ENV_DIR/py-light_curve_classifier/bin/activate
 ```
@@ -64,7 +64,7 @@ To install additional software, there are two options:
 To add packages to a currently installed environment, you install them with `pip` (or the faster `uv pip`) after activating the relevant environment.
     - Inside a notebook running the relevant environment, run `!uv pip install ...`, passing the extra packaged needed.
     - In the terminal, after activating the environment run: `uv pip install ...`.
- 
+
  **Note** that packages installed this way are added in the `$ENV_DIR` folder, and therefore are not saved for the next session.
 To ensure the packages are installed in you home directory, and therefore saved between session, add `--user` to the pip command.
 Note also, that if the container image is updated, packages installed with the `--user` option may not be compatible with the new image and package conflicts may arise.
@@ -95,7 +95,7 @@ The kernel should show up in the jupyterlab main launcher page and in the kernel
 There are two types Jupyerlab extensions.
 Front-end (menus etc), and server extensions.
 Most extensions include both components.
-Instructions on how to find and install extensions can be found at [JupyterLab: Extensions](https://jupyterlab.readthedocs.io/en/stable/user/extensions.html). 
+Instructions on how to find and install extensions can be found at [JupyterLab: Extensions](https://jupyterlab.readthedocs.io/en/stable/user/extensions.html).
 The front-end extension can be installed after jupyterlab starts, and can show up if you refresh the page, as long they are installed in the environment running jupyterlab.
 Note: Extensions that include a server-side component cannot be installed by individual users because they must be installed before JupyterLab starts.
 In that case, please open a request in the [Fornax Community Forum](https://discourse.fornax.sciencecloud.nasa.gov/) "Support" category.

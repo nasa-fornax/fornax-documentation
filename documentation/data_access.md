@@ -13,7 +13,7 @@ You can organize and manage files through the File Browser interface, view direc
 ## Direct Cloud Access
 
 The Fornax Science Console runs on AWS in the `us-east-1` region, enabling you to access cloud-hosted data directly from your JupyterLab session without downloading it locally.
-Accessing data stored in the same region (`us-east-1`) is generally more efficient, with lower latency and no inter-region data transfer costs. 
+Accessing data stored in the same region (`us-east-1`) is generally more efficient, with lower latency and no inter-region data transfer costs.
 
 The NASA Astrophysics Mission Archives (HEASARC, IRSA, MAST) offer curated datasets through the AWS Open Data program: https://registry.opendata.aws/.
 
