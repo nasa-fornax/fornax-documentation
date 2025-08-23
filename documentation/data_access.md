@@ -31,5 +31,3 @@ In addition to specialized astronomical archives, more general data repositories
 ## Python Libraries
 
 You can use Python tools like [Astroquery](https://astroquery.readthedocs.io/en/latest/) and [PyVO](https://pyvo.readthedocs.io/en/latest/) to easily access a wide range of astrophysics datasets. `Astroquery` provides a simple interface for retrieving data from major astronomical archives such as MAST, HEASARC, and IRSA, allowing you to query catalogs, images, and spectra programmatically. Similarly, `PyVO` supports IVOA-compliant web services, enabling seamless access to data from various virtual observatories. These libraries allow you to integrate data retrieval directly into your analysis scripts, making it easier to automate the process of working with large astronomical datasets without leaving your Python environment.
-
-
