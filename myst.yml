@@ -30,6 +30,7 @@ project:
     - file: documentation/fornax_community_forum.md
     - file: documentation/acknowledgement.md
     - file: documentation/more_resources.md
+    - file: documentation/glossary.md
 
 
 site:
