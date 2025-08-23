@@ -56,7 +56,7 @@ Examples this include `heasoft` and `ciao` in the high-energy container image.
 These are activated with `conda activate {env-name}` and deactivated with `conda deactivate`.
 These are installed under `$CONDA_DIR/envs`
 
-## Installing additional software on the Fornax Science Console
+## Installing Additional Software on the Fornax Science Console
 
 To install additional software, there are two options:
 

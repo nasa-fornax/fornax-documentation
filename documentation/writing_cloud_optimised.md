@@ -1,4 +1,4 @@
-# Tips for writing cloud-optimized code
+# Tips for Writing Cloud-optimized Code
 
 ## 1. Leverage Cloud Storage Efficiently
 
@@ -44,7 +44,7 @@ This is particularly important when working with large datasets.
 **Monitor cloud usage:** Cloud resources can accumulate costs quickly.
 Make sure to monitor usage, scale down resources when not in use, and avoid long-term storage of unused data.
 
-## 6. Optimize code for CPU usage (CPU profiling)
+## 6. Optimize Code for CPU Usage (CPU Profiling)
 
 **CPU profiling** is the process of measuring how much time your code spends running each part of your program, so you can find and fix performance bottlenecks.
 In Python, this means tracking which functions are slow or use a lot of CPU so you can make your code run faster—especially useful when working with large datasets or running analyses in the cloud.
@@ -65,7 +65,7 @@ In Python, this means tracking which functions are slow or use a lot of CPU so y
 Memory profiling is a technique that helps track and understand how much memory your code uses during execution.
 By identifying memory bottlenecks, you can optimize your code to handle larger datasets or reduce cloud resource costs.
 
-### **Memory Profiling Methods for Jupyter Notebooks**
+### Memory Profiling Methods for Jupyter Notebooks
 
 1. **[memory_profiler](https://pypi.org/project/memory-profiler/)** – Tracks memory usage line-by-line in notebooks.
 2. **[objgraph](https://mg.pov.lt/objgraph/)** – Visualizes memory usage and helps identify memory leaks in notebooks.

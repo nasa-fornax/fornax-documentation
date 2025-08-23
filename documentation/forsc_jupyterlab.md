@@ -67,7 +67,7 @@ Automatically generates a sidebar outline of all headings in your notebook or do
 
 Shows installed extensions and lets you manage them.
 
-## Right toolbar
+## Right Toolbar
 
 The right toolbar is a vertical strip of icons, each representing a tool or panel that will open up in the right column of the interface.
 

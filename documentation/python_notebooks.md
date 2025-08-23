@@ -16,7 +16,7 @@ To get the latest version of the notebooks, run the `update-notebooks.sh` script
 Note that the notebooks directory is reset with every session.
 if you want to make modifications to the notebooks, make you own copy or clone and modify it.
 
-## Running Fornax Markdown Notebook Tutorials outside the Fornax Science Console
+## Running Fornax Markdown Notebook Tutorials Outside the Fornax Science Console
 
 Fornax Notebooks can be downloaded in `.md` (Markdown) format.
 While many astronomers are familiar with the `.ipynb` format, Markdown was chosen for its superior readability, ease of version control through diffing, simpler testing workflows, and smooth rendering to HTML.
@@ -50,7 +50,7 @@ It is easy to convert from `.md` Markdown to a `.py` script, if that fits better
 
    ```jupytext --to script <your_notebook_file>.md```
 
-## Moving between compute platforms
+## Moving Between Compute Platforms
 
 If you prefer to develop your code outside the Fornax Science Console, you can push your changes to a publicly available repository (e.g., GitHub) and synchronize that to your home directory on the Fornax Science Console.
 

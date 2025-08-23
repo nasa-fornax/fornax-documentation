@@ -5,7 +5,7 @@ The Fornax Initiative is a NASA Astrophysics Archives project to collaboratively
 This repository holds the source for the user documentation.
 If you are looking for the demo notebooks, please visit the [fornax-demo-notebooks](https://github.com/nasa-fornax/fornax-demo-notebooks) repository.
 
-## Content contributing
+## Content Contributing
 
 The content is rendered from Markdown source files stored in `documentation`.
 Please edit these files and open a pull request with the suggested changes.
