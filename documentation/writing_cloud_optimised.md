@@ -1,22 +1,33 @@
 # Tips for writing cloud-optimized code
 
-## 1. Leverage Cloud Storage Efficiently
+## 1.
+Leverage Cloud Storage Efficiently
 
-**Avoid downloading large datasets:** Instead of downloading large datasets to your local machine, access them directly from cloud storage (e.g., Amazon S3, Google Cloud Storage). Use libraries like `s3fs` or `gcsfs` to interact with cloud storage as if it were a local file system.
+**Avoid downloading large datasets:** Instead of downloading large datasets to your local machine, access them directly from cloud storage (e.g., Amazon S3, Google Cloud Storage).
+Use libraries like `s3fs` or `gcsfs` to interact with cloud storage as if it were a local file system.
 
-**Use cloud-native data formats:** Cloud environments often work better with optimized data formats such as **Parquet** or **HDF5**. These formats allow for faster reading and writing of data, especially when working with large datasets.
+**Use cloud-native data formats:** Cloud environments often work better with optimized data formats such as **Parquet** or **HDF5**.
+These formats allow for faster reading and writing of data, especially when working with large datasets.
 
 
 
 ## 2. Distribute Computations
 
-**Parallelize tasks:** When dealing with large-scale data or complex computations, use distributed computing frameworks like **Dask** or **Ray**. These tools allow you to scale computations across multiple machines, leveraging the full power of cloud resources.
+**Parallelize tasks:** When dealing with large-scale data or complex computations, use distributed computing frameworks like **Dask** or **Ray**.
+These tools allow you to scale computations across multiple machines, leveraging the full power of cloud resources.
 
-**Split and process data in chunks:** If your data is too large to fit in memory, split it into smaller chunks and process each chunk in parallel. This is especially important when working with large catalogs or time-series data.
+**Split and process data in chunks:** If your data is too large to fit in memory, split it into smaller chunks and process each chunk in parallel.
+This is especially important when working with large catalogs or time-series data.
 
-**Example:** The [forced photometry notebook](https://nasa-fornax.github.io/fornax-demo-notebooks/forced_photometry/multiband_photometry.html) demonstrates an analysis workflow that operates on a large dataset but can be efficiently parallelized. It gathers a substantial number of astronomical images and applies the same photometric extraction procedure to each one. Since each image can be processed independently, the workload is distributed across multiple worker processes, each executing the same code on a different subset of images. This parallel approach significantly reduces total processing time and is well-suited to cloud environments where compute resources can be scaled as needed.
+**Example:** The [forced photometry notebook](https://nasa-fornax.github.io/fornax-demo-notebooks/forced_photometry/multiband_photometry.html) demonstrates an analysis workflow that operates on a large dataset but can be efficiently parallelized.
+It gathers a substantial number of astronomical images and applies the same photometric extraction procedure to each one.
+Since each image can be processed independently, the workload is distributed across multiple worker processes, each executing the same code on a different subset of images.
+This parallel approach significantly reduces total processing time and is well-suited to cloud environments where compute resources can be scaled as needed.
 
-**Example:** The [light curve generator notebook](https://nasa-fornax.github.io/fornax-demo-notebooks/light_curves/light_curve_generator.html) illustrates an analysis in which operations are time-consuming but can be executed independently across a dataset. The workflow begins by selecting a sample of astronomical objects and then makes multiple independent queries—such as retrieving light curves from various archives—for each object. Because these queries do not depend on one another, the workload can be parallelized by assigning different tasks (e.g., different archive queries) to separate worker processes. Each worker operates on the same object sample but runs a distinct part of the pipeline, enabling faster execution through concurrent processing.
+**Example:** The [light curve generator notebook](https://nasa-fornax.github.io/fornax-demo-notebooks/light_curves/light_curve_generator.html) illustrates an analysis in which operations are time-consuming but can be executed independently across a dataset.
+The workflow begins by selecting a sample of astronomical objects and then makes multiple independent queries—such as retrieving light curves from various archives—for each object.
+Because these queries do not depend on one another, the workload can be parallelized by assigning different tasks (e.g., different archive queries) to separate worker processes.
+Each worker operates on the same object sample but runs a distinct part of the pipeline, enabling faster execution through concurrent processing.
 
 **Example** Our [scale up notebook](https://nasa-fornax.github.io/fornax-demo-notebooks/light_curves/scale_up.html) is a tutorial on parallelization of generating multiwavelength light curves with tools, tips, and suggestions relevant to many tasks.
 
@@ -28,15 +39,18 @@
 
 ## 4. Minimize Data Movement
 
-**Avoid moving data between cloud and local systems:** Whenever possible, keep the data within the cloud environment to avoid slow network transfers. This is particularly important when working with large datasets.
+**Avoid moving data between cloud and local systems:** Whenever possible, keep the data within the cloud environment to avoid slow network transfers.
+This is particularly important when working with large datasets.
 
 ## 5. Ensure Efficient Use of Cloud Resources
 
-**Monitor cloud usage:** Cloud resources can accumulate costs quickly. Make sure to monitor usage, scale down resources when not in use, and avoid long-term storage of unused data.
+**Monitor cloud usage:** Cloud resources can accumulate costs quickly.
+Make sure to monitor usage, scale down resources when not in use, and avoid long-term storage of unused data.
 
 ## 6. Optimize code for CPU usage (CPU profiling)
 
-**CPU profiling** is the process of measuring how much time your code spends running each part of your program, so you can find and fix performance bottlenecks. In Python, this means tracking which functions are slow or use a lot of CPU so you can make your code run faster—especially useful when working with large datasets or running analyses in the cloud.
+**CPU profiling** is the process of measuring how much time your code spends running each part of your program, so you can find and fix performance bottlenecks.
+In Python, this means tracking which functions are slow or use a lot of CPU so you can make your code run faster—especially useful when working with large datasets or running analyses in the cloud.
 
 ### CPU Profiling Methods in Jupyter Notebooks
 
@@ -51,7 +65,8 @@
 
 ## 7. Optimize for Memory Usage (Memory Profiling)
 
-Memory profiling is a technique that helps track and understand how much memory your code uses during execution. By identifying memory bottlenecks, you can optimize your code to handle larger datasets or reduce cloud resource costs.
+Memory profiling is a technique that helps track and understand how much memory your code uses during execution.
+By identifying memory bottlenecks, you can optimize your code to handle larger datasets or reduce cloud resource costs.
 
 ### **Memory Profiling Methods for Jupyter Notebooks**
 
