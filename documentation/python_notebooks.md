@@ -48,7 +48,7 @@ It is easy to convert from `.md` Markdown to a `.py` script, if that fits better
 3.  Navigate to the directory containing your `.md` notebook file.
 4.  Run the following command to convert it to a Python script:
 
-   ```jupytext --to script <your_notebook_file>.md```
+    ```jupytext --to script <your_notebook_file>.md```
 
 ## Moving Between Compute Platforms
 
