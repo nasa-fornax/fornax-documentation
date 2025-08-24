@@ -33,7 +33,7 @@ Please choose **Small** until you have carefully read the {ref}`intro-best-pract
 
 ## 5. Select a Software Environment
 
-Choose the **Astrophysics Default Image**.
+Choose the **Default Astrophysics** environment unless you know that you have a particular need for one of the others.
 
 ## 6. Launch JupyterLab
 

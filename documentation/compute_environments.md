@@ -2,7 +2,7 @@
 
 The Fornax Science Console offers several Software environments, they are currently grouped into two containers:
 
--   **Default Astrophysics** (recommended for most use cases) contain many common astronomy software, including those required to run the demo notebooks.
+-   **Default Astrophysics** (recommended for most use cases) contains many common astronomy software, including those required to run the demo notebooks.
     This container image is referred to as **fornax-main**.
 -   **High-Energy Astrophysics** contains high-energy software, which currently includes HEASoft.
     Plans exist to add CIAO, XMM-SAS and Fermitools.
