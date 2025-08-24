@@ -26,7 +26,7 @@ project:
     - file: documentation/python_notebooks.md
     - file: documentation/compute_environments.md
     - file: documentation/data_access.md
-    - file: documentation/writing_cloud_optimised.md
+    - file: documentation/writing_cloud_optimized.md
     - file: documentation/fornax_community_forum.md
     - file: documentation/acknowledgement.md
     - file: documentation/more_resources.md
