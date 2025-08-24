@@ -5,8 +5,15 @@ This quick-start guide introduces the basic steps to begin using it effectively.
 
 ## 1. Get an Account
 
-The Fornax Science Console is currently available by invitation only.
-To get started, request access through your point of contact.
+To create a Fornax Science Console and Community Forum account, go to https://signup.fornax.sciencecloud.nasa.gov and follow the instructions that ask you for some information as follows:
+
+-   A valid email address and mobile phone number that will be used for verification only.
+    Note that if you use an email address that is not from a whitelisted domain (currently nasa.gov), there will be a delay while a human verifies that you are not likely to be a malicious user.
+-   We also ask for your institute affiliation and career level for demographics.
+-   Most importantly, we ask for a brief description of the science analysis you would like to use Fornax for.
+    Again, this is merely for verification that the proposed usage of Fornax is appropriate.
+
+Once your account is created, you will receive an email with further instructions on how to log in and find information and help, etc.
 
 ## 2. Log In
 
