@@ -28,9 +28,9 @@ Simply closing your browser window does not stop the server.
 To properly shut it down, go to File → Hub Control Panel and click “Stop My Server.”
 
 **Approval required for XLarge instance:**
-To use the XLarge compute instance, please contact the Help Desk with a brief description of your scientific use case and an estimated total runtime.
+To use the XLarge compute instance, please open a request by starting a new topic in the Fornax Community Forum [Support/Compute](https://discourse.fornax.sciencecloud.nasa.gov/c/support/compute) category with a brief description of your scientific use case and an estimated total runtime.
 You do not need approval for stopping and restarting your instance as long as you remain within the original estimated runtime.
-However, if you require additional time beyond your estimate, please notify the Help Desk with a brief justification.
+However, if you require additional time beyond your estimate, please notify us by posting a brief justification to your topic.
 If your analysis exceeds the estimated runtime, we may reach out to discuss potential termination.
 
 ## Environment

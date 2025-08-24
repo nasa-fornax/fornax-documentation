@@ -36,4 +36,4 @@ The Fornax Science Console only allows access to web services running on ports 8
 
 ## How do I access a web service running on a different port?
 
-Please open a new topic in the Fornax Community Forum "Support" category to ask for help.
+Please open a new topic in the Fornax Community Forum [Support](https://discourse.fornax.sciencecloud.nasa.gov/c/support/6) category to ask for help.
