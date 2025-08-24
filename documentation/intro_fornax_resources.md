@@ -13,7 +13,7 @@ The Fornax Science Console offers three choices for compute capacity:
 
 Fornax also offers three types of storage:
 
--   **Persistent home directory:** Each user has a 100 GB home directory on the file system for storing important files that need to be saved long term.
+-   **Persistent home directory:** Each user has a 10 GB home directory on the file system for storing important files that need to be saved long term.
 -   **Short-term scratch space:** Users can request up to 5 TB of temporary space on the file system, available for up to two weeks, for files needed only during active work.
 -   **Extended temporary storage:** For project work lasting several months, users can request up to 5 TB of object storage on S3, intended for data that doesn’t require fast file system access and won’t be stored permanently.
 
