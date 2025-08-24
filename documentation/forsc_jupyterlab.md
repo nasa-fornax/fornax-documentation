@@ -91,7 +91,7 @@ Monitors and manages active processes in your JupyterLab environment, such as ru
 Allows you to step through your code to identify bugs, understand the flow of execution, and troubleshoot issues in real-time by providing features like breakpoints, variable inspection, and call stacks.
 
 (jupyterlab-session-information)=
-# Jupyterlab Session Information
+# JupyterLab Session Information
 
 To allow for efficient use of resources, idle sessions will be stopped (or culled).
 Fornax has the following guidelines for session culling:

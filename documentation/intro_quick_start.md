@@ -31,7 +31,7 @@ Choose the **Astrophysics Default Image**.
 ## 6. Launch JupyterLab
 
 Click **Start** to launch the environment.
-It is normal for Jupyterlab to take a couple of minutes to start.
+It is normal for JupyterLab to take a couple of minutes to start.
 At this point, the server you have chosen will begin accruing cost, even though you have not started any computations.
 Since you have chosen the **Small** server, this cost will be low.
 

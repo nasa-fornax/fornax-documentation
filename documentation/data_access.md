@@ -21,7 +21,7 @@ You can use the Python tool `s3fs` to interact with Amazon S3 buckets as if they
 For image data, `Astropy` can retrieve cutouts and handle astronomical images in memory, while `pyarrow` enables fast, efficient access to large catalog tables in Parquet format.
 These tools allow seamless and scalable analysis of large datasets without manual downloads or local storage overhead.
 
-## Application Program Interaces
+## Application Program Interfaces
 
 Application Programming Interfaces (APIs) are powerful tools that allow users to programmatically access and retrieve astronomical data from remote repositories or cloud-hosted archives.
 In astrophysics, APIs are crucial for:
