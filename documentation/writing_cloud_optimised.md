@@ -54,7 +54,7 @@ In Python, this means tracking which functions are slow or use a lot of CPU so y
 -   **[%prun magic command](https://ipython.readthedocs.io/en/stable/interactive/magics.html#magic-prun)** – Quick function-level profiling.
 -   **[cProfile module](https://docs.python.org/3/library/profile.html)** – Built-in Python profiler for detailed performance stats.
 -   **[line_profiler with `%lprun`](https://github.com/pyutils/line_profiler)** – Line-by-line timing; requires installation.
--   **[@profile decorator](https://github.com/pyutils/line_profiler#usage)** – Used with `line_profiler` for marking functions.
+-   **[\@profile decorator](https://github.com/pyutils/line_profiler#usage)** – Used with `line_profiler` for marking functions.
 -   **[SnakeViz](https://jiffyclub.github.io/snakeviz/)** – Visualizes profiling output interactively.
 -   **[Py-Spy](https://github.com/benfred/py-spy)** – Low-overhead sampling profiler (typically used outside notebooks).
 -   **[Scalene](https://github.com/plasma-umass/scalene)** – Advanced profiler with CPU, memory, and line-level stats.

@@ -16,7 +16,7 @@ Once you receive your credentials, log into the Fornax Science Console at:
 ## 3. Select JupyterHub
 
 After logging in, you will see a Resource Dashboard.
-You can learn more about it in the {ref}`forsc_dashboard` section.
+You can learn more about it in the {ref}`forsc-dashboard` section.
 For now, go to the left-hand menu and choose JupyterHub under Compute.
 
 ## 4. Select a Server Type

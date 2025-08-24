@@ -1,6 +1,6 @@
 # Python Notebook Tutorials
 
-The Fornax Initiative has established a [github repository of Python Tutorial Notebooks](https://github.com/nasa-fornax/fornax-demo-notebooks/tree/main) that demonstrate how to access and analyze NASA Astrophysics datasets
+The Fornax Initiative has established a [github repository of Python Tutorial Notebooks](https://github.com/nasa-fornax/fornax-demo-notebooks) that demonstrate how to access and analyze NASA Astrophysics datasets
 
 The notebooks in this repository are tested frequently and automatically to guarantee that they successfully run using the software environments provided within the Fornax Science Console.
 
