@@ -29,7 +29,7 @@ The left sidebar is a vertical strip of icons, each representing a tool or exten
 
 Lets you navigate and open files and folders.
 Double-click a file or .ipynb notebook to open it in the main area.
-Opening .md files as notebooks should be done by right clicking on the file -> "Open With" -> "Notebook" so that they display in the expected format with cells of runable code.
+Opening .md files as notebooks should be done by right clicking on the file → "Open With" → "Notebook" so that they display in the expected format with cells of runable code.
 
 This includes the **Launcher**(blue plus sign), **New Folder** (folder symbol with plus sign), and **Upload Files** (up arrow) icons.
 
@@ -100,7 +100,7 @@ Fornax has the following guidelines for session culling:
 2.  If session contains running jobs with CPU activity up to the hard limit, it will not be culled.
 3.  A session is stopped after 15 minutes of no activity.
 4.  The user can override the 15 min limit by using the Keep-Alive feature under the Foranx menu.
-    - Start a session: You can request the session to stay alive by selecting: `Fornax -> Keep-alive -> Start Keep-alive Session`.
+    - Start a session: You can request the session to stay alive by selecting: `Fornax → Keep-alive → Start Keep-alive Session`.
       Pick a time using the abbreviated notation such as '2d' for two days, '3h45m' for 3 hours and 45 minutes, or the time in seconds as an integer.
-    - Stop a session: end a previously started session by `Fornax -> Keep-alive -> Start Keep-alive Session`.
+    - Stop a session: end a previously started session by `Fornax → Keep-alive → Start Keep-alive Session`.
     - The time remaining in the currently requested session is shown in the status bar at the bottom left, e.g. 'Keepalive: 35m'.

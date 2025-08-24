@@ -52,13 +52,13 @@ In JupyterLab, you will see a main menu at the top, your persistent home directo
     A new notebook tab will open in the work area.
 -   When you are ready to save your work to your Fornax home directory, click on the **Save** icon in the notebook tab.
 -   To download your notebook to your local machine, click on your notebook in your home directory on the left side of the screen.
-    Then go to the main menu and select **File-->Download**.
+    Then go to the main menu and select **File** → **Download**.
 
 ## 8. Shut Down Your Server
 
 When you are done with your work session, you must shut down the Standard server you launched.
 
-In the main menu, choose **File**-->**Hub Control Panel**.
+In the main menu, choose **File** → **Hub Control Panel**.
 
 In the new JupyterHub browser tab that opens, click on the red button labeled **Stop My Server**.
 
