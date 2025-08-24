@@ -24,7 +24,7 @@ There are two ways to view the software pre-installed in the containers:
 `python3` is the default python environment.
 It has general astronomy and plotting software.
 
-Each of the Fornax demo notebooks has its own environment with a name of the form `py-{notebook-name}` (e.g. `py-light_curve_generator` and `py-multiband_photometry`).
+Each of the Fornax demo notebooks has its own environment with a name of the form `py-{notebook-name}` (e.g. `py-light_curve_collector` and `py-multiband_photometry`).
 Each environment has the packages required to run the notebook  pre-installed.
 When opening the notebook, the corresponding kernel should automatically start.
 You can also select it from the drop down kernel menu at the top-right of an open notebook.

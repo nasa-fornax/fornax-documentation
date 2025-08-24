@@ -21,7 +21,7 @@ It gathers a substantial number of astronomical images and applies the same phot
 Since each image can be processed independently, the workload is distributed across multiple worker processes, each executing the same code on a different subset of images.
 This parallel approach significantly reduces total processing time and is well-suited to cloud environments where compute resources can be scaled as needed.
 
-**Example:** The [light curve generator notebook](https://nasa-fornax.github.io/fornax-demo-notebooks/light_curves/light_curve_generator.html) illustrates an analysis in which operations are time-consuming but can be executed independently across a dataset.
+**Example:** The [light curve collector notebook](https://nasa-fornax.github.io/fornax-demo-notebooks/light_curves/light_curve_collector.html) illustrates an analysis in which operations are time-consuming but can be executed independently across a dataset.
 The workflow begins by selecting a sample of astronomical objects and then makes multiple independent queries—such as retrieving light curves from various archives—for each object.
 Because these queries do not depend on one another, the workload can be parallelized by assigning different tasks (e.g., different archive queries) to separate worker processes.
 Each worker operates on the same object sample but runs a distinct part of the pipeline, enabling faster execution through concurrent processing.
