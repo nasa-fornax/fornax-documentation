@@ -10,7 +10,7 @@ JupyterLab Server options on ForSC.
 
 ## Server Type
 
-The Fornax Science Console offers three server types: **Standard**, **Large**, and **XLarge**.
+The Fornax Science Console offers four server types: **Small**, **Medium**, **Large**, and **XLarge**.
 Basic specifications for each are described in the {ref}`intro-best-practices` section.
 
 Compute resources on Fornax are cloud-based and funded by NASA.

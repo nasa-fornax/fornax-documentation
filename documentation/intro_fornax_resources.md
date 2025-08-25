@@ -3,7 +3,7 @@
 
 The Fornax Science Console offers three choices for compute capacity:
 
--   **small** (4 GB RAM, 2 CPUs): Ideal for exploratory or prototype work.
+-   **Small** (4 GB RAM, 2 CPUs): Ideal for exploratory or prototype work.
     With no usage time constraints, this is the best place to start developing.
 -   **Medium** (16GB RAM, 4CPUs): This is a good server size to test workflows.
 -   **Large** (64 GB RAM, 16 CPUs): Suited for tested and parallelized workflows.
