@@ -1,3 +1,4 @@
+(quick-start)=
 # Quick Start Guide
 
 The Fornax Science Console is a robust tool for scientific research.
