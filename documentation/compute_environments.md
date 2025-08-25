@@ -15,7 +15,9 @@ There are two ways to view the software pre-installed in the containers:
     Each environment in the container has a corresponding file there.
     For instance:
     -   *requirements-python3.txt*: is the pip requirement file for the `python3` environment.
-    -   *base-lock.yml*: is the conda environment file for the base conda environment running jupyter-lab
+    -   *base-lock.yml*: is the conda environment file for the base conda environment.
+    -   *heasoft-lock.yml*: is the conda environment file for the heasoft conda environment.
+      etc.
 -   **Outside the Console**: The same environment files are also available for every release of the container images on github.
     They are grouped by image name and available in the [container images release page](https://github.com/nasa-fornax/fornax-images/releases).
 
@@ -50,10 +52,10 @@ There are two types of environments, **uv**-based and **conda**-based:
     These environments contain `pip`-installable packages and are used in most cases.
     The default environment are installed under `$ENV_DIR`.
     The are activated as indicated above with `source $ENV_DIR/{env-name}/bin/activate`.
--   **conda**-based:
+-   **conda**-based (using [micromamba](https://mamba.readthedocs.io/en/latest/user_guide/micromamba.html)):
     The `conda`-based environments are used when packages that are not `pip`-installable.
     Examples this include `heasoft` and `ciao` in the high-energy container image.
-    These are activated with `conda activate {env-name}` and deactivated with `conda deactivate`.
+    These are activated with `micromamba activate {env-name}` and deactivated with `micrmamba deactivate`.
     These are installed under `$CONDA_DIR/envs`
 
 ## Installing Additional Software on the Fornax Science Console
@@ -78,6 +80,7 @@ To install additional software, there are two options:
     ```sh
     uv venv myenv --python=3.11
     source myenv/bin/activate
+    # add numpy for example
     uv pip install "numpy<2"
     ```
 
@@ -100,7 +103,7 @@ There are two types Jupyerlab extensions.
 Front-end (menus etc), and server extensions.
 Most extensions include both components.
 Instructions on how to find and install extensions can be found at [JupyterLab: Extensions](https://jupyterlab.readthedocs.io/en/stable/user/extensions.html).
-The front-end extension can be installed after jupyterlab starts, and can show up if you refresh the page, as long they are installed in the environment running jupyterlab.
+The front-end extension can be installed after jupyterlab starts, and can show up if you refresh the page, as long they are installed in the environment running jupyterlab (/opt/jupyter/).
 Note: Extensions that include a server-side component cannot be installed by individual users because they must be installed before JupyterLab starts.
 In that case, please open a request in the [Fornax Community Forum](https://discourse.fornax.sciencecloud.nasa.gov/) "Support" category.
 
