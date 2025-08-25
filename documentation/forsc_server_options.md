@@ -1,3 +1,4 @@
+(server-and-env-options)=
 # Server and Environment Options
 
 Once you have logged in to the Fornax Science Console ({term}`ForSC`) and clicked "JupyterHub" to start a server (see {ref}`quick-start`), you will be asked to specify a **Server Type** and a base **Environment**, as shown in the screenshot below.
