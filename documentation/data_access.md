@@ -9,6 +9,7 @@ By combining these data access options with Fornax's integrated compute resource
 The **JupyterLab File Browser** includes an **Upload File** option, allowing users to transfer data files from their local machine directly into your Fornax Science Console home directory.
 Once uploaded, these files are available for immediate use in your analysis, whether in Jupyter Notebooks or other tools.
 You can organize and manage files through the File Browser interface, view directory structures, and access the uploaded datasets for use with Python libraries, APIs, or the compute resources provided by Fornax.
+If you need the full path to a file or directory you have uploaded, find it using the File Browser interface, then right-click on it and select "Copy Path".
 
 ## Direct Cloud Access
 
