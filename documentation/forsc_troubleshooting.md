@@ -2,7 +2,7 @@
 
 ## If my internet connection goes away or is intermittent - what happens to the running notebook?
 
-If you have a running job and your internet is disrupted, the job should continue to run as long as the session does not expire (See [forsc_jupyterlab.html#jupyterlab-session-information](session information) section).
+If you have a running job and your internet is disrupted, the job should continue to run as long as the session does not expire (See {ref}`jupyterlab-session-information`).
 You can connect to a running session using the same browser or different browser.
 You can even connect to the same session from different machines.
 
@@ -36,4 +36,4 @@ The Fornax Science Console only allows access to web services running on ports 8
 
 ## How do I access a web service running on a different port?
 
-Please open a new topic in the Fornax Community Forum "Support" category to ask for help.
+Please open a new topic in the Fornax Community Forum [Support](https://discourse.fornax.sciencecloud.nasa.gov/c/support/6) category to ask for help.

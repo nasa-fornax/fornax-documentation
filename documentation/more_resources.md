@@ -5,7 +5,7 @@
 -   [Numpy Tutorials](https://numpy.org/numpy-tutorials/)
 -   [Scientific Python Lecture Notes](https://lectures.scientific-python.org/)
 -   [Python Data Science Handbook](https://jakevdp.github.io/PythonDataScienceHandbook/)
--   [Jupyterlab](https://jupyter.org/)
+-   [JupyterLab](https://jupyter.org/)
 
 **Fornax is the collaboration of three NASA archives**
 

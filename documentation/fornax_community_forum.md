@@ -1,7 +1,7 @@
 # Fornax Community Forum
 
-The [Fornax Community Forum](https://discourse.fornax.smce.nasa.gov/) is a platform dedicated to fostering collaboration and knowledge-sharing among Fornax users.
-Specifically, the community forum serves as the Fornax helpdesk, and as a hub for discussions related to using NASA's Astrophysics missions cloud resources to accelerate scientific research.
+The [Fornax Community Forum](https://discourse.fornax.sciencecloud.nasa.gov) is a platform dedicated to fostering collaboration and knowledge-sharing among Fornax users.
+Specifically, the community forum serves as the Fornax helpdesk (see the [Support](https://discourse.fornax.sciencecloud.nasa.gov/c/support/6) category), and as a hub for discussions related to using NASA's Astrophysics missions cloud resources to accelerate scientific research.
 
 The forum is designed to facilitate collaboration on the use of cloud computing tools, data access, and data analysis.
 Members can engage in discussions, ask questions, share ideas, and collaborate on topics such as data integration, cloud-based resources, astrophysics analysis, and more.
@@ -11,7 +11,7 @@ Whether you're a professional researcher or a newcomer to the field, the forum a
 
 ## Reporting Bugs
 
-To help us quickly diagnose and resolve any issues you're experiencing, please provide as much of the following information as possible when reporting a problem or suspected bug in the [Fornax Community Forum Support Category](https://discourse.fornax.smce.nasa.gov/c/support/6).
+To help us quickly diagnose and resolve any issues you're experiencing, please provide as much of the following information as possible when reporting a problem or suspected bug in the Fornax Community Forum [Support](https://discourse.fornax.sciencecloud.nasa.gov/c/support/6) category.
 We also recommend reviewing the provided template before submitting your report.
 
 -   **Date and time (with timezone)** when the issue occurred
