@@ -1,14 +1,13 @@
+(compute-environments)=
 # Compute Environments
 
-The Fornax Science Console offers several Software environments, they are currently grouped into two containers:
+The Fornax Science Console offers {ref}`Base Environments <base-environment>` which you can select by choosing a container image when starting your server.
+Each base environment comes pre-installed with one or more specific software environments (or simply, "environments").
+You can customize your environment by installing additional software and extensions.
 
--   **Default Astrophysics** (recommended for most use cases) contains many common astronomy software, including those required to run the demo notebooks.
-    This container image is referred to as **fornax-main**.
--   **High-Energy Astrophysics** contains high-energy software, which currently includes HEASoft.
-    Plans exist to add CIAO, XMM-SAS and Fermitools.
-    This container image is referred to as **fornax-hea**.
+## View Pre-installed Software
 
-There are two ways to view the software pre-installed in the containers:
+There are two ways to view the pre-installed environments and software that come with each container:
 
 -   **Inside the Console**:
     The list of environment files (`*.yml` for conda and `requirements-*.txt` for uv) of all the installed environments can be found in the folder `$LOCK_DIR`.
@@ -27,7 +26,7 @@ There are two ways to view the software pre-installed in the containers:
 It has general astronomy and plotting software.
 
 Each of the Fornax demo notebooks has its own environment with a name of the form `py-{notebook-name}` (e.g. `py-light_curve_collector` and `py-multiband_photometry`).
-Each environment has the packages required to run the notebook  pre-installed.
+Each environment has the packages required to run the notebook pre-installed.
 When opening the notebook, the corresponding kernel should automatically start.
 You can also select it from the drop down kernel menu at the top-right of an open notebook.
 

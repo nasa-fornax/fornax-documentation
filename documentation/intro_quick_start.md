@@ -1,3 +1,4 @@
+(quick-start)=
 # Quick Start Guide
 
 The Fornax Science Console is a robust tool for scientific research.
@@ -26,42 +27,42 @@ After logging in, you will see a Resource Dashboard.
 You can learn more about it in the {ref}`forsc-dashboard` section.
 For now, go to the left-hand menu and choose JupyterHub under Compute.
 
-## 4. Select a Server Type
+## 4. Select a Server Type and Environment
 
-You’ll be prompted to select the size of the compute instance.
-Please choose **Small** until you have carefully read the {ref}`intro-best-practices` section.
+You’ll be prompted to select the following:
 
-## 5. Select a Software Environment
+-   **Server Type**: Size of the compute instance.
+    Please choose **Small** until you have carefully read the {ref}`intro-best-practices` section.
+-   **Environment**: Container image providing your base environment.
+    The **Default Astrophysics** environment is recommended for most use cases.
+    {ref}`base-environment` describes the options in more detail.
 
-Choose the **Default Astrophysics** environment unless you know that you have a particular need for one of the others.
+## 5. Launch JupyterLab
 
-## 6. Launch JupyterLab
-
-Click **Start** to launch the environment.
+Click **Start** to launch the base environment.
 It is normal for JupyterLab to take a couple of minutes to start.
 At this point, the server you have chosen will begin accruing cost, even though you have not started any computations.
 Since you have chosen the **Small** server, this cost will be low.
 
-## 7. Open a New Notebook
+## 6. Open a New Notebook
 
 In JupyterLab, you will see a main menu at the top, your persistent home directory on the left, and a work area on the right.
+The Launcher tab is open in the work area by default.
+You can click the **+** to the right of the tab name just under the main menu to open a new Launcher tab at any time.
 
--   Click the **blue +** just under the main menu.
-    This will open a new Launcher tab in the work area.
 -   In the Launcher tab, select **notebook** under the **Notebook** section.
     A new notebook tab will open in the work area.
 -   When you are ready to save your work to your Fornax home directory, click on the **Save** icon in the notebook tab.
 -   To download your notebook to your local machine, click on your notebook in your home directory on the left side of the screen.
     Then go to the main menu and select **File** → **Download**.
 
-## 8. Shut Down Your Server
+## 7. Shut Down Your Server
 
-When you are done with your work session, you must shut down the Standard server you launched.
+When you are done with your work session, you must shut down the server you launched.
 
-In the main menu, choose **File** → **Hub Control Panel**.
+-   In the main menu, choose **File** → **Hub Control Panel**.
+-   In the new JupyterHub browser tab that opens, click on the red button labeled **Stop My Server**.
 
-In the new JupyterHub browser tab that opens, click on the red button labeled **Stop My Server**.
-
-## 9. Logout
+## 8. Logout
 
 Click **Logout** in the upper right corner of the new browser JupyterHub tab.
