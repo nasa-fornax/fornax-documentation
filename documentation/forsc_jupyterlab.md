@@ -42,7 +42,11 @@ Below we discuss some of the tools available via the **Launcher**.
 
 **Terminal** provides a command line, which allows users to run Emacs or vi .
 
-2. **Dask**
+2. **Running Terminals and Kernels**
+
+Monitors and manages active processes in your JupyterLab environment, such as running notebooks, terminals, and associated kernels.
+
+3. **Dask**
 
 Dask is a Python library for parallel computing.
 The Fornax Science Console includes the Dask JupyterLab Extension which can be used to manage a Dask cluster and monitor the progress of submitted functions.
@@ -55,15 +59,15 @@ You can drag and drop the tab to move it somewhere else on the screen.
 
 Start or restart the kernel for the notebook you’re working in so that it will recognize the cluster.
 
-3. **Git**
+4. **Git**
 
 This extension integrates Git version control into the JupyterLab interface, enabling you to stage, commit, push, and pull notebook and code changes without leaving the environment.
 It provides visual diffs, branch management, and history browsing, making collaborative development and reproducibility seamless.
 
-4. **Table of Contents**
+5. **Table of Contents**
 Automatically generates a sidebar outline of all headings in your notebook or document, allowing you to quickly navigate between sections.
 
-5. **Extensions Manager**
+6. **Extensions Manager**
 
 Shows installed extensions and lets you manage them.
 
@@ -78,15 +82,12 @@ Shows metadata, configuration options, or properties for the currently selected 
 2. **Kernel Usage**
 
 In JupyterLab, a kernel is the computational engine that executes your code.
+It is connected to an environment with installed software.
 When you open a notebook or console in JupyterLab, it connects to a kernel that runs the code you write, keeps track of variables, and returns output (such as plots, results, or errors) back to the interface.
 
 The Kernel Usage tool monitors resources (such as CPU and memory) being used by your Jupyter kernel.
 
-3. **Running Terminals and Kernels**
-
-Monitors and manages active processes in your JupyterLab environment, such as running notebooks, terminals, and associated kernels.
-
-4. **Debugger**
+3. **Debugger**
 
 Allows you to step through your code to identify bugs, understand the flow of execution, and troubleshoot issues in real-time by providing features like breakpoints, variable inspection, and call stacks.
 

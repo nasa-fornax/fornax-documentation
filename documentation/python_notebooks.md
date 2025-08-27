@@ -8,10 +8,10 @@ Once tested, these notebooks are [rendered into HTML](https://nasa-fornax.github
 
 ## Notebooks in the Console
 
-When you login to the console, the notebooks available in `/opt/notebooks`, which is linked in the user's home directory as `~/fornax-notebook`.
+When you login to the console, the tutorial notebooks are available in your home directory at `~/fornax-notebooks`.
 
 As the notebooks are continuously developed, the clone in the console can lag behind.
-To get the latest version of the notebooks, run the `update-notebooks.sh` script from the terminal.
+To get the latest version of the notebooks, open a terminal and run `update-notebooks.sh`.
 
 Note that the notebooks directory is reset with every session.
 if you want to make modifications to the notebooks, make you own copy or clone and modify it.

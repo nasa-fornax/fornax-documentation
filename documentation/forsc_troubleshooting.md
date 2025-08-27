@@ -6,7 +6,7 @@ If you have a running job and your internet is disrupted, the job should continu
 You can connect to a running session using the same browser or different browser.
 You can even connect to the same session from different machines.
 
-## How will my analysis be affected by memory limitations?
+## How will my analysis be affected by CPU and memory limitations?
 
 If your workload exceeds your server size, your server may be allowed to use additional resources temporarily.
 This can be convenient but should not be relied on.
