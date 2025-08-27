@@ -50,7 +50,7 @@ Monitors and manages active processes in your JupyterLab environment, such as ru
 
 [dask](https://docs.dask.org/en/stable/) is a Python library for parallel and distributed computing.
 
-It is available by default in the main python kernel `python3`, and can be used from a script or a notebook.
+It is available by default in the main {term}`Python kernel <kernel>` `python3`, and can be used from a script or a notebook.
 
 Additionally, the Fornax Science Console includes the Dask JupyterLab Extension which is a visual [dashboard](https://docs.dask.org/en/latest/dashboard.html) that can be used to manage clusters and profile parallel code.
 
