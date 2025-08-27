@@ -1,3 +1,4 @@
+(intro-forum)=
 # Fornax Community Forum
 
 The [Fornax Community Forum](https://discourse.fornax.sciencecloud.nasa.gov) is a platform dedicated to fostering collaboration and knowledge-sharing among Fornax users.

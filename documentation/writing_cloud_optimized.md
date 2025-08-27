@@ -13,7 +13,7 @@ These formats allow for faster reading and writing of data, especially when work
 **Parallelize tasks:** When dealing with large-scale data or complex computations, use distributed computing frameworks like **Dask** or **Ray**.
 These tools allow you to scale computations across multiple machines, leveraging the full power of cloud resources.
 
-**Split and process data in chunks:** If your data is too large to fit in memory, split it into smaller chunks and process each chunk in parallel.
+**Split and process data in chunks:** If your data is too large to fit in {term}`memory <RAM>`, split it into smaller chunks and process each chunk in parallel.
 This is especially important when working with large catalogs or time-series data.
 
 **Example:** The [forced photometry notebook](https://nasa-fornax.github.io/fornax-demo-notebooks/forced_photometry/multiband_photometry.html) demonstrates an analysis workflow that operates on a large dataset but can be efficiently parallelized.
@@ -30,7 +30,7 @@ Each worker operates on the same object sample but runs a distinct part of the p
 
 ## 3. Optimize Memory Usage
 
-**Avoid loading entire datasets into memory:** Use libraries like **Dask**, **Vaex**, or **Zarr** that allow for out-of-core computations (processing data that doesn't fit in memory).
+**Avoid loading entire datasets into memory:** Use libraries like **Dask**, **Vaex**, or **Zarr** that allow for out-of-core computations (processing data that doesn't fit in {term}`memory <RAM>`).
 
 **Use lazy loading:** Libraries like **lsdb** and **HDF5** allow you to load and process data lazily, meaning data is read in chunks only when needed.
 
@@ -47,7 +47,7 @@ Make sure to monitor usage, scale down resources when not in use, and avoid long
 ## 6. Optimize Code for CPU Usage (CPU Profiling)
 
 **CPU profiling** is the process of measuring how much time your code spends running each part of your program, so you can find and fix performance bottlenecks.
-In Python, this means tracking which functions are slow or use a lot of CPU so you can make your code run faster—especially useful when working with large datasets or running analyses in the cloud.
+In Python, this means tracking which functions are slow or use a lot of {term}`CPU` so you can make your code run faster—especially useful when working with large datasets or running analyses in the cloud.
 
 ### CPU Profiling Methods in Jupyter Notebooks
 
@@ -57,12 +57,12 @@ In Python, this means tracking which functions are slow or use a lot of CPU so y
 -   **[\@profile decorator](https://github.com/pyutils/line_profiler#usage)** – Used with `line_profiler` for marking functions.
 -   **[SnakeViz](https://jiffyclub.github.io/snakeviz/)** – Visualizes profiling output interactively.
 -   **[Py-Spy](https://github.com/benfred/py-spy)** – Low-overhead sampling profiler (typically used outside notebooks).
--   **[Scalene](https://github.com/plasma-umass/scalene)** – Advanced profiler with CPU, memory, and line-level stats.
+-   **[Scalene](https://github.com/plasma-umass/scalene)** – Advanced profiler with CPU, memory`, and line-level stats.
 -   **[JupyterLab Profiler extensions](https://github.com/jupyterlab-contrib/jupyterlab-profiling)** – Optional profiling tools for enhanced visualization in notebooks.
 
 ## 7. Optimize for Memory Usage (Memory Profiling)
 
-Memory profiling is a technique that helps track and understand how much memory your code uses during execution.
+Memory profiling is a technique that helps track and understand how much {term}`memory <RAM>` your code uses during execution.
 By identifying memory bottlenecks, you can optimize your code to handle larger datasets or reduce cloud resource costs.
 
 ### Memory Profiling Methods for Jupyter Notebooks

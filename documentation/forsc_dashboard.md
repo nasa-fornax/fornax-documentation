@@ -10,7 +10,7 @@ The image below shows a screenshot of the Dashboard.
 The Fornax Science Console Dashboard
 ```
 
--   **Total Spend** tracks the total number of dollars spent on egress, storage, and compute so far this calendar year.
+-   **Total Spend** tracks the total number of dollars spent on {term}`egress <egress>`, storage, and compute so far this calendar year.
 -   **Credits Remaining** tracks the total number of dollars left to be spent on any combination of egress, storage, and compute for the rest of this calendar year.
 -   **Egress Spend** tracks total number of dollars spent on egress so far this calendar year.
     Egress refers to data that is transferred out of a cloud provider's system to somewhere else, like your local computer or another cloud.
@@ -22,4 +22,4 @@ The Fornax Science Console Dashboard
 -   **Running Jupyter Servers** this is 0 if you are not running a compute environment, or 1 if you are.
     Note there is a delay in this value of about 1-2 minutes, so if you shut down your server, you will have to wait a bit before this number shows the update.
 
-To see changes, you can reload the Dashboard at any time without affecting a server you may have running, but note that there may be a delay of up to a few minutes before recent usage is reflected.
+To see changes, you can reload the Dashboard at any time without affecting a {term}`server <server>` you may have running, but note that there may be a delay of up to a few minutes before recent usage is reflected.

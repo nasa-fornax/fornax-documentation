@@ -27,10 +27,10 @@ It has general astronomy and plotting software.
 
 Each of the Fornax demo notebooks has its own environment with a name of the form `py-{notebook-name}` (e.g. `py-light_curve_collector` and `py-multiband_photometry`).
 Each environment has the packages required to run the notebook pre-installed.
-When opening the notebook, the corresponding kernel should automatically start.
-You can also select it from the drop down kernel menu at the top-right of an open notebook.
+When opening the notebook, the corresponding {term}`kernel` should automatically start.
+You can also select it from the drop down {term}`kernel` menu at the top-right of an open notebook.
 
-To activate a specific environment from the terminal, run: `source $ENV_DIR/{environment-name}/bin/activate`.
+To activate a specific environment from the {term}`terminal <terminal>`, run: `source $ENV_DIR/{environment-name}/bin/activate`.
 
 For example, to activate the `py-light_curve_classifier` environment, run:
 
@@ -63,8 +63,8 @@ To install additional software, there are two options:
 
 1.  Add to a current environment:
     To add packages to a currently installed environment, you install them with `pip` (or the faster `uv pip`) after activating the relevant environment.
-    -   Inside a notebook running the relevant environment, run `!uv pip install ...`, passing the extra packaged needed.
-    -   In the terminal, after activating the environment run: `uv pip install ...`.
+    -   Inside a {term}`notebook <Jupyter Notebook>` running the relevant environment, run `!uv pip install ...`, passing the extra packaged needed.
+    -   In the {term}`terminal <terminal>`, after activating the environment run: `uv pip install ...`.
 
     **Note** that packages installed this way are added in the `$ENV_DIR` folder, and therefore are not saved for the next session.
     To ensure the packages are installed in you home directory, and therefore saved between session, add `--user` to the pip command.
@@ -85,14 +85,14 @@ To install additional software, there are two options:
 
     This will create a new environment with python version 3.11, activate it, and then install a "numpy<2".
 
-    In order to use this new environment in a notebook, you'll need to install `ipykernel` inside the environment and then register it.
+    In order to use this new environment in a {term}`notebook <Jupyter Notebook>`, you'll need to install `ipykernel` inside the environment and then register it.
 
     ```sh
     uv pip install ipykernel
     python -m ipykernel install --name myenv --user
     ```
 
-    The kernel should show up in the jupyterlab main launcher page and in the kernel selection dropdown menu inside a running notebook.
+    The {term}`kernel <Kernel>` should show up in the JupyterLab main launcher page and in the kernel selection dropdown menu inside a running notebook.
 
     **Note**: It is recommended that you remove user environments that are no longer needed, as they may deplete your home storage.
 
@@ -102,7 +102,7 @@ There are two types Jupyerlab extensions.
 Front-end (menus etc), and server extensions.
 Most extensions include both components.
 Instructions on how to find and install extensions can be found at [JupyterLab: Extensions](https://jupyterlab.readthedocs.io/en/stable/user/extensions.html).
-The front-end extension can be installed after jupyterlab starts, and can show up if you refresh the page, as long they are installed in the environment running jupyterlab (/opt/jupyter/).
+The front-end extension can be installed after JupyterLab starts, and can show up if you refresh the page, as long they are installed in the environment running JupyterLab (/opt/jupyter/).
 Note: Extensions that include a server-side component cannot be installed by individual users because they must be installed before JupyterLab starts.
 In that case, please open a request in the [Fornax Community Forum](https://discourse.fornax.sciencecloud.nasa.gov/) "Support" category.
 
@@ -111,7 +111,7 @@ In that case, please open a request in the [Fornax Community Forum](https://disc
 You must use HTTPS to authenticate with `git` on the Fornax Science Console.
 SSH is not supported.
 This means you will need to enter your username and password (or token) when interacting with a remote.
-To reduce the number of times you need to enter them, you can configure `git` to cache them by opening a terminal and running the following command:
+To reduce the number of times you need to enter them, you can configure `git` to cache them by opening a {term}`terminal <terminal>` and running the following command:
 
 ```sh
 # Tell git to cache your credentials for all repos.
