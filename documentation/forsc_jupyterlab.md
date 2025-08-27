@@ -54,7 +54,7 @@ It is available by default in the main python kernel `python3`, and can be used 
 
 Additionally, the Fornax Science Console includes the Dask JupyterLab Extension which is a visual [dashboard](https://docs.dask.org/en/latest/dashboard.html) that can be used to manage clusters and profile parallel code.
 
-A cluster can be started either from a notebook or by using the dask lab-extension (colored icon in the left sidebar):
+A cluster can be started either from a notebook or by using the dask lab-extension (colored <img src="../_static/dask_logo.svg" height=15> icon in the left sidebar):
 
 - Using the lab-extension:
 
