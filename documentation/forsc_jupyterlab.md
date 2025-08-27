@@ -1,6 +1,6 @@
 # JupyterLab
 
-The Fornax Science Console offers a lightly customized version of JupyterLab that many Python users will find familiar.
+The Fornax Science Console offers a lightly customized version of {term}`JupyterLab` that many Python users will find familiar.
 We refer readers to the [JupyterLab documentation](https://jupyterlab.readthedocs.io/en/stable/user/interface.html) for details of the interface.
 Here we define the major components of this interface that we will refer to throughout the User Guide.
 
@@ -12,7 +12,7 @@ JupyterLab deployed in the Fornax Science Console
 
 ## Main Work Area
 
-The main work area in JupyterLab is the central space where you open and interact with documents, notebooks, terminals, consoles, and other panels.
+The main work area in JupyterLab is the central space where you open and interact with documents, {term}`notebooks <Jupyter Notebook>`, {term}`terminals <Terminal>`, {term}`consoles <Jupyter Console>`, and other panels.
 It supports multi-document, tabbed, and split-pane layouts, allowing you to work with multiple files side by side.
 
 You can drag and arrange tabs freely, view code, outputs, data files, or terminals in one unified interface, and seamlessly switch between tasks—making it a flexible environment for data analysis, coding, and exploration.
@@ -40,7 +40,7 @@ Below we discuss some of the tools available via the **Launcher**.
 
 **Firefly** is a visualization platform designed to facilitate interactive exploration of astronomical data, including images, catalogs, and plots, through a modern, browser-based interface.
 
-**Terminal** provides a command line, which allows users to run Emacs or vi .
+**Terminal** provides a {term}`command line <terminal>`, which allows users to run Emacs, vi, Python, etc.
 
 2. **Running Terminals and Kernels**
 
@@ -57,7 +57,7 @@ Once the cluster starts, you’ll see a column of yellow buttons appear with the
 Click on any of them and a new tab will open showing the selected chart.
 You can drag and drop the tab to move it somewhere else on the screen.
 
-Start or restart the kernel for the notebook you’re working in so that it will recognize the cluster.
+Start or restart the {term}`kernel <kernel>` for the notebook you’re working in so that it will recognize the cluster.
 
 4. **Git**
 
@@ -81,11 +81,11 @@ Shows metadata, configuration options, or properties for the currently selected 
 
 2. **Kernel Usage**
 
-In JupyterLab, a kernel is the computational engine that executes your code.
-It is connected to an environment with installed software.
-When you open a notebook or console in JupyterLab, it connects to a kernel that runs the code you write, keeps track of variables, and returns output (such as plots, results, or errors) back to the interface.
+In JupyterLab, the {term}`kernel <kernel>` is the computational engine that executes your code.
+It is connected to an {term}`environment <environment>` with installed software.
+When you open a {term}`notebook <Jupyter Notebook>` or {term}`console <Jupyter Console>` in JupyterLab, it connects to a kernel that runs the code you write, keeps track of variables, and returns output (such as plots, results, or errors) back to the interface.
 
-The Kernel Usage tool monitors resources (such as CPU and memory) being used by your Jupyter kernel.
+The Kernel Usage tool monitors resources (such as {term}`CPU` and {term}`memory <RAM>`) being used by your Jupyter kernel.
 
 3. **Debugger**
 
@@ -98,7 +98,7 @@ To allow for efficient use of resources, idle sessions will be stopped (or culle
 Fornax has the following guidelines for session culling:
 
 1.  All sessions have a hard upper limit of 48 hours.
-2.  If session contains running jobs with CPU activity up to the hard limit, it will not be culled.
+2.  If session contains running jobs with {term}`CPU` activity up to the hard limit, it will not be culled.
 3.  A session is stopped after 15 minutes of no activity.
 4.  The user can override the 15 min limit by using the Keep-Alive feature under the Foranx menu.
     - Start a session: You can request the session to stay alive by selecting: `Fornax → Keep-alive → Start Keep-alive Session`.

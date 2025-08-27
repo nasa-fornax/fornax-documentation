@@ -1,12 +1,12 @@
 (server-and-env-options)=
 # Server and Environment Options
 
-Once you have logged in to the Fornax Science Console ({term}`ForSC`) and clicked "JupyterHub" to start a server (see {ref}`quick-start`), you will be asked to specify a **Server Type** and a base **Environment**, as shown in the screenshot below.
+Once you have logged in to the Fornax Science Console and clicked "JupyterHub" to start a server (see {ref}`quick-start`), you will be asked to specify a **Server Type** and a base **Environment**, as shown in the screenshot below.
 
 ```{figure} ../_static/forsc_jupyterlab_servers.png
 :alt: JupyterLab server options menu as deployed in the Fornax Science Console
 
-JupyterLab Server options on ForSC.
+JupyterLab Server options on the Fornax Science Console.
 ```
 
 ## Server Type
@@ -37,7 +37,7 @@ If your analysis exceeds the estimated runtime, we may reach out to discuss pote
 (base-environment)=
 ## Base Environment
 
-The Fornax Science Console offers a number of software environments to choose from.
+The Fornax Science Console offers a number of software {term}`environments <environment>` to choose from.
 They are currently grouped into two base environments.
 You can select a base environment by choosing one of the following container images from the "Environment" dropdown in the screenshot above:
 

@@ -9,7 +9,7 @@ To understand data storage options on the Fornax Science Console, see {ref}`intr
 ## Direct File Uploads
 
 The **JupyterLab File Browser** includes an **Upload File** option, allowing users to transfer data files from their local machine directly into your Fornax Science Console home directory.
-Once uploaded, these files are available for immediate use in your analysis, whether in Jupyter Notebooks or other tools.
+Once uploaded, these files are available for immediate use in your analysis, whether in {term}`Jupyter Notebook`s or other tools.
 You can organize and manage files through the File Browser interface, view directory structures, and access the uploaded datasets for use with Python libraries, APIs, or the compute resources provided by Fornax.
 If you need the full path to a file or directory you have uploaded, find it using the File Browser interface, then right-click on it and select "Copy Path".
 
@@ -20,7 +20,7 @@ Accessing data stored in the same region (`us-east-1`) is generally more efficie
 
 The NASA Astrophysics Mission Archives (HEASARC, IRSA, MAST) offer curated datasets through the AWS Open Data program: https://registry.opendata.aws/.
 
-You can use the Python tool `s3fs` to interact with Amazon S3 buckets as if they were part of your local filesystem—opening FITS files, CSVs, or other data products directly by specifying the S3 path.
+You can use the Python tool `s3fs` to interact with Amazon {term}`S3` buckets as if they were part of your local filesystem—opening FITS files, CSVs, or other data products directly by specifying the {term}`S3` path.
 For image data, `Astropy` can retrieve cutouts and handle astronomical images in memory, while `pyarrow` enables fast, efficient access to large catalog tables in Parquet format.
 These tools allow seamless and scalable analysis of large datasets without manual downloads or local storage overhead.
 
