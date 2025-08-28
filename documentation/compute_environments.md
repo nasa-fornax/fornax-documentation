@@ -5,21 +5,6 @@ The Fornax Science Console offers {ref}`Base Environments <base-environment>` wh
 Each base environment comes pre-installed with one or more specific software environments (or simply, "environments").
 You can customize your environment by installing additional software and extensions.
 
-## View Pre-installed Software
-
-There are two ways to view the pre-installed environments and software that come with each container:
-
--   **Inside the Console**:
-    The list of environment files (`*.yml` for conda and `requirements-*.txt` for uv) of all the installed environments can be found in the folder `$LOCK_DIR`.
-    Each environment in the container has a corresponding file there.
-    For instance:
-    -   *requirements-python3.txt*: is the pip requirement file for the `python3` environment.
-    -   *base-lock.yml*: is the conda environment file for the base conda environment.
-    -   *heasoft-lock.yml*: is the conda environment file for the heasoft conda environment.
-      etc.
--   **Outside the Console**: The same environment files are also available for every release of the container images on github.
-    They are grouped by image name and available in the [container images release page](https://github.com/nasa-fornax/fornax-images/releases).
-
 ## Environment Selection
 
 `python3` is the default python environment.
