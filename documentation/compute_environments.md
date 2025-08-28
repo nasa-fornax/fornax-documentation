@@ -45,13 +45,13 @@ There are two types of environments, **uv**-based and **conda**-based.
 **uv**-based:
 The **uv**-based environments use [uv](https://docs.astral.sh/uv/) to manage the packages.
 These environments contain `pip`-installable packages and are used in most cases.
-The default environment are installed under `$ENV_DIR`.
-The are activated as indicated above with `source $ENV_DIR/{env-name}/bin/activate`.
+The default environments are installed under `$ENV_DIR`.
+They are activated as indicated above with `source $ENV_DIR/{env-name}/bin/activate`.
 
 **conda**-based (using [micromamba](https://mamba.readthedocs.io/en/latest/user_guide/micromamba.html)):
 The `conda`-based environments are used when packages that are not `pip`-installable.
-Examples this include `heasoft` and `ciao` in the high-energy container image.
-These are activated with `micromamba activate {env-name}` and deactivated with `micrmamba deactivate`.
+Examples of this include `heasoft` and `ciao` in the high-energy container image.
+These are activated with `micromamba activate {env-name}` and deactivated with `micromamba deactivate`.
 These are installed under `$CONDA_DIR/envs`
 
 ## Install Additional Software
