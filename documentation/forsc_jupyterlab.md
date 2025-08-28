@@ -1,3 +1,4 @@
+(jupyterlab)=
 # JupyterLab
 
 The Fornax Science Console offers a lightly customized version of {term}`JupyterLab` that many Python users will find familiar.
