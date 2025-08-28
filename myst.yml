@@ -1,8 +1,8 @@
 # See docs at: https://mystmd.org/guide/frontmatter
 version: 1
 project:
-  title: Fornax User documentation
-  subject: Fornax User documentation
+  title: Fornax User Documentation
+  subject: Fornax User Documentation
   # description: Fornax User documentation
   # keywords: []
   github: https://github.com/nasa-fornax/fornax-documentation
