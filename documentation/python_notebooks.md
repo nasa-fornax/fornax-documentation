@@ -54,6 +54,22 @@ It is easy to convert from `.md` Markdown to a `.py` script, if that fits better
 
 If you prefer to develop your code outside the Fornax Science Console, you can push your changes to a publicly available repository (e.g., GitHub) and synchronize that to your home directory on the Fornax Science Console.
 
+
+### Using Git
+
+You must use HTTPS to authenticate with `git` on the Fornax Science Console.
+SSH is not supported.
+This means you will need to enter your username and password (or token) when interacting with a remote.
+To reduce the number of times you need to enter them, you can configure `git` to cache them by opening a {term}`terminal <terminal>` and running the following command:
+
+```sh
+# Tell git to cache your credentials for all repos.
+# To do this for a single repo instead, cd into the repo directory and remove '--global' before running the command.
+git config --global credential.helper cache
+```
+
+For more information about using `git`, see https://git-scm.com/docs/gittutorial.
+
 ## Other NASA Astrophysics Notebooks
 
 The [Fornax Tutorial Notebooks](https://nasa-fornax.github.io/fornax-demo-notebooks/) showcase science that can be carried out by combining data across the NASA Astrophysics Archives, and have been tested using the software environments offered in the Fornax Science Console.

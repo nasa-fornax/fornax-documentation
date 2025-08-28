@@ -90,18 +90,3 @@ Instructions on how to find and install extensions can be found at [JupyterLab: 
 The front-end extension can be installed after JupyterLab starts, and can show up if you refresh the page, as long they are installed in the environment running JupyterLab (/opt/jupyter/).
 Note: Extensions that include a server-side component cannot be installed by individual users because they must be installed before JupyterLab starts.
 In that case, please open a request in the [Fornax Community Forum](https://discourse.fornax.sciencecloud.nasa.gov/) "Support" category.
-
-## Using Git
-
-You must use HTTPS to authenticate with `git` on the Fornax Science Console.
-SSH is not supported.
-This means you will need to enter your username and password (or token) when interacting with a remote.
-To reduce the number of times you need to enter them, you can configure `git` to cache them by opening a {term}`terminal <terminal>` and running the following command:
-
-```sh
-# Tell git to cache your credentials for all repos.
-# To do this for a single repo instead, cd into the repo directory and remove '--global' before running the command.
-git config --global credential.helper cache
-```
-
-For more information about using `git`, see https://git-scm.com/docs/gittutorial.
