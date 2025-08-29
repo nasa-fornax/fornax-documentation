@@ -20,7 +20,14 @@ You can drag and arrange tabs freely, view code, outputs, data files, or termina
 
 ## Menu Bar (Topmost horizontal menu)
 
-This contains dropdown menus like File, Edit, View, Run, Kernel, Git, Tabs, Settings, Help
+This contains dropdown menus like File, Edit, etc., and the *Fornax* menu. which includes:
+
+- Useful links to the Fornax main dashboard, the documentation and community forum.
+- `Update Notebooks` can be used ensure the notebooks in the home directory are up to date. Note that the notebooks can also be updated by calling the `update-notebooks.sh` command from the terminal.
+- `Shutdown Server` is a quick link to the jupyterhub control that can used to shut down the current notebook session.
+- `Keep-alive` is used to request the current session not to be terminated. See {ref}`jupyterlab-session-information`.
+- `Release Notes` shows the changes in the software environment.
+
 
 ## Left Sidebar
 
