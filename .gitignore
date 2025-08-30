@@ -2,3 +2,10 @@
 .ipynb_checkpoints
 *.ipynb
 _build/
+
+# MyST build outputs
+_build
+
+# Miscellaneous
+.DS_Store
+.idea/
