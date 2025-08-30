@@ -45,7 +45,7 @@ The **Launcher** will open a panel in the main area that provides clickable tile
 Below we discuss some of the tools available via the **Launcher**.
 
 **VS Code** will open a new window where you can work in a web-based integrated development environment (IDE).
-It is powered by [openvscode-server](https://github.com/gitpod-io/openvscode-server) which runs [Visual Studio Code - Open Source](https://github.com/microsoft/vscode) in a remote environment.
+It is powered by [code-server](https://github.com/coder/code-server) which runs [Visual Studio Code - Open Source](https://github.com/microsoft/vscode) in a remote environment.
 See those links for more information.
 Note: Microsoft-specific customizations like GitHub Copilot are only available in Microsoft's desktop version of VS Code and so cannot be accessed here.
 
