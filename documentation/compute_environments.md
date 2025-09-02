@@ -8,7 +8,7 @@ You can customize your experience by installing additional extensions and softwa
 ## Install a New Extension
 
 There are two types of JupyterLab extensions.
-Front-end (menus etc), and server extensions.
+Front-end (menus etc.), and server extensions.
 Most extensions include both components.
 Instructions on how to find and install extensions can be found at [JupyterLab: Extensions](https://jupyterlab.readthedocs.io/en/stable/user/extensions.html).
 The front-end extension can be installed after JupyterLab starts, and can show up if you refresh the page, as long they are installed in the environment running JupyterLab (/opt/jupyter/).
@@ -23,7 +23,7 @@ It has general astronomy and plotting software.
 Each of the Fornax demo notebooks has its own environment with a name of the form `py-{notebook-name}` (e.g. `py-light_curve_collector` and `py-multiband_photometry`).
 Each environment has the packages required to run the notebook pre-installed (see {ref}`view-preinstalled-software`).
 When opening the notebook, the corresponding {term}`kernel <kernel>` should automatically start.
-You can also select it from the drop down kernel menu at the top-right of an open notebook.
+You can also select it from the drop-down kernel menu at the top-right of an open notebook.
 
 To activate a specific environment from the {term}`terminal <terminal>`, run: `source $ENV_DIR/{environment-name}/bin/activate`.
 For example, to activate the `py-light_curve_classifier` environment, run:
