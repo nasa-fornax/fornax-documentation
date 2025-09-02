@@ -15,6 +15,7 @@ The front-end extension can be installed after JupyterLab starts, and can show u
 Note: Extensions that include a server-side component cannot be installed by individual users because they must be installed before JupyterLab starts.
 In that case, please open a request in the [Fornax Community Forum](https://discourse.fornax.sciencecloud.nasa.gov/) "Support" category.
 
+(compute-environments-select-python)=
 ## Select a Python Environment
 
 `python3` is the default python {term}`environment <environment>`.
