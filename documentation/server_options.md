@@ -45,7 +45,7 @@ You can select a base environment by choosing one of the following container ima
 ### **Default Astrophysics**
 - The base Fornax container will be sufficient for many use cases, and provides a pre-installed set of commonly used astronomy tools. This includes the Python environments (managed with _uv_; see {ref}`compute-environments`) required to run the demonstration notebooks.
 
-- This container image is referred to as **fornax-main** - *please note that there is currently also a `Dev Astrophysics' environment option, and we do not recommend its use unless suggested by the support team.*
+- This image is referred to as **Default Astrophysics** - *please note that there is currently also a `Dev Astrophysics' environment option, and we do not recommend its use unless suggested by the support team.*
 
 When a default astrophysics Fornax instance has been launched, the existing software environments can be activated by following the instructions provided in - {ref}`compute-environments-select-python`.
 
@@ -53,7 +53,7 @@ When a default astrophysics Fornax instance has been launched, the existing soft
 ### **High-Energy Astrophysics**
 - The second base environment contains pre-installed versions of software required for the analysis of high-energy (X-ray, Gamma-ray, etc.) observations.
 
-- This container image is referred to as **fornax-hea** - *please note that there is currently also a `Dev High-Energy Astrophysics' environment option, and we do not recommend its use unless suggested by the support team.*
+- This image is referred to as **High-Energy Astrophysics** - *please note that there is currently also a `Dev High-Energy Astrophysics' environment option, and we do not recommend its use unless suggested by the support team.*
 
 - Fornax-hea currently includes HEASoft, CIAO, and FermiPy environments; XMM-SAS support is under active development, and plans also exist to include an eROSITA-eSASS install.
 
