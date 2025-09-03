@@ -20,7 +20,7 @@ Being mindful of usage helps ensure that the platform remains sustainable and ac
 Please follow these guidelines:
 
 **Start small:** Begin by testing your workflow on the smallest server that meets your needs.
-Limit initial runs in scope (e.g. fewer sources, shorter iterations, smaller datasets).
+Limit initial runs in scope (e.g., fewer sources, shorter iterations, smaller datasets).
 Scale up to a larger server or full analysis only after verifying that your code runs successfully at a smaller scale.
 
 **Shut down when done**:
@@ -63,7 +63,7 @@ Once launched, access to Fornax-hea software environments is provided through _m
 micromamba env list
 ```
 
-Once you know the name of an environment you want to activate (e.g. *ciao*), you can activate it with:
+Once you know the name of an environment you want to activate (e.g., *ciao*), you can activate it with:
 
 ```bash 
 micromamba activate ciao
