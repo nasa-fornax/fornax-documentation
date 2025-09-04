@@ -44,7 +44,10 @@ This includes the **Launcher**(blue plus sign), **New Folder** (folder symbol wi
 The **Launcher** will open a panel in the main area that provides clickable tiles for quickly starting new tools, such as notebooks and terminals.
 Below we discuss some of the tools available via the **Launcher**.
 
-**Visual Studio Code (VS Code)** is an integrated development environment(IDE) widely used for programming in many languages—including Python, JavaScript, C++, and more.
+**VS Code** will open a new window where you can work in a web-based integrated development environment (IDE).
+It is powered by [code-server](https://github.com/coder/code-server) which runs [Visual Studio Code - Open Source](https://github.com/microsoft/vscode) in a remote environment.
+See those links for more information.
+Note: Microsoft-specific customizations like GitHub Copilot are only available in Microsoft's desktop version of VS Code and so cannot be accessed here.
 
 **Firefly** is a visualization platform designed to facilitate interactive exploration of astronomical data, including images, catalogs, and plots, through a modern, browser-based interface.
 
