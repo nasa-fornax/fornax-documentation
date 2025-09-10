@@ -1,7 +1,7 @@
 (forsc-dashboard)=
 # Dashboard
 
-The purpose of the Fornax Science Console Dashboard is to provide users the status of their compute and storage resource consumption.
+The purpose of the [Fornax Science Console Dashboard](https://console.fornax.sciencecloud.nasa.gov/) is to provide users the status of their compute and storage resource consumption.
 The image below shows a screenshot of the Dashboard.
 
 ```{figure} ../_static/forsc_dashboard.png
