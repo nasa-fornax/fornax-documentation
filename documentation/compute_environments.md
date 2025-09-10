@@ -15,28 +15,7 @@ The front-end extension can be installed after JupyterLab starts, and can show u
 Note: Extensions that include a server-side component cannot be installed by individual users because they must be installed before JupyterLab starts.
 In that case, please open a request in the [Fornax Community Forum](https://discourse.fornax.sciencecloud.nasa.gov/) "Support" category.
 
-## Select a Python Environment
-
-`python3` is the default python {term}`environment <environment>`.
-It has general astronomy and plotting software.
-
-Each of the Fornax demo notebooks has its own environment with a name of the form `py-{notebook-name}` (e.g. `py-light_curve_collector` and `py-multiband_photometry`).
-Each environment has the packages required to run the notebook pre-installed (see {ref}`view-preinstalled-software`).
-When opening the notebook, the corresponding {term}`kernel <kernel>` should automatically start.
-You can also select it from the drop down kernel menu at the top-right of an open notebook.
-
-To activate a specific environment from the {term}`terminal <terminal>`, run: `source $ENV_DIR/{environment-name}/bin/activate`.
-For example, to activate the `py-light_curve_classifier` environment, run:
-
-```sh
-source $ENV_DIR/py-light_curve_classifier/bin/activate
-```
-
-and the following to deactivate it:
-
-```sh
-deactivate
-```
+## Software Environments
 
 ### Environment Types
 
@@ -52,7 +31,37 @@ They are activated as indicated above with `source $ENV_DIR/{env-name}/bin/activ
 The `conda`-based environments are used when packages that are not `pip`-installable.
 Examples of this include `heasoft` and `ciao` in the high-energy container image.
 These are activated with `micromamba activate {env-name}` and deactivated with `micromamba deactivate`.
-These are installed under `$CONDA_DIR/envs`
+These are installed under `$CONDA_DIR/envs`.
+
+### Pre-installed Environments
+
+The following environments are pre-installed:
+
+-   `python3`: This is the default Python environment.
+    It has general astronomy and plotting software.
+-   `py-{notebook-name}`: Each of the Fornax demo notebooks has its own environment with a name of the form `py-{notebook-name}` (e.g. `py-light_curve_collector` and `py-multiband_photometry`).
+    Each environment has the packages required to run the notebook pre-installed.
+    When opening the notebook, the corresponding {term}`kernel <kernel>` should automatically start.
+    You can also select it from the drop down kernel menu at the top-right of an open notebook.
+
+See {ref}`view-preinstalled-software` to learn about specific libraries each environment contains.
+
+### Select an Environment
+
+**Notebook:** To activate a specific environment from a {term}`notebook <Jupyter Notebook>`, click on the name of the notebook's current environment at the top right and then select your desired environment from the kernel drop down menu.
+
+**Terminal:** To activate a specific environment from the {term}`terminal <terminal>`, run: `source $ENV_DIR/{environment-name}/bin/activate`.
+For example, to activate the `py-light_curve_classifier` environment, run:
+
+```sh
+source $ENV_DIR/py-light_curve_classifier/bin/activate
+```
+
+and the following to deactivate it:
+
+```sh
+deactivate
+```
 
 ## Install Additional Software
 
