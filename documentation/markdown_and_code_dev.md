@@ -47,6 +47,8 @@ If you prefer to develop your code outside the Fornax Science Console, you can p
 
 ### Using Git
 
+You can use `git` from the command line or the UI provided by the {ref}`Git extension <git-extension>`.
+
 To set up `git` for the first time, configure your name and email by opening a {term}`terminal <terminal>` and running the following commands:
 
 ```sh

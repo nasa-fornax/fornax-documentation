@@ -96,10 +96,12 @@ There are a few things to note when using Dask in the Fornax Science Console:
 -   Currently, Fornax only supports clusters running in the same instance.
     We plan to support launching instances in a Kubernetes cluster in the near future.
 
+(git-extension)=
 4. **Git**
 
 This extension integrates Git version control into the JupyterLab interface, enabling you to stage, commit, push, and pull notebook and code changes without leaving the environment.
 It provides visual diffs, branch management, and history browsing, making collaborative development and reproducibility seamless.
+See {ref}`using-git` for more information about setup and authentication and [jupyterlab-git](https://github.com/jupyterlab/jupyterlab-git) for more information about the extension.
 
 5. **Table of Contents**
 
