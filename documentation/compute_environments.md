@@ -45,11 +45,41 @@ Examples of this include `heasoft` and `ciao` in the high-energy container image
 These are activated with `micromamba activate {env-name}` and deactivated with `micromamba deactivate`.
 These are also installed under `$ENV_DIR`
 
-## Install Additional Software
+### Pre-installed Environments
+
+The following environments are pre-installed:
+
+-   `python3`: This is the default Python environment.
+    It has general astronomy and plotting software.
+-   `py-{notebook-name}`: Each of the Fornax demo notebooks has its own environment with a name of the form `py-{notebook-name}` (e.g. `py-light_curve_collector` and `py-multiband_photometry`).
+    Each environment has the packages required to run the notebook pre-installed.
+    When opening the notebook, the corresponding {term}`kernel <kernel>` should automatically start.
+    You can also select it from the drop down kernel menu at the top-right of an open notebook.
+
+See {ref}`view-preinstalled-software` to learn about specific libraries each environment contains.
+
+### Select an Environment
+
+**Notebook:** To activate a specific environment from a {term}`notebook <Jupyter Notebook>`, click on the name of the notebook's current environment at the top right and then select your desired environment from the kernel drop down menu.
+
+**Terminal:** To activate a specific environment from the {term}`terminal <terminal>`, run: `source $ENV_DIR/{environment-name}/bin/activate`.
+For example, to activate the `py-light_curve_classifier` environment, run:
+
+```sh
+source $ENV_DIR/py-light_curve_classifier/bin/activate
+```
+
+and the following to deactivate it:
+
+```sh
+deactivate
+```
+
+### Install Additional Software
 
 To install additional software, you can either update an existing environment or create a new one.
 
-### Update an existing environment
+#### Update an Existing Environment
 
 To add packages to a currently installed environment, you install them with `pip` (or the faster `uv pip`) after activating the relevant environment.
 
@@ -62,7 +92,7 @@ To ensure the packages are available in the next session, you can install them i
 Note also, that if the container image is updated, packages installed with the `--user` option may not be compatible with the new image and package conflicts may arise.
 The solution is this case is to create your own environments that are independent of the container image (next bullet).
 
-### Create a new environment
+#### Create a New Environment
 
 To create a new environment that persists between sessions, create a folder in your home directory where user environments will be installed.
 Say `mkdir ~/user-envs`.
@@ -100,19 +130,15 @@ Similarly, to use this environment in a {term}`notebook <Jupyter Notebook>`, you
 
 ## JupyterLab Extensions
 
-There are two types of JupyterLab extensions.
-Front-end (menus, sidebar etc), and server extensions.
-Most extensions include both components.
-Instructions on how to find and install extensions can be found at
-[JupyterLab: Extensions](https://jupyterlab.readthedocs.io/en/stable/user/extensions.html).
-The front-end extension can be installed after JupyterLab starts, and can show up
-if you refresh the page, as long they are installed in the environment running
-JupyterLab (/opt/jupyter/).
-Note: Extensions that include a server-side component cannot be installed by individual
-users because they must be installed before JupyterLab starts.
-In that case, please open a request in the
-[Fornax Community Forum](https://discourse.fornax.sciencecloud.nasa.gov/) "Support" category.
+Pre-installed extensions are described on the {ref}`jupyterlab` page.
 
+### Install a New Extension
+
+Instructions on how to find and install extensions can be found at [JupyterLab: Extensions](https://jupyterlab.readthedocs.io/en/stable/user/extensions.html).
+Extensions may include a front-end component, a server-side component, or both.
+You can install front-end extensions after JupyterLab starts, and they can show up if you refresh the page, as long they are installed in the environment running JupyterLab (`/opt/jupyter/`).
+Extensions that include a server-side component cannot be installed by individual users because they must be installed before JupyterLab starts.
+In that case, please open a helpdesk request on the {ref}`intro-forum`.
 
 ## Compilers and General Software
 As part of the system optimization and to allow for users to manage their own software,
