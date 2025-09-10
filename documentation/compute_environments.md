@@ -63,11 +63,11 @@ and the following to deactivate it:
 deactivate
 ```
 
-## Install Additional Software
+### Install Additional Software
 
 To install additional software, you can either update an existing environment or create a new one.
 
-### Update an existing environment
+#### Update an Existing Environment
 
 To add packages to a currently installed environment, you install them with `pip` (or the faster `uv pip`) after activating the relevant environment.
 
@@ -79,7 +79,7 @@ To ensure the packages are installed in you home directory, and therefore saved 
 Note also, that if the container image is updated, packages installed with the `--user` option may not be compatible with the new image and package conflicts may arise.
 The solution is this case is to create your own environments that are independent of the container image (next bullet).
 
-### Create a new environment
+#### Create a New Environment
 
 To create a new environment that persists between sessions, create a folder in your home directory where user environments will be installed.
 Say `mkdir ~/user-envs`.
