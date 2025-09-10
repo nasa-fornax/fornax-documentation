@@ -9,7 +9,7 @@ These include {term}`Jupyter Notebook`s, Linux {term}`command-line <terminal>` a
 
 A Jupyter Notebook is a feature-rich application supporting data exploration and code development.
 The notebook documents may be in either `.ipynb` or `.md` (Markdown) format.
-The Fornax Tutorial Notebooks are in `.md` format ([MyST](https://mystmd.org/) Markdown flavor) following the standard practice of the Scientific Python ecosystem.
+The Fornax Tutorial Notebooks are in `.md` format (specifically in [MyST](https://mystmd.org/) Markdown flavor) following the standard practice of the Scientific Python ecosystem.
 While many astronomers are familiar with the `.ipynb` format, we chose Markdown for its superior readability, ease of version control through diffing, simpler testing workflows, and smooth rendering to HTML.
 To read more about the differences between `.md` and `.ipynb`, see the [MyST Markdown documentation](https://mystmd.org/guide/md-vs-ipynb).
 
@@ -52,11 +52,11 @@ It is easy to convert notebooks between file formats like `.md`, `.ipynb`, and `
     Some examples are:
     -   Convert `.ipynb` to a MyST Markdown `.md` notebook:
 
-        ```jupytext --from notebook --to myst <your_notebook_file>.ipynb```
+        ```jupytext --to md:myst <your_notebook_file>.ipynb```
 
     -   Convert `.md` to a `.ipynb` notebook (*not necessary for use in JupyterLab*):
 
-        ```jupytext --from notebook --to myst <your_notebook_file>.ipynb```
+        ```jupytext --to ipynb <your_notebook_file>.md```
 
     -   Convert `.md` to a `.py` Python script:
 
