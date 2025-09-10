@@ -15,8 +15,26 @@ JupyterLab deployed in the Fornax Science Console
 
 The main work area in JupyterLab is the central space where you open and interact with documents, {term}`notebooks <Jupyter Notebook>`, {term}`terminals <Terminal>`, {term}`consoles <Jupyter Console>`, and other panels.
 It supports multi-document, tabbed, and split-pane layouts, allowing you to work with multiple files side by side.
-
 You can drag and arrange tabs freely, view code, outputs, data files, or terminals in one unified interface, and seamlessly switch between tasks—making it a flexible environment for data analysis, coding, and exploration.
+
+### Launcher
+
+The **Launcher** panel provides clickable tiles for quickly starting new tools, such as notebooks and terminals.
+This panel may be open by default when a session starts and a new one can be opened at any time by clicking the plus sign to the right of open tabs.
+Many of the tools are standard for JupyterLab and more information about them can be found at the documentation linked above.
+Below we discuss some of the other tools available via the **Launcher**.
+
+**VS Code** will open a new window where you can work in a web-based integrated development environment (IDE).
+It is powered by [code-server](https://github.com/coder/code-server) which runs [Visual Studio Code - Open Source](https://github.com/microsoft/vscode) in a remote environment.
+See those links for more information.
+Note: Microsoft-specific customizations like GitHub Copilot are only available in Microsoft's desktop version of VS Code and so cannot be accessed here.
+
+**Terminal** provides a {term}`command line <terminal>`, which allows users to run Emacs, vi, Python, etc.
+
+The **Fornax** section contains links to the {ref}`forsc-dashboard`, documentation (this website), and the {ref}`intro-forum`.
+
+**Firefly** is a visualization platform designed to facilitate interactive exploration of astronomical data, including images, catalogs, and plots, through a modern, browser-based interface.
+See [jupyter_firefly_extensions](https://github.com/Caltech-IPAC/jupyter_firefly_extensions) for more information about this extension, including example notebooks that demonstrate the extension features.
 
 ## Menu Bar (Topmost horizontal menu)
 
@@ -39,19 +57,7 @@ Lets you navigate and open files and folders.
 Double-click a file or .ipynb notebook to open it in the main area.
 Opening .md files as notebooks should be done by right clicking on the file → "Open With" → "Notebook" so that they display in the expected format with cells of runnable code.
 
-This includes the **Launcher**(blue plus sign), **New Folder** (folder symbol with plus sign), and **Upload Files** (up arrow) icons.
-
-The **Launcher** will open a panel in the main area that provides clickable tiles for quickly starting new tools, such as notebooks and terminals.
-Below we discuss some of the tools available via the **Launcher**.
-
-**VS Code** will open a new window where you can work in a web-based integrated development environment (IDE).
-It is powered by [code-server](https://github.com/coder/code-server) which runs [Visual Studio Code - Open Source](https://github.com/microsoft/vscode) in a remote environment.
-See those links for more information.
-Note: Microsoft-specific customizations like GitHub Copilot are only available in Microsoft's desktop version of VS Code and so cannot be accessed here.
-
-**Firefly** is a visualization platform designed to facilitate interactive exploration of astronomical data, including images, catalogs, and plots, through a modern, browser-based interface.
-
-**Terminal** provides a {term}`command line <terminal>`, which allows users to run Emacs, vi, Python, etc.
+This includes the **Launcher** (blue plus sign; see above for more information), **New Folder** (folder symbol with plus sign), and **Upload Files** (up arrow) icons.
 
 2. **Running Terminals and Kernels**
 
