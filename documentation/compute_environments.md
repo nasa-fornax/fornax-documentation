@@ -5,15 +5,17 @@ The Fornax Science Console offers {ref}`Base Environments <base-environment>` wh
 Each base environment comes pre-installed with JupyterLab extensions as well as one or more Python software environments (or simply, "environments").
 You can customize your experience by installing additional extensions and software.
 
-## Install a New Extension
+## JupyterLab Extensions
 
-There are two types of JupyterLab extensions.
-Front-end (menus etc), and server extensions.
-Most extensions include both components.
+Pre-installed extensions are described on the {ref}`jupyterlab` page.
+
+### Install a New Extension
+
 Instructions on how to find and install extensions can be found at [JupyterLab: Extensions](https://jupyterlab.readthedocs.io/en/stable/user/extensions.html).
-The front-end extension can be installed after JupyterLab starts, and can show up if you refresh the page, as long they are installed in the environment running JupyterLab (/opt/jupyter/).
-Note: Extensions that include a server-side component cannot be installed by individual users because they must be installed before JupyterLab starts.
-In that case, please open a request in the [Fornax Community Forum](https://discourse.fornax.sciencecloud.nasa.gov/) "Support" category.
+Extensions may include a front-end component, a server-side component, or both.
+You can install front-end extensions after JupyterLab starts, and they can show up if you refresh the page, as long they are installed in the environment running JupyterLab (`/opt/jupyter/`).
+Extensions that include a server-side component cannot be installed by individual users because they must be installed before JupyterLab starts.
+In that case, please open a helpdesk request on the {ref}`intro-forum`.
 
 ## Software Environments
 
