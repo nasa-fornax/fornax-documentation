@@ -61,4 +61,4 @@ There are two ways to view the pre-installed environments and software that come
     -   *heasoft-lock.yml*: is the conda environment file for the heasoft conda environment.
       etc.
 -   **Outside the Console**: The same environment files are also available for every release of the container images on github.
-    They are grouped by image name and available in the [container images release page](https://github.com/nasa-fornax/fornax-images/releases).
+    They are grouped by image name and available in the [container images release page](https://github.com/nasa-fornax/fornax-images/releases) (expand the "Assets" section).
