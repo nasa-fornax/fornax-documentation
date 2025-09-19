@@ -37,8 +37,9 @@ Fornax
 :   The Fornax section contains links to the {ref}`forsc-dashboard`, documentation (this website), and the {ref}`intro-forum`.
 
 Firefly
-:   Firefly is a visualization platform designed to facilitate interactive exploration of astronomical data, including images, catalogs, and plots, through a modern, browser-based interface.
-    See [jupyter_firefly_extensions](https://github.com/Caltech-IPAC/jupyter_firefly_extensions) for more information about this extension, including example notebooks that demonstrate the extension features.
+:   Firefly is a modern web-based GUI for accessing and exploring astronomical data with advanced data visualization capabilities.
+    This extension ([jupyter_firefly_extensions](https://github.com/Caltech-IPAC/jupyter_firefly_extensions)) allows users to visualize interlinked images, catalogs, charts, and more from their notebooks in a Firefly viewer embedded within JupyterLab.
+    Check out Firefly's Python API and full capabilities at [firefly-client documentation](https://caltech-ipac.github.io/firefly_client/) and the example notebooks demonstrating them at [IRSA tutorials](https://caltech-ipac.github.io/irsa-tutorials/).
 
 ## Menu Bar (Topmost horizontal menu)
 
