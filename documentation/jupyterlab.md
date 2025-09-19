@@ -15,12 +15,35 @@ JupyterLab deployed in the Fornax Science Console
 
 The main work area in JupyterLab is the central space where you open and interact with documents, {term}`notebooks <Jupyter Notebook>`, {term}`terminals <Terminal>`, {term}`consoles <Jupyter Console>`, and other panels.
 It supports multi-document, tabbed, and split-pane layouts, allowing you to work with multiple files side by side.
-
 You can drag and arrange tabs freely, view code, outputs, data files, or terminals in one unified interface, and seamlessly switch between tasks—making it a flexible environment for data analysis, coding, and exploration.
+
+### Launcher
+
+The **Launcher** panel provides clickable tiles for quickly starting new tools, such as notebooks and terminals.
+This panel may be open by default when a session starts and a new one can be opened at any time by clicking the plus sign to the right of open tabs.
+Many of the tools are standard for JupyterLab and more information about them can be found at the documentation linked above.
+Below we discuss some of the other tools available via the **Launcher**.
+
+VS Code
+:   VS Code will open a new window where you can work in a web-based integrated development environment (IDE).
+    It is powered by [code-server](https://github.com/coder/code-server) which runs [Visual Studio Code - Open Source](https://github.com/microsoft/vscode) in a remote environment.
+    See those links for more information.
+    Note: Microsoft-specific customizations like GitHub Copilot are only available in Microsoft's desktop version of VS Code and so cannot be accessed here.
+
+Terminal
+:   Terminal provides a {term}`command line <terminal>`, which allows users to run Emacs, vi, Python, etc.
+
+Fornax
+:   The Fornax section contains links to the {ref}`forsc-dashboard`, documentation (this website), and the {ref}`intro-forum`.
+
+Firefly
+:   Firefly is a modern web-based GUI for accessing and exploring astronomical data with advanced data visualization capabilities.
+    This extension ([jupyter_firefly_extensions](https://github.com/Caltech-IPAC/jupyter_firefly_extensions)) allows users to visualize interlinked images, catalogs, charts, and more from their notebooks in a Firefly viewer embedded within JupyterLab.
+    Check out Firefly's Python API and full capabilities at [firefly-client documentation](https://caltech-ipac.github.io/firefly_client/) and the example notebooks demonstrating them at [IRSA tutorials](https://caltech-ipac.github.io/irsa-tutorials/).
 
 ## Menu Bar (Topmost horizontal menu)
 
-This contains dropdown menus like File, Edit, etc., and the *Fornax* menu. which includes:
+This contains dropdown menus like File, Edit, etc., and the *Fornax* menu, which includes:
 
 - Useful links to the Fornax main dashboard, the documentation and community forum.
 - `Update Notebooks` can be used ensure the notebooks in the home directory are up to date. Note that the notebooks can also be updated by calling the `update-notebooks.sh` command from the terminal.
@@ -33,88 +56,76 @@ This contains dropdown menus like File, Edit, etc., and the *Fornax* menu. which
 
 The left sidebar is a vertical strip of icons, each representing a tool or extension that will open up in the left column of the interface.
 
-1. **File Browser (📁)**
+File Browser (📁)
+:   The File Browser lets you navigate and open files and folders.
+    Double-click a file or .ipynb notebook to open it in the main area.
+    Opening .md files as notebooks should be done by right clicking on the file → "Open With" → "Notebook" so that they display in the expected format with cells of runnable code.
 
-Lets you navigate and open files and folders.
-Double-click a file or .ipynb notebook to open it in the main area.
-Opening .md files as notebooks should be done by right clicking on the file → "Open With" → "Notebook" so that they display in the expected format with cells of runnable code.
+    This includes the **Launcher** (blue plus sign; see above for more information), **New Folder** (folder symbol with plus sign), and **Upload Files** (up arrow) icons.
 
-This includes the **Launcher**(blue plus sign), **New Folder** (folder symbol with plus sign), and **Upload Files** (up arrow) icons.
+Running Terminals and Kernels
+:   Running Terminals and Kernels monitors and manages active processes in your JupyterLab environment, such as running notebooks, terminals, and associated kernels.
 
-The **Launcher** will open a panel in the main area that provides clickable tiles for quickly starting new tools, such as notebooks and terminals.
-Below we discuss some of the tools available via the **Launcher**.
+Dask
+:   [Dask](https://docs.dask.org/en/stable/) is a Python library for parallel and distributed computing.
+    It is available by default in the main {term}`Python kernel <kernel>` `python3`, and can be used from a script or a notebook.
+    Additionally, the Fornax Science Console includes the [Dask JupyterLab Extension](https://github.com/dask/dask-labextension) (dask-labextension) which is a visual [dashboard](https://docs.dask.org/en/latest/dashboard.html) that can be used to manage clusters and profile parallel code.
 
-**VS Code** will open a new window where you can work in a web-based integrated development environment (IDE).
-It is powered by [code-server](https://github.com/coder/code-server) which runs [Visual Studio Code - Open Source](https://github.com/microsoft/vscode) in a remote environment.
-See those links for more information.
-Note: Microsoft-specific customizations like GitHub Copilot are only available in Microsoft's desktop version of VS Code and so cannot be accessed here.
+    A cluster can be started from either the dask-labextension or a notebook:
 
-**Firefly** is a visualization platform designed to facilitate interactive exploration of astronomical data, including images, catalogs, and plots, through a modern, browser-based interface.
+    -   **Using the dask-labextension**:
+        To start a cluster, click the dask-labextension icon (<img src="../_static/dask_logo.svg" height=15>) in the left sidebar and then click `+NEW`.
+        A dashboard with yellow buttons will show up that link to different profiling charts.
+        Information about the new cluster are displayed at the bottom of that pane, including code that helps you connect to that cluster from a notebook (drag the `<>` icon into a notebook cell to copy the code).
 
-**Terminal** provides a {term}`command line <terminal>`, which allows users to run Emacs, vi, Python, etc.
+    -   **In a notebook**, run a code like the following:
 
-2. **Running Terminals and Kernels**
+        ```python
+        from dask.distributed import Client
+        client = Client(threads_per_worker=4, n_workers=2, memory_limit='4GB')
+        client
+        ```
 
-Monitors and manages active processes in your JupyterLab environment, such as running notebooks, terminals, and associated kernels.
+        This will print information about the cluster, including the link to the dashboard of the form: `/jupyter/user/<USERNAME>/proxy/<PORT>/status`.
+        Clicking the link will open a new browser window to the dashboard.
+        You can also connect to the dashboard by copying and posting that link in the dask-labextension window.
+        Note: You may need to install `bokeh` in the same kernel as your notebook in order to display the profiling charts.
 
-3. **Dask**
+    There are a few things to note when using Dask in the Fornax Science Console:
 
-[dask](https://docs.dask.org/en/stable/) is a Python library for parallel and distributed computing.
+    -   `dask[distributed]` is pre-installed in the default kernel `python3`.
+        If you plan to use it with a different kernel, you'll need to install it there with `pip install dask[distributed]`.
+    -   Currently, Fornax only supports clusters running in the same instance.
+        We plan to support launching instances in a Kubernetes cluster in the near future.
 
-It is available by default in the main {term}`Python kernel <kernel>` `python3`, and can be used from a script or a notebook.
+(git-extension)=
+Git
+:   This extension integrates Git version control into the JupyterLab interface, enabling you to stage, commit, push, and pull notebook and code changes without leaving the environment.
+    It provides visual diffs, branch management, and history browsing, making collaborative development and reproducibility seamless.
+    See {ref}`using-git` for more information about setup and authentication and [jupyterlab-git](https://github.com/jupyterlab/jupyterlab-git) for more information about the extension.
 
-Additionally, the Fornax Science Console includes the Dask JupyterLab Extension which is a visual [dashboard](https://docs.dask.org/en/latest/dashboard.html) that can be used to manage clusters and profile parallel code.
+Table of Contents
+:   Automatically generates a sidebar outline of all headings in your notebook or document, allowing you to quickly navigate between sections.
 
-A cluster can be started either from a notebook or by using the dask lab-extension (colored <img src="../_static/dask_logo.svg" height=15> icon in the left sidebar):
-
-- Using the lab-extension:
-
-To start a cluster, click the dask lab-extension and at the bottom, click `+NEW`. A dashboard with yellow buttons will show up that link to different profiling charts. Information about the new cluster are displayed at the bottom of that pane, including code that helps you connect to that cluster from a notebook (drag the `<>` icon into a notebook cell to copy the code).
-
-- In a notebook, run a code like the following:
-
-```python
-from dask.distributed import Client
-client = Client(threads_per_worker=4, n_workers=2, memory_limit='4GB')
-client
-```
-This will print information about the cluster, including the link to the dashboard of the form: '/jupyter/user/<USERNAME>/proxy/<PORT>/status'. Clicking the link will open a new browser window to the dashboard. You can also connect to the dashboard by copying and posting that link in the dask lab-extension window.
-
-There are a few things to note when using dask in the Fornax Science Console:
-- Currently, Fornax only supports clusters running in the same instance. We plan to support launching instances in a Kubernetes cluster in the near future.
-- `dask[distributed]` is pre-installed in the default kernel `python3`. If you plan to use it with a different kernel, you'll need to install it there with `pip install dask[distributed]`. Additionally, if you want to use the dashboard with clusters started in a notebook, you may also need to install `bokeh` in that kernel to display the profiling charts. `bokeh` is not needed for clusters started from the lab-extension dashboard.
-
-4. **Git**
-
-This extension integrates Git version control into the JupyterLab interface, enabling you to stage, commit, push, and pull notebook and code changes without leaving the environment.
-It provides visual diffs, branch management, and history browsing, making collaborative development and reproducibility seamless.
-
-5. **Table of Contents**
-Automatically generates a sidebar outline of all headings in your notebook or document, allowing you to quickly navigate between sections.
-
-6. **Extensions Manager**
-
-Shows installed extensions and lets you manage them.
+Extensions Manager
+:   Shows installed extensions and lets you manage them.
 
 ## Right Toolbar
 
 The right toolbar is a vertical strip of icons, each representing a tool or panel that will open up in the right column of the interface.
 
-1. **Property Inspector**
+Property Inspector
+:   The Property Inspector shows metadata, configuration options, or properties for the currently selected item in the JupyterLab interface.
 
-Shows metadata, configuration options, or properties for the currently selected item in the JupyterLab interface.
+Kernel Usage
+:   In JupyterLab, the {term}`kernel <kernel>` is the computational engine that executes your code.
+    It is connected to an {term}`environment <environment>` with installed software.
+    When you open a {term}`notebook <Jupyter Notebook>` or {term}`console <Jupyter Console>` in JupyterLab, it connects to a kernel that runs the code you write, keeps track of variables, and returns output (such as plots, results, or errors) back to the interface.
 
-2. **Kernel Usage**
+    The Kernel Usage tool monitors resources (such as {term}`CPU` and {term}`memory <RAM>`) being used by your Jupyter kernel.
 
-In JupyterLab, the {term}`kernel <kernel>` is the computational engine that executes your code.
-It is connected to an {term}`environment <environment>` with installed software.
-When you open a {term}`notebook <Jupyter Notebook>` or {term}`console <Jupyter Console>` in JupyterLab, it connects to a kernel that runs the code you write, keeps track of variables, and returns output (such as plots, results, or errors) back to the interface.
-
-The Kernel Usage tool monitors resources (such as {term}`CPU` and {term}`memory <RAM>`) being used by your Jupyter kernel.
-
-3. **Debugger**
-
-Allows you to step through your code to identify bugs, understand the flow of execution, and troubleshoot issues in real-time by providing features like breakpoints, variable inspection, and call stacks.
+Debugger
+:   The Debugger allows you to step through your code to identify bugs, understand the flow of execution, and troubleshoot issues in real-time by providing features like breakpoints, variable inspection, and call stacks.
 
 (jupyterlab-session-information)=
 # JupyterLab Session Information
