@@ -1,21 +1,11 @@
 (compute-environments)=
 # Compute Environments
 
-The Fornax Science Console offers {ref}`Base Environments <base-environment>` which you can select by choosing a container image when starting your server.
-Each base environment comes pre-installed with JupyterLab extensions as well as one or more Python software environments (or simply, "environments").
+The Fornax Science Console offers {ref}`Compute Environments <compute-environment>` which you can select by choosing a container image when starting your server. All the images uses an x86_64 Ubuntu linux system.
+Each compute environment comes pre-installed with JupyterLab extensions as well as one or more Python software environments (or simply, "environments").
 You can customize your experience by installing additional extensions and software.
 
-## Install a New Extension
-
-There are two types of JupyterLab extensions.
-Front-end (menus etc), and server extensions.
-Most extensions include both components.
-Instructions on how to find and install extensions can be found at [JupyterLab: Extensions](https://jupyterlab.readthedocs.io/en/stable/user/extensions.html).
-The front-end extension can be installed after JupyterLab starts, and can show up if you refresh the page, as long they are installed in the environment running JupyterLab (/opt/jupyter/).
-Note: Extensions that include a server-side component cannot be installed by individual users because they must be installed before JupyterLab starts.
-In that case, please open a request in the [Fornax Community Forum](https://discourse.fornax.sciencecloud.nasa.gov/) "Support" category.
-
-## Select a Python Environment
+## Working with Python Environments
 
 `python3` is the default python {term}`environment <environment>`.
 It has general astronomy and plotting software.
@@ -25,7 +15,7 @@ Each environment has the packages required to run the notebook pre-installed (se
 When opening the notebook, the corresponding {term}`kernel <kernel>` should automatically start.
 You can also select it from the drop down kernel menu at the top-right of an open notebook.
 
-To activate a specific environment from the {term}`terminal <terminal>`, run: `source $ENV_DIR/{environment-name}/bin/activate`.
+To activate a specific pip-based environment (see {ref}`environment-types` for details) from the {term}`terminal <terminal>`, run: `source $ENV_DIR/{environment-name}/bin/activate`.
 For example, to activate the `py-light_curve_classifier` environment, run:
 
 ```sh
@@ -37,22 +27,23 @@ and the following to deactivate it:
 ```sh
 deactivate
 ```
-
+(environment-types)=
 ### Environment Types
 
-There are two types of environments, **uv**-based and **conda**-based.
+There are two types of python environments, **pip**-based and **conda**-based.
 
-**uv**-based:
-The **uv**-based environments use [uv](https://docs.astral.sh/uv/) to manage the packages.
+**pip**-based:
+The **pip**-based environments use [uv](https://docs.astral.sh/uv/) to manage the packages.
 These environments contain `pip`-installable packages and are used in most cases.
 The default environments are installed under `$ENV_DIR`.
 They are activated as indicated above with `source $ENV_DIR/{env-name}/bin/activate`.
 
-**conda**-based (using [micromamba](https://mamba.readthedocs.io/en/latest/user_guide/micromamba.html)):
+**conda**-based:
+These use [micromamba](https://mamba.readthedocs.io/en/latest/user_guide/micromamba.html) to manage the packages (similar to conda/mamba):
 The `conda`-based environments are used when packages that are not `pip`-installable.
 Examples of this include `heasoft` and `ciao` in the high-energy container image.
 These are activated with `micromamba activate {env-name}` and deactivated with `micromamba deactivate`.
-These are installed under `$CONDA_DIR/envs`
+These are also installed under `$ENV_DIR`
 
 ## Install Additional Software
 
@@ -66,7 +57,8 @@ To add packages to a currently installed environment, you install them with `pip
 -   In the {term}`terminal <terminal>`, after activating the environment run: `uv pip install ...`.
 
 **Note** that packages installed this way are added in the `$ENV_DIR` folder, and therefore are not saved for the next session.
-To ensure the packages are installed in you home directory, and therefore saved between session, add `--user` to the pip command.
+To ensure the packages are available in the next session, you can install them in your home directory by adding `--user` to the pip command.
+
 Note also, that if the container image is updated, packages installed with the `--user` option may not be compatible with the new image and package conflicts may arise.
 The solution is this case is to create your own environments that are independent of the container image (next bullet).
 
@@ -77,6 +69,7 @@ Say `mkdir ~/user-envs`.
 Then inside that folder run the following to create an environment:
 
 ```sh
+cd ~/user-envs
 uv venv myenv --python=3.11
 source myenv/bin/activate
 # add numpy for example
@@ -85,7 +78,7 @@ uv pip install "numpy<2"
 
 This will create a new environment with python version 3.11, activate it, and then install a "numpy<2".
 
-In order to use this new environment in a {term}`notebook <Jupyter Notebook>`, you'll need to install `ipykernel` inside the environment and then register it.
+In order to use this new environment in a {term}`notebook <Jupyter Notebook>`, you'll need to install `ipykernel` inside the environment and then register it with jupyterlab.
 
 ```sh
 uv pip install ipykernel
@@ -94,4 +87,46 @@ python -m ipykernel install --name myenv --user
 
 The {term}`kernel <Kernel>` should show up in the JupyterLab main launcher page and in the kernel selection dropdown menu inside a running notebook.
 
+The same can be done for conda enviornments. A conda environment can be created by:
+
+```sh
+micromamba create -p ~/user-envs/my-conda-env python=3.12 pandas
+micromamba activate -p ~/user-envs/my-conda-env
+```
+
+Similarly, to use this environment in a {term}`notebook <Jupyter Notebook>`, you'll need to install `ipykernel` and register it with jupyterlab like for pip-installed environments.
+
 **Note**: It is recommended that you remove user environments that are no longer needed, as they may deplete your home storage.
+
+## JupyterLab Extensions
+
+There are two types of JupyterLab extensions.
+Front-end (menus, sidebar etc), and server extensions.
+Most extensions include both components.
+Instructions on how to find and install extensions can be found at 
+[JupyterLab: Extensions](https://jupyterlab.readthedocs.io/en/stable/user/extensions.html).
+The front-end extension can be installed after JupyterLab starts, and can show up 
+if you refresh the page, as long they are installed in the environment running 
+JupyterLab (/opt/jupyter/).
+Note: Extensions that include a server-side component cannot be installed by individual 
+users because they must be installed before JupyterLab starts.
+In that case, please open a request in the 
+[Fornax Community Forum](https://discourse.fornax.sciencecloud.nasa.gov/) "Support" category.
+
+
+## Compilers and General Software
+As part of the system optimization and to allow for users to manage their own software, 
+the list of packages installed in the system (using ubuntu `apt`) is kept to a minimum.
+Many of the useful packages (vim, htop, git, awscli, etc) are installed from `conda-forge`
+into the `base` conda environment under `$ENV_DIR/base`. You can add packages to this envionment
+by doing:
+```sh
+micromamba install package_name
+```
+including compilers. For example, you can do:
+```sh
+micromamba install c-compiler cxx-compiler fortran-compiler
+```
+to install C, C++ and Fortran compilers. For non-python tools (e.g. `htop`, `vim` etc),
+they can be run directly from the terminal without a need for activatign the base 
+environment, as they are included in the `PATH` by default.
