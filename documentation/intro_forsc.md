@@ -53,7 +53,7 @@ This may be anything that you can access using an API, such as an Amazon S3 or G
 There are two ways to view the pre-installed environments and software that come with each container:
 
 -   **Inside the Console**:
-    The list of environment files (`*.yml` for conda and `requirements-*.txt` for uv) of all the installed environments can be found in the folder `$LOCK_DIR`.
+    The list of environment files (`*.yml` for conda and `requirements-*.txt` for pip) of all the installed environments can be found in the folder `$LOCK_DIR`.
     Each environment in the container has a corresponding file there.
     For instance:
     -   *requirements-python3.txt*: is the pip requirement file for the `python3` environment.

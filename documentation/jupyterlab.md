@@ -134,9 +134,9 @@ To allow for efficient use of resources, idle sessions will be stopped (or culle
 Fornax has the following guidelines for session culling:
 
 1.  All sessions have a hard upper limit of 48 hours.
-2.  If session contains running jobs with {term}`CPU` activity up to the hard limit, it will not be culled.
+2.  If a session contains running jobs with {term}`CPU` activity, it will not be culled.
 3.  A session is stopped after 15 minutes of no activity.
-4.  The user can override the 15 min limit by using the Keep-Alive feature under the Fornax menu.
+4.  The user can override the 15 min no-activity limit by using the Keep-Alive feature under the Fornax menu.
     - Start a session: You can request the session to stay alive by selecting: `Fornax → Keep-alive → Start Keep-alive Session`.
       Pick a time using the abbreviated notation such as '2d' for two days, '3h45m' for 3 hours and 45 minutes, or the time in seconds as an integer.
     - Stop a session: end a previously started session by `Fornax → Keep-alive → Start Keep-alive Session`.
