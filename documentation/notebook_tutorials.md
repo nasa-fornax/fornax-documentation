@@ -7,6 +7,7 @@ Once tested, these notebooks are rendered into HTML for easy reading: [Fornax Tu
 They can be downloaded in `.md` (Markdown) format and run in any JupyterLab environment with the same user experience as traditional `.ipynb` notebooks.
 See {ref}`working-with-markdown`.
 
+(notebooks-in-fornax)=
 ## Notebooks in the Console
 
 When you login to the console, the tutorial notebooks are available in your home directory at `~/fornax-notebooks`.
