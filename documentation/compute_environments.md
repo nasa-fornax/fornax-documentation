@@ -1,7 +1,7 @@
 (compute-environments)=
 # Compute Environments
 
-The Fornax Science Console offers {ref}`Compute Environments <compute-environment>` which you can select by choosing a container image when starting your server. All the images uses an x86_64 Ubuntu linux system.
+The Fornax Science Console offers compute environments which you can select by choosing a container image when starting your server. All the images uses an x86_64 Ubuntu linux system.
 Each compute environment comes pre-installed with JupyterLab extensions as well as one or more Python software environments (or simply, "environments").
 You can customize your experience by installing additional extensions and software.
 
@@ -103,19 +103,19 @@ Similarly, to use this environment in a {term}`notebook <Jupyter Notebook>`, you
 There are two types of JupyterLab extensions.
 Front-end (menus, sidebar etc), and server extensions.
 Most extensions include both components.
-Instructions on how to find and install extensions can be found at 
+Instructions on how to find and install extensions can be found at
 [JupyterLab: Extensions](https://jupyterlab.readthedocs.io/en/stable/user/extensions.html).
-The front-end extension can be installed after JupyterLab starts, and can show up 
-if you refresh the page, as long they are installed in the environment running 
+The front-end extension can be installed after JupyterLab starts, and can show up
+if you refresh the page, as long they are installed in the environment running
 JupyterLab (/opt/jupyter/).
-Note: Extensions that include a server-side component cannot be installed by individual 
+Note: Extensions that include a server-side component cannot be installed by individual
 users because they must be installed before JupyterLab starts.
-In that case, please open a request in the 
+In that case, please open a request in the
 [Fornax Community Forum](https://discourse.fornax.sciencecloud.nasa.gov/) "Support" category.
 
 
 ## Compilers and General Software
-As part of the system optimization and to allow for users to manage their own software, 
+As part of the system optimization and to allow for users to manage their own software,
 the list of packages installed in the system (using ubuntu `apt`) is kept to a minimum.
 Many of the useful packages (vim, htop, git, awscli, etc) are installed from `conda-forge`
 into the `base` conda environment under `$ENV_DIR/base`. You can add packages to this envionment
@@ -128,5 +128,5 @@ including compilers. For example, you can do:
 micromamba install c-compiler cxx-compiler fortran-compiler
 ```
 to install C, C++ and Fortran compilers. For non-python tools (e.g. `htop`, `vim` etc),
-they can be run directly from the terminal without a need for activatign the base 
+they can be run directly from the terminal without a need for activatign the base
 environment, as they are included in the `PATH` by default.
