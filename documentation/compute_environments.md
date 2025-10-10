@@ -44,7 +44,7 @@ There are two types of Python environments, **pip**-based and **conda**-based.
 
 **conda**-based
 :   These use [micromamba](https://mamba.readthedocs.io/en/latest/user_guide/micromamba.html) to manage the packages (similar to conda/mamba):
-    The `conda`-based environments are used when packages that are not `pip`-installable.
+    The `conda`-based environments are used with packages that are not `pip`-installable.
     Examples of this include `heasoft` and `ciao` in the high-energy container image.
     These are activated with `micromamba activate {env-name}` and deactivated with `micromamba deactivate`.
     These are also installed under `$ENV_DIR`.
@@ -68,6 +68,8 @@ See {ref}`view-preinstalled-software` to learn about specific libraries each env
 ### Select an Environment
 
 **Notebook:** To activate a specific environment from a {term}`notebook <Jupyter Notebook>`, click on the name of the notebook's current environment at the top right and then select your desired environment from the kernel drop down menu.
+If you open a Fornax demo notebook and get a popup window asking you to select a kernel, choose the kernel from the drop down menu with the same name as the notebook you are opening.
+If you open any other notebook and get a popup window asking you to select a kernel, `python3` is usually the best choice.
 
 **Terminal:** To activate a specific environment from the {term}`terminal <terminal>`, run: `source $ENV_DIR/{environment-name}/bin/activate`.
 For example, to activate the `py-light_curve_classifier` environment, run:
