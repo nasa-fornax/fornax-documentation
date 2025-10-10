@@ -58,7 +58,6 @@ In Python, this means tracking which functions are slow or use a lot of {term}`C
 -   **[SnakeViz](https://jiffyclub.github.io/snakeviz/)** – Visualizes profiling output interactively.
 -   **[Py-Spy](https://github.com/benfred/py-spy)** – Low-overhead sampling profiler (typically used outside notebooks).
 -   **[Scalene](https://github.com/plasma-umass/scalene)** – Advanced profiler with CPU, memory`, and line-level stats.
--   **[JupyterLab Profiler extensions](https://github.com/jupyterlab-contrib/jupyterlab-profiling)** – Optional profiling tools for enhanced visualization in notebooks.
 
 ## 7. Optimize for Memory Usage (Memory Profiling)
 
