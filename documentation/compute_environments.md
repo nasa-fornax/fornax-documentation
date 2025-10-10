@@ -1,13 +1,15 @@
 (compute-environments)=
 # Compute Environments
 
-The Fornax Science Console offers compute environments which you can select by choosing a container image when starting your server. All the images uses an x86_64 Ubuntu linux system.
-Each compute environment comes pre-installed with JupyterLab extensions as well as one or more Python software environments (or simply, "environments").
-You can customize your experience by installing additional extensions and software.
+The Fornax Science Console offers several pre-installed {term}`environments <environment>`.
+The specific environments that are available depend on the {ref}`base-environment` (container image) you selected when starting your server.
+All container images use an x86_64 Ubuntu Linux system.
+Each comes pre-installed with JupyterLab extensions as well as one or more Python software environments.
+You can customize your experience by installing additional software in the pre-installed environments as well as creating new environments and installing additional JupyterLab extensions.
 
 ## Working with Python Environments
 
-`python3` is the default python {term}`environment <environment>`.
+`python3` is the default Python {term}`environment <environment>`.
 It has general astronomy and plotting software.
 
 Each of the Fornax demo notebooks has its own environment with a name of the form `py-{notebook-name}` (e.g. `py-light_curve_collector` and `py-multiband_photometry`).

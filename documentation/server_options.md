@@ -1,5 +1,5 @@
 (server-and-env-options)=
-# Server and Environment Options
+# Server Options
 
 Once you have logged in to the Fornax Science Console and clicked "JupyterHub" to start a server (see {ref}`quick-start`), you will be asked to specify a **Server Type** and a base **Environment**, as shown in the screenshot below.
 
@@ -38,13 +38,11 @@ If your analysis exceeds the estimated runtime, we may reach out to discuss pote
 ## Base Environment
 
 The Fornax Science Console offers a number of software {term}`environments <environment>` to choose from.
-They are currently grouped into two base environments.
-You can select a base environment by choosing one of the following container images from the "Environment" dropdown in the screenshot above:
+They are currently grouped into one base environment (a container image).
+You can select the base environment by choosing the container image from the "Environment" dropdown in the screenshot above:
 
--   **Default Astrophysics** (recommended for most use cases) contains many common astronomy software, including those required to run the demo notebooks.
-    This container image is referred to as **fornax-main**.
--   **High-Energy Astrophysics** contains high-energy software, which currently includes HEASoft.
+-   **Default Astrophysics** contains common astronomy software, including those required to run the demo notebooks.
+    It also contains high-energy software, which currently includes HEASoft.
     Plans exist to add CIAO, XMM-SAS and Fermitools.
-    This container image is referred to as **fornax-hea**.
 
-See {ref}`compute-environments` for more information about the specific software environments that are pre-installed in each container image and how to customize your environment after your server starts up.
+See {ref}`compute-environments` for more information about the specific software environments that are pre-installed in the container image and how to customize your environment after your server starts up.
