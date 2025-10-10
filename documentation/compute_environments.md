@@ -5,7 +5,8 @@ The Fornax Science Console offers several pre-installed {term}`environments <env
 The specific environments that are available depend on the {ref}`base-environment` (container image) you selected when starting your server.
 All container images use an x86_64 Ubuntu Linux system.
 Each comes pre-installed with JupyterLab extensions as well as one or more Python software environments.
-You can customize your experience by installing additional software in the pre-installed environments as well as creating new environments and installing additional JupyterLab extensions.
+You can customize your experience by installing additional Python software in the pre-installed environments as well as creating new environments, installing additional JupyterLab extensions, and installing non-Python software.
+This page describes the details.
 
 ## Working with Python Environments
 
@@ -29,31 +30,35 @@ and the following to deactivate it:
 ```sh
 deactivate
 ```
+
 (environment-types)=
 ### Environment Types
 
-There are two types of python environments, **pip**-based and **conda**-based.
+There are two types of Python environments, **pip**-based and **conda**-based.
 
-**pip**-based:
-The **pip**-based environments use [uv](https://docs.astral.sh/uv/) to manage the packages.
-These environments contain `pip`-installable packages and are used in most cases.
-The default environments are installed under `$ENV_DIR`.
-They are activated as indicated above with `source $ENV_DIR/{env-name}/bin/activate`.
+**pip**-based
+:   The **pip**-based environments use [uv](https://docs.astral.sh/uv/) to manage the packages.
+    These environments contain `pip`-installable packages and are used in most cases.
+    The default environments are installed under `$ENV_DIR`.
+    They are activated as indicated above with `source $ENV_DIR/{env-name}/bin/activate`.
 
-**conda**-based:
-These use [micromamba](https://mamba.readthedocs.io/en/latest/user_guide/micromamba.html) to manage the packages (similar to conda/mamba):
-The `conda`-based environments are used when packages that are not `pip`-installable.
-Examples of this include `heasoft` and `ciao` in the high-energy container image.
-These are activated with `micromamba activate {env-name}` and deactivated with `micromamba deactivate`.
-These are also installed under `$ENV_DIR`
+**conda**-based
+:   These use [micromamba](https://mamba.readthedocs.io/en/latest/user_guide/micromamba.html) to manage the packages (similar to conda/mamba):
+    The `conda`-based environments are used when packages that are not `pip`-installable.
+    Examples of this include `heasoft` and `ciao` in the high-energy container image.
+    These are activated with `micromamba activate {env-name}` and deactivated with `micromamba deactivate`.
+    These are also installed under `$ENV_DIR`.
 
 ### Pre-installed Environments
 
 The following environments are pre-installed:
 
--   `python3`: This is the default Python environment.
+`python3`
+:   This is the default Python environment.
     It has general astronomy and plotting software.
--   `py-{notebook-name}`: Each of the Fornax demo notebooks has its own environment with a name of the form `py-{notebook-name}` (e.g. `py-light_curve_collector` and `py-multiband_photometry`).
+
+`py-{notebook-name}`
+:   Each of the Fornax demo notebooks has its own environment with a name of the form `py-{notebook-name}` (e.g. `py-light_curve_collector` and `py-multiband_photometry`).
     Each environment has the packages required to run the notebook pre-installed.
     When opening the notebook, the corresponding {term}`kernel <kernel>` should automatically start.
     You can also select it from the drop down kernel menu at the top-right of an open notebook.
@@ -79,7 +84,7 @@ deactivate
 
 ### Install Additional Software
 
-To install additional software, you can either update an existing environment or create a new one.
+To install additional Python software, you can either update an existing environment or create a new one.
 
 #### Update an Existing Environment
 
@@ -91,8 +96,8 @@ To add packages to a currently installed environment, you install them with `pip
 **Note** that packages installed this way are added in the `$ENV_DIR` folder, and therefore are not saved for the next session.
 To ensure the packages are available in the next session, you can install them in your home directory by adding `--user` to the pip command.
 
-Note also, that if the container image is updated, packages installed with the `--user` option may not be compatible with the new image and package conflicts may arise.
-The solution is this case is to create your own environments that are independent of the container image (next bullet).
+Note also that if the container image is updated, packages installed with the `--user` option may not be compatible with the new image and package conflicts may arise.
+The solution is this case is to create your own environments that are independent of the container image (next section).
 
 #### Create a New Environment
 
@@ -108,9 +113,9 @@ source myenv/bin/activate
 uv pip install "numpy<2"
 ```
 
-This will create a new environment with python version 3.11, activate it, and then install a "numpy<2".
+This will create a new environment with Python version 3.11, activate it, and then install a "numpy<2".
 
-In order to use this new environment in a {term}`notebook <Jupyter Notebook>`, you'll need to install `ipykernel` inside the environment and then register it with jupyterlab.
+In order to use this new environment in a {term}`notebook <Jupyter Notebook>`, you'll need to install `ipykernel` inside the environment and then register it with JupyterLab.
 
 ```sh
 uv pip install ipykernel
@@ -119,14 +124,14 @@ python -m ipykernel install --name myenv --user
 
 The {term}`kernel <Kernel>` should show up in the JupyterLab main launcher page and in the kernel selection dropdown menu inside a running notebook.
 
-The same can be done for conda enviornments. A conda environment can be created by:
+The same can be done for conda environments. A conda environment can be created by:
 
 ```sh
 micromamba create -p ~/user-envs/my-conda-env python=3.12 pandas
 micromamba activate -p ~/user-envs/my-conda-env
 ```
 
-Similarly, to use this environment in a {term}`notebook <Jupyter Notebook>`, you'll need to install `ipykernel` and register it with jupyterlab like for pip-installed environments.
+Similarly, to use this environment in a {term}`notebook <Jupyter Notebook>`, you'll need to install `ipykernel` and register it with JupyterLab like for pip-installed environments.
 
 **Note**: It is recommended that you remove user environments that are no longer needed, as they may deplete your home storage.
 
@@ -143,18 +148,19 @@ Extensions that include a server-side component cannot be installed by individua
 In that case, please open a helpdesk request on the {ref}`intro-forum`.
 
 ## Compilers and General Software
-As part of the system optimization and to allow for users to manage their own software,
-the list of packages installed in the system (using ubuntu `apt`) is kept to a minimum.
-Many of the useful packages (vim, htop, git, awscli, etc) are installed from `conda-forge`
-into the `base` conda environment under `$ENV_DIR/base`. You can add packages to this envionment
-by doing:
+
+As part of the system optimization and to allow for users to manage their own software, the list of packages installed in the system (using ubuntu `apt`) is kept to a minimum.
+Many of the useful packages (vim, htop, git, awscli, etc) are installed from `conda-forge` into the `base` conda environment under `$ENV_DIR/base`. You can add packages to this environment by doing:
+
 ```sh
 micromamba install package_name
 ```
-including compilers. For example, you can do:
+
+You can also include compilers.
+For example, to install C, C++ and Fortran compilers, you can do:
+
 ```sh
 micromamba install c-compiler cxx-compiler fortran-compiler
 ```
-to install C, C++ and Fortran compilers. For non-python tools (e.g. `htop`, `vim` etc),
-they can be run directly from the terminal without a need for activatign the base
-environment, as they are included in the `PATH` by default.
+
+For non-Python tools (e.g. `htop`, `vim` etc), they can be run directly from the terminal without a need for activating the base environment as they are included in the `PATH` by default.
