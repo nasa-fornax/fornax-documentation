@@ -59,7 +59,6 @@ You can click the **+** to the right of the tab name just under the main menu to
 ## 7. Shut Down Your Server
 
 Since running sessions continuously use the allocated credit, it is strongly recommended that you should terminate your session when you are done with the work.
-See the {ref}`jupyterlab-session-information` for details.
 The session can be stopped by clicking **Stop My Server** from the JupyterHub control panel page, which is accessed from from:
 
 - **Fornax** → **Shutdown Server**, or
@@ -67,3 +66,8 @@ The session can be stopped by clicking **Stop My Server** from the JupyterHub co
 
 Note that clicking **Logout** from the File menu (or in the upper right corner of the JupyterHub control page) does not stop the session or shut down the server.
 It only logs you out.
+
+```{warning}
+JupyterLab sessions that appear to be inactive or reach the time limit will be automatically shut down.
+See {ref}`jupyterlab-session-information` for details, including the Keep-Alive option.
+```
