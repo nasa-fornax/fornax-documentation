@@ -58,7 +58,11 @@ You can click the **+** to the right of the tab name just under the main menu to
 
 ## 7. Shut Down Your Server
 
-Since running sessions continuously use the allocated credit, it is strongly recommended that you should terminate your session when you are done with the work.
+Since running sessions continuously use the allocated credit, it is strongly recommended that you should terminate your session when you are done using it for awhile.
+Be sure to save your work to your persistent home directory before doing this.
+Anything not saved will be lost, including both files and software customizations.
+See {ref}`install-additional-software` for information about how to install software that persists between sessions.
+
 The session can be stopped by clicking **Stop My Server** from the JupyterHub control panel page, which is accessed from from:
 
 - **Fornax** → **Shutdown Server**, or

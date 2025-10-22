@@ -84,6 +84,7 @@ and the following to deactivate it:
 deactivate
 ```
 
+(install-additional-software)=
 ### Install Additional Software
 
 To install additional Python software, you can either update an existing environment or create a new one.
