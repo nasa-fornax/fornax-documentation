@@ -25,7 +25,7 @@ Scale up to a larger server or full analysis only after verifying that your code
 
 **Shut down when done**:
 Having an active compute instance—even if you're not currently running code—still consumes resources and counts against your allocation.
-Simply closing your browser window does not stop the server.
+Simply closing your browser window or logging out does not stop the server.
 To properly shut it down, go to File → Hub Control Panel and click “Stop My Server.”
 
 **Approval required for XLarge instance:**

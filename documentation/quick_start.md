@@ -50,7 +50,7 @@ In JupyterLab, you will see a main menu at the top, your persistent home directo
 The Launcher tab is open in the work area by default.
 You can click the **+** to the right of the tab name just under the main menu to open a new Launcher tab at any time.
 
--   In the Launcher tab, select **notebook** under the **Notebook** section.
+-   In the Launcher tab, select **python3** under the **Notebook** section.
     A new notebook tab will open in the work area.
 -   When you are ready to save your work to your Fornax home directory, click on the **Save** icon in the notebook tab.
 -   To download your notebook to your local machine, click on your notebook in your home directory on the left side of the screen.
@@ -58,9 +58,12 @@ You can click the **+** to the right of the tab name just under the main menu to
 
 ## 7. Shut Down Your Server
 
-Since running sessions continuously use the allocated credit, it strongly recommended that yoy should terminate you session when you are done with the work. See the {ref}`jupyterlab-session-information` for details. The session can be stopped by clicking **Stop My Server** from the jupyterhub control panel page, which is accessed from from:
+Since running sessions continuously use the allocated credit, it is strongly recommended that you should terminate your session when you are done with the work.
+See the {ref}`jupyterlab-session-information` for details.
+The session can be stopped by clicking **Stop My Server** from the JupyterHub control panel page, which is accessed from from:
 
 - **Fornax** → **Shutdown Server**, or
 - **File** → **Hub Control Panel**, both in the top menu.
 
-Clicking **Logout** from the File menu (or in the upper right corner of the JupyterHub control page) does not stop the session. It only logs you out. See {ref}`jupyterlab-session-information` for details.
+Note that clicking **Logout** from the File menu (or in the upper right corner of the JupyterHub control page) does not stop the session or shut down the server.
+It only logs you out.
