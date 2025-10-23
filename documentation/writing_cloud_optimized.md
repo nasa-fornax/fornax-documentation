@@ -16,17 +16,17 @@ These tools allow you to scale computations across multiple machines, leveraging
 **Split and process data in chunks:** If your data is too large to fit in {term}`memory <RAM>`, split it into smaller chunks and process each chunk in parallel.
 This is especially important when working with large catalogs or time-series data.
 
-**Example:** The [forced photometry notebook](https://nasa-fornax.github.io/fornax-demo-notebooks/forced_photometry/multiband_photometry.html) demonstrates an analysis workflow that operates on a large dataset but can be efficiently parallelized.
+**Example:** The [forced photometry notebook](https://nasa-fornax.github.io/fornax-demo-notebooks/multiband-photometry) demonstrates an analysis workflow that operates on a large dataset but can be efficiently parallelized.
 It gathers a substantial number of astronomical images and applies the same photometric extraction procedure to each one.
 Since each image can be processed independently, the workload is distributed across multiple worker processes, each executing the same code on a different subset of images.
 This parallel approach significantly reduces total processing time and is well-suited to cloud environments where compute resources can be scaled as needed.
 
-**Example:** The [light curve collector notebook](https://nasa-fornax.github.io/fornax-demo-notebooks/light_curves/light_curve_collector.html) illustrates an analysis in which operations are time-consuming but can be executed independently across a dataset.
+**Example:** The [light curve collector notebook](https://nasa-fornax.github.io/fornax-demo-notebooks/light-curve-collector) illustrates an analysis in which operations are time-consuming but can be executed independently across a dataset.
 The workflow begins by selecting a sample of astronomical objects and then makes multiple independent queries—such as retrieving light curves from various archives—for each object.
 Because these queries do not depend on one another, the workload can be parallelized by assigning different tasks (e.g., different archive queries) to separate worker processes.
 Each worker operates on the same object sample but runs a distinct part of the pipeline, enabling faster execution through concurrent processing.
 
-**Example** Our [scale up notebook](https://nasa-fornax.github.io/fornax-demo-notebooks/light_curves/scale_up.html) is a tutorial on parallelization of generating multiwavelength light curves with tools, tips, and suggestions relevant to many tasks.
+**Example** Our [scale up notebook](https://nasa-fornax.github.io/fornax-demo-notebooks/scale-up) is a tutorial on parallelization of generating multiwavelength light curves with tools, tips, and suggestions relevant to many tasks.
 
 ## 3. Optimize Memory Usage
 

@@ -42,7 +42,7 @@ They are currently grouped into one base environment (a container image).
 You can select the base environment by choosing the container image from the "Environment" dropdown in the screenshot above:
 
 -   **Default Astrophysics** contains common astronomy software, including those required to run the demo notebooks.
-    It also contains high-energy software, which currently includes HEASoft.
-    Plans exist to add CIAO, XMM-SAS and Fermitools.
+    It also contains high-energy software, which currently includes HEASoft, CIAO, and Fermitools.
+    Plans exist to add XMM-SAS.
 
 See {ref}`compute-environments` for more information about the specific software environments that are pre-installed in the container image and how to customize your environment after your server starts up.
