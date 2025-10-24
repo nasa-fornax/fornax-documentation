@@ -69,7 +69,7 @@ The session can be stopped by clicking **Stop My Server** from the JupyterHub co
 - **File** → **Hub Control Panel**, both in the top menu.
 
 Note that clicking **Logout** from the File menu (or in the upper right corner of the JupyterHub control page) does not stop the session or shut down the server.
-It only logs you out of jupyter but keeps the Fornax session running (and the $$ accruing).
+It only logs you out of JupyterHub but leaves the Fornax session running (and the $$ accruing).
 
 ```{warning}
 JupyterLab sessions that appear to be inactive or reach the time limit will be automatically shut down.
