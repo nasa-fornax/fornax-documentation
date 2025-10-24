@@ -3,7 +3,7 @@
 ## 1. Leverage Cloud Storage Efficiently
 
 **Avoid downloading large datasets:** Instead of downloading large datasets to your local machine, access them directly from cloud storage (e.g., Amazon S3, Google Cloud Storage).
-Use libraries like `s3fs` or `gcsfs` to interact with cloud storage as if it were a local file system.
+Use libraries like [`s3fs`](https://s3fs.readthedocs.io/) or [`gcsfs`](https://gcsfs.readthedocs.io/) to interact with cloud storage as if it were a local file system.
 
 **Use cloud-native data formats:** Cloud environments often work better with optimized data formats such as **Parquet** or **HDF5**.
 These formats allow for faster reading and writing of data, especially when working with large datasets.
