@@ -167,3 +167,11 @@ micromamba install c-compiler cxx-compiler fortran-compiler
 ```
 
 For non-Python tools (e.g. `htop`, `vim` etc), they can be run directly from the terminal without a need for activating the base environment as they are included in the `PATH` by default.
+
+## Terminal Initialization scripts
+The system uses bash as a default shell. The Jupyterlab terminal uses a non-login shell, which means `~/.bashrc` is not called
+by default when a new terminal session starts. `~/.profile` on the other hand is called.
+You can therefore use it for any bash initialization code. A new `~/.profile` is created at login time if it does not exist,
+and it also calls `~/.bashrc`, so you can add you customization (e.g. update `PATH`, setup rust or julia, etc) to either one.
+
+
