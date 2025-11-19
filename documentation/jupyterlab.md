@@ -29,7 +29,7 @@ VS Code
     It is powered by [code-server](https://github.com/coder/code-server) which runs [Visual Studio Code - Open Source](https://github.com/microsoft/vscode) in a remote environment.
     See those links for more information.
     Note: Microsoft-specific customizations like GitHub Copilot are only available in Microsoft's desktop version of VS Code and so cannot be accessed here.
-    Note also that `code-server` extensions are installed in your home directory, so they persist between sessions.
+    Note also that any `code-server` extensions you install are stored in your home directory, so they persist between sessions.
 
 Terminal
 :   Terminal provides a {term}`command line <terminal>`, which allows users to run Emacs, vi, Python, etc.
