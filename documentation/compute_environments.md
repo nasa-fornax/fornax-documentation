@@ -155,8 +155,7 @@ astropy
       that is reset at the start of every session.
       If you want the environment to persist between sessions, use `setup-conda-env --user`.
 
-:::{hint} Example conda environment file: `conda-myenv.yml`
-:class: dropdown
+:::{dropdown} Example conda environment file: `conda-myenv.yml`
 
 ```yaml
 name: myenv
@@ -172,6 +171,7 @@ dependencies:
 :::
 
 :::{note} Click here for details on installing new enviornments by hand
+:class: dropdown
 
 You can also do all the setup by hand if you want more control.
 Persistent environment should be installed under `$USER_ENV_DIR`:
