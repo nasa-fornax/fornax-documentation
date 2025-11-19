@@ -133,15 +133,14 @@ These scripts take need either a requirements file (former) or a conda yaml file
 the environment, including the setup of the kernel so you can user the environment in a notebook.
 
 - For pip-based environments (recommended):
-    - Create a requirement file named: `requirements-{env-name}.txt`.
+    - Create a requirement file named: `requirements-{env-name}.txt` (e.g. `requirements-myenv.txt` bellow).
     - Call `setup-pip-env`. By default, the environment is created in a global location (`$ENV_DIR`),
       that is reset at the start of every session. Use this for environment that are needed for a single
       session.
       If you want the environment to persist between sessions, use `setup-pip-env --user`. This will install
       the new environment under `$USER_ENV_DIR` (defaults to `~/user-envs`).
 
-:::{hint} Example requirements file: `requirements-myenv.txt`
-:class: dropdown
+:::{dropdown} `requirements-myenv.txt`
 
 ```
 numpy == 2.2.0
@@ -150,12 +149,12 @@ astropy
 :::
 
 - For conda-based environment (If your packages are not pip-installable):
-    - Create an environment file: `conda-{env-name}.yml`.
+    - Create an environment file: `conda-{env-name}.yml` (e.g. `conda-myenv.yml` below).
     - Call `setup-conda-env`. Similar to the pip-case, the environment is created in a global default location (`$ENV_DIR`),
       that is reset at the start of every session.
       If you want the environment to persist between sessions, use `setup-conda-env --user`.
 
-:::{dropdown} Example conda environment file: `conda-myenv.yml`
+:::{dropdown} `conda-myenv.yml`
 
 ```yaml
 name: myenv
@@ -170,7 +169,9 @@ dependencies:
 ```
 :::
 
-:::{note} Click here for details on installing new enviornments by hand
+\
+
+:::{note} Details on installing new enviornments by hand
 :class: dropdown
 
 You can also do all the setup by hand if you want more control.
