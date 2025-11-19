@@ -47,7 +47,7 @@ There are two types of Python environments, **pip**-based and **conda**-based.
     The `conda`-based environments are used with packages that are not `pip`-installable.
     Examples of this include `heasoft` and `ciao` in the high-energy container image.
     These are activated with `micromamba activate {env-name}` and deactivated with `micromamba deactivate`.
-    These are also installed under `$ENV_DIR`.
+    These are also installed under `$ENV_DIR`. You can use `micromamba env list` to list the environments.
 
 ### Pre-installed Environments
 
