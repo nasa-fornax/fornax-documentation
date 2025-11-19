@@ -63,6 +63,14 @@ The following environments are pre-installed:
     When opening the notebook, the corresponding {term}`kernel <kernel>` should automatically start.
     You can also select it from the drop down kernel menu at the top-right of an open notebook.
 
+`heasoft`, `ciao`, `fermi`, `sas`
+:   Environments for high energy software that includes:
+    [heasoft](https://heasarc.gsfc.nasa.gov/docs/software/lheasoft/),
+    Chandra [ciao](https://cxc.cfa.harvard.edu/ciao/),
+    [Fermi analysis software](https://fermi.gsfc.nasa.gov/ssc/data/analysis/software/),
+    and [XMM-Newton SAS](https://www.cosmos.esa.int/web/xmm-newton/sas).
+    
+
 See {ref}`view-preinstalled-software` to learn about specific libraries each environment contains.
 
 ### Select an Environment
