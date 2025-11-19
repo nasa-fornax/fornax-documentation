@@ -169,7 +169,6 @@ dependencies:
 ```
 :::
 
-\
 
 :::{note} Details on installing new enviornments by hand
 :class: dropdown
