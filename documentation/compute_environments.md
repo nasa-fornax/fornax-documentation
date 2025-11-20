@@ -109,19 +109,17 @@ This should work for both pip and conda-based environments.
 
 **Note** that packages installed this way are added in the global `$ENV_DIR` folder, which is reset when you start a new session.
 It is highly recommended that you create new environments if you want to install new packages (See {ref}`create-new-env`),
-but if you want add a small number of packages to a built-in environment, you can follow these steps:
+but if you want to add a small number of packages to a built-in environment, you can follow these steps:
 
 - From the {term}`terminal <terminal>`, activate the desired environment (see {ref}`view-preinstalled-software`).
 - Add the packages with: `uv pip install --target $USER_ENV_DIR/{env_name} package-1 package-2`. Where `{env_name}` is the folder name of choice.
 - Tell the environment about the new location:
-    - In a {term}`terminal <terminal>`: `export PYTHONPATH=$USER_ENV_DIR/{env_name}`.
+    - In a {term}`terminal <terminal>`: `export PYTHONPATH=$USER_ENV_DIR/{env_name}:$PYTHONPATH`.
     - In a {term}`notebook <Jupyter Notebook>`, add the following at the top:
 ```python
 import sys, os
 sys.path.insert(0, f"{os.environ['USER_ENV_DIR']}/{env_name}")
 ```
-
-The solution is this case is to create your own environments that are independent of the container image (next section).
 
 (create-new-env)=
 #### Create a New Environment
@@ -129,13 +127,13 @@ The solution is this case is to create your own environments that are independen
 To create a new environment, we recommend using one of the provided scripts: `setup-pip-env` or `setup-conda-env`.
 
 Run `setup-pip-env -h` or `setup-conda-env -h` from the {term}`terminal <terminal>` for detailed help.
-These scripts take need either a requirements file (former) or a conda yaml file (latter), and create
-the environment, including the setup of the kernel so you can user the environment in a notebook.
+These scripts take either a requirements file (former) or a conda yaml file (latter), and create
+the environment, including the setup of the kernel so you can use the environment in a notebook.
 
 - For pip-based environments (recommended):
     - Create a requirement file named: `requirements-{env-name}.txt` (e.g. `requirements-myenv.txt` bellow).
-    - Call `setup-pip-env`. By default, the environment is created in a global location (`$ENV_DIR`),
-      that is reset at the start of every session. Use this for environment that are needed for a single
+    - Call `setup-pip-env` from the same folder. By default, the environment is created in a global location (`$ENV_DIR`),
+      that is reset at the start of every session. Use this for environments that are needed for a single
       session.
       If you want the environment to persist between sessions, use `setup-pip-env --user`. This will install
       the new environment under `$USER_ENV_DIR` (defaults to `~/user-envs`).
@@ -201,11 +199,11 @@ micromamba create -p ~/user-envs/my-conda-env python=3.12 pandas
 micromamba activate -p ~/user-envs/my-conda-env
 ```
 
-Similarly, to use this environment in a {term}`notebook <Jupyter Notebook>`, you'll need to install `ipykernel` and register it with JupyterLab like for pip-installed environments.
+Similarly, to use this environment in a {term}`notebook <Jupyter Notebook>`, you'll need to install `ipykernel` and register it with JupyterLab like the pip environments.
 :::
 
 :::{attention}
-It is recommended that you remove user environments that are no longer needed, as they may deplete your home storage.
+It is recommended that you remove user environments in your home directory that are no longer needed, as they may deplete your home storage and consume your allocated credit.
 :::
 
 ## JupyterLab Extensions
