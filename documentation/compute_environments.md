@@ -107,9 +107,12 @@ To add packages to a currently installed environment, you install them with `pip
 
 This should work for both pip and conda-based environments.
 
-**Note** that packages installed this way are added in the global `$ENV_DIR` folder, which is reset when you start a new session.
+:::{note}
+Note that packages installed this way are added in the global `$ENV_DIR` folder, which is reset when you start a new session.
 It is highly recommended that you create new environments if you want to install new packages (See {ref}`create-new-env`),
-but if you want to add a small number of packages to a built-in environment, you can follow these steps:
+:::
+
+If you want to add a small number of packages to a built-in environment, however, you can follow these steps:
 
 - From the {term}`terminal <terminal>`, activate the desired environment (see {ref}`view-preinstalled-software`).
 - Add the packages with: `uv pip install --target $USER_ENV_DIR/{env_name} package-1 package-2`. Where `{env_name}` is the folder name of choice.
