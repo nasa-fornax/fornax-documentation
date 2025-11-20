@@ -169,7 +169,7 @@ dependencies:
 :::
 
 
-:::{note} Details on installing new enviornments by hand
+:::{note} Details on manually installing new enviornments
 :class: dropdown
 
 You can also do all the setup by hand if you want more control.
