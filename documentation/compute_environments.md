@@ -127,16 +127,14 @@ sys.path.insert(0, f"{os.environ['USER_ENV_DIR']}/{env_name}")
 To create a new environment, we recommend using one of the provided scripts: `setup-pip-env` or `setup-conda-env`.
 
 Run `setup-pip-env -h` or `setup-conda-env -h` from the {term}`terminal <terminal>` for detailed help.
-These scripts take either a requirements file (former) or a conda yaml file (latter), and create
-the environment, including the setup of the kernel so you can use the environment in a notebook.
+These scripts take either a requirements file (former) or a conda yaml file (latter), and create the environment, including the setup of the kernel so you can use the environment in a notebook.
 
 - For pip-based environments (recommended):
     - Create a requirement file named: `requirements-{env-name}.txt` (e.g. `requirements-myenv.txt` bellow).
     - Call `setup-pip-env` from the same folder. By default, the environment is created in a global location (`$ENV_DIR`),
-      that is reset at the start of every session. Use this for environments that are needed for a single
-      session.
-      If you want the environment to persist between sessions, use `setup-pip-env --user`. This will install
-      the new environment under `$USER_ENV_DIR` (defaults to `~/user-envs`).
+      that is reset at the start of every session. Use this for environments that are needed for a single session.
+      If you want the environment to persist between sessions, use `setup-pip-env --user`.
+      This will install the new environment under `$USER_ENV_DIR` (defaults to `~/user-envs`).
 
 :::{dropdown} `requirements-myenv.txt`
 
