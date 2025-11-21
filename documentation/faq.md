@@ -30,3 +30,8 @@ It is set to 15 minutes, but it can take a few minutes longer for culling servic
 
 Cloning a repo of the form `git@github.com/...` uses SSH connection, which is disabled on the Fornax system.
 You can still clone repos using HTTPS. See {ref}`using-git` for more details.
+
+## Why my html page is blank when opened inside Jupyterlab with Safari?
+This is a known issue in displaying html files inside Jupyterlab in Safari.
+The workaround is to right-click (double finger tap) on the html file and select 'Open in New Browser Tab'.
+The file should open correctly in a new browser tab.
