@@ -1,4 +1,4 @@
-# Troubleshooting
+# Frequently Asked Questions (FAQ)
 
 ## If my internet connection goes away or is intermittent - what happens to the running notebook?
 
