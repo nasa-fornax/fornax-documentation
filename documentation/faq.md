@@ -15,7 +15,7 @@ This behavior is not specific to Fornax or AWS but users may encounter it more o
 (Your laptop needs to have the max amount of {term}`memory <RAM>` that you will ever use while working on it.
 On the science console, you can choose a different server size every time you start it up – this is much more efficient, but also requires you to be more aware of how much {term}`CPU` and {term}`RAM` your tasks need.)
 
-## Save your work!
+## Why was my session stopped?
 
 The Fornax Science Console is currently intended for interactive use and will cull sessions which appear to be inactive.
 The team is working on tools to enable users to submit jobs to run asynchronously.
@@ -23,17 +23,10 @@ For efficient resource usage, idle interactive sessions will be culled automatic
 If you want to keep your session running for longer, you can use the Keep-alive feature in the Fornax menu.
 See the {ref}`jupyterlab-session-information` section for details.
 
-how long is the period of inactivity that gets culled? 15 minutes.
+how long is the period of inactivity that gets culled?
+It is set to 15 minutes, but it can take a few minutes longer for culling service to be triggered.
 
-## Can I use SSH instead of HTTPS?
+## I am getting an error when cloning a github repo with git@github.com
 
-SSH is not supported on the Fornax Science Console at this time.
-
-## I am trying to access a web service and it is not working
-
-If you are trying to access a web service and it is not working, it may be due to it not running on standard HTTP or HTTPS ports.
-The Fornax Science Console only allows access to web services running on ports 80 and 443.
-
-## How do I access a web service running on a different port?
-
-Please open a new topic in the Fornax Community Forum [Support](https://discourse.fornax.sciencecloud.nasa.gov/c/support/6) category to ask for help.
+Cloning a repo of the form `git@github.com/...` uses SSH connection, which is disabled on the Fornax system.
+You can still clone repos using HTTPS. See {ref}`using-git` for more details.
