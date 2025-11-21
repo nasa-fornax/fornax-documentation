@@ -131,7 +131,7 @@ Debugger
 (jupyterlab-session-information)=
 # JupyterLab Session Information
 
-To allow for efficient use of resources, idle sessions will be stopped (or culled).
+To allow for efficient use of resources, idle {term}`sessions <Server Session>` will be stopped (or culled).
 Fornax has the following guidelines for session culling:
 
 1.  All sessions have a hard upper limit of 48 hours.
@@ -142,3 +142,10 @@ Fornax has the following guidelines for session culling:
       Pick a time using the abbreviated notation such as '2d' for two days, '3h45m' for 3 hours and 45 minutes, or the time in seconds as an integer.
     - Stop a session: end a previously started session by `Fornax → Keep-alive → Start Keep-alive Session`.
     - The time remaining in the currently requested session is shown in the status bar at the bottom left, e.g. 'Keepalive: 35m'.
+
+:::{hint}
+A {term}`Login Session` is independent of a {term}`Server Session`.
+You can be logged out, but have a running server in the cloud.
+This means if you start some jobs, they are not going to stop if your internet connection is disrupted,
+or if you are logged out. Just log back in and you will be able to access your active {term}`session <Server Session>`.
+:::

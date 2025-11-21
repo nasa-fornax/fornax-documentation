@@ -19,7 +19,7 @@ project:
     - file: documentation/compute_environments.md
     - file: documentation/data_access.md
     - file: documentation/writing_cloud_optimized.md
-    - file: documentation/troubleshooting.md
+    - file: documentation/faq.md
     - file: documentation/fornax_community_forum.md
     - file: documentation/acknowledgement.md
     - file: documentation/more_resources.md
