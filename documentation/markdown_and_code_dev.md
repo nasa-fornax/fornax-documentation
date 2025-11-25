@@ -98,14 +98,7 @@ git config --global credential.helper cache
 :::{hint} Set up github access
 
 To setup github access over HTTPS, it is highly recommended that you create a personal access token.
-For details, you can follow the [github documentation](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens#creating-a-fine-grained-personal-access-token).
-
-- On the github page, go to `Settings` (Under Profile in upper right corder) → `Developer settings`.
-- Under `Personal access tokens`, click `Fine-grained tokens`, and then `Generate new token`.
-- Fill in a name and expiration. Select the resource owner and which repository you want to access.
-- Under permissions, select `Content` and choose either `Read-only` or `Read and write`.
-- Generate token and access the repo. We will assume you token now is in a variable `$token`.
-- Cloning should work with:
+For details, you can follow the [github documentation](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens#creating-a-fine-grained-personal-access-token), then clone the repo using:
 ```sh
 git clone https://$token@github.com/{name}/{repo}
 ```
