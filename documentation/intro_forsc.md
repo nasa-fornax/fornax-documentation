@@ -2,8 +2,7 @@
 # Fornax Science Console Capabilities
 
 The Fornax Science Console is a NASA-funded web-based application that provides access to a limited amount of cloud computing via {term}`JupyterLab`, which offers access to {term}`Jupyter Notebook`s, {term}`Jupyter Console`, and the {term}`terminal`.
-Users must register to login to the system, but usage is free.
-Once logged in, users will have access to data sets curated by repositories around the world, and can upload moderate amounts of private data.
+Users will have access to data sets curated by repositories around the world, and can upload moderate amounts of private data.
 To get started quickly, users can choose from a variety of example notebooks as well as pre-installed software environments.
 These can be modified to suit user needs.
 
@@ -13,49 +12,73 @@ The Fornax Science Console supports many astronomical use cases, but users will 
 -   that require complicated software pre-installed on the platform; or
 -   that are parallelizable and require a large number of {term}`CPU`s.
 
+## Registration and Cost
+
+Users must register for an account to login to the system.
+See [Quick Start: Get an Account](#get-an-account) for instructions.
+New users will receive the following two documents, also viewable on this site for reference:
+
+-   [User Resource Allotments and Costs](change-controlled-documents/user-resource-allotments-and-costs)
+-   [User Agreement](change-controlled-documents/user-agreement)
+
+There is no monetary cost to users.
+NASA provides each user with an allotment of credits to spend on compute, storage, and/or egress.
+See the new user documents above for details.
+
 (intro-best-practices)=
 ## Fornax Resources and Best Practices
 
-Cloud compute is billed to NASA on an hourly basis—even when resources are idle.
-Likewise, storage is charged based on the amount allocated, not the amount actively used.
+Cloud compute is billed to NASA and charged to the user's credits on an hourly basis for a running {term}`Server Session`—even when resources are idle.
+Storage may be charged based on either the amount allotted or the amount used, depending on the type of storage.
 To ensure efficient allocation of these limited resources across the community, users are encouraged to use the least amount of compute and storage necessary to accomplish their tasks.
 
 ### Computing Resources
 
-The Fornax Science Console offers four choices for compute capacity:
+The Fornax Science Console offers four server sizes with different compute capacities ({term}`RAM` and {term}`CPU`), listed below.
+See {ref}`server-and-env-options` for additional usage guidance and [User Resource Allotments and Costs](change-controlled-documents/user-resource-allotments-and-costs) for costs.
 
--   **Small** (8 GB {term}`RAM`, 2 {term}`CPU`s): Ideal for exploratory or prototype work.
-    With no usage time constraints, this is the best place to start developing.
--   **Medium** (16 GB {term}`RAM`, 4 {term}`CPU`s): This is a good server size to test workflows.
--   **Large** (64 GB {term}`RAM`, 16 {term}`CPU`s): Suited for tested and parallelized workflows.
-    Users may access the large compute environment for several hundred hours per year while staying within cloud cost guidelines.
--   **XLarge** (512 GB {term}`RAM`, 128 {term}`CPU`s): Reserved for the most demanding, highly parallel jobs.
-    Available by approval only and intended for limited, efficient use of roughly 100 hours in a given year.
+Small (8 GB RAM, 2 CPU)
+:   Ideal for exploratory or prototype work.
+    This is the best place to start developing.
 
-See {ref}`server-and-env-options` for more information.
+Medium (16 GB RAM, 4 CPU)
+:   This is a good server size to test workflows.
+
+Large (64 GB RAM, 16 CPU)
+:   Suited for tested and parallelized workflows.
+
+XLarge (512 GB RAM, 128 CPU)
+:   Reserved for the most demanding, highly parallel jobs.
+    Available by approval only and intended for limited, efficient use.
 
 ### Storage Resources
 
-The Fornax Science Console currently offers 3 types of storage:
+The Fornax Science Console offers the following storage options:
 
--   **Persistent home directory:** Each user has a 20 GB private home directory on the file system for storing important files that need to be saved long term.
-    Users can request a size increase incrementally up to 100 GB by opening a Support topic in [Fornax Community forum](https://discourse.fornax.sciencecloud.nasa.gov/).
--   **Shared and temporary storage** While a detailed sharing solution is being implemented (planned for early 2026), sharing is currently available via the `~/shared-storage` folder (also accessed from `/shared-storage`).
+Private storage
+:   Users have 2 types of private storage: Home Directory and AWS S3.
+    Please see [User Resource Allotments and Costs](change-controlled-documents/user-resource-allotments-and-costs) for details.
+
+    S3 usage guidance:
+    S3 storage is accessible via standard AWS tools ([Command line interface](https://docs.aws.amazon.com/cli/latest/reference/s3/) or [`boto3`](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/s3.html) in Python) and is also mounted in the Console as a file system at `~/s3-storage` for convenience.
+    However, S3 doesn't always behave like a traditional file system.
+    In particular, it is inefficient for repeated access of many small files.
+    It's best suited for infrequently accessed data, such as archival storage of pipeline outputs (catalogs, spectra, images, etc.) needed for reproducibility.
+    When storing multiple files, consider using `tar` to collect them into a single file before saving to `~/s3-storage`.
+
+Shared storage
+:   Shared storage is currently available via the `~/shared-storage` folder (also accessed from `/shared-storage`).
     This is a shared efs drive that is writable by all users.
     To use, create a folder with your name that stores your files.
     This folder can be used for both sharing and also for short term (~weeks) storage of large files that you want to persist between sessions, but do not fit in the home directory.
     Note, however, that the content of this folder is visible and writable by all users.
--   **Long term s3 storage:** For long term storage (more than a few weeks), users have access to private AWS S3 storage under `~/s3-storage`.
-    Although access is generally available using the AWS tools ([Command line interface](https://docs.aws.amazon.com/cli/latest/reference/s3/) or [`boto3`](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/s3.html) in python), it is conveniently mounted as a file system under `~/s3-storage`, but it does not always behave like a file system.
-    It is especially not efficient for repeated access of many small files, so it is recommended for files that are not accessed often.
-    Use it, for example, to store spectra or images that have been generated in a pipeline and you want them for reproducibility.
-    Tar the files into a single file and store them in the `~/s3-storage` folder.
 
-The Fornax team is actively working on a solution for both short term and sharing storage.
-The second option above is only temporary while the solution is being implemented.
+    This shared storage is only temporary while a more permanent solution is being developed.
 
-You are also welcome to "bring your own storage".
-This may be anything that you can access using an API, such as an Amazon S3 or Google Cloud Storage bucket, Google Drive, Box, etc.
+Bring your own storage
+:   You are also welcome to "bring your own storage".
+    This can be anything that you can access using an API.
+    Examples include Google Drive, Box, AWS S3 and Google Cloud Storage buckets, etc.
 
 (view-preinstalled-software)=
 ## View Pre-installed Software

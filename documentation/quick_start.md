@@ -4,6 +4,7 @@
 The Fornax Science Console is a robust tool for scientific research.
 This quick-start guide introduces the basic steps to begin using it effectively.
 
+(get-an-account)=
 ## 1. Get an Account
 
 To create a Fornax Science Console and Community Forum account, go to https://signup.fornax.sciencecloud.nasa.gov and follow the instructions that ask you for some information as follows:
