@@ -66,6 +66,7 @@ It is easy to convert notebooks between file formats like `.md`, `.ipynb`, and `
 
 If you prefer to develop your code outside the Fornax Science Console, you can push your changes to a publicly available repository (e.g., GitHub) and synchronize that to your home directory on the Fornax Science Console.
 
+(using-git)=
 ### Using Git
 
 You can use `git` from the command line or the UI provided by the {ref}`Git extension <git-extension>`.
@@ -79,7 +80,13 @@ git config --global user.email "your.email@example.com"
 
 You will need to use HTTPS to authenticate with `git` on the Fornax Science Console.
 SSH is not supported.
-This means you will need to enter your username and password (or token) when interacting with a remote.
+For read-only access of public repositories, you can clone them with:
+```sh
+git clone https://github.com/{name}/{repo}
+```
+
+To be able to write to the repo and to access private repos, you will need to setup your credentials.
+You can either enter your username and password, or preferably use access tokens.
 To reduce the number of times you need to enter them, you can configure `git` to cache them:
 
 ```sh
@@ -87,5 +94,15 @@ To reduce the number of times you need to enter them, you can configure `git` to
 # To do this for a single repo instead, cd into the repo directory and remove '--global' before running the command.
 git config --global credential.helper cache
 ```
+
+:::{hint} Set up github access
+
+To setup github access over HTTPS, it is highly recommended that you create a personal access token.
+For details, you can follow the [github documentation](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens#creating-a-fine-grained-personal-access-token), then clone the repo using:
+```sh
+git clone https://$token@github.com/{name}/{repo}
+```
+:::
+
 
 For more information about using `git`, see https://git-scm.com/docs/gittutorial.

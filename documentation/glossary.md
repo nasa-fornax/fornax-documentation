@@ -59,4 +59,13 @@ Terminal
 : Interface that allows users to interact with the system by entering text commands.
   The "terminal" is also known as the "command line".
 
+Login Session
+: The span of time during which the system identifies you as an authenticated user after you successfully log in.
+
+Server Session
+: Also called Notebook server session. The period during which a user has an **active** single-user notebook server running.
+  It has nothing to do with whether the browser is open or not, or even whether you are logged in or not.
+  An active server session just means there is an active running pod assigned to you.
+  To access the pod, you need an active {term}`Login Session`.
+
 :::
