@@ -1,2 +1,2 @@
-/.github/CODEOWNERS @bsipocz @troyraen
-change-controlled-documents/ @troyraen
+.git* @bsipocz @troyraen
+documentation/change-controlled-documents @troyraen
