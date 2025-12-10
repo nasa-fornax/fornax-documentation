@@ -1,4 +1,8 @@
-# Fornax User Agreement,  v.1.0
+---
+short_title: User Agreement
+---
+
+# Fornax User Agreement v.1.0
 
 2025-11-24
 

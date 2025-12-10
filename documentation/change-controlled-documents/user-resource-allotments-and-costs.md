@@ -1,3 +1,7 @@
+---
+short_title: User Resources and Costs
+---
+
 # Fornax User Resource Allotments and Costs for Open Beta, v.1.0
 
 2025-11-24
