@@ -1,5 +1,6 @@
-Fornax User Agreement  v.1.0
-Nov. 24, 2025
+# Fornax User Agreement,  v.1.0
+
+2025-11-24
 
 The Fornax Team is excited to welcome you to the Fornax Science Console. Please be aware that as a Fornax user you will receive the following resources and need to obey the following guidelines:
 

@@ -1,4 +1,6 @@
-Fornax User Resource Allotments and Costs for Open Beta, v. 1.0		2025-11-24
+# Fornax User Resource Allotments and Costs for Open Beta, v.1.0
+
+2025-11-24
 
 Upon your first login to the Fornax Science Console you will have:
 
