@@ -1,2 +1,7 @@
+# This file is controlling notification to certain teams who are expected either to review the changes.
+# Use github teams rather than individuals whenever possible.
+#
+# In the special case of the change-controlled-documents, someone must sign-off on the changes from the group.
+
 .git* @bsipocz @troyraen
-documentation/change-controlled-documents @troyraen
+documentation/change-controlled-documents @nasa-fornax/change-controlled-docs
