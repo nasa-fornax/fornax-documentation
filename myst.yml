@@ -37,7 +37,7 @@ project:
 site:
   template: book-theme
   parts:
-     banner: "📢 Announcement: Fornax is in Open Beta."
+     banner: "📢 Announcement: The Fornax Science Console welcomes Beta testers."
   options:
      favicon: _static/fornax_favicon.ico
      logo: _static/fornax_logo.png
