@@ -41,6 +41,9 @@ There are two types of Python environments, **pip**-based and **conda**-based.
     These environments contain `pip`-installable packages and are used in most cases.
     The default environments are installed under `$ENV_DIR`.
     They are activated as indicated above with `source $ENV_DIR/{env-name}/bin/activate`.
+    
+    Currently-installed pip-based environments include: `python3` as a general environment, and 
+    environments named `py-*`, one for each demonstration notebook.
 
 **conda**-based
 :   These use [micromamba](https://mamba.readthedocs.io/en/latest/user_guide/micromamba.html) to manage the packages (similar to conda/mamba):
@@ -48,6 +51,9 @@ There are two types of Python environments, **pip**-based and **conda**-based.
     Examples of this include `heasoft` and `ciao` in the high-energy container image.
     These are activated with `micromamba activate {env-name}` and deactivated with `micromamba deactivate`.
     These are also installed under `$ENV_DIR`. You can use `micromamba env list` to list the environments.
+
+    Currently-installed conda-based environments include: `heasoft`, `ciao`, `sas` and `fermi` for high
+    energy astrophysics software.
 
 ### Pre-installed Environments
 
