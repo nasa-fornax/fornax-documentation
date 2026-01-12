@@ -116,7 +116,7 @@ It is highly recommended that you create new environments if you want to install
 
 If you want to add a small number of packages to a built-in environment, however, you can follow these steps:
 
-- From the {term}`terminal <terminal>`, activate the desired environment (see {ref}``).
+- From the {term}`terminal <terminal>`, activate the desired environment (see {ref}`select-environment`).
 - Add the packages with: `uv pip install --target $USER_ENV_DIR/{env_name} package-1 package-2`. Where `{env_name}` is the folder name of choice.
 - Tell the environment about the new location:
     - In a {term}`terminal <terminal>`: `export PYTHONPATH=$USER_ENV_DIR/{env_name}:$PYTHONPATH`.
