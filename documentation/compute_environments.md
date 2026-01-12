@@ -8,6 +8,47 @@ Each comes pre-installed with JupyterLab extensions as well as one or more Pytho
 You can customize your experience by installing additional Python software in the pre-installed environments as well as creating new environments, installing additional JupyterLab extensions, and installing non-Python software.
 This page describes the details.
 
+(environment-types)=
+### Environment Types
+
+There are two types of Python environments, **pip**-based and **conda**-based.
+
+**pip**-based
+:   The **pip**-based environments use [uv](https://docs.astral.sh/uv/) to manage the packages.
+    These environments contain `pip`-installable packages and are used in most cases.
+    The default environments are installed under `$ENV_DIR`.
+    Currently-installed pip-based environments include: `python3` as a general environment, and environments named `py-*`, one for each demonstration notebook.
+    They are activated with `source $ENV_DIR/{env-name}/bin/activate`.
+
+**conda**-based
+:   These use [micromamba](https://mamba.readthedocs.io/en/latest/user_guide/micromamba.html) to manage the packages (similar to conda/mamba):
+    The `conda`-based environments are used with packages that are not `pip`-installable.
+    These are also installed under `$ENV_DIR`. You can use `micromamba env list` to list the environments.
+    Currently-installed conda-based environments include: `heasoft`, `ciao`, `sas` and `fermi` for high energy astrophysics software.
+    These are activated with `micromamba activate {env-name}` and deactivated with `micromamba deactivate`.
+
+### Pre-installed Environments
+
+The following environments are pre-installed:
+
+`python3`
+:   This is the default Python environment and is **pip**-based.
+    It has general astronomy and plotting software.
+
+`py-{notebook-name}`
+:   Each of the Fornax demo notebooks has its own environment with a name of the form `py-{notebook-name}` (e.g. `py-light_curve_collector` and `py-multiband_photometry`).
+    Each environment has the packages required to run the notebook pre-installed.
+    These environments are **pip**-based.
+    When opening the notebook, the corresponding {term}`kernel <kernel>` should automatically start.
+    You can also select it from the drop down kernel menu at the top-right of an open notebook.
+
+`heasoft`, `ciao`, `fermi`, `sas`
+:   Environments for high energy software are **conda**-based and include:
+    [heasoft](https://heasarc.gsfc.nasa.gov/docs/software/lheasoft/),
+    Chandra [ciao](https://cxc.cfa.harvard.edu/ciao/),
+    [Fermi analysis software](https://fermi.gsfc.nasa.gov/ssc/data/analysis/software/),
+    and [XMM-Newton SAS](https://www.cosmos.esa.int/web/xmm-newton/sas).
+
 ## Working with Python Environments
 
 `python3` is the default Python {term}`environment <environment>`.
@@ -18,69 +59,17 @@ Each environment has the packages required to run the notebook pre-installed (se
 When opening the notebook, the corresponding {term}`kernel <kernel>` should automatically start.
 You can also select it from the drop down kernel menu at the top-right of an open notebook.
 
-To activate a specific pip-based environment (see {ref}`environment-types` for details) from the {term}`terminal <terminal>`, run: `source $ENV_DIR/{environment-name}/bin/activate`.
-For example, to activate the `py-light_curve_classifier` environment, run:
-
-```sh
-source $ENV_DIR/py-light_curve_classifier/bin/activate
-```
-
-and the following to deactivate it:
-
-```sh
-deactivate
-```
-
-(environment-types)=
-### Environment Types
-
-There are two types of Python environments, **pip**-based and **conda**-based.
-
-**pip**-based
-:   The **pip**-based environments use [uv](https://docs.astral.sh/uv/) to manage the packages.
-    These environments contain `pip`-installable packages and are used in most cases.
-    The default environments are installed under `$ENV_DIR`.
-    They are activated as indicated above with `source $ENV_DIR/{env-name}/bin/activate`.
-
-**conda**-based
-:   These use [micromamba](https://mamba.readthedocs.io/en/latest/user_guide/micromamba.html) to manage the packages (similar to conda/mamba):
-    The `conda`-based environments are used with packages that are not `pip`-installable.
-    Examples of this include `heasoft` and `ciao` in the high-energy container image.
-    These are activated with `micromamba activate {env-name}` and deactivated with `micromamba deactivate`.
-    These are also installed under `$ENV_DIR`. You can use `micromamba env list` to list the environments.
-
-### Pre-installed Environments
-
-The following environments are pre-installed:
-
-`python3`
-:   This is the default Python environment.
-    It has general astronomy and plotting software.
-
-`py-{notebook-name}`
-:   Each of the Fornax demo notebooks has its own environment with a name of the form `py-{notebook-name}` (e.g. `py-light_curve_collector` and `py-multiband_photometry`).
-    Each environment has the packages required to run the notebook pre-installed.
-    When opening the notebook, the corresponding {term}`kernel <kernel>` should automatically start.
-    You can also select it from the drop down kernel menu at the top-right of an open notebook.
-
-`heasoft`, `ciao`, `fermi`, `sas`
-:   Environments for high energy software that includes:
-    [heasoft](https://heasarc.gsfc.nasa.gov/docs/software/lheasoft/),
-    Chandra [ciao](https://cxc.cfa.harvard.edu/ciao/),
-    [Fermi analysis software](https://fermi.gsfc.nasa.gov/ssc/data/analysis/software/),
-    and [XMM-Newton SAS](https://www.cosmos.esa.int/web/xmm-newton/sas).
-    
-
 See {ref}`view-preinstalled-software` to learn about specific libraries each environment contains.
 
 (select-environment)=
-### Select an Environment
+### Activate an Environment
 
 **Notebook:** To activate a specific environment from a {term}`notebook <Jupyter Notebook>`, click on the name of the notebook's current environment at the top right and then select your desired environment from the kernel drop down menu.
+Notebooks can use either a **pip**-based or **conda**-based environment.
 If you open a Fornax demo notebook and get a popup window asking you to select a kernel, choose the kernel from the drop down menu with the same name as the notebook you are opening.
-If you open any other notebook and get a popup window asking you to select a kernel, `python3` is usually the best choice.
+If you open any other notebook and get a popup window asking you to select a kernel, `python3` is usually the best choice, unless you already know which environment you need.
 
-**Terminal:** To activate a specific environment from the {term}`terminal <terminal>`, run: `source $ENV_DIR/{environment-name}/bin/activate`.
+**Terminal:** To activate a specific **pip**-based environment (see {ref}`environment-types` for details) from the {term}`terminal <terminal>`, run: `source $ENV_DIR/{environment-name}/bin/activate`.
 For example, to activate the `py-light_curve_classifier` environment, run:
 
 ```sh
@@ -91,6 +80,19 @@ and the following to deactivate it:
 
 ```sh
 deactivate
+```
+
+To activate a specific **conda**-based environment (see {ref}`environment-types` for details) from the {term}`terminal <terminal>`, run: `micromamba activate {env-name}`.
+For example, to activate the `heasoft` environment, run:
+
+```sh
+micromamba activate heasoft
+```
+
+and the following to deactivate it:
+
+```sh
+micromamba deactivate
 ```
 
 (install-additional-software)=
@@ -114,7 +116,7 @@ It is highly recommended that you create new environments if you want to install
 
 If you want to add a small number of packages to a built-in environment, however, you can follow these steps:
 
-- From the {term}`terminal <terminal>`, activate the desired environment (see {ref}`view-preinstalled-software`).
+- From the {term}`terminal <terminal>`, activate the desired environment (see {ref}``).
 - Add the packages with: `uv pip install --target $USER_ENV_DIR/{env_name} package-1 package-2`. Where `{env_name}` is the folder name of choice.
 - Tell the environment about the new location:
     - In a {term}`terminal <terminal>`: `export PYTHONPATH=$USER_ENV_DIR/{env_name}:$PYTHONPATH`.
