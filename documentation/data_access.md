@@ -1,3 +1,7 @@
+---
+short_title: Data Access
+---
+
 # Data Access from within Fornax
 
 The Fornax Science Console provides multiple data access pathways, including direct file uploads, direct cloud access, and support for IVOA-compliant application program interfaces (APIs).
