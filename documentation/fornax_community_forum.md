@@ -58,14 +58,21 @@ If your analysis exceeds the estimated runtime, we may reach out to discuss pote
 ```{dropdown} Submit an effective bug report
 To help us quickly diagnose and resolve any issues you're experiencing, please provide as much of the following information as possible when submitting a bug report.
 
--   **Location within Fornax** where the issue occurred (for example, while running a notebook in JupyterLab and using the Dask extension)
--   **Actions you were performing** when the issue occurred
--   **Expected behavior** (what you anticipated would happen)
--   **Observed behavior** (what actually happened)
--   **Error messages, logs, tracebacks, or other relevant output** that were generated
--   **Date and time (with timezone)** when the issue occurred
--   **Web browser (name and version)** you are using to access the Fornax Science Console (e.g., Chrome 125.0.64422.142)
--   **Additional context** that might help (e.g., if you successfully completed the same task on a previous occasion, including the date and time)
+-   **Location within Fornax** where the issue occurred.
+    For example, "the JupyterLab Dask extension".
+-   **Actions you were performing and any relevant context**.
+    For example, "running a notebook in the `python3` kernel on a Medium server type".
+    If the issue involves a notebook or code, include a link to the exact version you were using, if possible.
+-   **Expected behavior**. What you anticipated would happen.
+-   **Observed behavior**. What actually happened.
+    Screenshots are helpful.
+    If error messages, logs, or tracebacks were generated, include them in full.
+-   **Steps-by-step instructions to reproduce the problem**.
+-   **Date and time (with timezone)** when the issue occurred.
+-   **Web browser (name and version)** you were using.
+    For example, "Chrome 125.0.64422.142".
+-   **Any additional information** that might help.
+    For example, if you successfully completed the same task on a previous occasion, including the date and time.
 
 Providing detailed information will help us resolve your issue more efficiently.
 Thank you!
