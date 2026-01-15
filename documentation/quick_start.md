@@ -33,7 +33,7 @@ A human will then review your request.
 If approved, your account will be created and you will receive an email with further instructions and information.
 
 ```{tip}
-Email addresses from whitelisted domains (currently, nasa.gov) are automatically approved.
+Email addresses from safelisted domains (currently, nasa.gov) are automatically approved.
 All other requests require human review, so expect some delay before your account is created.
 ```
 
