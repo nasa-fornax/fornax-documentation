@@ -44,11 +44,11 @@ Firefly
 
 ## Menu Bar (Topmost horizontal menu)
 
-This contains dropdown menus like File, Edit, etc., and the *Fornax* menu, which includes:
+This contains dropdown menus like File, Edit, etc., and the **Fornax** menu, which includes:
 
 - Useful links to the Fornax main dashboard, the documentation and community forum.
 - `Update Notebooks` can be used ensure the notebooks in the home directory are up to date. Note that the notebooks can also be updated by calling the `update-notebooks.sh` command from the terminal.
-- `Shutdown Server` is a quick link to the jupyterhub control that can used to shut down the current notebook session.
+- `Shutdown Server` is a quick link to the JupyterHub control panel that can used to shut down the current notebook session.
 - `Keep-alive` is used to request the current session not to be terminated. See {ref}`jupyterlab-session-information`.
 - `Release Notes` shows the changes in the software environment.
 
@@ -103,7 +103,7 @@ Dask
 Git
 :   This extension integrates Git version control into the JupyterLab interface, enabling you to stage, commit, push, and pull notebook and code changes without leaving the environment.
     It provides visual diffs, branch management, and history browsing, making collaborative development and reproducibility seamless.
-    See {ref}`using-git` for more information about setup and authentication and [jupyterlab-git](https://github.com/jupyterlab/jupyterlab-git) for more information about the extension.
+    See [](#using-git) for more information about setup and authentication, and [jupyterlab-git](https://github.com/jupyterlab/jupyterlab-git) for more information about the extension.
 
 Table of Contents
 :   Automatically generates a sidebar outline of all headings in your notebook or document, allowing you to quickly navigate between sections.

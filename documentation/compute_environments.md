@@ -93,7 +93,7 @@ To install additional Python software, you can either update an existing environ
 
 To add packages to a currently installed environment, you install them with `pip` (or the faster `uv pip`) after activating the relevant environment.
 
--   Inside a {term}`notebook <Jupyter Notebook>` running the relevant environment, run `!uv pip install ...`, passing the extra packaged needed.
+-   Inside a {term}`notebook <Jupyter Notebook>` running the relevant environment, run `!uv pip install ...`, passing the extra package needed.
 -   In the {term}`terminal <terminal>`, after activating the environment run: `uv pip install ...`.
 
 This should work for both pip and conda-based environments.
@@ -161,7 +161,7 @@ dependencies:
 :::
 
 
-:::{note} Details on manually installing new enviornments
+:::{note} Details on manually installing new environments
 :class: dropdown
 
 You can also do all the setup by hand if you want more control.
