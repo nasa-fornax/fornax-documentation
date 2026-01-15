@@ -57,6 +57,7 @@ Fornax Science Console Dashboard
 You can log out at any time by clicking the **Logout** button at the top right.
 You will be automatically logged out after 24 hours.
 
+(start-server-session)=
 ## 3. Start a Server Session
 
 To start a {term}`compute session<Server Session>`, go to the left-hand menu on the dashboard and choose `Compute → JupyterHub`.
@@ -97,6 +98,7 @@ To start a new {term}`Jupyter Notebook`:
 -   To download your notebook to your local machine, click on your notebook in your home directory on the left side of the screen.
     Then go to the main menu and select `File → Download`.
 
+(stop-server-session)=
 ## 5. Shut Down Your Server
 
 Since a running {term}`session <Server Session>` continuously uses your allocated credits, it is strongly recommended to terminate your session when you are done using it for awhile.

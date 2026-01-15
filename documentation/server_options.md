@@ -1,48 +1,56 @@
 (server-and-env-options)=
 # Server Options
 
-Once you have logged in to the Fornax Science Console and clicked "JupyterHub" to start a server (see {ref}`quick-start`), you will be asked to specify a **Server Type** and a base **Environment**, as shown in the screenshot below.
+When you [start a server session](#start-server-session), you will see a **Server Options** page similar to the screenshot below where you can choose a **Server Type**.
 
 ```{figure} ../_static/forsc_jupyterlab_servers.png
 :alt: JupyterLab server options menu as deployed in the Fornax Science Console
 
-JupyterLab Server options on the Fornax Science Console.
+Server Options page on the Fornax Science Console.
 ```
 
-## Server Type
+## Server Types
 
 The Fornax Science Console offers four server types: **Small**, **Medium**, **Large**, and **XLarge**.
+They differ in the amount of {term}`CPU` and {term}`RAM` they provide.
 Basic specifications for each are described in the {ref}`intro-best-practices` section.
 
-Compute resources on Fornax are cloud-based and funded by NASA.
-While the platform is designed for high performance, these resources are limited.
-Being mindful of usage helps ensure that the platform remains sustainable and accessible to the broader astrophysics community.
-Please follow these guidelines:
+## Guidelines
 
-**Start small:** Begin by testing your workflow on the smallest server that meets your needs.
+Compute resources on Fornax are cloud-based and funded by NASA.
+While the platform is designed for high performance, resources should be used wisely to avoid wasting them.
+Being mindful of usage helps ensure that the platform remains sustainable and accessible to the broader astrophysics community.
+
+### Start small
+
+Begin by testing your workflow on the smallest server that meets your needs.
 Limit initial runs in scope (e.g., fewer sources, shorter iterations, smaller datasets).
 Scale up to a larger server or full analysis only after verifying that your code runs successfully at smaller scale.
 
-**Shut down when done**:
-Having an active compute instance—even if you're not currently running code—still consumes resources and counts against your allocation.
-Simply closing your browser window or logging out does not stop the server.
-To properly shut it down, go to File → Hub Control Panel and click “Stop My Server.”
+### Shut down when done
 
-**Approval required for XLarge instance:**
-To use the XLarge compute instance, please open a request by starting a new topic in the Fornax Community Forum [Support/Compute](https://discourse.fornax.sciencecloud.nasa.gov/c/support/compute) category with a brief description of your scientific use case and an estimated total runtime.
-You do not need approval for stopping and restarting your instance as long as you remain within the original estimated runtime.
-However, if you require additional time beyond your estimate, please notify us by posting a brief justification to your topic.
+You are continuously charged credits for a running server regardless of whether you're actively using it.
+So it's important to [stop your server](#stop-server-session) when you're done using it for a period of time (for example, overnight).
+
+```{warning}
+Simply closing your browser window or logging out of your Fornax account does not stop your server.
+```
+
+To properly stop your server, go to `File → Hub Control Panel` and then click **Stop My Server**.
+
+### Get approval to use the XLarge server
+
+The XLarge server type provides a large amount of memory and CPU, and should be used wisely to avoid wasting resources.
+We require users to submit a request to the [Helpdesk](#intro-forum) before using the XLarge server.
+In your request, please include:
+
+- Estimated total runtime.
+- Brief description of your scientific use case.
+- Brief description of your code development and readiness for scaling up.
+    - For example: "I have parallelized my code and tested it on the Medium server type, and I believe it will make efficient use of the XLarge server."
+
+Once approved, you may use the XLarge server within the parameters of your request.
+You do not need additional approval to stop and restart your server as long as you remain within the original estimated runtime.
+
+If you require additional time beyond your estimate, please notify us by posting a brief justification to your Helpdesk request.
 If your analysis exceeds the estimated runtime, we may reach out to discuss potential termination.
-
-(base-environment)=
-## Base Environment
-
-The Fornax Science Console offers a number of software {term}`environments <environment>` to choose from.
-They are currently grouped into one base environment (a container image).
-You can select the base environment by choosing the container image from the "Environment" dropdown in the screenshot above:
-
--   **Default Astrophysics** contains common astronomy software, including those required to run the demo notebooks.
-    It also contains high-energy software, which currently includes HEASoft, CIAO, and Fermitools.
-    Plans exist to add XMM-SAS.
-
-See {ref}`compute-environments` for more information about the specific software environments that are pre-installed in the container image and how to customize your environment after your server starts up.
