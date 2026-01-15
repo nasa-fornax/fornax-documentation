@@ -40,17 +40,5 @@ To properly stop your server, go to `File → Hub Control Panel` and then click 
 
 ### Get approval to use the XLarge server
 
-The XLarge server type provides a large amount of memory and CPU, and should be used wisely to avoid wasting resources.
-We require users to submit a request to the [Helpdesk](#intro-forum) before using the XLarge server.
-In your request, please include:
-
-- Estimated total runtime.
-- Brief description of your scientific use case.
-- Brief description of your code development and readiness for scaling up.
-    - For example: "I have parallelized my code and tested it on the Medium server type, and I believe it will make efficient use of the XLarge server."
-
-Once approved, you may use the XLarge server within the parameters of your request.
-You do not need additional approval to stop and restart your server as long as you remain within the original estimated runtime.
-
-If you require additional time beyond your estimate, please notify us by posting a brief justification to your Helpdesk request.
-If your analysis exceeds the estimated runtime, we may reach out to discuss potential termination.
+We require users to get approval before using the XLarge server to help ensure that the significant compute resources are not wasted.
+To request approval, please contact the [](#helpdesk).
