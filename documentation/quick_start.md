@@ -34,6 +34,7 @@ All other requests require human review, which may take up to 2 US business days
 
 If you have trouble getting an account, please contact the [Helpdesk](#helpdesk).
 
+(forsc-login)=
 ## 2. Log In
 
 Once your [account](#get-an-account) has been created, log in to the Fornax Science Console:
@@ -73,7 +74,7 @@ Once your server has started, you will see a JupyterLab interface similar to thi
 :alt: JupyterLab opening page with some Fornax customizations, as deployed in the Fornax Science Console.
 ```
 
-At this point, the server you have chosen will begin accruing cost even though you have not started any computations.
+At this point, the server you have chosen will begin accruing cost (charged to your credit allotment) even though you have not started any computations.
 Since you have chosen the **Small** server, this cost will be low.
 
 ```{warning}
