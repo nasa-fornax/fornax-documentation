@@ -1,29 +1,56 @@
+---
+short_title: Community Forum and Helpdesk
+---
+
 (intro-forum)=
-# Fornax Community Forum
+# Fornax Community Forum and Helpdesk
 
-The [Fornax Community Forum](https://discourse.fornax.sciencecloud.nasa.gov) is a platform dedicated to fostering collaboration and knowledge-sharing among Fornax users.
-Specifically, the community forum serves as the Fornax helpdesk (see the [Support](https://discourse.fornax.sciencecloud.nasa.gov/c/support/6) category), and as a hub for discussions related to using NASA's Astrophysics missions cloud resources to accelerate scientific research.
+{button}`discourse.fornax.sciencecloud.nasa.gov<https://discourse.fornax.sciencecloud.nasa.gov>`
 
-The forum is designed to facilitate collaboration on the use of cloud computing tools, data access, and data analysis.
-Members can engage in discussions, ask questions, share ideas, and collaborate on topics such as data integration, cloud-based resources, astrophysics analysis, and more.
+The [Fornax Community Forum](https://discourse.fornax.sciencecloud.nasa.gov) fosters collaboration and knowledge-sharing among Fornax users.
+Members can get help, engage in discussions, ask questions, share ideas, and collaborate on topics such as data integration, cloud computing tools, astrophysics analysis, and more.
 
-The Fornax Community Forum also serves as a space for announcements, updates, and user-driven initiatives.
-Whether you're a professional researcher or a newcomer to the field, the forum aims to support open and constructive dialogue, ensuring the continued success of the initiative’s efforts to advance astrophysics through cloud-based data platforms.
+```{figure} ../_static/community_forum.png
+:alt: The Fornax Community Forum, with topics listed in the main area and categories including "Announcements", "Support", and "User Discussion" on the left.
 
-## Reporting Bugs
+Fornax Community Forum
+```
 
-To help us quickly diagnose and resolve any issues you're experiencing, please provide as much of the following information as possible when reporting a problem or suspected bug in the Fornax Community Forum [Support](https://discourse.fornax.sciencecloud.nasa.gov/c/support/6) category.
-We also recommend reviewing the provided template before submitting your report.
+There are three categories that serve different purposes:
 
--   **Date and time (with timezone)** when the issue occurred
--   **Web browser (name and version)** you are using to access the Fornax Science Console (e.g., Chrome 125.0.64422.142)
--   **Location within the Fornax Science Console** where the issue occurred (e.g., while running a notebook in JupyterHub, using the Dask extension, etc.)
+-   **Announcements**: New features, changes, and other important information.
+-   **Support**: The [](#helpdesk).
+-   **User Discussion**: Hub for users to share insights and engage in collaborative discussions about using NASA Astrophysics mission data and Fornax resources for scientific research.
+
+To post on the forum, you will need a [Fornax account](#get-an-account).
+The forum can be read without an account.
+
+(helpdesk)=
+## Helpdesk
+
+The Support category on the Fornax Community Forum serves as our Helpdesk:
+
+{button}`discourse.fornax.sciencecloud.nasa.gov/c/support<https://discourse.fornax.sciencecloud.nasa.gov/c/support>`
+
+Please start a new topic there to get support from Fornax staff, request a new feature, get approval to use the XLarge server, or report a bug.
+
+```{tip}
+You will need a [Fornax account](#get-an-account) to post on the forum.
+If you are having trouble logging in to your account, you don't have an account, or you need to contact us privately, please email us at [fornax-helpdesk@lists.nasa.gov](mailto:fornax-helpdesk@lists.nasa.gov).
+```
+
+```{dropdown} Submit an effective bug report
+To help us quickly diagnose and resolve any issues you're experiencing, please provide as much of the following information as possible when submitting a bug report.
+
+-   **Location within Fornax** where the issue occurred (for example, while running a notebook in JupyterLab and using the Dask extension)
 -   **Actions you were performing** when the issue occurred
 -   **Expected behavior** (what you anticipated would happen)
 -   **Observed behavior** (what actually happened)
--   **Error messages or other relevant output** that were generated
+-   **Error messages, logs, tracebacks, or other relevant output** that were generated
+-   **Date and time (with timezone)** when the issue occurred
+-   **Web browser (name and version)** you are using to access the Fornax Science Console (e.g., Chrome 125.0.64422.142)
 -   **Additional context** that might help (e.g., if you successfully completed the same task on a previous occasion, including the date and time)
--   **Logs or traceback** (if available, please attach any relevant logs or tracebacks)
 
 Providing detailed information will help us resolve your issue more efficiently.
 Thank you!
+```
