@@ -9,21 +9,19 @@ These can be modified to suit user needs.
 The Fornax Science Console supports many astronomical use cases, but users will find it especially beneficial for analyses:
 
 -   on large cloud-hosted data sets that would be cumbersome to download;
--   that require complicated software pre-installed on the platform; or
+-   that require complicated software which is pre-installed on the platform; or
 -   that are parallelizable and require a large number of {term}`CPU`s.
 
 ## Registration and Cost
 
-Users must register for an account to login to the system.
-See [Quick Start: Get an Account](#get-an-account) for instructions.
-New users will receive the following two documents, also viewable on this site for reference:
+NASA provides each user with an allotment of credits to spend on compute, storage, and/or egress.
+There is no monetary cost to users.
+
+To register, follow the instructions at [](#get-an-account).
+After completing the process, you will receive the following documents:
 
 -   [User Resource Allotments and Costs](change-controlled-documents/user-resource-allotments-and-costs)
 -   [User Agreement](change-controlled-documents/user-agreement)
-
-There is no monetary cost to users.
-NASA provides each user with an allotment of credits to spend on compute, storage, and/or egress.
-See the new user documents above for details.
 
 (intro-best-practices)=
 ## Fornax Resources and Best Practices

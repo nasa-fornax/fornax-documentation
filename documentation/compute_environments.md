@@ -23,8 +23,7 @@ There are two types of Python environments, **pip**-based and **conda**-based.
     The `conda`-based environments are used with packages that are not `pip`-installable.
     These are also installed under `$ENV_DIR`. You can also use `micromamba env list` to list the conda based environments.
 
-    Currently-installed conda-based environments include: `heasoft`, `ciao`, `sas` and `fermi` for high
-    energy astrophysics software.
+    Currently-installed conda-based environments include: `heasoft`, `ciao`, `sas` and `fermi` for high energy astrophysics software.
 
 ### Pre-installed Environments
 
@@ -37,16 +36,19 @@ The following environments are pre-installed:
 `py-{notebook-name}`
 :   These environments are **pip**-based.
     Each of the Fornax demo notebooks has its own environment with a name of the form `py-{notebook-name}` (e.g. `py-light_curve_collector` and `py-multiband_photometry`).
-    Each environment has the packages required to run the notebook pre-installed (see {ref}`view-preinstalled-software`).
-    When opening the notebook, the corresponding {term}`kernel <kernel>` should automatically start.
-    You can also select it from the drop down kernel menu at the top-right of an open notebook.
+    Each environment has the packages required to run the notebook pre-installed.
 
 `heasoft`, `ciao`, `fermi`, `sas`
 :   Environments for high energy software are **conda**-based and include:
     [heasoft](https://heasarc.gsfc.nasa.gov/docs/software/lheasoft/),
-    [Chnadra ciao](https://cxc.cfa.harvard.edu/ciao/),
+    [Chandra ciao](https://cxc.cfa.harvard.edu/ciao/),
     [Fermi analysis software](https://fermi.gsfc.nasa.gov/ssc/data/analysis/software/),
-    [XMM-Newton SAS](https://www.cosmos.esa.int/web/xmm-newton/sas).
+    and [XMM-Newton SAS](https://www.cosmos.esa.int/web/xmm-newton/sas).
+
+See {ref}`view-preinstalled-software` to learn about specific libraries each environment contains.
+
+When opening the notebook, the corresponding {term}`kernel <kernel>` should automatically start.
+You can also select it from the drop down kernel menu at the top-right of an open notebook.
 
 (select-environment)=
 ### Activate an Environment
@@ -91,27 +93,28 @@ To install additional Python software, you can either update an existing environ
 
 To add packages to a currently installed environment, you install them with `pip` (or the faster `uv pip`) after activating the relevant environment.
 
--   Inside a {term}`notebook <Jupyter Notebook>` running the relevant environment, run `!uv pip install ...`, passing the extra packaged needed.
+-   Inside a {term}`notebook <Jupyter Notebook>` running the relevant environment, run `!uv pip install ...`, passing the extra package needed.
 -   In the {term}`terminal <terminal>`, after activating the environment run: `uv pip install ...`.
 
 This should work for both pip and conda-based environments.
 
 :::{note}
 Note that packages installed this way are added in the global `$ENV_DIR` folder, which is reset when you start a new session.
-It is highly recommended that you create new environments if you want to install new packages (See {ref}`create-new-env`),
+It is highly recommended that you [create a new environment](#create-new-env) if you want to install new packages.
 :::
 
 If you want to add a small number of packages to a built-in environment, however, you can follow these steps:
 
-- From the {term}`terminal <terminal>`, activate the desired environment (see {ref}`select-environment`).
-- Add the packages with: `uv pip install --target $USER_ENV_DIR/{env_name} package-1 package-2`. Where `{env_name}` is the folder name of choice.
+- From the terminal, [activate the desired environment](#select-environment).
+- Add the packages with: `uv pip install --target $USER_ENV_DIR/{env_name} package-1 package-2`, where `{env_name}` is the folder name of choice.
 - Tell the environment about the new location:
-    - In a {term}`terminal <terminal>`: `export PYTHONPATH=$USER_ENV_DIR/{env_name}:$PYTHONPATH`.
-    - In a {term}`notebook <Jupyter Notebook>`, add the following at the top:
-```python
-import sys, os
-sys.path.insert(0, f"{os.environ['USER_ENV_DIR']}/{env_name}")
-```
+    - In a terminal: `export PYTHONPATH=$USER_ENV_DIR/{env_name}:$PYTHONPATH`.
+    - In a notebook, add the following at the top:
+        ```python
+        import os
+        import sys
+        sys.path.insert(0, f"{os.environ['USER_ENV_DIR']}/{env_name}")
+        ```
 
 (create-new-env)=
 #### Create a New Environment
@@ -123,8 +126,9 @@ These scripts take either a requirements file (former) or a conda yaml file (lat
 
 - For pip-based environments (recommended):
     - Create a requirement file named: `requirements-{env-name}.txt` (e.g. `requirements-myenv.txt` bellow).
-    - Call `setup-pip-env` from the same folder. By default, the environment is created in a global location (`$ENV_DIR`),
-      that is reset at the start of every session. Use this for environments that are needed for a single session.
+    - Call `setup-pip-env` from the same folder.
+      By default, the environment is created in a global location (`$ENV_DIR`), that is reset at the start of every session.
+      Use this for environments that are needed for a single session.
       If you want the environment to persist between sessions, use `setup-pip-env --user`.
       This will install the new environment under `$USER_ENV_DIR` (defaults to `~/user-envs`).
 
@@ -136,10 +140,10 @@ astropy
 ```
 :::
 
-- For conda-based environment (If your packages are not pip-installable):
+- For conda-based environments (if your packages are not pip-installable):
     - Create an environment file: `conda-{env-name}.yml` (e.g. `conda-myenv.yml` below).
-    - Call `setup-conda-env`. Similar to the pip-case, the environment is created in a global default location (`$ENV_DIR`),
-      that is reset at the start of every session.
+    - Call `setup-conda-env`.
+      Similar to the pip-case, the environment is created in a global default location (`$ENV_DIR`), that is reset at the start of every session.
       If you want the environment to persist between sessions, use `setup-conda-env --user`.
 
 :::{dropdown} `conda-myenv.yml`
@@ -158,7 +162,7 @@ dependencies:
 :::
 
 
-:::{note} Details on manually installing new enviornments
+:::{note} Details on manually installing new environments
 :class: dropdown
 
 You can also do all the setup by hand if you want more control.
@@ -171,6 +175,7 @@ source myenv/bin/activate
 # add numpy for example
 uv pip install "numpy<2"
 ```
+
 This will create a new environment with Python version 3.11, activate it, and then install a "numpy<2".
 
 In order to use this new environment in a {term}`notebook <Jupyter Notebook>`, you'll need to install `ipykernel` inside the environment and then register it with JupyterLab.
@@ -182,7 +187,8 @@ python -m ipykernel install --name myenv --user
 
 The {term}`kernel <Kernel>` should show up in the JupyterLab main launcher page and in the kernel selection dropdown menu inside a running notebook.
 
-The same can be done for conda environments. A conda environment can be created by:
+The same can be done for conda environments.
+A conda environment can be created by:
 
 ```sh
 micromamba create -p ~/user-envs/my-conda-env python=3.12 pandas
@@ -211,7 +217,8 @@ In that case, please open a helpdesk request on the {ref}`intro-forum`.
 ## Compilers and General Software
 
 As part of the system optimization and to allow for users to manage their own software, the list of packages installed in the system (using ubuntu `apt`) is kept to a minimum.
-Many of the useful packages (vim, htop, git, awscli, etc) are installed from `conda-forge` into the `base` conda environment under `$ENV_DIR/base`. You can add packages to this environment by doing:
+Many of the useful packages (vim, htop, git, awscli, etc) are installed from `conda-forge` into the `base` conda environment under `$ENV_DIR/base`.
+You can add packages to this environment by doing:
 
 ```sh
 micromamba install package_name
@@ -227,9 +234,9 @@ micromamba install c-compiler cxx-compiler fortran-compiler
 For non-Python tools (e.g. `htop`, `vim` etc), they can be run directly from the terminal without a need for activating the base environment as they are included in the `PATH` by default.
 
 ## Terminal Initialization scripts
-The system uses bash as a default shell. The Jupyterlab terminal uses a non-login shell, which means `~/.bashrc` is not called
-by default when a new terminal session starts. `~/.profile` on the other hand is called.
-You can therefore use it for any bash initialization code. A new `~/.profile` is created at login time if it does not exist,
-and it also calls `~/.bashrc`, so you can add you customization (e.g. update `PATH`, setup rust or julia, etc) to either one.
 
-
+The system uses bash as a default shell.
+The Jupyterlab terminal uses a non-login shell, which means `~/.bashrc` is not called by default when a new terminal session starts.
+`~/.profile` on the other hand is called.
+You can therefore use it for any bash initialization code.
+A new `~/.profile` is created at login time if it does not exist, and it also calls `~/.bashrc`, so you can add you customization (e.g. update `PATH`, setup rust or julia, etc) to either one.
