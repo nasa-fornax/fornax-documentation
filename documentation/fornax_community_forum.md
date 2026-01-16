@@ -1,20 +1,14 @@
 ---
-short_title: Community Forum and Helpdesk
+short_title: Forum and Helpdesk
 ---
 
 (intro-forum)=
 # Fornax Community Forum and Helpdesk
 
-{button}`discourse.fornax.sciencecloud.nasa.gov<https://discourse.fornax.sciencecloud.nasa.gov>`
+{button}`Fornax Community Forum<https://discourse.fornax.sciencecloud.nasa.gov>`
 
-The [Fornax Community Forum](https://discourse.fornax.sciencecloud.nasa.gov) fosters collaboration and knowledge-sharing among Fornax users.
+The Fornax Community Forum fosters collaboration and knowledge-sharing among Fornax users.
 Members can get help, engage in discussions, ask questions, share ideas, and collaborate on topics such as data integration, cloud computing tools, astrophysics analysis, and more.
-
-```{figure} ../_static/community_forum.png
-:alt: The Fornax Community Forum, with topics listed in the main area and categories including "Announcements", "Support", and "User Discussion" on the left.
-
-Fornax Community Forum
-```
 
 There are three categories that serve different purposes:
 
@@ -30,7 +24,7 @@ The forum can be read without an account.
 
 The Support category on the Fornax Community Forum serves as our Helpdesk:
 
-{button}`discourse.fornax.sciencecloud.nasa.gov/c/support<https://discourse.fornax.sciencecloud.nasa.gov/c/support>`
+{button}`Fornax Helpdesk<https://discourse.fornax.sciencecloud.nasa.gov/c/support>`
 
 Please start a new topic there to get support from Fornax staff, request a new feature, get approval to use the XLarge server, or report a bug.
 
@@ -55,7 +49,7 @@ If you require additional time beyond your estimate, please notify us by posting
 If your analysis exceeds the estimated runtime, we may reach out to discuss potential termination.
 ```
 
-```{dropdown} Submit an effective bug report
+```{dropdown} Submit an effective bug report for Fornax
 To help us quickly diagnose and resolve any issues you're experiencing, please provide as much of the following information as possible when submitting a bug report.
 
 -   **Location within Fornax** where the issue occurred.

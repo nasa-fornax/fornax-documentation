@@ -9,7 +9,7 @@ This quick-start guide introduces the basic steps to begin using it effectively.
 
 To create a Fornax Science Console and Community Forum account, complete the form at:
 
-{button}`signup.fornax.sciencecloud.nasa.gov<https://signup.fornax.sciencecloud.nasa.gov>`
+{button}`Sign up for a Fornax account<https://signup.fornax.sciencecloud.nasa.gov>`
 
 The form will ask for the following:
 
@@ -39,9 +39,9 @@ All other requests require human review, which may take up to 2 US business days
 
 ## 2. Log In
 
-Once your [account](#get-an-account) has been created, log in to the Fornax Science Console at:
+Once your [account](#get-an-account) has been created, log in to the Fornax Science Console:
 
-{button}`science-console.fornax.sciencecloud.nasa.gov<https://science-console.fornax.sciencecloud.nasa.gov/>`
+{button}`Fornax Science Console<https://science-console.fornax.sciencecloud.nasa.gov/>`
 
 After submitting your username and password, you will be prompted for a Multi-Factor Authentication (MFA) code.
 The code will be automatically emailed to the address you used when registering your account.
