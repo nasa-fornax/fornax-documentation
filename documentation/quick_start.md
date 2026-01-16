@@ -9,7 +9,7 @@ This quick-start guide introduces the basic steps to begin using it effectively.
 
 To create a Fornax Science Console and Community Forum account, complete the form at:
 
-{button}`signup.fornax.sciencecloud.nasa.gov<https://signup.fornax.sciencecloud.nasa.gov>`
+{button}`Sign up for a Fornax account<https://signup.fornax.sciencecloud.nasa.gov>`
 
 The form will ask for the following:
 
@@ -21,27 +21,24 @@ The form will ask for the following:
     We use this to verify that the proposed usage of Fornax is appropriate.
 -   Desired username and password.
 
-```{warning}
-Please do not register twice using the same phone number.
-If you have trouble with your initial registration or need to register a second account and only have one phone number, please contact the [Helpdesk](#intro-forum).
-```
-
 Once you submit the form, a verification link will be sent to your email address.
 Click the link to verify your email address and then follow the instructions to verify your phone number.
 
 A human will then review your request.
 If approved, your account will be created and you will receive an email with further instructions and information.
 
-```{tip}
+```{note}
 Email addresses from safelisted domains (currently, nasa.gov) are automatically approved.
 All other requests require human review, which may take up to 2 US business days.
 ```
 
+If you have trouble getting an account, please contact the [Helpdesk](#helpdesk).
+
 ## 2. Log In
 
-Once your [account](#get-an-account) has been created, log in to the Fornax Science Console at:
+Once your [account](#get-an-account) has been created, log in to the Fornax Science Console:
 
-{button}`science-console.fornax.sciencecloud.nasa.gov<https://science-console.fornax.sciencecloud.nasa.gov/>`
+{button}`Fornax Science Console<https://science-console.fornax.sciencecloud.nasa.gov/>`
 
 After submitting your username and password, you will be prompted for a Multi-Factor Authentication (MFA) code.
 The code will be automatically emailed to the address you used when registering your account.
@@ -57,6 +54,7 @@ Fornax Science Console Dashboard
 You can log out at any time by clicking the **Logout** button at the top right.
 You will be automatically logged out after 24 hours.
 
+(start-server-session)=
 ## 3. Start a Server Session
 
 To start a {term}`compute session<Server Session>`, go to the left-hand menu on the dashboard and choose `Compute → JupyterHub`.
@@ -97,6 +95,7 @@ To start a new {term}`Jupyter Notebook`:
 -   To download your notebook to your local machine, click on your notebook in your home directory on the left side of the screen.
     Then go to the main menu and select `File → Download`.
 
+(stop-server-session)=
 ## 5. Shut Down Your Server
 
 Since a running {term}`session <Server Session>` continuously uses your allocated credits, it is strongly recommended to terminate your session when you are done using it for awhile.
