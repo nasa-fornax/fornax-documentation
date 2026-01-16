@@ -34,7 +34,7 @@ If approved, your account will be created and you will receive an email with fur
 
 ```{tip}
 Email addresses from safelisted domains (currently, nasa.gov) are automatically approved.
-All other requests require human review, so expect some delay before your account is created.
+All other requests require human review, which may take up to 2 US business days.
 ```
 
 ## 2. Log In
