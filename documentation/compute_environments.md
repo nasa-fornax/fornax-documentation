@@ -111,7 +111,8 @@ If you want to add a small number of packages to a built-in environment, however
     - In a terminal: `export PYTHONPATH=$USER_ENV_DIR/{env_name}:$PYTHONPATH`.
     - In a notebook, add the following at the top:
         ```python
-        import sys, os
+        import os
+        import sys
         sys.path.insert(0, f"{os.environ['USER_ENV_DIR']}/{env_name}")
         ```
 
