@@ -21,21 +21,18 @@ The form will ask for the following:
     We use this to verify that the proposed usage of Fornax is appropriate.
 -   Desired username and password.
 
-```{warning}
-Please do not register twice using the same phone number.
-If you have trouble with your initial registration or need to register a second account and only have one phone number, please contact the [Helpdesk](#intro-forum).
-```
-
 Once you submit the form, a verification link will be sent to your email address.
 Click the link to verify your email address and then follow the instructions to verify your phone number.
 
 A human will then review your request.
 If approved, your account will be created and you will receive an email with further instructions and information.
 
-```{tip}
+```{note}
 Email addresses from safelisted domains (currently, nasa.gov) are automatically approved.
 All other requests require human review, which may take up to 2 US business days.
 ```
+
+If you have trouble getting an account, please contact the [Helpdesk](#helpdesk).
 
 ## 2. Log In
 
