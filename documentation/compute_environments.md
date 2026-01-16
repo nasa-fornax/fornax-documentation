@@ -8,6 +8,8 @@ Each comes pre-installed with JupyterLab extensions as well as one or more Pytho
 You can customize your experience by installing additional Python software in the pre-installed environments as well as creating new environments, installing additional JupyterLab extensions, and installing non-Python software.
 This page describes the details.
 
+## Working with Python Environments
+
 (environment-types)=
 ### Environment Types
 
@@ -17,15 +19,11 @@ There are two types of Python environments, **pip**-based and **conda**-based.
 :   The **pip**-based environments use [uv](https://docs.astral.sh/uv/) to manage the packages.
     These environments contain `pip`-installable packages and are used in most cases.
     The default environments are installed under `$ENV_DIR`.
-    Currently-installed pip-based environments include: `python3` as a general environment, and environments named `py-*`, one for each demonstration notebook.
-    They are activated with `source $ENV_DIR/{env-name}/bin/activate`.
 
 **conda**-based
 :   These use [micromamba](https://mamba.readthedocs.io/en/latest/user_guide/micromamba.html) to manage the packages (similar to conda/mamba):
     The `conda`-based environments are used with packages that are not `pip`-installable.
-    These are also installed under `$ENV_DIR`. You can use `micromamba env list` to list the environments.
-    Currently-installed conda-based environments include: `heasoft`, `ciao`, `sas` and `fermi` for high energy astrophysics software.
-    These are activated with `micromamba activate {env-name}` and deactivated with `micromamba deactivate`.
+    These are also installed under `$ENV_DIR`. You can also use `micromamba env list` to list the conda based environments.
 
 ### Pre-installed Environments
 
@@ -36,30 +34,18 @@ The following environments are pre-installed:
     It has general astronomy and plotting software.
 
 `py-{notebook-name}`
-:   Each of the Fornax demo notebooks has its own environment with a name of the form `py-{notebook-name}` (e.g. `py-light_curve_collector` and `py-multiband_photometry`).
-    Each environment has the packages required to run the notebook pre-installed.
-    These environments are **pip**-based.
+:   These environments are **pip**-based.
+    Each of the Fornax demo notebooks has its own environment with a name of the form `py-{notebook-name}` (e.g. `py-light_curve_collector` and `py-multiband_photometry`).
+    Each environment has the packages required to run the notebook pre-installed (see {ref}`view-preinstalled-software`).
     When opening the notebook, the corresponding {term}`kernel <kernel>` should automatically start.
     You can also select it from the drop down kernel menu at the top-right of an open notebook.
 
 `heasoft`, `ciao`, `fermi`, `sas`
 :   Environments for high energy software are **conda**-based and include:
     [heasoft](https://heasarc.gsfc.nasa.gov/docs/software/lheasoft/),
-    Chandra [ciao](https://cxc.cfa.harvard.edu/ciao/),
+    [Chnadra ciao](https://cxc.cfa.harvard.edu/ciao/),
     [Fermi analysis software](https://fermi.gsfc.nasa.gov/ssc/data/analysis/software/),
-    and [XMM-Newton SAS](https://www.cosmos.esa.int/web/xmm-newton/sas).
-
-## Working with Python Environments
-
-`python3` is the default Python {term}`environment <environment>`.
-It has general astronomy and plotting software.
-
-Each of the Fornax demo notebooks has its own environment with a name of the form `py-{notebook-name}` (e.g. `py-light_curve_collector` and `py-multiband_photometry`).
-Each environment has the packages required to run the notebook pre-installed (see {ref}`view-preinstalled-software`).
-When opening the notebook, the corresponding {term}`kernel <kernel>` should automatically start.
-You can also select it from the drop down kernel menu at the top-right of an open notebook.
-
-See {ref}`view-preinstalled-software` to learn about specific libraries each environment contains.
+    [XMM-Newton SAS](https://www.cosmos.esa.int/web/xmm-newton/sas).
 
 (select-environment)=
 ### Activate an Environment
