@@ -10,7 +10,7 @@ short_title: Forum and Helpdesk
 The Fornax Community Forum fosters collaboration and knowledge-sharing among Fornax users.
 Members can get help, engage in discussions, ask questions, share ideas, and collaborate on topics such as data integration, cloud computing tools, astrophysics analysis, and more.
 
-There are three categories that serve different purposes:
+The forum has three categories that serve different purposes:
 
 -   **Announcements**: New features, changes, and other important information.
 -   **Support**: The [](#helpdesk).
