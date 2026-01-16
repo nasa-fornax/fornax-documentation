@@ -1,12 +1,10 @@
 (compute-environments)=
 # Compute Environments
 
-The Fornax Science Console offers several pre-installed {term}`environments <environment>`.
-The specific environments that are available depend on the {ref}`base-environment` (container image) you selected when starting your server.
-All container images use an x86_64 Ubuntu Linux system.
-Each comes pre-installed with JupyterLab extensions as well as one or more Python software environments.
-You can customize your experience by installing additional Python software in the pre-installed environments as well as creating new environments, installing additional JupyterLab extensions, and installing non-Python software.
-This page describes the details.
+The Fornax Science Console is a lightly customized {term}`JupyterLab` environment running on AWS cloud servers (x86_64 Ubuntu Linux).
+Several {term}`software environments <environment>` and JupyterLab extensions are pre-installed.
+Users can also customize their experience by installing additional software and/or JupyterLab extensions.
+This page describes the pre-installed tools and customization instructions.
 
 ## Working with Python Environments
 
@@ -24,6 +22,9 @@ There are two types of Python environments, **pip**-based and **conda**-based.
 :   These use [micromamba](https://mamba.readthedocs.io/en/latest/user_guide/micromamba.html) to manage the packages (similar to conda/mamba):
     The `conda`-based environments are used with packages that are not `pip`-installable.
     These are also installed under `$ENV_DIR`. You can also use `micromamba env list` to list the conda based environments.
+
+    Currently-installed conda-based environments include: `heasoft`, `ciao`, `sas` and `fermi` for high
+    energy astrophysics software.
 
 ### Pre-installed Environments
 

@@ -1,29 +1,73 @@
+---
+short_title: Forum and Helpdesk
+---
+
 (intro-forum)=
-# Fornax Community Forum
+# Fornax Community Forum and Helpdesk
 
-The [Fornax Community Forum](https://discourse.fornax.sciencecloud.nasa.gov) is a platform dedicated to fostering collaboration and knowledge-sharing among Fornax users.
-Specifically, the community forum serves as the Fornax helpdesk (see the [Support](https://discourse.fornax.sciencecloud.nasa.gov/c/support/6) category), and as a hub for discussions related to using NASA's Astrophysics missions cloud resources to accelerate scientific research.
+{button}`Fornax Community Forum<https://discourse.fornax.sciencecloud.nasa.gov>`
 
-The forum is designed to facilitate collaboration on the use of cloud computing tools, data access, and data analysis.
-Members can engage in discussions, ask questions, share ideas, and collaborate on topics such as data integration, cloud-based resources, astrophysics analysis, and more.
+The Fornax Community Forum fosters collaboration and knowledge-sharing among Fornax users.
+Members can get help, engage in discussions, ask questions, share ideas, and collaborate on topics such as data integration, cloud computing tools, astrophysics analysis, and more.
 
-The Fornax Community Forum also serves as a space for announcements, updates, and user-driven initiatives.
-Whether you're a professional researcher or a newcomer to the field, the forum aims to support open and constructive dialogue, ensuring the continued success of the initiative’s efforts to advance astrophysics through cloud-based data platforms.
+The forum has three categories that serve different purposes:
 
-## Reporting Bugs
+-   **Announcements**: New features, changes, and other important information.
+-   **Support**: The [](#helpdesk).
+-   **User Discussion**: Hub for users to share insights and engage in collaborative discussions about using NASA Astrophysics mission data and Fornax resources for scientific research.
 
-To help us quickly diagnose and resolve any issues you're experiencing, please provide as much of the following information as possible when reporting a problem or suspected bug in the Fornax Community Forum [Support](https://discourse.fornax.sciencecloud.nasa.gov/c/support/6) category.
-We also recommend reviewing the provided template before submitting your report.
+To post on the forum, you will need a [Fornax account](#get-an-account).
+The forum can be read without an account.
 
--   **Date and time (with timezone)** when the issue occurred
--   **Web browser (name and version)** you are using to access the Fornax Science Console (e.g., Chrome 125.0.64422.142)
--   **Location within the Fornax Science Console** where the issue occurred (e.g., while running a notebook in JupyterHub, using the Dask extension, etc.)
--   **Actions you were performing** when the issue occurred
--   **Expected behavior** (what you anticipated would happen)
--   **Observed behavior** (what actually happened)
--   **Error messages or other relevant output** that were generated
--   **Additional context** that might help (e.g., if you successfully completed the same task on a previous occasion, including the date and time)
--   **Logs or traceback** (if available, please attach any relevant logs or tracebacks)
+(helpdesk)=
+## Helpdesk
+
+The Support category on the Fornax Community Forum serves as our Helpdesk:
+
+{button}`Fornax Helpdesk<https://discourse.fornax.sciencecloud.nasa.gov/c/support>`
+
+Please start a new topic there to get support from Fornax staff, request a new feature, get approval to use the XLarge server, or report a bug.
+
+```{tip}
+You will need a [Fornax account](#get-an-account) to post on the forum.
+If you are having trouble logging in to your account, you don't have an account, or you need to contact us privately, please email us at [fornax-helpdesk@lists.nasa.gov](mailto:fornax-helpdesk@lists.nasa.gov).
+```
+
+```{dropdown} Request the XLarge server
+We require users to get approval before using the XLarge server to help ensure that the significant compute resources are not wasted.
+To request approval, please open a Helpdesk topic and include the following information:
+
+-   Estimated total runtime.
+-   Brief description of your scientific use case.
+-   Brief description of your code development and readiness for scaling up.
+    -   For example: "I have parallelized my code and tested it on the Medium server type, and I believe it will make efficient use of the XLarge server."
+
+Once approved, you may use the XLarge server within the parameters of your request.
+You do not need additional approval to stop and restart your server as long as you remain within the original estimated runtime.
+
+If you require additional time beyond your estimate, please notify us by posting a brief justification to your Helpdesk request.
+If your analysis exceeds the estimated runtime, we may reach out to discuss potential termination.
+```
+
+```{dropdown} Submit an effective bug report for Fornax
+To help us quickly diagnose and resolve any issues you're experiencing, please provide as much of the following information as possible when submitting a bug report.
+
+-   **Location within Fornax** where the issue occurred.
+    For example, "the JupyterLab Dask extension".
+-   **Actions you were performing and any relevant context**.
+    For example, "running a notebook in the `python3` kernel on a Medium server type".
+    If the issue involves a notebook or code, include a link to the exact version you were using, if possible.
+-   **Expected behavior**. What you anticipated would happen.
+-   **Observed behavior**. What actually happened.
+    Screenshots are helpful.
+    If error messages, logs, or tracebacks were generated, include them in full.
+-   **Steps-by-step instructions to reproduce the problem**.
+-   **Date and time (with timezone)** when the issue occurred.
+-   **Web browser (name and version)** you were using.
+    For example, "Chrome 125.0.64422.142".
+-   **Any additional information** that might help.
+    For example, if you successfully completed the same task on a previous occasion, including the date and time.
 
 Providing detailed information will help us resolve your issue more efficiently.
 Thank you!
+```

@@ -7,72 +7,108 @@ This quick-start guide introduces the basic steps to begin using it effectively.
 (get-an-account)=
 ## 1. Get an Account
 
-To create a Fornax Science Console and Community Forum account, go to https://signup.fornax.sciencecloud.nasa.gov and follow the instructions that ask you for some information as follows:
+To create a Fornax Science Console and Community Forum account, complete the form at:
 
--   A valid email address and mobile phone number that will be used for verification only.
-    Note that if you use an email address that is not from a whitelisted domain (currently nasa.gov), there will be a delay while a human verifies that you are not likely to be a malicious user.
--   We also ask for your institute affiliation and career level for demographics.
--   Most importantly, we ask for a brief description of the science analysis you would like to use Fornax for.
-    Again, this is merely for verification that the proposed usage of Fornax is appropriate.
+{button}`Sign up for a Fornax account<https://signup.fornax.sciencecloud.nasa.gov>`
 
-Once your account is created, you will receive an email with further instructions on how to log in and find information and help, etc.
+The form will ask for the following:
+
+-   Name, email address, and phone number.
+    We use these for verification purposes only.
+    Remember your email address as it will be used for ongoing Multi-Factor Authentication (MFA) and will be required in case you need to reset your password.
+-   Institute affiliation and career stage, for demographics.
+-   A brief description of the science analysis you would like to use Fornax for.
+    We use this to verify that the proposed usage of Fornax is appropriate.
+-   Desired username and password.
+
+Once you submit the form, a verification link will be sent to your email address.
+Click the link to verify your email address and then follow the instructions to verify your phone number.
+
+A human will then review your request.
+If approved, your account will be created and you will receive an email with further instructions and information.
+
+```{note}
+Email addresses from safelisted domains (currently, nasa.gov) are automatically approved.
+All other requests require human review, which may take up to 2 US business days.
+```
+
+If you have trouble getting an account, please contact the [Helpdesk](#helpdesk).
 
 ## 2. Log In
 
-Once you receive your credentials, log into the Fornax Science Console at:
-🔗 [https://science-console.fornax.sciencecloud.nasa.gov/](https://science-console.fornax.sciencecloud.nasa.gov/)
+Once your [account](#get-an-account) has been created, log in to the Fornax Science Console:
 
-## 3. Select JupyterHub
+{button}`Fornax Science Console<https://science-console.fornax.sciencecloud.nasa.gov/>`
 
-After logging in, you will see a Resource Dashboard.
-You can learn more about it in the {ref}`forsc-dashboard` section.
-For now, go to the left-hand menu and choose JupyterHub under Compute.
+After submitting your username and password, you will be prompted for a Multi-Factor Authentication (MFA) code.
+The code will be automatically emailed to the address you used when registering your account.
 
-## 4. Select a Server Type and Environment
+Once logged in, you will see a [dashboard](#forsc-dashboard) similar to this:
 
-You’ll be prompted to select the following:
+```{figure} ../_static/forsc_dashboard.png
+:alt: The Fornax Science Console Dashboard showing credit usage categorized by resource type and a navigation menu with links to JupyterHub, documentation, and help.
 
--   **Server Type**: Size of the compute instance.
-    Please choose **Small** until you have carefully read the {ref}`intro-best-practices` section.
--   **Environment**: Container image providing your base environment.
-    The **Default Astrophysics** environment is recommended for most use cases.
-    {ref}`base-environment` describes the options in more detail.
+Fornax Science Console Dashboard
+```
 
-## 5. Launch JupyterLab
+You can log out at any time by clicking the **Logout** button at the top right.
+You will be automatically logged out after 24 hours.
 
-Click **Start** to launch the base environment.
-It is normal for JupyterLab to take a couple of minutes to start.
-At this point, the server you have chosen will begin accruing cost, even though you have not started any computations.
+(start-server-session)=
+## 3. Start a Server Session
+
+To start a {term}`compute session<Server Session>`, go to the left-hand menu on the dashboard and choose `Compute → JupyterHub`.
+A new window will open and you will be prompted to choose a **Server Type**.
+Please choose **Small** until you have carefully read [](#server-and-env-options).
+
+```{figure} ../_static/forsc_jupyterlab_servers.png
+:alt: JupyterLab server options menu, as deployed in the Fornax Science Console.
+```
+
+Click **Start** to launch your server.
+It is normal for it to take a couple of minutes.
+Once your server has started, you will see a JupyterLab interface similar to this:
+
+```{figure} ../_static/forsc_jupyterlab.png
+:alt: JupyterLab opening page with some Fornax customizations, as deployed in the Fornax Science Console.
+```
+
+At this point, the server you have chosen will begin accruing cost even though you have not started any computations.
 Since you have chosen the **Small** server, this cost will be low.
 
-## 6. Open a New Notebook
+```{warning}
+Server sessions that appear to be inactive or reach the maximum time limit will be automatically shut down.
+See {ref}`jupyterlab-session-information` for details, including the Keep-Alive option.
+```
 
-In JupyterLab, you will see a main menu at the top, your persistent home directory on the left, and a work area on the right.
+## 4. Open a New Notebook
+
+In [](#jupyterlab), you will see a main menu at the top, your persistent home directory on the left, and a work area on the right.
 The Launcher tab is open in the work area by default.
 You can click the **+** to the right of the tab name just under the main menu to open a new Launcher tab at any time.
+
+To start a new {term}`Jupyter Notebook`:
 
 -   In the Launcher tab, select **python3** under the **Notebook** section.
     A new notebook tab will open in the work area.
 -   When you are ready to save your work to your Fornax home directory, click on the **Save** icon in the notebook tab.
 -   To download your notebook to your local machine, click on your notebook in your home directory on the left side of the screen.
-    Then go to the main menu and select **File** → **Download**.
+    Then go to the main menu and select `File → Download`.
 
-## 7. Shut Down Your Server
+(stop-server-session)=
+## 5. Shut Down Your Server
 
-Since running sessions continuously use the allocated credit, it is strongly recommended that you should terminate your session when you are done using it for awhile.
+Since a running {term}`session <Server Session>` continuously uses your allocated credits, it is strongly recommended to terminate your session when you are done using it for awhile.
 Be sure to save your work to your persistent home directory before doing this.
 Anything not saved will be lost, including both files and software customizations.
 See {ref}`install-additional-software` for information about how to install software that persists between sessions.
 
-The session can be stopped by clicking **Stop My Server** from the JupyterHub control panel page, which is accessed from from:
+To stop your session:
 
-- **Fornax** → **Shutdown Server**, or
-- **File** → **Hub Control Panel**, both in the top menu.
-
-Note that clicking **Logout** from the File menu (or in the upper right corner of the JupyterHub control page) does not stop the session or shut down the server.
-It only logs you out of JupyterHub but leaves the Fornax session running (and the $$ accruing).
+- Navigate to the JupyterHub control panel page by clicking `Fornax → Shutdown Server` in the top menu bar (equivalently, click `File → Hub Control Panel`).
+- On the control panel page, click **Stop My Server**.
 
 ```{warning}
-JupyterLab sessions that appear to be inactive or reach the time limit will be automatically shut down.
-See {ref}`jupyterlab-session-information` for details, including the Keep-Alive option.
+Clicking **Logout** (either `File → Logout` or the button in the top right corner of the control panel) does not stop the session or shut down the server.
+It logs you out of your Fornax account but leaves your server session running (and will continue using your credits).
 ```
