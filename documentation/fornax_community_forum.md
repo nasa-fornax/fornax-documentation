@@ -12,9 +12,10 @@ Members can get help, engage in discussions, ask questions, share ideas, and col
 
 The forum has three categories that serve different purposes:
 
--   **Announcements**: New features, changes, and other important information.
--   **Support**: The [](#helpdesk).
--   **User Discussion**: Hub for users to share insights and engage in collaborative discussions about using NASA Astrophysics mission data and Fornax resources for scientific research.
+-   **Announcements**: Learn about new features, changes, and other important information.
+-   **Helpdesk**: Get support, request a new feature, or report a bug.
+    See [](#helpdesk).
+-   **User Discussion**: Share insights and engage in collaborative discussions about using NASA Astrophysics mission data and Fornax resources for scientific research.
 
 To post on the forum, you will need a [Fornax account](#get-an-account).
 The forum can be read without an account.
@@ -22,16 +23,12 @@ The forum can be read without an account.
 (helpdesk)=
 ## Helpdesk
 
-The Support category on the Fornax Community Forum serves as our Helpdesk:
+To get support from Fornax staff, request a new feature, or report a bug, please open a topic in the Helpdesk category of the Community Forum:
 
-{button}`Fornax Helpdesk<https://discourse.fornax.sciencecloud.nasa.gov/c/support>`
+{button}`Fornax Helpdesk<https://discourse.fornax.sciencecloud.nasa.gov/c/helpdesk>`
 
-Please start a new topic there to get support from Fornax staff, request a new feature, get approval to use the XLarge server, or report a bug.
-
-```{tip}
-You will need a [Fornax account](#get-an-account) to post on the forum.
+You will need a [Fornax account](#get-an-account) to post on the Helpdesk.
 If you are having trouble logging in to your account, you don't have an account, or you need to contact us privately, please email us at [fornax-helpdesk@lists.nasa.gov](mailto:fornax-helpdesk@lists.nasa.gov).
-```
 
 ```{dropdown} Request the XLarge server
 We require users to get approval before using the XLarge server to help ensure that the significant compute resources are not wasted.
