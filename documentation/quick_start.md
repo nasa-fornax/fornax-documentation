@@ -7,7 +7,7 @@ This quick-start guide introduces the basic steps to begin using it effectively.
 (get-an-account)=
 ## 1. Get an Account
 
-To create a Fornax Science Console and Community Forum account, complete the form at:
+To create a free Fornax Science Console and Community Forum account, complete the form at:
 
 {button}`Sign up for a Fornax account<https://signup.fornax.sciencecloud.nasa.gov>`
 
@@ -44,7 +44,7 @@ Once your [account](#get-an-account) has been created, log in to the Fornax Scie
 After submitting your username and password, you will be prompted for a Multi-Factor Authentication (MFA) code.
 The code will be automatically emailed to the address you used when registering your account.
 
-Once logged in, you will see a [dashboard](#forsc-dashboard) similar to this:
+Once logged in, you will see a [dashboard](#forsc-dashboard) with navigation links on the left and your account's resource and credit usage in the main area, similar to this:
 
 ```{figure} ../_static/forsc_dashboard.png
 :alt: The Fornax Science Console Dashboard showing credit usage categorized by resource type and a navigation menu with links to JupyterHub, documentation, and help.
@@ -74,7 +74,7 @@ Once your server has started, you will see a JupyterLab interface similar to thi
 :alt: JupyterLab opening page with some Fornax customizations, as deployed in the Fornax Science Console.
 ```
 
-At this point, the server you have chosen will begin accruing cost (charged to your credit allotment) even though you have not started any computations.
+At this point, the selected server will begin charging against your credit allotment, even though no computations have started yet.
 Since you have chosen the **Small** server, this cost will be low.
 
 ```{warning}
