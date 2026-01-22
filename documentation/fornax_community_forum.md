@@ -13,7 +13,7 @@ Members can get help, engage in discussions, ask questions, share ideas, and col
 The forum has three categories that serve different purposes:
 
 -   **Announcements**: Learn about new features, changes, and other important information.
--   **Helpdesk**: Get support, request a new feature, or report a bug.
+-   **Helpdesk**: Ask questions, report issues, request features, and get help from the Fornax team and the wider community.
     See [](#helpdesk).
 -   **User Discussion**: Share insights and engage in collaborative discussions about using NASA Astrophysics mission data and Fornax resources for scientific research.
 
