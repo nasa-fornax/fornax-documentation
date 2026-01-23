@@ -8,7 +8,7 @@ V.1.1 January 26, 2026
 
 The Fornax Team is excited to welcome you to the Fornax Science Console. Please be aware that as a Fornax user you will receive the following resources and need to obey the following guidelines:
 
-1. **NASA will provide you with a certain amount of cloud resource “credits”** that can be spent on compute, storage, and egress. (See [User Resource Allotments and Costs for Beta Users v1.1](https://docs.google.com/document/d/1Ze3mo3h4rqpLl3xxpGc6gW8yuzWuTkNhGvyEXP07yFE/edit?tab=t.0)).
+1. **NASA will provide you with a certain amount of cloud resource “credits”** that can be spent on compute, storage, and egress. (See [User Resource Allotments and Costs for Beta Users v1.1](https://docs.fornax.sciencecloud.nasa.gov/user-resource-allotments-and-costs)).
 
    1. **In** **the cloud, every second that compute, storage, or egress is in use will cost credits.** This is substantially different from traditional on-premises hardware costs.
 
