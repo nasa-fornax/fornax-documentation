@@ -1,30 +1,35 @@
-Fornax User Resource Allotments and Costs for Open Beta, v. 1.0		2025-11-24
+---
+short_title: User Resource Allotments and Costs
+---
+
+# Fornax User Resource Allotments and Costs
+
+V.1.1  January 26, 2026
 
 Upon your first login to the Fornax Science Console you will have:
 
-**1000 credits total** for spending on cloud resources (compute, storage, and egress)
+**1000 credits** for spending on cloud resources (compute, storage, and egress); this is renewed yearly, at the beginning of the fiscal year (Oct. 1). If you need more credits before the renewal date, contact the [Fornax Helpdesk](https://docs.fornax.sciencecloud.nasa.gov/fornax-community-forum/#helpdesk).
 
-**20 GB of storage** in your Home Directory
+**A 200 GB ceiling** to the private storage available in your Home Directory; if your work requires more, please contact the [Fornax Helpdesk](https://docs.fornax.sciencecloud.nasa.gov/fornax-community-forum/#helpdesk).
 
-**Access to private S3 storage**, mounted as \~/s3-storage under your Home Directory
+**Access to additional, private S3 storage**, mounted as “s3-storage” under your Home Directory, for a cheaper storage option (see table, below)
 
-Dashboards in the Fornax Science Console will help you keep track of what you have spent.
+The [Fornax Science Console Dashboard](https://docs.fornax.sciencecloud.nasa.gov/dashboard/) will help you keep track of what you have spent.
 
-**Additional storage:** post in the  ["Support” section of the Fornax Community Forum](https://discourse.fornax.sciencecloud.nasa.gov/c/support/) if you find you need additional storage in your Home Directory. Keep in mind this extra storage is paid for with your cloud resource credits.
-
-**For more information** on storage and AWS resources, see: [Fornax User Documentation](https://docs.fornax.sciencecloud.nasa.gov/)
+**For more information**, see: [Fornax Resources and Best Practices](https://docs.fornax.sciencecloud.nasa.gov/intro-forsc/#intro-best-practices) in the Fornax docs
 
 **Typical usage costs**, for reference:
 
-* Running the small instance for 100 hours:  8.70 credits
-* Running the large instance for 100 hours:  77 credits
-* Running the XL instance for 100 hours:  759 credits
+* Running the small instance for 100 hours: 8.70 credits
+* Running the large instance for 100 hours: 77 credits
+* Running the XL instance for 100 hours: 759 credits
 * Running the small instance 40 hours a week for a year: 181 credits
-* Using 100 GB of storage in your home directory for a year: 120 credits
-* Using 1 TB of Long-Term (S3) storage for one year:  276 credits
-* Egressing 20 GB  of data: 1.80  credits
+* Using 100 GB of storage in your home directory for a year: 108 credits
+* Using 1 TB of storage in your home directory for a year: 1,080 credits
+* Using 1 TB of private S3-storage for one year: 276 credits
+* Egressing 20 GB of data: 1.80 credits
 
-The table below shows the approximate costs of various storage, compute, and egress options.
+The table below shows the approximate costs of various compute, storage, and egress options.
 
 | Compute (\# CPU, GB RAM) | Cost (credits/hour) |
 | :---- | :---- |
@@ -33,7 +38,7 @@ The table below shows the approximate costs of various storage, compute, and egr
 | Large (16, 64\) | 0.768 |
 | XLarge (128, 512\) | 7.59 |
 | **Storage (AWS media)** | **Cost (credits/GB/month)** |
-| Home Dir (EBS) | 0.100 |
-| Long-Term (S3) | 0.023 |
+| Home Directory (FSx) | 0.090 |
+| Additional private storage (S3)   | 0.023 |
 | **Egress** | **Cost (credits/GB)** |
 | Standard Egress rate | 0.090 |
