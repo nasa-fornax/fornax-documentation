@@ -46,6 +46,17 @@ If you require additional time beyond your estimate, please notify us by posting
 If your analysis exceeds the estimated runtime, we may reach out to discuss potential termination.
 ```
 
+```{dropdown} Request a large, temporary storage space
+If you need access to a large (TB scale) volume of storage space for a limited amount of time, please open a Helpdesk topic and include the following information:
+
+-   Amount of storage space needed.
+-   Amount of time you need it for.
+-   Brief description of your use case.
+
+Once approved, your [temporary storage space](#temporary-storage) will be expanded to the requested size for the agreed upon duration.
+Any files left in the temporary storage space after this period will be deleted.
+```
+
 ```{dropdown} Submit an effective bug report for Fornax
 To help us quickly diagnose and resolve any issues you're experiencing, please provide as much of the following information as possible when submitting a bug report.
 

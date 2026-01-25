@@ -37,32 +37,8 @@ See {ref}`server-and-env-options` for additional usage guidance and [User Resour
 
 ### Storage Resources
 
-The Fornax Science Console offers the following storage options:
-
-Private storage
-:   Users have 2 types of private storage: Home Directory and AWS S3.
-    Please see [User Resource Allotments and Costs](change-controlled-documents/user-resource-allotments-and-costs) for details.
-
-    S3 usage guidance:
-    S3 storage is accessible via standard AWS tools ([Command line interface](https://docs.aws.amazon.com/cli/latest/reference/s3/) or [`boto3`](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/s3.html) in Python) and is also mounted in the Console as a file system at `~/s3-storage` for convenience.
-    However, S3 doesn't always behave like a traditional file system.
-    In particular, it is inefficient for repeated access of many small files.
-    It's best suited for infrequently accessed data, such as archival storage of pipeline outputs (catalogs, spectra, images, etc.) needed for reproducibility.
-    When storing multiple files, consider using `tar` to collect them into a single file before saving to `~/s3-storage`.
-
-Shared storage
-:   Shared storage is currently available via the `~/shared-storage` folder (also accessed from `/shared-storage`).
-    This is a shared efs drive that is writable by all users.
-    To use, create a folder with your name that stores your files.
-    This folder can be used for both sharing and also for short term (~weeks) storage of large files that you want to persist between sessions, but do not fit in the home directory.
-    Note, however, that the content of this folder is visible and writable by all users.
-
-    This shared storage is only temporary while a more permanent solution is being developed.
-
-Bring your own storage
-:   You are also welcome to "bring your own storage".
-    This can be anything that you can access using an API.
-    Examples include Google Drive, Box, AWS S3 and Google Cloud Storage buckets, etc.
+The Fornax Science Console offers both private and shared storage options.
+See [](#data-storage) for more information.
 
 (view-preinstalled-software)=
 ## View Pre-installed Software
