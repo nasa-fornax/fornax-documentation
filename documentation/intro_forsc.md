@@ -1,7 +1,7 @@
 (intro-forsc)=
 # Fornax Science Console Capabilities
 
-The Fornax Science Console is a NASA-funded web-based application that provides access to a limited amount of cloud computing via {term}`JupyterLab`, which offers access to {term}`Jupyter Notebook`s, {term}`Jupyter Console`, and the {term}`terminal`.
+The Fornax Science Console is a NASA-funded web-based application that provides access to cloud computing via {term}`JupyterLab`, which offers access to {term}`Jupyter Notebook`s, {term}`Jupyter Console`, and the {term}`terminal`.
 Users will have access to data sets curated by repositories around the world, and can upload moderate amounts of private data.
 To get started quickly, users can choose from a variety of example notebooks as well as pre-installed software environments.
 These can be modified to suit user needs.
@@ -32,22 +32,8 @@ To ensure efficient allocation of these limited resources across the community, 
 
 ### Computing Resources
 
-The Fornax Science Console offers four server sizes with different compute capacities ({term}`RAM` and {term}`CPU`), listed below.
+The Fornax Science Console offers four server sizes with different compute capacities ({term}`RAM` and {term}`CPU`).
 See {ref}`server-and-env-options` for additional usage guidance and [User Resource Allotments and Costs](change-controlled-documents/user-resource-allotments-and-costs) for costs.
-
-Small (8 GB RAM, 2 CPU)
-:   Ideal for exploratory or prototype work.
-    This is the best place to start developing.
-
-Medium (16 GB RAM, 4 CPU)
-:   This is a good server size to test workflows.
-
-Large (64 GB RAM, 16 CPU)
-:   Suited for tested and parallelized workflows.
-
-XLarge (512 GB RAM, 128 CPU)
-:   Reserved for the most demanding, highly parallel jobs.
-    Available by approval only and intended for limited, efficient use.
 
 ### Storage Resources
 
