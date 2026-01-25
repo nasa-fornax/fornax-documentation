@@ -6,7 +6,7 @@ Several {term}`software environments <environment>` and JupyterLab extensions ar
 Users can also customize their experience by installing additional software and/or JupyterLab extensions.
 This page describes the pre-installed tools and customization instructions.
 
-## Working with Python Environments
+## Python Environments
 
 (environment-types)=
 ### Environment Types
@@ -25,9 +25,12 @@ There are two types of Python environments, **pip**-based and **conda**-based.
 
     Currently-installed conda-based environments include: `heasoft`, `ciao`, `sas` and `fermi` for high energy astrophysics software.
 
+(preinstalled-software)=
 ### Pre-installed Environments
 
-The following environments are pre-installed:
+A wide variety of software is pre-installed.
+A detailed accounting can be found in the environment lock files in the `$LOCK_DIR` directory or on the [latest image release](https://github.com/nasa-fornax/fornax-images/releases/latest) page.
+The software is organized into several environments.
 
 `python3`
 :   This is the default Python environment and is **pip**-based.
@@ -44,8 +47,6 @@ The following environments are pre-installed:
     [Chandra ciao](https://cxc.cfa.harvard.edu/ciao/),
     [Fermi analysis software](https://fermi.gsfc.nasa.gov/ssc/data/analysis/software/),
     and [XMM-Newton SAS](https://www.cosmos.esa.int/web/xmm-newton/sas).
-
-See {ref}`view-preinstalled-software` to learn about specific libraries each environment contains.
 
 When opening the notebook, the corresponding {term}`kernel <kernel>` should automatically start.
 You can also select it from the drop down kernel menu at the top-right of an open notebook.

@@ -70,18 +70,13 @@ Storage Charges
 A key difference from typical cloud computing is that Fornax users spend free credits, courtesy of NASA.
 To help ensure that NASA can continue to provide these services to the community for a long time to come, we ask users to remain aware of their activity and data storage on Fornax and to spend their free credits wisely.
 
-(view-preinstalled-software)=
-### What software is available?
+## Software
 
-There are two ways to view the pre-installed environments and software that come with each container:
+Fornax has a wide variety of [pre-installed software](#preinstalled-software), including:
 
--   **Inside the Console**:
-    The list of environment files (`*.yml` for conda and `requirements-*.txt` for pip) of all the installed environments can be found in the folder `$LOCK_DIR`.
-    Each environment in the container has a corresponding file there.
-    For instance:
-    -   *requirements-python3.txt*: is the pip requirement file for the `python3` environment.
-    -   *base-lock.yml*: is the conda environment file for the base conda environment.
-    -   *heasoft-lock.yml*: is the conda environment file for the heasoft conda environment.
-      etc.
--   **Outside the Console**: The same environment files are also available for every release of the container images on github.
-    They are grouped by image name and available in the [container images release page](https://github.com/nasa-fornax/fornax-images/releases) (expand the "Assets" section).
+-   Common Python libraries, such as NumPy, Matplotlib, Bokeh, Seaborn, Pandas, and Dask.
+-   Python libraries commonly used in astronomy, such as Astropy, Astroquery, SciPy, and Firefly client.
+-   Non-Python libraries commonly used in astronomy, such as The Tractor, HEASoft, Chandra CIAO, Fermitools, and XMM-Newton SAS.
+-   AWS tools, such as the Command Line Interface and S3Fs.
+
+Users can also install other Python and non-Python software of their choosing.
