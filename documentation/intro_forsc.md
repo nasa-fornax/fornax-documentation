@@ -12,36 +12,66 @@ The Fornax Science Console supports many astronomical use cases, but users will 
 -   that require complicated software which is pre-installed on the platform; or
 -   that are parallelizable and require a large number of {term}`CPU`s.
 
-## Registration and Cost
+## Registration
 
-NASA provides each user with an allotment of credits to spend on compute, storage, and/or egress.
-There is no monetary cost to users.
+To create a free Fornax account, complete the form at:
 
-To register, follow the instructions at [](#get-an-account).
+{button}`Sign up for a Fornax account<https://signup.fornax.sciencecloud.nasa.gov>`
+
+Detailed information about the registration process can be found in [Quickstart: Get an Account](#get-an-account).
 After completing the process, you will receive the following documents:
 
 -   [User Resource Allotments and Costs](change-controlled-documents/user-resource-allotments-and-costs)
 -   [User Agreement](change-controlled-documents/user-agreement)
 
 (intro-best-practices)=
-## Fornax Resources and Best Practices
+## Compute, Storage, and Cost
 
-Cloud compute is billed to NASA and charged to the user's credits on an hourly basis for a running {term}`Server Session`—even when resources are idle.
-Storage may be charged based on either the amount allotted or the amount used, depending on the type of storage.
-To ensure efficient allocation of these limited resources across the community, users are encouraged to use the least amount of compute and storage necessary to accomplish their tasks.
+Fornax offers cloud-based computing with multiple server and data storage options, and an allotment of credits to spend as they wish.
 
-### Computing Resources
+Credits
+:   NASA provides each user with an allotment of credits to spend however they like on compute, storage, and {term}`egress`.
+    There is no monetary cost to users.
+    The credit allotments renew annually.
+    Users can also request more credits before the renewal date by contacting the [](#helpdesk).
 
-The Fornax Science Console offers four server sizes with different compute capacities ({term}`RAM` and {term}`CPU`).
-See {ref}`server-and-env-options` for additional usage guidance and [User Resource Allotments and Costs](change-controlled-documents/user-resource-allotments-and-costs) for costs.
+Compute Power
+:   Multiple server sizes are available, offering different amounts of CPU and RAM.
+    These range from a fraction of a typical laptop up to an order of magnitude or more above a typical laptop.
+    Users can choose a different server size each time they start one up.
+    See [](#server-and-env-options) for details about server sizes and guidelines for use.
 
-### Storage Resources
+Storage Solutions
+:   Both traditional filesystem and cloud-based storage (AWS S3) options are available for users to store data.
+    There is no strict upper limit on the volume of data users can keep.
+    (In practice, this is restricted by how users choose to spend their credits.)
+    See [](#data-storage) for details about the types of storage available and guidelines for use.
 
-The Fornax Science Console offers both private and shared storage options.
-See [](#data-storage) for more information.
+### How far will my credits take me?
+
+While Fornax is not a super-computing center, substantial results can be achieved when using resources wisely.
+To help users get a sense of how much they can do with their credit allotments and the server and storage options available to them, [User Resource Allotments and Costs](change-controlled-documents/user-resource-allotments-and-costs) details the number of credits charged for each activity and outlines typical usage scenarios.
+
+As is typical with cloud computing, the unit charges are small but accrue constantly while a resource is in use, and the charges stop as soon as resource usage stops.
+
+Compute Charges
+:   A Fornax user's credits are charged for the entire time they have a server running, irrespective of whether notebooks or code are being executed.
+    Compute charges stop as soon as the server is stopped.
+    Charges accrue at an hourly rate that depends on the chosen server size.
+    Larger servers have a higher rate, but can also complete large workloads much faster than smaller servers when the code is parallelized and makes full and efficient use of the larger CPU and RAM.
+
+Storage Charges
+:   Charges begin accruing for a given chunk of data when it is saved to the filesystem or bucket, and stop when it is deleted.
+    Storage is charged by the hour at a rate that depends on the volume of data stored and the chosen storage solution.
+    Filesystem storage has a higher rate than S3 but performs better for frequently accessed data.
+
+### Community Sustainability
+
+A key difference from typical cloud computing is that Fornax users spend free credits, courtesy of NASA.
+To help ensure that NASA can continue to provide these services to the community for a long time to come, we ask users to remain aware of their activity and data storage on Fornax and to spend their free credits wisely.
 
 (view-preinstalled-software)=
-## View Pre-installed Software
+### What software is available?
 
 There are two ways to view the pre-installed environments and software that come with each container:
 
