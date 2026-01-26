@@ -24,7 +24,7 @@ The NASA Astrophysics Mission Archives (HEASARC, IRSA, MAST) offer curated datas
 
 Accessing data that is stored in the same region as your compute (Fornax, in this case) will generally be more efficient, meaning lower latency.
 The Fornax Science Console runs on AWS in the `us-east-1` region.
-Most of NASA's ODR datasets are also in the `us-east-1` region (in {term}`Amazon S3` buckets).
+Most of NASA's ODR datasets are also in the `us-east-1` region (in {term}`Amazon S3<s3>` buckets).
 
 You can use the Python tool [`s3fs`](https://s3fs.readthedocs.io/) to interact with S3 buckets as if they were part of your local filesystem—opening FITS files, CSVs, or other data products directly by specifying the {term}`S3` path.
 For image data, `Astropy` can retrieve cutouts and handle astronomical images in memory, while `pyarrow` enables fast, efficient access to large catalog tables in Parquet format.

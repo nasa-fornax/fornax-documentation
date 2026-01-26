@@ -38,6 +38,7 @@ This is a known issue in displaying html files inside Jupyterlab in Safari.
 The workaround is to right-click (double finger tap) on the html file and select 'Open in New Browser Tab'.
 The file should open correctly in a new browser tab.
 
+(using-git)=
 ## How do I use Git from Fornax?
 
 If you want to clone notebooks or code from a Git repository (repo) into the Fornax Science Console, you can use either the `git` command-line tool from the {term}`terminal <terminal>` or the {ref}`Git extension <git-extension>` UI.
