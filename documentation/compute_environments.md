@@ -162,7 +162,6 @@ dependencies:
 ```
 :::
 
-
 :::{note} Details on manually installing new environments
 :class: dropdown
 
@@ -198,6 +197,18 @@ micromamba activate -p ~/user-envs/my-conda-env
 
 Similarly, to use this environment in a {term}`notebook <Jupyter Notebook>`, you'll need to install `ipykernel` and register it with JupyterLab like the pip environments.
 :::
+
+(delete-user-env)=
+#### Deleting a User Environment
+Deleting a user envivronment that was created either manually or with the scripts provided can be done with these two steps:
+
+- Delete the environment folder under `~/user-envs/` (or wherever else it is was installed).
+- Remove the kernel for that environment by deleting the the folder with the environment name from `~/.local/share/jupyter/kernels/`.
+
+As a tip, running the following in the terminal, will list all the installed kernels. It can be used to find the location of installed kernels:
+```sh
+$JUPYTER_DIR/bin/jupyter kernelspec list
+```
 
 :::{attention}
 It is recommended that you remove user environments in your home directory that are no longer needed, as they may deplete your home storage and consume your allocated credit.
