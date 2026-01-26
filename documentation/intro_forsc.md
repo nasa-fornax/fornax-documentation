@@ -74,8 +74,8 @@ To help ensure that NASA can continue to provide these services to the community
 
 Fornax has a wide variety of [pre-installed software](#preinstalled-software), including:
 
--   Common Python libraries, such as NumPy, Matplotlib, Bokeh, Seaborn, Pandas, and Dask.
--   Python libraries commonly used in astronomy, such as Astropy, Astroquery, SciPy, and Firefly client.
+-   Common Python libraries, such as NumPy, SciPy, Scikit-Learn, Matplotlib, Bokeh, Seaborn, Pandas, and Dask.
+-   Python libraries used in astronomy, such as Astropy, Astroquery, LSDB, and Firefly client.
 -   Non-Python libraries commonly used in astronomy, such as The Tractor, HEASoft, Chandra CIAO, Fermitools, and XMM-Newton SAS.
 -   AWS tools, such as the Command Line Interface and S3Fs.
 
