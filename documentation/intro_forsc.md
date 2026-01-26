@@ -13,7 +13,7 @@ The Fornax Science Console supports many astronomical use cases, but users will 
 -   that are parallelizable and require a large number of {term}`CPU`s.
 
 (intro-best-practices)=
-## Compute, Storage, and Cost
+## Compute and Storage
 
 Fornax offers cloud-based computing with multiple server and data storage options, and an allotment of credits to spend as they wish.
 

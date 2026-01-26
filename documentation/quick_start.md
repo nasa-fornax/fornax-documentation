@@ -75,7 +75,7 @@ Once your server has started, you will see a JupyterLab interface similar to thi
 ```
 
 At this point, the selected server will begin charging against your credit allotment, even though no computations have started yet.
-Since you have chosen the **Small** server, this cost will be low.
+Since you have chosen the **Small** server, the associated credit usage will be low.
 
 ```{warning}
 Server sessions that appear to be inactive or reach the maximum time limit will be automatically shut down.

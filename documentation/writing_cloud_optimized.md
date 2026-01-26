@@ -41,7 +41,7 @@ This is particularly important when working with large datasets.
 
 ## 5. Ensure Efficient Use of Cloud Resources
 
-**Monitor cloud usage:** Cloud resources can accumulate costs quickly.
+**Monitor cloud usage:** When running software on Fornax, you are drawing from a limited amount of cloud credits.
 Make sure to monitor usage, scale down resources when not in use, and avoid long-term storage of unused data.
 
 ## 6. Optimize Code for CPU Usage (CPU Profiling)
@@ -62,7 +62,7 @@ In Python, this means tracking which functions are slow or use a lot of {term}`C
 ## 7. Optimize for Memory Usage (Memory Profiling)
 
 Memory profiling is a technique that helps track and understand how much {term}`memory <RAM>` your code uses during execution.
-By identifying memory bottlenecks, you can optimize your code to handle larger datasets or reduce cloud resource costs.
+By identifying memory bottlenecks, you can optimize your code to handle larger datasets or reduce cloud resource usage.
 
 ### Memory Profiling Methods for Jupyter Notebooks
 
