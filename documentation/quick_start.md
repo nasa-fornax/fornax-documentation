@@ -44,7 +44,7 @@ Once your [account](#get-an-account) has been created, log in to the Fornax Scie
 After submitting your username and password, you will be prompted for a Multi-Factor Authentication (MFA) code.
 The code will be automatically emailed to the address you used when registering your account.
 
-Once logged in, you will see a [dashboard](#forsc-dashboard) with navigation links on the left and your account's resource and credit usage in the main area, similar to this:
+Once logged in, you will see the [](#forsc-dashboard) with navigation links on the left and your account's resource and credit usage in the main area, similar to this:
 
 ```{figure} ../_static/forsc_dashboard.png
 :alt: The Fornax Science Console Dashboard showing credit usage categorized by resource type and a navigation menu with links to JupyterHub, documentation, and help.
@@ -58,7 +58,7 @@ You will be automatically logged out after 24 hours.
 (start-server-session)=
 ## 3. Start a Server Session
 
-To start a {term}`compute session<Server Session>`, go to the left-hand menu on the dashboard and choose `Compute → JupyterHub`.
+To start a {term}`compute session<Server Session>`, go to the left-hand menu on the [](#forsc-dashboard) and choose `Compute → JupyterHub`.
 A new window will open and you will be prompted to choose a **Server Type**.
 Please choose **Small** until you have carefully read [](#server-and-env-options).
 

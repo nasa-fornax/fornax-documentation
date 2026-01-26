@@ -1,6 +1,29 @@
 (server-and-env-options)=
 # Server Options
 
+The Fornax Science Console offers four server types: **Small**, **Medium**, **Large**, and **XLarge**.
+They differ in the amount of {term}`CPU` and {term}`RAM` they provide.
+Their basic specifications and intended use are described below.
+
+## Server Types
+
+Small (8 GB RAM, 2 CPU)
+:   Ideal for exploratory or prototype work.
+    This is the best place to start developing.
+
+Medium (16 GB RAM, 4 CPU)
+:   This is a good server size to test workflows.
+
+Large (64 GB RAM, 16 CPU)
+:   Suited for tested and parallelized workflows.
+
+XLarge (512 GB RAM, 128 CPU)
+:   Reserved for the most demanding, highly parallel jobs.
+    Available by approval only and intended for limited, efficient use.
+
+## Starting a Server
+
+You can choose a different server size each time you start one up.
 When you [start a server session](#start-server-session), you will see a **Server Options** page similar to the screenshot below where you can choose a **Server Type**.
 
 ```{figure} ../_static/forsc_jupyterlab_servers.png
@@ -9,17 +32,10 @@ When you [start a server session](#start-server-session), you will see a **Serve
 Server Options page on the Fornax Science Console.
 ```
 
-## Server Types
-
-The Fornax Science Console offers four server types: **Small**, **Medium**, **Large**, and **XLarge**.
-They differ in the amount of {term}`CPU` and {term}`RAM` they provide.
-Basic specifications for each are described in the {ref}`intro-best-practices` section.
-
-## Guidelines
+## Guidelines for Use
 
 Compute resources on Fornax are cloud-based and funded by NASA.
-While the platform is designed for high performance, resources should be used wisely to avoid wasting them.
-Being mindful of usage helps ensure that the platform remains sustainable and accessible to the broader astrophysics community.
+While the platform is designed for high performance, please use the resources wisely to help ensure that NASA can continue to provide these free services to the broader astrophysics community.
 
 ### Start small
 

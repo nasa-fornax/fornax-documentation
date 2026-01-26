@@ -11,6 +11,7 @@ project:
     - file: documentation/dashboard.md
     - file: documentation/server_options.md
     - file: documentation/jupyterlab.md
+    - file: documentation/data_storage.md
     - file: documentation/notebook_tutorials.md
     - file: documentation/markdown_and_code_dev.md
     - file: documentation/compute_environments.md

@@ -1,5 +1,5 @@
 ---
-date: 2025-08-27
+date: 2026-01-25
 ---
 
 # Fornax User Documentation

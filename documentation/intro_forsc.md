@@ -1,7 +1,7 @@
 (intro-forsc)=
 # Fornax Science Console Capabilities
 
-The Fornax Science Console is a NASA-funded web-based application that provides access to a limited amount of cloud computing via {term}`JupyterLab`, which offers access to {term}`Jupyter Notebook`s, {term}`Jupyter Console`, and the {term}`terminal`.
+The Fornax Science Console is a NASA-funded web-based application that provides access to cloud computing via {term}`JupyterLab`, which offers access to {term}`Jupyter Notebook`s, {term}`Jupyter Console`, and the {term}`terminal`.
 Users will have access to data sets curated by repositories around the world, and can upload moderate amounts of private data.
 To get started quickly, users can choose from a variety of example notebooks as well as pre-installed software environments.
 These can be modified to suit user needs.
@@ -12,84 +12,71 @@ The Fornax Science Console supports many astronomical use cases, but users will 
 -   that require complicated software which is pre-installed on the platform; or
 -   that are parallelizable and require a large number of {term}`CPU`s.
 
-## Registration and Cost
+## Registration
 
-NASA provides each user with an allotment of credits to spend on compute, storage, and/or egress.
-There is no monetary cost to users.
+To create a free Fornax account, complete the form at:
 
-To register, follow the instructions at [](#get-an-account).
+{button}`Sign up for a Fornax account<https://signup.fornax.sciencecloud.nasa.gov>`
+
+Detailed information about the registration process can be found in [Quickstart: Get an Account](#get-an-account).
 After completing the process, you will receive the following documents:
 
 -   [User Resource Allotments and Costs](change-controlled-documents/user-resource-allotments-and-costs)
 -   [User Agreement](change-controlled-documents/user-agreement)
 
 (intro-best-practices)=
-## Fornax Resources and Best Practices
+## Compute, Storage, and Cost
 
-Cloud compute is billed to NASA and charged to the user's credits on an hourly basis for a running {term}`Server Session`—even when resources are idle.
-Storage may be charged based on either the amount allotted or the amount used, depending on the type of storage.
-To ensure efficient allocation of these limited resources across the community, users are encouraged to use the least amount of compute and storage necessary to accomplish their tasks.
+Fornax offers cloud-based computing with multiple server and data storage options, and an allotment of credits to spend as they wish.
 
-### Computing Resources
+Credits
+:   NASA provides each user with an allotment of credits to spend however they like on compute, storage, and {term}`egress`.
+    There is no monetary cost to users.
+    The credit allotments renew annually.
+    Users can also request more credits before the renewal date by contacting the [](#helpdesk).
 
-The Fornax Science Console offers four server sizes with different compute capacities ({term}`RAM` and {term}`CPU`), listed below.
-See {ref}`server-and-env-options` for additional usage guidance and [User Resource Allotments and Costs](change-controlled-documents/user-resource-allotments-and-costs) for costs.
+Compute Power
+:   Multiple server sizes are available, offering different amounts of CPU and RAM.
+    These range from a fraction of a typical laptop up to an order of magnitude or more above a typical laptop.
+    Users can choose a different server size each time they start one up.
+    See [](#server-and-env-options) for details about server sizes and guidelines for use.
 
-Small (8 GB RAM, 2 CPU)
-:   Ideal for exploratory or prototype work.
-    This is the best place to start developing.
+Storage Solutions
+:   Both traditional filesystem and cloud-based storage (AWS S3) options are available for users to store data.
+    There is no strict upper limit on the volume of data users can keep.
+    (In practice, this is restricted by how users choose to spend their credits.)
+    See [](#data-storage) for details about the types of storage available and guidelines for use.
 
-Medium (16 GB RAM, 4 CPU)
-:   This is a good server size to test workflows.
+### How far will my credits take me?
 
-Large (64 GB RAM, 16 CPU)
-:   Suited for tested and parallelized workflows.
+While Fornax is not a super-computing center, substantial results can be achieved when using resources wisely.
+To help users get a sense of how much they can do with their credit allotments and the server and storage options available to them, [User Resource Allotments and Costs](change-controlled-documents/user-resource-allotments-and-costs) details the number of credits charged for each activity and outlines typical usage scenarios.
 
-XLarge (512 GB RAM, 128 CPU)
-:   Reserved for the most demanding, highly parallel jobs.
-    Available by approval only and intended for limited, efficient use.
+As is typical with cloud computing, the unit charges are small but accrue constantly while a resource is in use, and the charges stop as soon as resource usage stops.
 
-### Storage Resources
+Compute Charges
+:   A Fornax user's credits are charged for the entire time they have a server running, irrespective of whether notebooks or code are being executed.
+    Compute charges stop as soon as the server is stopped.
+    Charges accrue at an hourly rate that depends on the chosen server size.
+    Larger servers have a higher rate, but can also complete large workloads much faster than smaller servers when the code is parallelized and makes full and efficient use of the larger CPU and RAM.
 
-The Fornax Science Console offers the following storage options:
+Storage Charges
+:   Charges begin accruing for a given chunk of data when it is saved to the filesystem or bucket, and stop when it is deleted.
+    Storage is charged by the hour at a rate that depends on the volume of data stored and the chosen storage solution.
+    Filesystem storage has a higher rate than S3 but performs better for frequently accessed data.
 
-Private storage
-:   Users have 2 types of private storage: Home Directory and AWS S3.
-    Please see [User Resource Allotments and Costs](change-controlled-documents/user-resource-allotments-and-costs) for details.
+### Community Sustainability
 
-    S3 usage guidance:
-    S3 storage is accessible via standard AWS tools ([Command line interface](https://docs.aws.amazon.com/cli/latest/reference/s3/) or [`boto3`](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/s3.html) in Python) and is also mounted in the Console as a file system at `~/s3-storage` for convenience.
-    However, S3 doesn't always behave like a traditional file system.
-    In particular, it is inefficient for repeated access of many small files.
-    It's best suited for infrequently accessed data, such as archival storage of pipeline outputs (catalogs, spectra, images, etc.) needed for reproducibility.
-    When storing multiple files, consider using `tar` to collect them into a single file before saving to `~/s3-storage`.
+A key difference from typical cloud computing is that Fornax users spend free credits, courtesy of NASA.
+To help ensure that NASA can continue to provide these services to the community for a long time to come, we ask users to remain aware of their activity and data storage on Fornax and to spend their free credits wisely.
 
-Shared storage
-:   Shared storage is currently available via the `~/shared-storage` folder (also accessed from `/shared-storage`).
-    This is a shared efs drive that is writable by all users.
-    To use, create a folder with your name that stores your files.
-    This folder can be used for both sharing and also for short term (~weeks) storage of large files that you want to persist between sessions, but do not fit in the home directory.
-    Note, however, that the content of this folder is visible and writable by all users.
+## Software
 
-    This shared storage is only temporary while a more permanent solution is being developed.
+Fornax has a wide variety of [pre-installed software](#preinstalled-software), including:
 
-Bring your own storage
-:   You are also welcome to "bring your own storage".
-    This can be anything that you can access using an API.
-    Examples include Google Drive, Box, AWS S3 and Google Cloud Storage buckets, etc.
+-   Common Python libraries, such as NumPy, SciPy, Scikit-Learn, Matplotlib, Bokeh, Seaborn, Pandas, and Dask.
+-   Python libraries used in astronomy, such as Astropy, Astroquery, LSDB, and Firefly client.
+-   Non-Python libraries commonly used in astronomy, such as The Tractor, HEASoft, Chandra CIAO, Fermitools, and XMM-Newton SAS.
+-   AWS tools, such as the Command Line Interface and S3Fs.
 
-(view-preinstalled-software)=
-## View Pre-installed Software
-
-There are two ways to view the pre-installed environments and software that come with each container:
-
--   **Inside the Console**:
-    The list of environment files (`*.yml` for conda and `requirements-*.txt` for pip) of all the installed environments can be found in the folder `$LOCK_DIR`.
-    Each environment in the container has a corresponding file there.
-    For instance:
-    -   *requirements-python3.txt*: is the pip requirement file for the `python3` environment.
-    -   *base-lock.yml*: is the conda environment file for the base conda environment.
-    -   *heasoft-lock.yml*: is the conda environment file for the heasoft conda environment.
-      etc.
--   **Outside the Console**: The same environment files are also available for every release of the container images on github.
-    They are grouped by image name and available in the [container images release page](https://github.com/nasa-fornax/fornax-images/releases) (expand the "Assets" section).
+Users can also install other Python and non-Python software of their choosing.
