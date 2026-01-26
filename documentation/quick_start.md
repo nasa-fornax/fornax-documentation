@@ -25,7 +25,7 @@ Once you submit the form, a verification link will be sent to your email address
 Click the link to verify your email address and then follow the instructions to verify your phone number.
 
 A human will then review your request.
-If approved, your account will be created and you will receive an email with further instructions and information.
+If approved, your account will be created and you will receive an email with further instructions and information, including the [User Agreement](change-controlled-documents/user-agreement) and [User Resource Allotments and Costs](change-controlled-documents/user-resource-allotments-and-costs).
 
 ```{note}
 Email addresses from safelisted domains (currently, nasa.gov) are automatically approved.
