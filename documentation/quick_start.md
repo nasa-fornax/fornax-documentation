@@ -15,7 +15,7 @@ The form will ask for the following:
 
 -   Name, email address, and phone number.
     We use these for verification purposes only.
-    Remember your email address as it will be used for ongoing Multi-Factor Authentication (MFA) and will be required in case you need to reset your password.
+    Your email address will be used for ongoing Multi-Factor Authentication (MFA), so please choose one that receives messages quickly and reliably.
 -   Institute affiliation and career stage, for demographics.
 -   A brief description of the science analysis you would like to use Fornax for.
     We use this to verify that the proposed usage of Fornax is appropriate.
