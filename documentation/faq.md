@@ -33,12 +33,67 @@ See the {ref}`jupyterlab-session-information` section for details.
 how long is the period of inactivity that gets culled?
 It is set to 15 minutes, but it can take a few minutes longer for culling service to be triggered.
 
-## I am getting an error when cloning a github repo with git@github.com
-
-Cloning a repo of the form `git@github.com/...` uses SSH connection, which is disabled on the Fornax system.
-You can still clone repos using HTTPS. See {ref}`using-git` for more details.
-
 ## Why my html page is blank when opened inside Jupyterlab with Safari?
 This is a known issue in displaying html files inside Jupyterlab in Safari.
 The workaround is to right-click (double finger tap) on the html file and select 'Open in New Browser Tab'.
 The file should open correctly in a new browser tab.
+
+(using-git)=
+## How do I use Git from Fornax?
+
+If you want to clone notebooks or code from a Git repository (repo) into the Fornax Science Console, you can use either the `git` command-line tool from the {term}`terminal <terminal>` or the {ref}`Git extension <git-extension>` UI.
+
+Basic instructions to get started using Git on Fornax are below, including details that are specific to Fornax.
+For a detailed tutorial about how to use Git in any context, see https://git-scm.com/docs/gittutorial.
+
+### One-time setup
+
+To set up Git on Fornax for the first time, configure your username and email by opening a terminal and running the following commands:
+
+```sh
+# Use the username and email associated with your Git account (not your Fornax account).
+git config --global user.name "username"
+git config --global user.email "your.email@example.com"
+```
+
+To be able to *read* (or clone) a *private* repo, or to *write* to *any* repo, you will need to use credentials.
+You can either use your username and password or an access token, both of which you would set up through your Git provider (for example, GitHub).
+
+:::{hint} For GitHub access, we recommend using a personal access token.
+
+To set up GitHub access, it is highly recommended that you create a personal access token.
+For details, please follow the [GitHub documentation](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens#creating-a-fine-grained-personal-access-token).
+Then, to clone a repo use the syntax `git clone https://{your-token}@github.com/{repo-owner}/{repo-name}`.
+:::
+
+You can reduce the number of times you need to enter your credentials by configuring `git` to cache them.
+In a terminal on Fornax, execute the following command:
+
+```sh
+# Tell git to cache your credentials for all repos.
+# To do this for a single repo instead, cd into the repo directory and remove '--global' before running the command.
+git config --global credential.helper cache
+```
+
+### Clone a repository
+
+After setting up your credentials (if necessary; see above), you can clone a repo using a command similar to one of the following.
+
+**Option 1**: Clone without passing credentials.
+(You will be asked to provide them later if/when doing something that requires them.)
+
+```sh
+git clone https://github.com/{repo-owner}/{repo-name}
+```
+
+**Option 2**: Pass your personal access token while cloning.
+
+```sh
+git clone https://{your-token}@github.com/{repo-owner}/{repo-name}
+```
+
+:::{warning} Warning: SSH is not supported
+You will need to use HTTPS to authenticate with Git on the Fornax Science Console.
+In practice, this means you must clone the repo using a URL that starts with `https://`.
+Addresses that start with `git@` use an SSH connection, which will not work because SSH is disabled on the Fornax system.
+:::

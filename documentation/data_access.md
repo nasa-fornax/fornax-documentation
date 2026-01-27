@@ -19,15 +19,22 @@ If you need the full path to a file or directory you have uploaded, find it usin
 
 ## Direct Cloud Access
 
-The Fornax Science Console runs on AWS in the `us-east-1` region, enabling you to access cloud-hosted data directly from your JupyterLab session without downloading it locally.
-Accessing data stored in the same region (`us-east-1`) is generally more efficient, with lower latency and no inter-region data transfer costs.
+You can access cloud-hosted data directly from your JupyterLab session without downloading it first, regardless of whether the data is hosted on AWS, Google Cloud, Azure, or any other cloud provider.
+The NASA Astrophysics Mission Archives (HEASARC, IRSA, MAST) offer curated datasets through the [AWS Open Data program](https://registry.opendata.aws/) (ODR).
 
-The NASA Astrophysics Mission Archives (HEASARC, IRSA, MAST) offer curated datasets through the AWS Open Data program: https://registry.opendata.aws/.
-Most data is stored in Amazon {term}`S3` buckets in the `us-east-1` region.
+Accessing data that is stored in the same region as your compute (Fornax, in this case) will generally be more efficient, meaning lower latency.
+The Fornax Science Console runs on AWS in the `us-east-1` region.
+Most of NASA's ODR datasets are also in the `us-east-1` region (in {term}`Amazon S3<s3>` buckets).
 
 You can use the Python tool [`s3fs`](https://s3fs.readthedocs.io/) to interact with S3 buckets as if they were part of your local filesystem—opening FITS files, CSVs, or other data products directly by specifying the {term}`S3` path.
 For image data, `Astropy` can retrieve cutouts and handle astronomical images in memory, while `pyarrow` enables fast, efficient access to large catalog tables in Parquet format.
 These tools allow seamless and scalable analysis of large datasets without manual downloads or local storage overhead.
+
+Access to NASA's ODR datasets is completely free for users, regardless of your compute location or access method.
+You are also welcome to access other datasets from the Fornax Science Console, but note that you will be responsible for any associated costs.
+Those charges would come from the cloud provider of the given dataset, not from NASA or Fornax, and you would handle them directly with that cloud provider just as you would if you weren't using Fornax.
+Typically, accessing data that is hosted in the same region as your compute is not subject to inter-region data transfer costs (also called "{term}`egress`"), but may be subject to other charges.
+Please check with the relevant cloud provider.
 
 ## Application Program Interfaces
 

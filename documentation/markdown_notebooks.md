@@ -1,13 +1,11 @@
-# Working with Markdown and Developing Code
-
-{ref}`Fornax Science Console: JupyterLab <jupyterlab>` describes the interface and tools available to support users in exploring data and developing code.
-These include {term}`Jupyter Notebook`s, Linux {term}`command-line <terminal>` and {term}`Jupyter Console` terminals, file storage, JupyterLab extensions, and Python environments pre-installed with common astronomy software.
-{ref}`compute-environments` describes how to install additional extensions and software.
+---
+short_title: Markdown Notebooks
+---
 
 (working-with-markdown)=
-## Working with Markdown Notebooks
+# Working with Notebooks in Markdown Format
 
-A Jupyter Notebook is a feature-rich application supporting data exploration and code development.
+A {term}`Jupyter Notebook` is a feature-rich application supporting data exploration and code development.
 The notebook documents may be in either `.ipynb` or `.md` (Markdown) format.
 The Fornax Tutorial Notebooks are in `.md` format (specifically in [MyST](https://mystmd.org/) Markdown flavor) following the standard practice of the Scientific Python ecosystem.
 While many astronomers are familiar with the `.ipynb` format, we chose Markdown for its superior readability, ease of version control through diffing, simpler testing workflows, and smooth rendering to HTML.
@@ -61,48 +59,3 @@ It is easy to convert notebooks between file formats like `.md`, `.ipynb`, and `
     -   Convert `.md` to a `.py` Python script:
 
         ```jupytext --to script <your_notebook_file>.md```
-
-## Moving Between Compute Platforms
-
-If you prefer to develop your code outside the Fornax Science Console, you can push your changes to a publicly available repository (e.g., GitHub) and synchronize that to your home directory on the Fornax Science Console.
-
-(using-git)=
-### Using Git
-
-You can use `git` from the command line or the UI provided by the {ref}`Git extension <git-extension>`.
-
-To set up `git` for the first time, configure your name and email by opening a {term}`terminal <terminal>` and running the following commands:
-
-```sh
-git config --global user.name "Your Name"
-git config --global user.email "your.email@example.com"
-```
-
-You will need to use HTTPS to authenticate with `git` on the Fornax Science Console.
-SSH is not supported.
-For read-only access of public repositories, you can clone them with:
-```sh
-git clone https://github.com/{name}/{repo}
-```
-
-To be able to write to the repo and to access private repos, you will need to setup your credentials.
-You can either enter your username and password, or preferably use access tokens.
-To reduce the number of times you need to enter them, you can configure `git` to cache them:
-
-```sh
-# Tell git to cache your credentials for all repos.
-# To do this for a single repo instead, cd into the repo directory and remove '--global' before running the command.
-git config --global credential.helper cache
-```
-
-:::{hint} Set up github access
-
-To setup github access over HTTPS, it is highly recommended that you create a personal access token.
-For details, you can follow the [github documentation](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens#creating-a-fine-grained-personal-access-token), then clone the repo using:
-```sh
-git clone https://$token@github.com/{name}/{repo}
-```
-:::
-
-
-For more information about using `git`, see https://git-scm.com/docs/gittutorial.

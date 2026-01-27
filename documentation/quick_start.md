@@ -25,7 +25,7 @@ Once you submit the form, a verification link will be sent to your email address
 Click the link to verify your email address and then follow the instructions to verify your phone number.
 
 A human will then review your request.
-If approved, your account will be created and you will receive an email with further instructions and information.
+If approved, your account will be created and you will receive an email with further instructions and information, including the [User Agreement](change-controlled-documents/user-agreement) and [User Resource Allotments and Costs](change-controlled-documents/user-resource-allotments-and-costs).
 
 ```{note}
 Email addresses from safelisted domains (currently, nasa.gov) are automatically approved.
@@ -75,7 +75,7 @@ Once your server has started, you will see a JupyterLab interface similar to thi
 ```
 
 At this point, the selected server will begin charging against your credit allotment, even though no computations have started yet.
-Since you have chosen the **Small** server, this cost will be low.
+Since you have chosen the **Small** server, the associated credit usage will be low.
 
 ```{warning}
 Server sessions that appear to be inactive or reach the maximum time limit will be automatically shut down.

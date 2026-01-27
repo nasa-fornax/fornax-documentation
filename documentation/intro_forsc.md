@@ -12,20 +12,8 @@ The Fornax Science Console supports many astronomical use cases, but users will 
 -   that require complicated software which is pre-installed on the platform; or
 -   that are parallelizable and require a large number of {term}`CPU`s.
 
-## Registration
-
-To create a free Fornax account, complete the form at:
-
-{button}`Sign up for a Fornax account<https://signup.fornax.sciencecloud.nasa.gov>`
-
-Detailed information about the registration process can be found in [Quickstart: Get an Account](#get-an-account).
-After completing the process, you will receive the following documents:
-
--   [User Resource Allotments and Costs](change-controlled-documents/user-resource-allotments-and-costs)
--   [User Agreement](change-controlled-documents/user-agreement)
-
 (intro-best-practices)=
-## Compute, Storage, and Cost
+## Compute and Storage
 
 Fornax offers cloud-based computing with multiple server and data storage options, and an allotment of credits to spend as they wish.
 
