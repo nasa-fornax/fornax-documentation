@@ -59,7 +59,7 @@ git config --global user.email "your.email@example.com"
 To be able to *read* (or clone) a *private* repo, or to *write* to *any* repo, you will need to use credentials.
 You can either use your username and password or an access token, both of which you would set up through your Git provider (for example, GitHub).
 
-:::{hint} For GitHub access, we recommend using a personal access token
+:::{hint} For GitHub access, we recommend using a personal access token.
 
 To set up GitHub access, it is highly recommended that you create a personal access token.
 For details, please follow the [GitHub documentation](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens#creating-a-fine-grained-personal-access-token).
