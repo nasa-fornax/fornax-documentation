@@ -31,15 +31,18 @@ There are two types of Python environments, **pip**-based and **conda**-based.
 A wide variety of software is pre-installed.
 A detailed accounting can be found in the environment lock files in the `$LOCK_DIR` directory or on the [latest image release](https://github.com/nasa-fornax/fornax-images/releases/latest) page.
 The software is organized into several environments.
+Each environment has a corresponding {term}`kernel <kernel>` with the same name.
 
 `python3`
 :   This is the default Python environment and is **pip**-based.
     It has general astronomy and plotting software.
+    This is usually a good choice for any work that doesn't involve high-energy data or a Fornax demo notebook.
 
 `py-{notebook-name}`
 :   These environments are **pip**-based.
-    Each of the Fornax demo notebooks has its own environment with a name of the form `py-{notebook-name}` (e.g. `py-light_curve_collector` and `py-multiband_photometry`).
-    Each environment has the packages required to run the notebook pre-installed.
+    Each of the Fornax demo notebooks has its own environment with a name of the form `py-{notebook-name}` (e.g. `py-light_curve_collector` and `py-multiband_photometry`) and the packages required to run the notebook pre-installed.
+    When opening a notebook, the corresponding kernel should automatically start.
+    You can also select it from the drop down kernel menu at the top-right of an open notebook.
 
 `heasoft`, `ciao`, `fermi`, `sas`
 :   Environments for high energy software are **conda**-based and include:
@@ -48,8 +51,6 @@ The software is organized into several environments.
     [Fermi analysis software](https://fermi.gsfc.nasa.gov/ssc/data/analysis/software/),
     and [XMM-Newton SAS](https://www.cosmos.esa.int/web/xmm-newton/sas).
 
-When opening the notebook, the corresponding {term}`kernel <kernel>` should automatically start.
-You can also select it from the drop down kernel menu at the top-right of an open notebook.
 
 (select-environment)=
 ### Activate an Environment

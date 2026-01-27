@@ -28,7 +28,7 @@ It is best suited for infrequently accessed data, such as archival storage of pi
 
 There is no limit on the amount of data a user can store here, other than their own credit allotment.
 
-The bucket is not backed up, but AWS guarantees very high reliability (>>99%).
+Data stored here are not backed up, but AWS guarantees very high reliability (>>99%).
 Users can expect that data stored here will be available.
 But once the user deletes the data, it is non-recoverable.
 
@@ -52,7 +52,7 @@ Users can contact the [](#helpdesk) to request additional space.
 The directory `~/shared-storage` is a shared area that is visible to every Fornax user.
 It uses a standard Unix filesystem (POSIX).
 
-Users wishing to share data or code should make a new directory called `~/shared-storage/users/$USER` (where `$USER` is their username) and save the files there.
+Users wishing to share data or code with collaborators should make a new directory called `~/shared-storage/users/$USER` (where `$USER` is their username) and save the files there.
 
 ## Bring Your Own Storage
 
