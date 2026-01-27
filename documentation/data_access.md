@@ -33,7 +33,7 @@ These tools allow seamless and scalable analysis of large datasets without manua
 Access to NASA's ODR datasets is completely free for users, regardless of your compute location or access method.
 You are also welcome to access other datasets from the Fornax Science Console, but note that you will be responsible for any associated costs.
 Those charges would come from the cloud provider of the given dataset, not from NASA or Fornax, and you would handle them directly with that cloud provider just as you would if you weren't using Fornax.
-Typically, accessing data that is hosted in the same region as your compute is not subject to inter-region data transfer costs (also called "egress"), but may be subject to other charges.
+Typically, accessing data that is hosted in the same region as your compute is not subject to inter-region data transfer costs (also called "{term}`egress`"), but may be subject to other charges.
 Please check with the relevant cloud provider.
 
 ## Application Program Interfaces

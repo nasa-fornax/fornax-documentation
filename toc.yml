@@ -11,8 +11,6 @@ project:
         - file: documentation/server_options.md
         - file: documentation/compute_environments.md
         - file: documentation/data_storage.md
-        # - file: documentation/change-controlled-documents/user-resource-allotments-and-costs.md
-        # - file: documentation/change-controlled-documents/user-agreement.md
     - file: documentation/notebook_tutorials.md
     - file: documentation/data_access.md
     - title: Developing Code
@@ -22,5 +20,9 @@ project:
     - file: documentation/faq.md
     - file: documentation/fornax_community_forum.md
     - file: documentation/acknowledgement.md
+    - title: New User Documents
+      children:
+        - file: documentation/change-controlled-documents/user-resource-allotments-and-costs.md
+        - file: documentation/change-controlled-documents/user-agreement.md
     - file: documentation/more_resources.md
     - file: documentation/glossary.md
