@@ -22,7 +22,7 @@ Egress Spend
     Egress refers to data that is transferred out of a cloud provider's system to somewhere else, like your local computer or another cloud.
 
 Total Egress
-:   Total Egress tracks the volume of data in GB egressed so far this year.
+:   Total Egress tracks the total volume of data (in GB) that has been transferred out of the platform so far this year.
 
 Storage Spend
 :   Storage Spend tracks the total number of credits spent on storage so far this year.
@@ -32,7 +32,7 @@ Storage in Use
 :   Storage in Use tracks the volume of storage in GB that you are currently using, including your home directory and S3 storage space.
 
 Compute Spend
-:   Compute Spend tracks the total number of credits spent on compute so far this year.
+:   Compute Spend tracks the total number of credits spent on {term}`server sessions<Server Session>` so far this year.
 
 Running Jupyter Servers
 :   Running Jupyter Servers shows 0 if you are not running a compute environment, or 1 if you are.
