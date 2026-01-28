@@ -28,8 +28,8 @@ Storage Spend
 :   Storage Spend tracks the total number of credits spent on storage so far this year.
     This includes all private [storage](#data-storage) areas, such as the home directory and S3 (based on amount used), and temporary storage (based on amount allocated).
 
-Storage Allocated
-:   Storage Allocated tracks the volume of storage in GB that you are currently using, including your home directory and S3 storage space.
+Storage in Use
+:   Storage in Use tracks the volume of storage in GB that you are currently using, including your home directory and S3 storage space.
 
 Compute Spend
 :   Compute Spend tracks the total number of credits spent on compute so far this year.
