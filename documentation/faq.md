@@ -1,12 +1,13 @@
 # Frequently Asked Questions (FAQ)
 
-## If my internet connection goes away or is intermittent - what happens to the running notebook?
+## If my Internet connection goes away or is intermittent, what happens to the running notebook?
 
-If you have a running job and your internet is disrupted, the job should continue to run as long as the {term}`session<Server Session>` does not expire (See {ref}`jupyterlab-session-information`).
+If you have a running job and your Internet is disrupted, the job should continue to run as long as the {term}`session<Server Session>` does not expire (See {ref}`jupyterlab-session-information`).
 You can connect to a running session using the same browser or different browser.
 You can even connect to the same session from different machines.
 
 ## I was logged out while having a running job. What happens to it?
+
 Being logged-in and having a running job or server are independent.
 An active {term}`Server Session` is running in the cloud regardless of whether you logged in or not (See {ref}`jupyterlab-session-information`).
 To **access** that active {term}`Server Session` (to stop it or modify it),
@@ -30,11 +31,13 @@ For efficient resource usage, idle interactive sessions will be culled automatic
 If you want to keep your session running for longer, you can use the Keep-alive feature in the Fornax menu.
 See the {ref}`jupyterlab-session-information` section for details.
 
-how long is the period of inactivity that gets culled?
-It is set to 15 minutes, but it can take a few minutes longer for culling service to be triggered.
+## How long is the period of inactivity before a session gets culled?
 
-## Why my html page is blank when opened inside Jupyterlab with Safari?
-This is a known issue in displaying html files inside Jupyterlab in Safari.
+It is set to 15 minutes, but it can take a few minutes longer for the culling service to be triggered.
+
+## Why is my HTML page blank when opened inside Jupyterlab with Safari?
+
+This is a known issue in displaying HTML files inside Jupyterlab in Safari.
 The workaround is to right-click (double finger tap) on the html file and select 'Open in New Browser Tab'.
 The file should open correctly in a new browser tab.
 
