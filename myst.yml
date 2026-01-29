@@ -22,3 +22,4 @@ site:
   options:
      favicon: _static/fornax_favicon.ico
      logo: _static/fornax_logo.png
+     analytics_google: G-VW2CL80W4S
