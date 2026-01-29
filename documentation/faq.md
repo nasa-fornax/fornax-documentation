@@ -31,7 +31,7 @@ For efficient resource usage, idle interactive sessions will be culled automatic
 If you want to keep your session running for longer, you can use the Keep-alive feature in the Fornax menu.
 See the {ref}`jupyterlab-session-information` section for details.
 
-## How long is the period of inactivity that gets culled?
+## How long is the period of inactivity before a session gets culled?
 
 It is set to 15 minutes, but it can take a few minutes longer for the culling service to be triggered.
 
