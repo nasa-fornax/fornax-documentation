@@ -88,11 +88,13 @@ micromamba deactivate
 
 (install-additional-software)=
 ### Install Additional Software - Update an Existing Environment
+
 :::{note}
 Note that packages installed this way are added in the global `$ENV_DIR` folder, which is reset when you start a new session.
 It is highly recommended that you [create a new environment](#create-new-env) if you want to install new packages.
 In this case, the environment is added to $USER_ENV_DIR
 :::
+
 To add packages to a currently installed environment, you install them with `pip` (or the faster `uv pip`) after activating the relevant environment.
 
 -   Inside a {term}`notebook <Jupyter Notebook>` running the relevant environment, run `!uv pip install ...`, passing the extra package needed.
