@@ -215,6 +215,14 @@ $JUPYTER_DIR/bin/jupyter kernelspec list
 It is recommended that you remove user environments in your home directory that are no longer needed, as they may deplete your home storage and consume your allocated credit.
 :::
 
+(calibration-data)=
+### Calibration Data
+Some software tools require access to calibration or support data. These are currently provided via:
+
+- `/shared-storage/support-data`: This is a shared storage that containt the support data for some of the high energy software.
+
+- Environment variables associated with specific environments. For example, activating `heasoft` (see {ref}`select-environment`) defines the relevant environment variables for CALDB, which point to the calibration data on AWS S3 buckets for efficient access.
+
 ## Other Environments
 Although the focus is on python environments, additional environments are also available. There are pre-installed [R](https://www.r-project.org/) and [Julia](https://julialang.org/) environments. The current support for these environments is minial, with no tutorial notebooks. The `Julia` environment has basic astronomy packages installed, and the environment files are available under `$LOCK_DIR/julia`. You can also [create your own Julia environment](https://pkgdocs.julialang.org/v1/environments/).
 
