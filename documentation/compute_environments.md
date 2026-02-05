@@ -219,7 +219,11 @@ It is recommended that you remove user environments in your home directory that 
 :::
 
 ## Other Environments
-Although the focus is on python environments, additional environments are also available. There are pre-installed [R](https://www.r-project.org/) and [Julia](https://julialang.org/) environments. The current support for these environments is minial, with no tutorial notebooks. The `Julia` environment has basic astronomy packages installed, and the environment files are available under `$LOCK_DIR/julia`. You can also [create your own Julia environment](https://pkgdocs.julialang.org/v1/environments/).
+Although the focus is on Python environments, additional environments are also available.
+There are pre-installed [R](https://www.r-project.org/) and [Julia](https://julialang.org/) environments.
+The current support for these environments is minimal, with no tutorial notebooks.
+The `Julia` environment has basic astronomy packages installed, and the environment files are available under `$LOCK_DIR/julia`.
+You can also [create your own Julia environment](https://pkgdocs.julialang.org/v1/environments/).
 
 ## JupyterLab Extensions
 
