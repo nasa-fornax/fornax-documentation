@@ -86,24 +86,19 @@ and the following to deactivate it:
 micromamba deactivate
 ```
 
-(install-additional-software)=
-### Install Additional Software
 
-To install additional Python software, you can either update an existing environment or create a new one.
-
-#### Update an Existing Environment
-
+### Install additional Software - Update an Existing Environment
+:::{note}
+Note that packages installed this way are added in the global `$ENV_DIR` folder, which is reset when you start a new session.
+It is highly recommended that you [create a new environment](#create-new-env) if you want to install new packages.
+In this case, the environment is added to $USER_ENV_DIR
+:::
 To add packages to a currently installed environment, you install them with `pip` (or the faster `uv pip`) after activating the relevant environment.
 
 -   Inside a {term}`notebook <Jupyter Notebook>` running the relevant environment, run `!uv pip install ...`, passing the extra package needed.
 -   In the {term}`terminal <terminal>`, after activating the environment run: `uv pip install ...`.
 
 This should work for both pip and conda-based environments.
-
-:::{note}
-Note that packages installed this way are added in the global `$ENV_DIR` folder, which is reset when you start a new session.
-It is highly recommended that you [create a new environment](#create-new-env) if you want to install new packages.
-:::
 
 If you want to add a small number of packages to a built-in environment, however, you can follow these steps:
 
@@ -119,12 +114,14 @@ If you want to add a small number of packages to a built-in environment, however
         ```
 
 (create-new-env)=
-#### Create a New Environment
+### Install additional Software - Create a New Environment
 
-To create a new environment, we recommend using one of the provided scripts: `setup-pip-env` or `setup-conda-env`.
+Create a new environment when you want your installed packages to be persistent, isolated, and reproducible across sessions, rather than temporarily added to a shared environment that is reset when your session ends.
+To create a new environment, we recommend using one of the provided scripts: `setup-pip-env` or `setup-conda-env`.  
 
 Run `setup-pip-env -h` or `setup-conda-env -h` from the {term}`terminal <terminal>` for detailed help.
 These scripts take either a requirements file (former) or a conda yaml file (latter), and create the environment, including the setup of the kernel so you can use the environment in a notebook.
+
 
 - For pip-based environments (recommended):
     - Create a requirement file named: `requirements-{env-name}.txt` (e.g. `requirements-myenv.txt` bellow).
@@ -134,34 +131,40 @@ These scripts take either a requirements file (former) or a conda yaml file (lat
       If you want the environment to persist between sessions, use `setup-pip-env --user`.
       This will install the new environment under `$USER_ENV_DIR` (defaults to `~/user-envs`).
 
-:::{dropdown} `requirements-myenv.txt`
+    :::{dropdown} `example requirements-myenv.txt`
 
-```
-numpy == 2.2.0
-astropy
-```
-:::
+    ```
+    numpy == 2.2.0
+    astropy
+    ```
+    :::
 
 - For conda-based environments (if your packages are not pip-installable):
     - Create an environment file: `conda-{env-name}.yml` (e.g. `conda-myenv.yml` below).
-    - Call `setup-conda-env`.
+    - From the terminal, call `setup-conda-env` --user.
       Similar to the pip-case, the environment is created in a global default location (`$ENV_DIR`), that is reset at the start of every session.
-      If you want the environment to persist between sessions, use `setup-conda-env --user`.
+      If you do not want the environment to persist between sessions, use `setup-conda-env` (without the `--user`).
+    - When you run `setup-conda-env` it will automatically find all the .yml files in your directory and ask which one to use.
+    - Running the setup may take many minutes and be GB in size.
+    - To use this environment, in the terminal you need to activate with:
+        - `micromamba activate $USER_ENV_DIR/{env_name}`
+        - or `micromamba activate $ENV_DIR/{env_name}` if you didn't pass --user
+    - If you are working in a notebook, you can now choose that environment name as your kernel either by using the dropdown in the upper right or selecting the kernel menu -> change kernel
 
-:::{dropdown} `conda-myenv.yml`
+    :::{dropdown} `example conda-myenv.yml`
 
-```yaml
-name: myenv
-channels:
-  - conda-forge
-dependencies:
-  - python=3.11
-  - numpy=2.2.0
-  - pip
-  - pip:
-    - matplotlib
-```
-:::
+    ```yaml
+    name: myenv
+    channels:
+      - conda-forge
+    dependencies:
+      - python=3.11
+      - numpy=2.2.0
+      - pip
+      - pip:
+          - matplotlib
+    ```
+    :::
 
 :::{note} Details on manually installing new environments
 :class: dropdown
@@ -200,7 +203,7 @@ Similarly, to use this environment in a {term}`notebook <Jupyter Notebook>`, you
 :::
 
 (delete-user-env)=
-#### Deleting a User Environment
+### Deleting a User Environment
 Deleting a user envivronment that was created either manually or with the scripts provided can be done with these two steps:
 
 - Delete the environment folder under `~/user-envs/` (or wherever else it is was installed).
