@@ -12,6 +12,8 @@ project:
       keys:
         # some cross linking, ignore these until we can change the upstream source
         - https://docs.fornax.sciencecloud.nasa.gov/user-resource-allotments-and-costs
+    - rule: reference-target-resolves
+      severity: error
 extends:
   - toc.yml
 
