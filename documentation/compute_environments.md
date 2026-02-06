@@ -220,6 +220,14 @@ $JUPYTER_DIR/bin/jupyter kernelspec list
 It is recommended that you remove user environments in your home directory that are no longer needed, as they may deplete your home storage and consume your allocated credit.
 :::
 
+(calibration-data)=
+### Calibration Data
+Some software tools require access to calibration or support data. These are currently provided via:
+
+- `/shared-storage/support-data`: This is a shared storage that contains the support data for some of the high energy software such as HEASoft, CIAO, XMM SAS etc.
+
+- Environment variables associated with specific environments. For example, activating `heasoft` (see {ref}`select-environment`) defines the relevant environment variables for CALDB, which point to the calibration data on AWS S3 buckets for efficient access.
+
 ## Other Environments
 
 Although the focus is on Python environments, additional environments are also available.
