@@ -29,7 +29,7 @@ There are two types of Python environments, **pip**-based and **conda**-based.
     - These environments contain `pip`-installable packages and are used in most cases.
     - The default environments are installed under `$ENV_DIR`.
     
-(conda-baesd)=
+(conda-based)=
 **conda**-based
 :   - These use [micromamba](https://mamba.readthedocs.io/en/latest/user_guide/micromamba.html) to manage the packages (similar to conda/mamba):
     - The `conda`-based environments are used with packages that are not `pip`-installable.
