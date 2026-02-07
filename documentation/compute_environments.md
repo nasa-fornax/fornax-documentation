@@ -36,11 +36,7 @@ There are two types of Python environments, **pip**-based and **conda**-based.
      - These are also installed under `$ENV_DIR`. You can also use `micromamba env list` to list the conda based environments.
      - Many of the useful packages (vim, htop, git, awscli, etc) are installed from `conda-forge` into the `base` conda environment under `$ENV_DIR/base`.
      - Currently-installed conda-based environments include: `heasoft`, `ciao`, `sas` and `fermi` for high energy astrophysics software.
-     - You can add packages to these conda-based environments by doing:
-
-     ```sh
-     micromamba install package_name
-     ```
+     - You can add packages to these conda-based environments by doing `micromamba install package_name`
 
 
 (preinstalled-software)=
