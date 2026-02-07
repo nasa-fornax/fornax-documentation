@@ -4,7 +4,7 @@
 The Fornax Science Console is a lightly customized {term}`JupyterLab` environment running on AWS cloud servers (x86_64 Ubuntu Linux).
 Several {term}`software environments <environment>` and JupyterLab extensions are pre-installed.
 We intentionally keep {ref}`preinstalled-software` minimal to improve stability and maintainability while giving users flexibility to install only the software they need.
-Users can customize their experience by {ref}`install-additional-software` and/or {ref}`jupyterlab-extensions`.
+Users can customize their experience by {ref}`installing additional software<install-additional-software>` and/or {ref}`installing Jupyterlab extensions <jupyterlab-extensions>`.
 This page describes the pre-installed tools, customization instructions, and {ref}`user-shell-setup`.
 
 Although the focus is on {ref}`python-environments`, additional environments are also available.
@@ -13,7 +13,7 @@ The current support for these environments is minimal, with no tutorial notebook
 The `Julia` environment has basic astronomy packages installed, and the environment files are available under `$LOCK_DIR/julia`.
 You can also [create your own Julia environment](https://pkgdocs.julialang.org/v1/environments/).
 
-For non-Python tools (e.g. `htop`, `vim` etc), they can be run directly from the terminal without a need for activating the base environment as they are included in the `PATH` by default.
+non-Python tools (e.g. `htop`, `vim` etc) can be run directly from the terminal without a need for activating the base environment as they are included in the `PATH` by default.
 
 (python-environments)=
 ## Python Environments
@@ -25,22 +25,22 @@ There are two types of Python environments, **pip**-based and **conda**-based.
 
 (pip-based)=
 **pip**-based
-:   - The **pip**-based environments use [uv](https://docs.astral.sh/uv/) to manage the packages.
+    - The **pip**-based environments use [uv](https://docs.astral.sh/uv/) to manage the packages.
     - These environments contain `pip`-installable packages and are used in most cases.
     - The default environments are installed under `$ENV_DIR`.
     
 (conda-based)=
 **conda**-based
-:   - These use [micromamba](https://mamba.readthedocs.io/en/latest/user_guide/micromamba.html) to manage the packages (similar to conda/mamba):
-    - The `conda`-based environments are used with packages that are not `pip`-installable.
-    - These are also installed under `$ENV_DIR`. You can also use `micromamba env list` to list the conda based environments.
-    - Many of the useful packages (vim, htop, git, awscli, etc) are installed from `conda-forge` into the `base` conda environment under `$ENV_DIR/base`.
-    - Currently-installed conda-based environments include: `heasoft`, `ciao`, `sas` and `fermi` for high energy astrophysics software.
-    - You can add packages to these conda-based environments by doing:
+     - These use [micromamba](https://mamba.readthedocs.io/en/latest/user_guide/micromamba.html) to manage the packages (similar to conda/mamba):
+     - The `conda`-based environments are used with packages that are not `pip`-installable.
+     - These are also installed under `$ENV_DIR`. You can also use `micromamba env list` to list the conda based environments.
+     - Many of the useful packages (vim, htop, git, awscli, etc) are installed from `conda-forge` into the `base` conda environment under `$ENV_DIR/base`.
+     - Currently-installed conda-based environments include: `heasoft`, `ciao`, `sas` and `fermi` for high energy astrophysics software.
+     - You can add packages to these conda-based environments by doing:
 
-    ```sh
-    micromamba install package_name
-    ```
+     ```sh
+     micromamba install package_name
+     ```
 
 
 (preinstalled-software)=
@@ -139,7 +139,7 @@ These scripts take either a requirements file (former) or a conda yaml file (lat
     - If you are working in a notebook, you can now choose that environment name as your kernel either by using the dropdown in the upper right or selecting the kernel menu -> change kernel
     - You can also include compilers in your .yml file or on the command line.
 
-        For example, to install C, C++ and Fortran compilers, *note the compiler names*:
+        For example, to install C, C++ and Fortran compilers, **note the compiler names**:
 
         ```sh
         micromamba install c-compiler cxx-compiler fortran-compiler
