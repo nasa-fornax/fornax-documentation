@@ -105,43 +105,67 @@ To create a new environment, we recommend using one of the provided scripts: `se
 Run `setup-pip-env -h` or `setup-conda-env -h` from the {term}`terminal <terminal>` for detailed help.
 These scripts take either a requirements file (former) or a conda yaml file (latter), and create the environment, including the setup of the kernel so you can use the environment in a notebook.
 
-- For pip-based environments (recommended):
-    - Create a requirement file named: `requirements-{env-name}.txt` (e.g. `requirements-myenv.txt` bellow).
-    - Call `setup-pip-env` from the same folder.
-      By default, the environment is created in a global location (`$ENV_DIR`), that is reset at the start of every session.
-      Use this for environments that are needed for a single session.
-      If you want the environment to persist between sessions, use `setup-pip-env --user`.
-      This will install the new environment under `$USER_ENV_DIR` (defaults to `~/user-envs`).
+#### For pip-based environments (recommended):
+1. Create a requirement file named: `requirements-{env-name}.txt` (e.g. `requirements-myenv.txt` bellow).
+   
+2. From the same directory, run:
+   ```sh
+   setup-pip-env
+   ```
+3. By default, the environment is created in a global location (`$ENV_DIR`), that is reset at the start of every session.
+Use this for environments that are needed for a single session.
 
-    :::{dropdown} `Example requirements-myenv.txt`
 
+4. If you want the environment to persist between sessions, run:
+    ```sh
+    setup-pip-env --user
     ```
-    numpy == 2.2.0
-    astropy
+This will install the new environment under `$USER_ENV_DIR` (defaults to `~/user-envs`).
+
+:::{dropdown} `Example requirements-myenv.txt`
+
+```
+numpy == 2.2.0
+astropy
+```
+:::
+
+#### For conda-based environments (if your packages are not pip-installable):
+1. Create an environment file: `conda-{env-name}.yml` (e.g. `conda-myenv.yml` below).
+This naming scheme is required.
+
+2. From the same directory, run:
+
+    ```sh
+    setup-conda-env --user
     ```
-    :::
+3. Environments created without `--user` are installed under `$ENV_DIR` and reset at the start of each session.
+Use `--user` to create a persistent environment under `$USER_ENV_DIR`.
 
-- For conda-based environments (if your packages are not pip-installable):
-    - Create an environment file: `conda-{env-name}.yml` (e.g. `conda-myenv.yml` below).
-      This naming scheme is required.
-    - From the terminal, call `setup-conda-env` --user.
-      Similar to the pip-case, the environment is created in a global default location (`$ENV_DIR`), that is reset at the start of every session.
-      If you do not want the environment to persist between sessions, use `setup-conda-env` (without the `--user`).
-    - When you run `setup-conda-env` it will automatically find all the .yml files in your directory and ask which one to use.
-    - Running the setup may take many minutes and be GB in size.
-    - To use this environment, in the terminal you need to activate with:
-        - `micromamba activate $USER_ENV_DIR/{env_name}`
-        - or `micromamba activate $ENV_DIR/{env_name}` if you didn't pass --user
-    - If you are working in a notebook, you can now choose that environment name as your kernel either by using the dropdown in the upper right or selecting the kernel menu -> change kernel
-    - You can also include compilers in your .yml file or on the command line.
+4. When multiple .yml files are present, the script will prompt you to choose which one to use.
 
-        For example, to install C, C++ and Fortran compilers, **note the compiler names**:
+5. Running the setup may take many minutes and require multiple GB of disk space.
+
+6. Activate the environment in the terminal:
+    ```sh
+    micromamba activate $USER_ENV_DIR/{env_name}
+    ```
+    or if `--user` was not used
+
+   ```sh
+    micromamba activate $ENV_DIR/{env_name}
+    ```
+
+7. Activate the environment in a notebook: you can now select that environment name as your kernel either by using the dropdown menu in the upper right or selecting the kernel menu -> change kernel
+
+8. You can also include compilers in the `.yml` file or on the command line.
+For example, to install C, C++ and Fortran compilers, **note the compiler names**:
 
         ```sh
         micromamba install c-compiler cxx-compiler fortran-compiler
         ```
-    - It is also possible to include pip-installable packages in a conda .yml file, as shown in the example below.
-      When used carefully, this can help manage mixed conda and pip dependencies in a more reproducible way.  
+
+10. Conda environments may also include pip-installable packages, as shown in the example below. When used carefully, this can help manage mixed conda and pip dependencies in a reproducible way.
 
     :::{dropdown} `Example conda-myenv.yml`
 
@@ -158,7 +182,7 @@ These scripts take either a requirements file (former) or a conda yaml file (lat
     ```
     :::
 
-:::{note} Details on manually installing new environments
+:::{note} Details on manually installing new environments with 
 :class: dropdown
 
 You can also do all the setup by hand if you want more control.
