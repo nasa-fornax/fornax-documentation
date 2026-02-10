@@ -182,7 +182,7 @@ For example, to install C, C++ and Fortran compilers, **note the compiler names*
     ```
     :::
 
-:::{note} Details on manually installing new environments with 
+:::{note} Details on manually installing new environments
 :class: dropdown
 
 You can also do all the setup by hand if you want more control.
