@@ -15,11 +15,9 @@ See {ref}`working-with-markdown`.
 ## Notebooks in the Console
 
 When you login to the console, the tutorial notebooks are available in your home directory at `~/fornax-notebooks`.
-As the notebooks are continuously developed, the clone in the console can lag behind.
-To get the latest version of the notebooks, open a terminal and run `update-notebooks.sh`.
-You can also select Fornax -> Update Notebooks from the Top menu.
+The packages required to run the notebooks are already installed.
 
-Note that the notebooks directory is read-only, and its content is reset with every session.
+The notebooks directory is read-only, and its content is reset with every session.
 If you want to make modifications to the notebooks, make your own copy or clone and modify it.
 
 ## Other NASA Astrophysics Notebooks
