@@ -286,7 +286,7 @@ Start in a empty working direcotry that will be used for sharing data between th
 
 The Fornax images are available from the github registry: `ghcr.io/nasa-fornax/fornax-images`.
 
-Two images are provided. `fornax-main` and `fornax-hea`. The former is the main Fornax image that contains general software, the Fornax notebooks and their environments.
+Two images are provided. `fornax-main` and `fornax-hea`:
 
 - `fornax-main`: Contains general astronomy software, the Fornax tutorial notebooks and their pre-installed environments, Julia and R kernels.
 - `fornax-hea`: Contains environments for analyzing high energy astrophysics data, including `heasoft`, `ciao` (for Chandra), `fermi`, `sas` (for XMM-Newton).
