@@ -274,3 +274,113 @@ The Jupyterlab terminal uses a non-login shell, which means `~/.bashrc` is not c
 `~/.profile` on the other hand is called.
 You can therefore use it for any bash initialization code.
 A new `~/.profile` is created at login time if it does not exist, and it also calls `~/.bashrc`, so you can add you customization (e.g. update `PATH`, setup rust or julia, etc) to either one.
+
+
+# Using Fornax Software Environments Outside Fornax Console
+The Fornax software environments are available as docker container images in the github container registry.
+To use them outside the Fornax console (e.g. on your local machine),
+you will need to install [docker](https://docs.docker.com/engine/install/).
+
+## Setup
+Start in a empty working direcotry that will be used for sharing data between the container and your system.
+
+The Fornax images are available from the github registry: `ghcr.io/nasa-fornax/fornax-images`.
+
+Two images are provided. `fornax-main` and `fornax-hea`. The former is the main Fornax image that contains general software, the Fornax notebooks and their environments.
+
+- `fornax-main`: Contains general astronomy software, the Fornax tutorial notebooks and their pre-installed environments, Julia and R kernels.
+- `fornax-hea`: Contains environments for analyzing high energy astrophysics data, including `heasoft`, `ciao` (for Chandra), `fermi`, `sas` (for XMM-Newton).
+
+
+For each image, there are tags that keep track of the image versions:
+
+- `stable`: the latest stable version
+- `develop`: the latest develop version
+- Named versions (e.g. `26.0202`). Previous stable versions. See the [image release page](https://github.com/nasa-fornax/fornax-images/releases) for details.
+
+If you are familiar with docker, you can pull the image using the following example and start using it.
+
+```sh
+docker pull ghcr.io/nasa-fornax/fornax-images/fornax-main:stable
+```
+
+The following examples show you can use the images in different contexts. We will define some variables to be used in subsequent steps. You can change these based on what image and tag you are using.
+
+```sh
+image="fornax-main"
+tag="develop"
+
+declare -a docker_options=()
+docker_options+=(
+    --user root -e NB_UID=$(id -u) -e NB_GID=$(id -g)
+    -e CHOWN_HOME=yes -e CHOWN_HOME_OPTS='-R' -e NOTEBOOK_ARGS='--NotebookApp.token=""'
+    -v $(pwd):/opt/workspace:rw
+    -w /opt/workspace
+    ghcr.io/nasa-fornax/fornax-images/${image}:${tag}
+)
+```
+
+
+## Running JupyterLab
+The most basic use of the images is run JupyterLab inside them and replicate what you get in the Fornax Console.
+
+Running the following will run a container and starts jupyterlab inside it.
+You can then access it by pointing your browser to: `http://localhost:8888`
+
+```sh
+docker run --rm -p 8888:8888 ${docker_options[@]}
+```
+
+With this setup, the notebooks are available in `~/fornax-notebooks`, and the `/opt/workspace/` is writable to the user.
+Any files under `/opt/worksapce` are available outside the container in the folder in which the container started.
+You can for example copy the notebooks that folder and run them.
+
+
+## Running the Container in Intractive Mode
+In interactive mode, you start an interactive shell inside the container and proceed to running command line tools.
+
+```sh
+docker run --rm -it ${docker_options[@]} bash
+```
+
+## Running the Container in Batch Mode
+In bath mode, you can pass the command you want to run directly to `docker run`.
+It is recommended to call commands inside bash so environment variables are setup correctly.
+
+```sh
+docker run --rm ${docker_options[@]} bash -c "ls /opt/envs/lock"
+```
+This will first print some initialization messages and then calls the passed commands and exits.
+
+
+As a more useful example, we will run one of the demo notebooks available in the image.
+We use the `jupytext --execute` (see {ref}`working-with-markdown` for details).
+In this case the python kernel is already defined in the file's meta section.
+The kernel can also be specified by using the `-k kernel-name` option for `jupytext`
+
+```sh
+# first, we check the content
+nb_dir=/home/jovyan/fornax-notebooks/fornax-demo-notebooks
+docker run --rm ${docker_options[@]} bash -c "ls $nb_dir"
+
+# then run the notebooks
+docker run --rm ${docker_options[@]} bash -c "jupytext --execute $nb_dir/light_curves/light_curve_classifier.md"
+```
+
+## Running the Container in Detached Mode
+In detached mode, the container is started and commands are sent to it separately.
+
+```sh
+# start the container called `fornax`
+docker run -d --rm --name fornax ${docker_options[@]}
+
+# send commands to the running container
+docker exec fornax pwd
+# gives: /opt/worksapce
+
+# run the notebook similar to the above
+docker exec fornax bash -c "jupytext --execute $nb_dir/light_curves/light_curve_classifier.md"
+
+# stop the container
+docker stop fornax
+```
