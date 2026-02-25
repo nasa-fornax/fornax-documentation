@@ -304,11 +304,11 @@ If you are familiar with docker, you can pull the image using the following exam
 docker pull ghcr.io/nasa-fornax/fornax-images/fornax-main:stable
 ```
 
-The following examples show you can use the images in different contexts. We will define some variables to be used in subsequent steps. You can change these based on what image and tag you are using.
+The following examples show how you can use the images in different contexts. We will define some variables to be used in subsequent steps. You can change these based on what image and tag you are using:
 
 ```sh
 image="fornax-main"
-tag="develop"
+tag="stable"
 
 declare -a docker_options=()
 docker_options+=(
@@ -324,16 +324,16 @@ docker_options+=(
 ## Running JupyterLab
 The most basic use of the images is run JupyterLab inside them and replicate what you get in the Fornax Console.
 
-Running the following will run a container and starts jupyterlab inside it.
+Running the following will create a container and starts jupyterlab inside it.
 You can then access it by pointing your browser to: `http://localhost:8888`
 
 ```sh
 docker run --rm -p 8888:8888 ${docker_options[@]}
 ```
 
-With this setup, the notebooks are available in `~/fornax-notebooks`, and the `/opt/workspace/` is writable to the user.
+With this setup, the notebooks are available in `~/fornax-notebooks`, and the `/opt/workspace/` folder is writable to the user.
 Any files under `/opt/worksapce` are available outside the container in the folder in which the container started.
-You can for example copy the notebooks that folder and run them.
+You can for example copy the notebooks to that folder and run them.
 
 
 ## Running the Container in Intractive Mode
@@ -345,7 +345,7 @@ docker run --rm -it ${docker_options[@]} bash
 
 ## Running the Container in Batch Mode
 In bath mode, you can pass the command you want to run directly to `docker run`.
-It is recommended to call commands inside bash so environment variables are setup correctly.
+It is recommended to call commands inside bash so the environment variables are setup correctly.
 
 ```sh
 docker run --rm ${docker_options[@]} bash -c "ls /opt/envs/lock"
