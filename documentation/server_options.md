@@ -19,7 +19,9 @@ Large (64 GB RAM, 16 CPU)
 
 XLarge (512 GB RAM, 128 CPU)
 :   Reserved for the most demanding, highly parallel jobs.
-    Available by approval only and intended for limited, efficient use.
+    You are welcome to use this server, however you should be aware that this powerful server uses significantly more tokens than the others (See [User Resource Allotments and Costs for Beta Users v1.1](https://docs.fornax.sciencecloud.nasa.gov/user-resource-allotments-and-costs)), and therefore its use should be planned.
+    To help with this, you may receive regular emails from the Fornax team while the this instance is running. These are meant to serve as reminder notifications that the server
+    is running.
 
 ## Starting a Server
 
@@ -52,9 +54,4 @@ So it's important to [stop your server](#stop-server-session) when you're done u
 Simply closing your browser window or logging out of your Fornax account does not stop your server.
 ```
 
-To properly stop your server, go to `File → Hub Control Panel` and then click **Stop My Server**.
-
-### Get approval to use the XLarge server
-
-We require users to get approval before using the XLarge server to help ensure that the significant compute resources are not wasted.
-To request approval, please contact the [](#helpdesk).
+To properly stop your server, go to `Fornax → Shutdown Server` and then click **Stop My Server**.
