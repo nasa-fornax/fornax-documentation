@@ -23,7 +23,7 @@ Those do not actually live in the home directory (they are mounted or symlinked 
 (private-s3)=
 ## Private S3 Bucket
 
-All users have access to a private {term}`AWS S3<s3>` bucket, which is mounted in to the home directory at `~/s3-storage`.
+All users have access to a private {term}`AWS S3<s3>` bucket, which is mounted into the home directory at `~/s3-storage`.
 It is best suited for infrequently accessed data, such as archival storage of pipeline outputs (catalogs, spectra, images, etc.) needed for reproducibility.
 
 There is no limit on the amount of data a user can store here, other than their own credit allotment.

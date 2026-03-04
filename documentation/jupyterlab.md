@@ -102,7 +102,7 @@ Dask
 Git
 :   This extension integrates Git version control into the JupyterLab interface, enabling you to stage, commit, push, and pull notebook and code changes without leaving the environment.
     It provides visual diffs, branch management, and history browsing, making collaborative development and reproducibility seamless.
-    See [](#using-git) for more information about setup and authentication, and [jupyterlab-git](https://github.com/jupyterlab/jupyterlab-git) for more information about the extension.
+    See [](#using-git) for more information about setup and authentication, and [jupyterlab-git](https://github.com/jupyterlab/jupyterlab-git?#jupyterlab-git) for more information about the extension.
 
 Table of Contents
 :   Automatically generates a sidebar outline of all headings in your notebook or document, allowing you to quickly navigate between sections.
