@@ -14,7 +14,7 @@ See {ref}`working-with-markdown`.
 (notebooks-in-fornax)=
 ## Notebooks in the Console
 
-When you login to the console, the tutorial notebooks are available in your home directory at `~/fornax-notebooks`.
+When you log in to the console, the tutorial notebooks are available in your home directory at `~/fornax-notebooks`.
 The packages required to run the notebooks are already installed.
 
 The notebooks directory is read-only, and its content is reset with every session.

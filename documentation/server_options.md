@@ -19,7 +19,7 @@ Large (64 GB RAM, 16 CPU)
 
 XLarge (512 GB RAM, 128 CPU)
 :   Reserved for the most demanding, highly parallel jobs.
-    You are welcome to use this server, however you should be aware that this powerful server uses significantly more tokens than the others (See [User Resource Allotments and Costs for Beta Users v1.1](https://docs.fornax.sciencecloud.nasa.gov/user-resource-allotments-and-costs)), and therefore its use should be planned.
+    You are welcome to use this server, however you should be aware that this powerful server uses significantly more credits than the others (see [](change-controlled-documents/user-resource-allotments-and-costs.md)), and therefore its use should be planned.
     To help with this, you may receive regular emails from the Fornax team while the XLarge instance is running.
     These are meant to serve as reminder notifications that the server still is running.
 
