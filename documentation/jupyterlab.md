@@ -134,13 +134,19 @@ To allow for efficient use of resources, idle {term}`sessions <Server Session>` 
 Fornax has the following guidelines for session culling:
 
 1.  All sessions have a hard upper limit of 48 hours.
-2.  If a session contains running jobs with {term}`CPU` activity, it will not be culled.
+2.  If a session contains running jobs with {term}`CPU` activity, it will not be culled (but see below).
 3.  A session is stopped after 15 minutes of no activity.
 4.  The user can override the 15 min no-activity limit by using the Keep-Alive feature under the Fornax menu.
     - Start a session: You can request the session to stay alive by selecting: `Fornax → Keep-alive → Start Keep-alive Session`.
       Pick a time using the abbreviated notation such as '2d' for two days, '3h45m' for 3 hours and 45 minutes, or the time in seconds as an integer.
     - Stop a session: end a previously started session by `Fornax → Keep-alive → Start Keep-alive Session`.
     - The time remaining in the currently requested session is shown in the status bar at the bottom left, e.g. 'Keepalive: 35m'.
+5.  Independently of the above, a Terminal session that has no user interraction will be stopped after 15 minutes.
+    -  (This is so that an accurate assessment can be made of whether anything is really happening in the session or not.)
+    -  If you start a job running from the Terminal command line, it is then linked to that Terminal.
+    -  The Keep-alive feature applies to the session, not a specific Terminal.  
+    -  The running analysis would keep going and the session as well, except that if the Terminal has no recent user interraction, it is stopped, and this would stop the running process.
+    -  To avoid this, start your command-line jobs with `nohup` and put them in the background by putting `&` at the end.  This separates the computation from the Terminal so that it will continue even if the Terminal is culled.     
 
 :::{hint}
 A {term}`Login Session` is independent of a {term}`Server Session`.
