@@ -1,5 +1,9 @@
 # Frequently Asked Questions (FAQ)
 
+## How do I download a notebook from Fornax to my local machine?
+
+To download your notebook to your local machine, click on your notebook in your home directory on the left side of the screen. Then go to the main menu and select File → Download.  You can also right click on the file name and select "Download". 
+
 ## If my Internet connection goes away or is intermittent, what happens to the running notebook?
 
 If you have a running job and your Internet is disrupted, the job should continue to run as long as the {term}`session<Server Session>` does not expire (See {ref}`jupyterlab-session-information`).
