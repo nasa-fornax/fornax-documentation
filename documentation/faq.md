@@ -4,10 +4,10 @@
 
 Yes! Fornax is well-suited for many exoplanet workflows, especially computationally intensive tasks that parallelize well.
 Atmospheric retrievals are a prime example: tools like petitRADTRANS (pRT) require running thousands of forward models to sample parameter space, which maps naturally onto Fornax's scalable cloud compute.
-A tutorial for setting up and running a pRT retrieval on Fornax is available [here](https://github.com/nasa-fornax/fornax-howtos/blob/main/tutorials/exoplanet_retrievals/quickstart.md).
+[Exoplanet Retrieval Quickstart](https://github.com/nasa-fornax/fornax-howtos/blob/main/tutorials/exoplanet_retrievals/quickstart.md) is a tutorial for setting up and running a pRT retrieval on Fornax.
 Similarly, tasks like injection-recovery tests, transit timing analyses across large light curve sets, and population-level modeling all benefit from the ability to spin up many parallel workers.
 
-Fornax is also co-located with NASA archive data, making it easy to pull large datasets without the bottleneck of downloading to a local machine.
+Fornax is also co-located with NASA archive data on the cloud, making it easy to pull large datasets without the bottleneck of downloading to a local machine.
 Cloud-hosted NASA mission data are readily accessible at high bandwidth directly from the Fornax Science Console.
 
 ## If my Internet connection goes away or is intermittent, what happens to the running notebook?
