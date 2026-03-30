@@ -206,7 +206,7 @@ Similarly, to use this environment in a {term}`notebook <Jupyter Notebook>`, you
 (delete-user-env)=
 ### Deleting a User Environment
 
-Deleting a user envivronment that was created either manually or with the scripts provided can be done with these two steps:
+Deleting a user environment that was created either manually or with the scripts provided can be done with these two steps:
 
 - Delete the environment folder under `~/user-envs/` (or wherever else it is was installed).
 - Remove the kernel for that environment by deleting the the folder with the environment name from `~/.local/share/jupyter/kernels/`.
@@ -270,7 +270,7 @@ For non-Python tools (e.g. `htop`, `vim` etc), they can be run directly from the
 ## Terminal Initialization scripts
 
 The system uses bash as a default shell.
-The Jupyterlab terminal uses a non-login shell, which means `~/.bashrc` is not called by default when a new terminal session starts.
+The JupyterLab terminal uses a non-login shell, which means `~/.bashrc` is not called by default when a new terminal session starts.
 `~/.profile` on the other hand is called.
 You can therefore use it for any bash initialization code.
-A new `~/.profile` is created at login time if it does not exist, and it also calls `~/.bashrc`, so you can add you customization (e.g. update `PATH`, setup rust or julia, etc) to either one.
+A new `~/.profile` is created at login time if it does not exist, and it also calls `~/.bashrc`, so you can add you customization (e.g. update `PATH`, set up Rust or Julia, etc) to either one.
