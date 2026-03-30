@@ -58,10 +58,10 @@ See the {ref}`jupyterlab-session-information` section for details.
 
 It is set to 15 minutes, but it can take a few minutes longer for the culling service to be triggered.
 
-## Why is my HTML page blank when opened inside Jupyterlab with Safari?
+## Why is my HTML page blank when opened inside JupyterLab with Safari?
 
-This is a known issue in displaying HTML files inside Jupyterlab in Safari.
-The workaround is to right-click (double finger tap) on the html file and select 'Open in New Browser Tab'.
+This is a known issue in displaying HTML files inside JupyterLab in Safari.
+The workaround is to right-click (double finger tap) on the HTML file and select 'Open in New Browser Tab'.
 The file should open correctly in a new browser tab.
 
 (using-git)=

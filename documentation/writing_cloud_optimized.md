@@ -26,7 +26,7 @@ The workflow begins by selecting a sample of astronomical objects and then makes
 Because these queries do not depend on one another, the workload can be parallelized by assigning different tasks (e.g., different archive queries) to separate worker processes.
 Each worker operates on the same object sample but runs a distinct part of the pipeline, enabling faster execution through concurrent processing.
 
-**Example** Our [scale up notebook](https://nasa-fornax.github.io/fornax-demo-notebooks/scale-up) is a tutorial on parallelization of generating multiwavelength light curves with tools, tips, and suggestions relevant to many tasks.
+**Example** Our [scale up notebook](https://nasa-fornax.github.io/fornax-demo-notebooks/scale-up) is a tutorial on parallelization of generating multi-wavelength light curves with tools, tips, and suggestions relevant to many tasks.
 
 ## 3. Optimize Memory Usage
 
