@@ -1,8 +1,10 @@
 # Frequently Asked Questions (FAQ)
 
-## How do I download a notebook from Fornax to my local machine?
+## What is the difference between saving and downloading a file?
 
-To download your notebook to your local machine, click on your notebook in your home directory on the left side of the screen. Then go to the main menu and select File → Download.  You can also right click on the file name and select "Download". 
+'Saving' a file will place it in a location in your Fornax storage.  To save a file, click on your notebook in your directory on the left side of the screen. Then go to the main menu and select File → Save.  There are a few save options.  Alternatively you can click the image of the disk under the tab on an open file. 
+
+'Downloading' a file will move a copy to your local machine.  To download a file, click on your notebook in your directory on the left side of the screen. Then go to the main menu and select File → Download.  You can also right click on the file name and select "Download". 
 
 ## If my Internet connection goes away or is intermittent, what happens to the running notebook?
 
