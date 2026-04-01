@@ -17,6 +17,7 @@ Once uploaded, these files are available for immediate use in your analysis, whe
 You can organize and manage files through the File Browser interface, view directory structures, and access the uploaded datasets for use with Python libraries, APIs, or the compute resources provided by Fornax.
 If you need the full path to a file or directory you have uploaded, find it using the File Browser interface, then right-click on it and select "Copy Path".
 
+(cloud-hosted-data)=
 ## Direct Cloud Access
 
 You can access cloud-hosted data directly from your JupyterLab session without downloading it first, regardless of whether the data is hosted on AWS, Google Cloud, Azure, or any other cloud provider.
