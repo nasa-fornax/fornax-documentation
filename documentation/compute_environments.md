@@ -267,6 +267,7 @@ micromamba install c-compiler cxx-compiler fortran-compiler
 
 For non-Python tools (e.g. `htop`, `vim` etc), they can be run directly from the terminal without a need for activating the base environment as they are included in the `PATH` by default.
 
+(terminal-initialization)=
 ## Terminal Initialization scripts
 
 The system uses bash as a default shell.

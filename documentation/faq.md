@@ -15,6 +15,22 @@ We do plan to add support for batch or asynchronous job submission in a future r
 Be aware that server sessions can be automatically terminated under certain circumstances.
 See [](#jupyterlab-session-information) for details.
 
+## What are the pre-installed directories and files used for?
+
+You can store files and data in the directories `~/` (home directory), `~/s3-storage`, `~/shared-storage`, and `/scratch`.
+See [](#data-storage) for details.
+
+The directory `~/fornax-notebooks` contains demo and tutorial notebooks.
+It is read-only.
+See [](#notebooks-in-fornax) for details.
+
+`$ENV_DIR` and `$USER_ENV_DIR` are aliases to directories where {term}`environments <Environment>` are stored.
+`$LOCK_DIR` is an alias to a directory where you'll find lists of the software installed in the built-in environments.
+See [](#compute-environments) for details.
+
+The file `~/.profile` is an initialization script that runs when a {term}`terminal <Terminal>` session starts.
+See [](#terminal-initialization) for details.
+
 ## What is the difference between saving and downloading a file?
 
 "Saving" a file will place it in a location in your Fornax storage.
