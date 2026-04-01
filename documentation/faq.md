@@ -68,22 +68,27 @@ To **access** that active {term}`Server Session` (to stop it or modify it),
 you need to be {term}`logged in<Login Session>`.
 So your running job will not be affected.
 
-## How will my analysis be affected by CPU and memory limitations?
+## Why is my server unavailable or unreachable?
 
-If your workload exceeds your server size, your server may be allowed to use additional resources temporarily.
-This can be convenient but should not be relied on.
-In particular, be aware that your job may be killed automatically and without warning if its {term}`RAM` needs exceed the allotted memory.
-This behavior is not specific to Fornax or AWS but users may encounter it more often on the science console due to the flexible machine sizing options.
-(Your laptop needs to have the max amount of {term}`memory <RAM>` that you will ever use while working on it.
-On the science console, you can choose a different server size every time you start it up – this is much more efficient, but also requires you to be more aware of how much {term}`CPU` and {term}`RAM` your tasks need.)
+If you see a pop-up dialog like the one below, it means that your {term}`server session <Server Session>` was automatically terminated.
 
-## Why was my session stopped?
+```{figure} ../_static/forsc_server_unavailable.png
+:alt: A pop-up dialog titled "Server unavailable or unreachable" with the message that the server is not running and buttons to Restart or Dismiss.
 
-The Fornax Science Console is currently intended for interactive use and will cull sessions which appear to be inactive.
-The team is working on tools to enable users to submit jobs to run asynchronously.
-For efficient resource usage, idle interactive sessions will be culled automatically.
-If you want to keep your session running for longer, you can use the Keep-alive feature in the Fornax menu.
-See the {ref}`jupyterlab-session-information` section for details.
+The "Server unavailable or unreachable" dialog appears when your session has been automatically terminated.
+```
+
+This can happen for two reasons: your server was either culled or it ran out of memory.
+There's no way to determine which was the cause after the server shuts down, but you can make an educated guess based on what you had running.
+
+Sessions may be culled if they appear inactive or reach the maximum time limit.
+[](#jupyterlab-session-information) explains the details.
+Sessions executing code might still appear inactive if, for example, they wait a long time to receive data.
+The Keep-Alive feature can be used to prevent culling due to inactivity.
+However, keep in mind that your credits are charged while your server is running, even if it is inactive.
+
+A session will run out of memory if the code or task(s) being executed require more {term}`RAM` than the server has.
+Starting a new session with a larger [server size](#server-and-env-options) will increase the available RAM.
 
 ## How long is the period of inactivity before a session gets culled?
 
