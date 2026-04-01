@@ -1,5 +1,20 @@
 # Frequently Asked Questions (FAQ)
 
+## Can I run high-performance computing (HPC) workflows?
+
+Although the Fornax Science Console isn't a traditional HPC system, it provides many similar features and benefits.
+By selecting a very large [server size](#server-and-env-options), users can run highly parallelized workflows on a single node and achieve performance that often eliminates the need for a multi-node HPC system.
+In addition to the substantial compute power for data *processing*, the high network bandwidth enables massively parallel *access* to [cloud-hosted data](#cloud-hosted-data).
+Fornax also provides built-in TB-scale temporary and long-term [storage options](#data-storage), giving users several choices for reading and writing large datasets.
+
+Users have access to the {term}`command line <Terminal>` where they can [install software](#install-additional-software) and launch jobs from scripts.
+
+Unlike typical HPC systems, Fornax does not have a job scheduler.
+We do plan to add support for batch or asynchronous job submission in a future release.
+
+Be aware that server sessions can be automatically terminated under certain circumstances.
+See [](#jupyterlab-session-information) for details.
+
 ## What is the difference between saving and downloading a file?
 
 "Saving" a file will place it in a location in your Fornax storage.
