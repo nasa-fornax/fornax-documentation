@@ -30,6 +30,23 @@ To get support from Fornax staff, request a new feature, or report a bug, please
 You will need a [Fornax account](#get-an-account) to post on the Helpdesk.
 If you are having trouble logging in to your account, you don't have an account, or you need to contact us privately, please email us at [fornax-helpdesk@lists.nasa.gov](mailto:fornax-helpdesk@lists.nasa.gov).
 
+```{dropdown} Change your password or email address, or retrieve your username
+To **change your password**, follow the instructions at [How do I change my password?](#change-password).
+
+To **change your email address**, please email [fornax-helpdesk@lists.nasa.gov](mailto:fornax-helpdesk@lists.nasa.gov) and include the following:
+
+-   Request to change your email address
+-   Name
+-   Username
+-   Email address currently associated with your account
+-   New email address that you'd like associated with your account
+
+To **retrieve your username**, please email [fornax-helpdesk@lists.nasa.gov](mailto:fornax-helpdesk@lists.nasa.gov) and include the following:
+
+-   Request to retrieve your username
+-   Name
+-   Email address associated with your account
+```
 
 ```{dropdown} Request a large, temporary storage space
 If you need access to a large (TB scale) volume of storage space for a limited amount of time, please open a Helpdesk topic and include the following information:

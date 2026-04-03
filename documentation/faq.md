@@ -1,5 +1,20 @@
 # Frequently Asked Questions (FAQ)
 
+(change-password)=
+## How do I change my password or email address?
+
+To change your password:
+
+-   Go to the [log in page](https://science-console.fornax.sciencecloud.nasa.gov/).
+-   If you are already logged in, log out.
+-   Click `Forgot your password?`
+-   Enter your username.
+    (If you forgot your username, please contact the [](#helpdesk).)
+-   Click `Reset my password`.
+-   You will receive an email with further instructions.
+
+To change your email address, please contact the [](#helpdesk).
+
 ## Can I use Fornax for exoplanet research?
 
 Yes! Fornax is well-suited for many exoplanet workflows, especially computationally intensive tasks that parallelize well.
