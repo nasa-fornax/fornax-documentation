@@ -43,6 +43,14 @@ We recommend installing these packages from conda, which avoids the need for roo
 See [](#compilers) for more information.
 For security reasons, commands cannot be run using `sudo` because users don't have full root access.
 
+## How do I fix version conflicts when installing software?
+
+Version conflicts occur when two packages need incompatible versions of the same dependency.
+For example, one package might require `numpy<2` while another needs `numpy>=2`.
+To fix this, try [creating a new environment](#create-new-env), which isolates your packages from the pre-installed ones and gives the dependency solver a fresh start.
+Note that conda's solver can be better than pip's at finding a consistent set of package versions across dependencies.
+If two packages you need are truly incompatible, contact their maintainers to see if the conflict can be resolved upstream.
+
 ## Can I use Fornax for exoplanet research?
 
 Yes! Fornax is well-suited for many exoplanet workflows, especially computationally intensive tasks that parallelize well.
