@@ -31,6 +31,12 @@ See [](#compute-environments) for details.
 The file `~/.profile` is an initialization script that runs when a {term}`terminal <Terminal>` session starts.
 See [](#terminal-initialization) for details.
 
+## What software is pre-installed?
+
+[Software Overview](#software-overview) lists notable packages that are pre-installed.
+These and many other pre-installed packages are organized into several environments.
+[](#preinstalled-software) describes how to find complete lists of the packages in each environment and how to search for a particular package of interest.
+
 ## What is the difference between saving and downloading a file?
 
 "Saving" a file will place it in a location in your Fornax storage.
