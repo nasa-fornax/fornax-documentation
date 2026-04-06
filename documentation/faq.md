@@ -61,6 +61,42 @@ Similarly, tasks like injection-recovery tests, transit timing analyses across l
 Fornax is also co-located with NASA archive data on the cloud, making it easy to pull large datasets without the bottleneck of downloading to a local machine.
 Cloud-hosted NASA mission data are readily accessible at high bandwidth directly from the Fornax Science Console.
 
+(how-to-upload-download)=
+## How do I upload or download files and directories?
+
+:::{tip}
+By accessing NASA Astrophysics data through [APIs](#apis) (small to medium amounts of data) or reading it directly from [NASA's ODR buckets](#cloud-hosted-data) (unlimited), you can avoid having to upload it to the Fornax Science Console first.
+We also recommend that you minimize the amount of data you download because your [credits](#intro-best-practices) are charged for data egress.
+:::
+
+There are two ways to move files in and out of the Fornax Science Console: upload and download to your local computer, or use an API to connect with an external storage solution.
+Examples of external storage include GitHub repositories, cloud storage buckets, Box, and Google Drive.
+To use external storage, refer to the documentation for your chosen service.
+See also [](#data-access).
+
+To upload files from your local computer:
+
+-   Navigate to your destination directory using the **File Browser** panel on the left side of the Science Console.
+-   Click the **Upload Files** button (upward-arrow icon) in the **File Browser** toolbar.
+-   Select the file(s) you want to upload.
+    Hold down the **Shift** key to select multiple files.
+    To upload a directory, zip or tar it first (example below).
+- Click **Open**.
+
+To download a file to your local computer:
+
+-   Navigate to the file in the **File Browser**, right-click it, and select **Download**.
+-   Typically, the file will be saved to your downloads folder or you will be prompted to choose a location.
+    This depends on your browser settings.
+
+Only one file can be downloaded at a time.
+To download multiple files or an entire directory, first combine them into a single archive file using `tar` from the terminal, then download the archive file using the steps above.
+Here's a `tar` example that combines two files and a directory into an archive file called `my-files.tar.gz`:
+
+```sh
+tar -czvf my-files.tar.gz my-file1 my-file2 my-directory/
+```
+
 ## If my Internet connection goes away or is intermittent, what happens to the running notebook?
 
 If you have a running job and your Internet is disrupted, the job should continue to run as long as the {term}`session<Server Session>` does not expire (See {ref}`jupyterlab-session-information`).
