@@ -29,8 +29,7 @@ There are two types of Python environments, **pip**-based and **conda**-based.
 ### Pre-installed Environments
 
 A wide variety of software is pre-installed.
-A detailed accounting can be found in the environment lock files in the `$LOCK_DIR` directory or on the [latest image release](https://github.com/nasa-fornax/fornax-images/releases/latest) page.
-The software is organized into several environments.
+The software is organized into several environments, described below.
 Each environment has a corresponding {term}`kernel <kernel>` with the same name.
 
 `python3`
@@ -51,6 +50,17 @@ Each environment has a corresponding {term}`kernel <kernel>` with the same name.
     [Fermi analysis software](https://fermi.gsfc.nasa.gov/ssc/data/analysis/software/),
     and [XMM-Newton SAS](https://www.cosmos.esa.int/web/xmm-newton/sas).
 
+A detailed accounting of the software packages installed in each environment can be found in lock files on the [latest image release](https://github.com/nasa-fornax/fornax-images/releases/latest) page and in the `$LOCK_DIR` directory on the Fornax Science Console.
+You can use `grep` to search the lock files for a specific package.
+For example, to find Matplotlib:
+
+```sh
+cd $LOCK_DIR
+# -i makes this case-insensitive. --color makes the output easier to read.
+grep -i --color matplotlib *
+```
+
+The output will be a list of files (which correspond to environments) where the package was found, along with the full package name and the version that is installed in that environment.
 
 (select-environment)=
 ### Activate an Environment

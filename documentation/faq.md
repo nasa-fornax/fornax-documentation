@@ -31,6 +31,12 @@ See [](#compute-environments) for details.
 The file `~/.profile` is an initialization script that runs when a {term}`terminal <Terminal>` session starts.
 See [](#terminal-initialization) for details.
 
+## What software is pre-installed?
+
+[Software Overview](#software-overview) lists notable packages that are pre-installed.
+These and many other pre-installed packages are organized into several environments.
+[](#preinstalled-software) describes how to find complete lists of the packages in each environment and how to search for a particular package of interest.
+
 ## Can I use Fornax for exoplanet research?
 
 Yes! Fornax is well-suited for many exoplanet workflows, especially computationally intensive tasks that parallelize well.
