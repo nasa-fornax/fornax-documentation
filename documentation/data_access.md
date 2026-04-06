@@ -22,7 +22,9 @@ If you need the full path to a file or directory you have uploaded, find it usin
 
 You can access cloud-hosted data directly from your JupyterLab session without downloading it first, regardless of whether the data is hosted on AWS, Google Cloud, Azure, or any other cloud provider.
 The NASA Astrophysics Mission Archives (HEASARC, IRSA, MAST) offer curated datasets through the [AWS Open Data program](https://registry.opendata.aws/) (ODR).
-The [tutorials available on the Console](#notebooks-in-fornax) give examples of how to access that data.
+The NASA ODR data are freely available and no special permissions or credentials are required.
+If your tool raises an error indicating that it can't find your credentials, make an anonymous connection by including a parameter such as `--no-sign-request` or `anonymous=True`.
+The [](#fornax-tutorials) give examples of how to access that data.
 
 Accessing data that is stored in the same region as your compute (Fornax, in this case) will generally be more efficient, meaning lower latency.
 The Fornax Science Console runs on AWS in the `us-east-1` region.

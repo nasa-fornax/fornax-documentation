@@ -2,6 +2,7 @@
 short_title: Tutorial Notebooks
 ----
 
+(fornax-tutorials)=
 # Fornax Python Tutorial Notebooks
 
 The Fornax Initiative has established a [github repository of Python Tutorial Notebooks](https://github.com/nasa-fornax/fornax-demo-notebooks) that demonstrate how to access and analyze NASA Astrophysics datasets.
