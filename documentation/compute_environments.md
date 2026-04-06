@@ -258,6 +258,7 @@ You can install front-end extensions after JupyterLab starts, and they can show 
 Extensions that include a server-side component cannot be installed by individual users because they must be installed before JupyterLab starts.
 In that case, please open a helpdesk request on the {ref}`intro-forum`.
 
+(compilers)=
 ## Compilers and General Software
 
 As part of the system optimization and to allow for users to manage their own software, the list of packages installed in the system (using ubuntu `apt`) is kept to a minimum.

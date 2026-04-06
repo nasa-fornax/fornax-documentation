@@ -37,6 +37,12 @@ See [](#terminal-initialization) for details.
 These and many other pre-installed packages are organized into several environments.
 [](#preinstalled-software) describes how to find complete lists of the packages in each environment and how to search for a particular package of interest.
 
+## How do I install compilers or other packages that require root access?
+
+We recommend installing these packages from conda, which avoids the need for root access.
+See [](#compilers) for more information.
+For security reasons, commands cannot be run using `sudo` because users don't have full root access.
+
 ## What is the difference between saving and downloading a file?
 
 "Saving" a file will place it in a location in your Fornax storage.
