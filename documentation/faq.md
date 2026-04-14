@@ -63,7 +63,7 @@ For a detailed tutorial about how to use Git in any context, see https://git-scm
 
 To set up Git on Fornax for the first time, configure your username and email by opening a terminal and running the following commands:
 
-```sh
+```bash
 # Use the username and email associated with your Git account (not your Fornax account).
 git config --global user.name "username"
 git config --global user.email "your.email@example.com"
@@ -82,7 +82,7 @@ Then, to clone a repo use the syntax `git clone https://{your-token}@github.com/
 You can reduce the number of times you need to enter your credentials by configuring `git` to cache them.
 In a terminal on Fornax, execute the following command:
 
-```sh
+```bash
 # Tell git to cache your credentials for all repos.
 # To do this for a single repo instead, cd into the repo directory and remove '--global' before running the command.
 git config --global credential.helper cache
@@ -95,13 +95,13 @@ After setting up your credentials (if necessary; see above), you can clone a rep
 **Option 1**: Clone without passing credentials.
 (You will be asked to provide them later if/when doing something that requires them.)
 
-```sh
+```bash
 git clone https://github.com/{repo-owner}/{repo-name}
 ```
 
 **Option 2**: Pass your personal access token while cloning.
 
-```sh
+```bash
 git clone https://{your-token}@github.com/{repo-owner}/{repo-name}
 ```
 
