@@ -2,6 +2,7 @@
 # Fornax Science Console Capabilities
 
 The Fornax Science Console is a NASA-funded web-based application that provides access to cloud computing via {term}`JupyterLab`, which offers access to {term}`Jupyter Notebook`s, {term}`Jupyter Console`, and the {term}`terminal`.
+It runs on AWS cloud servers (x86_64 Ubuntu Linux).
 Users will have access to data sets curated by repositories around the world, and can upload moderate amounts of private data.
 To get started quickly, users can choose from a variety of example notebooks as well as pre-installed software environments.
 These can be modified to suit user needs.
@@ -68,4 +69,4 @@ Fornax has a wide variety of [pre-installed software](#preinstalled-software), i
 -   Non-Python libraries commonly used in astronomy, such as The Tractor, HEASoft, Chandra CIAO, Fermitools, and XMM-Newton SAS.
 -   AWS tools, such as the Command Line Interface and S3Fs.
 
-Users can also install other Python and non-Python software of their choosing.
+Users can also [install](#install-additional-software) other Python and non-Python software of their choosing.

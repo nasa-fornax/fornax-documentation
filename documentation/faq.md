@@ -20,27 +20,79 @@ See [](#jupyterlab-session-information) for details.
 You can store files and data in the directories `~/` (home directory), `~/s3-storage`, `~/shared-storage`, and `/scratch`.
 See [](#data-storage) for details.
 
-The directory `~/fornax-notebooks` contains demo and tutorial notebooks.
+The directory `~/fornax-notebooks` contains [demo and tutorial notebooks](#notebooks-in-fornax).
 It is read-only.
-See [](#notebooks-in-fornax) for details.
 
-`$ENV_DIR` and `$USER_ENV_DIR` are aliases to directories where {term}`environments <Environment>` are stored.
-`$LOCK_DIR` is an alias to a directory where you'll find lists of the software installed in the built-in environments.
-See [](#compute-environments) for details.
+`$ENV_DIR` and `$USER_ENV_DIR` are aliases to [directories where environments are stored](#env-dirs).
+`$LOCK_DIR` is an alias to a directory where you'll find lists of the [pre-installed software](#preinstalled-software).
 
 The file `~/.profile` is an initialization script that runs when a {term}`terminal <Terminal>` session starts.
-See [](#terminal-initialization) for details.
+See [](#shell-config) for details.
 
+(preinstalled-software)=
 ## What software is pre-installed?
 
 [Software Overview](#software-overview) lists notable packages that are pre-installed.
-These and many other pre-installed packages are organized into several environments.
-[](#preinstalled-software) describes how to find complete lists of the packages in each environment and how to search for a particular package of interest.
+These and many other pre-installed packages are organized into [](#preinstalled-envs).
+Here we describe how to search for a specific software package.
 
+Each environment has a "lock" file that lists every software package and its version.
+The lock files can be found in two places:
+
+- **On the Science Console:** These are stored in the `$LOCK_DIR` directory.
+- **Outside the Science Console:** Go to the [latest image release](https://github.com/nasa-fornax/fornax-images/releases/latest) page and download the `fornax-*-environment-locks.zip` files.
+
+You can use `grep` to search the lock files for a specific package.
+For example:
+
+```bash
+cd $LOCK_DIR
+
+# Search all Python environments for Astroquery. `-i` makes this case-insensitive.
+grep -i --color astroquery *
+
+# Search the Julia environment for AstroLib.
+grep -i --color astrolib julia/*
+```
+
+(env-dirs)=
+## Where are software environments and kernels stored? What are their names?
+
+[Pre-installed environments](#preinstalled-envs) are stored in the `$ENV_DIR` directory.
+[User-created environments](#create-new-env) that are temporary are also stored in `$ENV_DIR`, whereas persistent environments are stored in `$USER_ENV_DIR` (which is in your [home directory](#home-directory)).
+
+To see the names of installed environments, open a terminal and `ls` those directories:
+
+```bash
+ls $ENV_DIR
+ls $USER_ENV_DIR
+```
+
+Kernels corresponding to pre-installed environments are stored in the `/opt/jupyter/share/jupyter/kernels` directory.
+Kernels corresponding to user-created environments are in the `~/.local/share/jupyter/kernels` directory.
+To see a list of the installed kernels and their locations, run the following in a terminal:
+
+```bash
+$JUPYTER_DIR/bin/jupyter kernelspec list
+```
+
+(is-env-pip-conda)=
+## Are software environments pip- or conda-based?
+
+Environments may be either {term}`pip`- or {term}`conda`-based.
+To learn about pre-installed environments, see [](#preinstalled-envs).
+If you [created your own environment](#create-new-env), you chose pip or conda at that time.
+If you don't remember, run `micromamba env list` from the terminal to output the list of conda-based environments.
+If your environment isn't listed there, it's pip-based.
+
+(install-compilers)=
 ## How do I install compilers or other packages that require root access?
 
 We recommend installing these packages from conda, which avoids the need for root access.
-See [](#compilers) for more information.
+Many are available.
+For example: [c-compiler](https://anaconda.org/channels/conda-forge/packages/c-compiler/overview), [cxx-compiler](https://anaconda.org/channels/conda-forge/packages/cxx-compiler/overview), and [fortran-compiler](https://anaconda.org/channels/conda-forge/packages/fortran-compiler/overview).
+See [](#install-additional-software) (choose conda-based) for instructions.
+
 For security reasons, commands cannot be run using `sudo` because users don't have full root access.
 
 ## How do I fix version conflicts when installing software?

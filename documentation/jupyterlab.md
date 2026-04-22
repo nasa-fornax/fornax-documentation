@@ -29,7 +29,7 @@ VS Code
     It is powered by [code-server](https://github.com/coder/code-server) which runs [Visual Studio Code - Open Source](https://github.com/microsoft/vscode) in a remote environment.
     See those links for more information.
     Note: Microsoft-specific customizations like GitHub Copilot are only available in Microsoft's desktop version of VS Code and so cannot be accessed here.
-    Note also that any `code-server` extensions you install are stored in your home directory, so they persist between sessions.
+    Note also that any `code-server` extensions you install are stored in your [home directory](#home-directory), so they persist between sessions.
 
 Terminal
 :   Terminal provides a {term}`command line <terminal>`, which allows users to run Emacs, vi, Python, etc.
@@ -148,3 +148,15 @@ You can be logged out, but have a running server in the cloud.
 This means if you start some jobs, they are not going to stop if your internet connection is disrupted,
 or if you are logged out. Just log back in and you will be able to access your active {term}`session <Server Session>`.
 :::
+
+## JupyterLab Extensions
+
+Pre-installed extensions are described on the {ref}`jupyterlab` page.
+
+### Install a New Extension
+
+Instructions on how to find and install extensions can be found at [JupyterLab: Extensions](https://jupyterlab.readthedocs.io/en/stable/user/extensions.html).
+Extensions may include a front-end component, a server-side component, or both.
+You can install front-end extensions after JupyterLab starts, and they can show up if you refresh the page, as long they are installed in the environment running JupyterLab (`/opt/jupyter/`).
+Extensions that include a server-side component cannot be installed by individual users because they must be installed before JupyterLab starts.
+In that case, please open a helpdesk request on the {ref}`intro-forum`.

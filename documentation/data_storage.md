@@ -5,9 +5,10 @@ The Fornax Science Console offers both private and shared data storage options.
 Users are also welcome to "bring your own storage".
 Basic specifications and usage tips are described below.
 
+(home-directory)=
 ## Private Home Directory
 
-The user's home directory (`~/`) is intended for most data storage use cases, including notebook, code, and data files.
+The user's home directory (`~/` or `$HOME`) is intended for most data storage use cases, including notebook, code, and data files.
 It uses a standard Unix filesystem (POSIX).
 
 By default, the home directory has a 200 GB limit.
