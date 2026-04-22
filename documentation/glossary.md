@@ -25,6 +25,16 @@ Environment
 : Self-contained collection of software (interpreter, libraries, packages, and settings) installed together so that code execution is reproducible and isolated from other setups.
   In practice, an environment lets you pin specific package versions (e.g., Astropy, NumPy) without affecting the base system or other projects.
 
+pip
+: [Pip](https://pip.pypa.io/) is a package manager for Python.
+  On the Science Console, we manage pip-based environments using [uv](https://docs.astral.sh/uv/).
+  It can be used to install any software that is available on the [Python Package Index (PyPI)](https://pypi.org/).
+
+conda
+: [Conda](https://docs.conda.io/) is a package manager for any language.
+  On the Science Console, we manage conda-based environments using [micromamba](https://mamba.readthedocs.io/en/latest/user_guide/micromamba.html).
+  It can be used to install any software that is available on [Anaconda](https://anaconda.org/).
+
 Jupyter Console
 : Interface that combines aspects of {term}`terminals <terminal>` and {term}`notebooks <Jupyter Notebook>`.
   Useful for users who prefer to work in a terminal but also want the graphical output that is possible in a notebook (e.g., when plotting with `matplotlib`).
