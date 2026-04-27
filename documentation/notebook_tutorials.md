@@ -30,6 +30,12 @@ cp --no-preserve=mode $notebook_dir/light_curve_collector.md ~/.
 cp -r --no-preserve=mode $notebook_dir/code_src $notebook_dir/output ~/.
 ```
 
+Or, to clone the entire fornax-demo-notebooks repo:
+
+```sh
+git clone https://github.com/nasa-fornax/fornax-demo-notebooks.git
+```
+
 ## Other NASA Astrophysics Notebooks
 
 The [Fornax Tutorial Notebooks](https://nasa-fornax.github.io/fornax-demo-notebooks/) showcase science that can be carried out by combining data across the NASA Astrophysics Archives, and have been tested using the software environments offered in the Fornax Science Console.

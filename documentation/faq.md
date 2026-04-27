@@ -34,12 +34,12 @@ See [](#terminal-initialization) for details.
 ## What software is pre-installed?
 
 [Software Overview](#software-overview) lists notable packages that are pre-installed.
-These and many other pre-installed packages are organized into several environments.
+These and many other pre-installed packages are organized into several {term}`environments <Environment>`.
 [](#preinstalled-software) describes how to find complete lists of the packages in each environment and how to search for a particular package of interest.
 
 ## How do I install compilers or other packages that require root access?
 
-We recommend installing these packages from conda, which avoids the need for root access.
+We recommend installing these packages from conda, using miniconda, which avoids the need for root access.
 See [](#compilers) for more information.
 For security reasons, commands cannot be run using `sudo` because users don't have full root access.
 
@@ -83,10 +83,10 @@ Cloud-hosted NASA mission data are readily accessible at high bandwidth directly
 
 :::{tip}
 By accessing NASA Astrophysics data through [APIs](#apis) (small to medium amounts of data) or reading it directly from [NASA's ODR buckets](#cloud-hosted-data) (unlimited), you can avoid having to upload it to the Fornax Science Console first.
-We also recommend that you minimize the amount of data you download because your [credits](#intro-best-practices) are charged for data egress.
+Note that [credits](#intro-best-practices) will be charged for data download out of Fornax (known as "data egress").
 :::
 
-There are two ways to move files in and out of the Fornax Science Console: upload and download to your local computer, or use an API to connect with an external storage solution.
+There are two ways to move files in and out of the Fornax Science Console: connect with an external storage solution, or upload and download to your local computer
 Examples of external storage include GitHub repositories, cloud storage buckets, Box, and Google Drive.
 To use external storage, refer to the documentation for your chosen service.
 See also [](#data-access).
