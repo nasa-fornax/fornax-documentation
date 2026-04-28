@@ -1,5 +1,18 @@
 # Frequently Asked Questions (FAQ)
 
+## What is the difference between saving and downloading a file?
+
+"Saving" a file will place it in a location in your Fornax storage.
+To save a file, click on your notebook in your directory on the left side of the screen.
+Then go to the main menu and select `File → Save`.
+There are a few save options.
+Alternatively you can click the image of the disk under the tab on an open file.
+
+"Downloading" a file will move a copy to your local machine.
+To download a file, click on your notebook in your directory on the left side of the screen.
+Then go to the main menu and select `File → Download`.
+You can also right click on the file name and select `Download`.
+
 ## Can I use Fornax for exoplanet research?
 
 Yes! Fornax is well-suited for many exoplanet workflows, especially computationally intensive tasks that parallelize well.
