@@ -63,26 +63,26 @@ If you open any other notebook and get a popup window asking you to select a ker
 **Terminal:** To activate a specific **pip**-based environment (see {ref}`environment-types` for details) from the {term}`terminal <terminal>`, run: `source $ENV_DIR/{environment-name}/bin/activate`.
 For example, to activate the `py-light_curve_classifier` environment, run:
 
-```sh
+```bash
 source $ENV_DIR/py-light_curve_classifier/bin/activate
 ```
 
 and the following to deactivate it:
 
-```sh
+```bash
 deactivate
 ```
 
 To activate a specific **conda**-based environment (see {ref}`environment-types` for details) from the {term}`terminal <terminal>`, run: `micromamba activate {env-name}`.
 For example, to activate the `heasoft` environment, run:
 
-```sh
+```bash
 micromamba activate heasoft
 ```
 
 and the following to deactivate it:
 
-```sh
+```bash
 micromamba deactivate
 ```
 
@@ -173,7 +173,7 @@ These scripts take either a requirements file (former) or a conda yaml file (lat
 You can also do all the setup by hand if you want more control.
 Persistent environment should be installed under `$USER_ENV_DIR`:
 
-```sh
+```bash
 cd $USER_ENV_DIR
 uv venv myenv --python=3.11
 source myenv/bin/activate
@@ -185,7 +185,7 @@ This will create a new environment with Python version 3.11, activate it, and th
 
 In order to use this new environment in a {term}`notebook <Jupyter Notebook>`, you'll need to install `ipykernel` inside the environment and then register it with JupyterLab.
 
-```sh
+```bash
 uv pip install ipykernel
 python -m ipykernel install --name myenv --user
 ```
@@ -195,7 +195,7 @@ The {term}`kernel <Kernel>` should show up in the JupyterLab main launcher page 
 The same can be done for conda environments.
 A conda environment can be created by:
 
-```sh
+```bash
 micromamba create -p ~/user-envs/my-conda-env python=3.12 pandas
 micromamba activate -p ~/user-envs/my-conda-env
 ```
@@ -212,7 +212,7 @@ Deleting a user envivronment that was created either manually or with the script
 - Remove the kernel for that environment by deleting the the folder with the environment name from `~/.local/share/jupyter/kernels/`.
 
 As a tip, running the following in the terminal, will list all the installed kernels. It can be used to find the location of installed kernels:
-```sh
+```bash
 $JUPYTER_DIR/bin/jupyter kernelspec list
 ```
 
@@ -254,14 +254,14 @@ As part of the system optimization and to allow for users to manage their own so
 Many of the useful packages (vim, htop, git, awscli, etc) are installed from `conda-forge` into the `base` conda environment under `$ENV_DIR/base`.
 You can add packages to this environment by doing:
 
-```sh
+```bash
 micromamba install package_name
 ```
 
 You can also include compilers.
 For example, to install C, C++ and Fortran compilers, you can do:
 
-```sh
+```bash
 micromamba install c-compiler cxx-compiler fortran-compiler
 ```
 

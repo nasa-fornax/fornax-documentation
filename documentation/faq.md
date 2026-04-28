@@ -2,9 +2,26 @@
 
 ## What is the difference between saving and downloading a file?
 
-'Saving' a file will place it in a location in your Fornax storage.  To save a file, click on your notebook in your directory on the left side of the screen. Then go to the main menu and select File → Save.  There are a few save options.  Alternatively you can click the image of the disk under the tab on an open file. 
+"Saving" a file will place it in a location in your Fornax storage.
+To save a file, click on your notebook in your directory on the left side of the screen.
+Then go to the main menu and select `File → Save`.
+There are a few save options.
+Alternatively you can click the image of the disk under the tab on an open file.
 
-'Downloading' a file will move a copy to your local machine.  To download a file, click on your notebook in your directory on the left side of the screen. Then go to the main menu and select File → Download.  You can also right click on the file name and select "Download". 
+"Downloading" a file will move a copy to your local machine.
+To download a file, click on your notebook in your directory on the left side of the screen.
+Then go to the main menu and select `File → Download`.
+You can also right click on the file name and select `Download`.
+
+## Can I use Fornax for exoplanet research?
+
+Yes! Fornax is well-suited for many exoplanet workflows, especially computationally intensive tasks that parallelize well.
+Atmospheric retrievals are a prime example: tools like petitRADTRANS (pRT) require running thousands of forward models to sample parameter space, which maps naturally onto Fornax's scalable cloud compute.
+[Exoplanet Retrieval Quickstart](https://github.com/nasa-fornax/fornax-howtos/blob/main/tutorials/exoplanet_retrievals/quickstart.md) is a tutorial for setting up and running a pRT retrieval on Fornax.
+Similarly, tasks like injection-recovery tests, transit timing analyses across large light curve sets, and population-level modeling all benefit from the ability to spin up many parallel workers.
+
+Fornax is also co-located with NASA archive data on the cloud, making it easy to pull large datasets without the bottleneck of downloading to a local machine.
+Cloud-hosted NASA mission data are readily accessible at high bandwidth directly from the Fornax Science Console.
 
 ## If my Internet connection goes away or is intermittent, what happens to the running notebook?
 
@@ -59,7 +76,7 @@ For a detailed tutorial about how to use Git in any context, see https://git-scm
 
 To set up Git on Fornax for the first time, configure your username and email by opening a terminal and running the following commands:
 
-```sh
+```bash
 # Use the username and email associated with your Git account (not your Fornax account).
 git config --global user.name "username"
 git config --global user.email "your.email@example.com"
@@ -78,7 +95,7 @@ Then, to clone a repo use the syntax `git clone https://{your-token}@github.com/
 You can reduce the number of times you need to enter your credentials by configuring `git` to cache them.
 In a terminal on Fornax, execute the following command:
 
-```sh
+```bash
 # Tell git to cache your credentials for all repos.
 # To do this for a single repo instead, cd into the repo directory and remove '--global' before running the command.
 git config --global credential.helper cache
@@ -91,13 +108,13 @@ After setting up your credentials (if necessary; see above), you can clone a rep
 **Option 1**: Clone without passing credentials.
 (You will be asked to provide them later if/when doing something that requires them.)
 
-```sh
+```bash
 git clone https://github.com/{repo-owner}/{repo-name}
 ```
 
 **Option 2**: Pass your personal access token while cloning.
 
-```sh
+```bash
 git clone https://{your-token}@github.com/{repo-owner}/{repo-name}
 ```
 
