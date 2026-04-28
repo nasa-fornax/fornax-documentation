@@ -51,6 +51,10 @@ To fix this, try [creating a new environment](#create-new-env), which isolates y
 Note that conda's solver can be better than pip's at finding a consistent set of package versions across dependencies.
 If two packages you need are truly incompatible, contact their maintainers to see if the conflict can be resolved upstream.
 
+## How do I change my email address or password?
+
+Please email the [](#helpdesk) to change the email address or password associated with your Fornax account.
+
 ## What is the difference between saving and downloading a file?
 
 "Saving" a file will place it in a location in your Fornax storage.
