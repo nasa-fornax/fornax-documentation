@@ -2,13 +2,14 @@
 short_title: Data Access
 ---
 
+(data-access)=
 # Data Access from within Fornax
 
 The Fornax Science Console provides multiple data access pathways, including direct file uploads, direct cloud access, and support for IVOA-compliant application program interfaces (APIs).
 Users can also leverage Python libraries such as Astroquery and PyVO to programmatically access major astrophysics archives, including the NASA Astrophysics Archives: HEASARC, IRSA, and MAST.
 
 By combining these data access options with Fornax's integrated compute resources, users can streamline the process of retrieving, analyzing, and processing astrophysical data, making complex analyses more efficient and accessible.
-To understand data storage options on the Fornax Science Console, see {ref}`intro-best-practices`.
+To understand data storage options on the Fornax Science Console, see [](#data-storage).
 
 ## Direct File Uploads
 
@@ -17,11 +18,16 @@ Once uploaded, these files are available for immediate use in your analysis, whe
 You can organize and manage files through the File Browser interface, view directory structures, and access the uploaded datasets for use with Python libraries, APIs, or the compute resources provided by Fornax.
 If you need the full path to a file or directory you have uploaded, find it using the File Browser interface, then right-click on it and select "Copy Path".
 
+See also [](#how-to-upload-download).
+
+(cloud-hosted-data)=
 ## Direct Cloud Access
 
 You can access cloud-hosted data directly from your JupyterLab session without downloading it first, regardless of whether the data is hosted on AWS, Google Cloud, Azure, or any other cloud provider.
 The NASA Astrophysics Mission Archives (HEASARC, IRSA, MAST) offer curated datasets through the [AWS Open Data program](https://registry.opendata.aws/) (ODR).
-The [tutorials available on the Console](#notebooks-in-fornax) give examples of how to access that data.
+The NASA ODR data are freely available and no special permissions or credentials are required.
+If your tool raises an error indicating that it can't find your credentials, make an anonymous connection by including a parameter such as `--no-sign-request` or `anonymous=True`.
+The [](#fornax-tutorials) give examples of how to access that data.
 
 Accessing data that is stored in the same region as your compute (Fornax, in this case) will generally be more efficient, meaning lower latency.
 The Fornax Science Console runs on AWS in the `us-east-1` region.
@@ -39,6 +45,7 @@ The currently mounted buckets include:
 
 - `nasa-heasarc`: High energy data holdings from the HEASARC.
 
+(apis)=
 ## Application Program Interfaces
 
 Application Programming Interfaces (APIs) are powerful tools that allow users to programmatically access and retrieve astronomical data from remote repositories or cloud-hosted archives.

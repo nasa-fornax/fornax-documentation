@@ -29,8 +29,7 @@ There are two types of Python environments, **pip**-based and **conda**-based.
 ### Pre-installed Environments
 
 A wide variety of software is pre-installed.
-A detailed accounting can be found in the environment lock files in the `$LOCK_DIR` directory or on the [latest image release](https://github.com/nasa-fornax/fornax-images/releases/latest) page.
-The software is organized into several environments.
+The software is organized into several environments, described below.
 Each environment has a corresponding {term}`kernel <kernel>` with the same name.
 
 `python3`
@@ -51,6 +50,18 @@ Each environment has a corresponding {term}`kernel <kernel>` with the same name.
     [Fermi analysis software](https://fermi.gsfc.nasa.gov/ssc/data/analysis/software/),
     and [XMM-Newton SAS](https://www.cosmos.esa.int/web/xmm-newton/sas).
 
+Each environment has a "lock" file that lists the name and version of every software package installed in the environment.
+The lock files can be found on the [latest image release](https://github.com/nasa-fornax/fornax-images/releases/latest) page and in the `$LOCK_DIR` directory on the Fornax Science Console.
+You can use the shell command `grep` to search the lock files for a specific package.
+For example, to find Matplotlib:
+
+```sh
+cd $LOCK_DIR
+# -i makes this case-insensitive. --color makes the output easier to read.
+grep -i --color matplotlib *
+```
+
+The output will be a list of files (which correspond to environments) where the package was found, along with the full package name and the version that is installed in that environment.
 
 (select-environment)=
 ### Activate an Environment
@@ -206,7 +217,7 @@ Similarly, to use this environment in a {term}`notebook <Jupyter Notebook>`, you
 (delete-user-env)=
 ### Deleting a User Environment
 
-Deleting a user envivronment that was created either manually or with the scripts provided can be done with these two steps:
+Deleting a user environment that was created either manually or with the scripts provided can be done with these two steps:
 
 - Delete the environment folder under `~/user-envs/` (or wherever else it is was installed).
 - Remove the kernel for that environment by deleting the the folder with the environment name from `~/.local/share/jupyter/kernels/`.
@@ -248,6 +259,7 @@ You can install front-end extensions after JupyterLab starts, and they can show 
 Extensions that include a server-side component cannot be installed by individual users because they must be installed before JupyterLab starts.
 In that case, please open a helpdesk request on the {ref}`intro-forum`.
 
+(compilers)=
 ## Compilers and General Software
 
 As part of the system optimization and to allow for users to manage their own software, the list of packages installed in the system (using ubuntu `apt`) is kept to a minimum.
@@ -267,10 +279,11 @@ micromamba install c-compiler cxx-compiler fortran-compiler
 
 For non-Python tools (e.g. `htop`, `vim` etc), they can be run directly from the terminal without a need for activating the base environment as they are included in the `PATH` by default.
 
+(terminal-initialization)=
 ## Terminal Initialization scripts
 
 The system uses bash as a default shell.
-The Jupyterlab terminal uses a non-login shell, which means `~/.bashrc` is not called by default when a new terminal session starts.
+The JupyterLab terminal uses a non-login shell, which means `~/.bashrc` is not called by default when a new terminal session starts.
 `~/.profile` on the other hand is called.
 You can therefore use it for any bash initialization code.
-A new `~/.profile` is created at login time if it does not exist, and it also calls `~/.bashrc`, so you can add you customization (e.g. update `PATH`, setup rust or julia, etc) to either one.
+A new `~/.profile` is created at login time if it does not exist, and it also calls `~/.bashrc`, so you can add customization (e.g. update `PATH`, set up Rust or Julia, etc) to either one.

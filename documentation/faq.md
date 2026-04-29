@@ -1,5 +1,60 @@
 # Frequently Asked Questions (FAQ)
 
+## Can I run high-performance computing (HPC) workflows?
+
+Although the Fornax Science Console isn't a traditional HPC system, it provides many similar features and benefits.
+By selecting a very large [server size](#server-and-env-options), users can run highly parallelized workflows on a single node and achieve performance that often eliminates the need for a multi-node HPC system.
+In addition to the substantial compute power for data *processing*, the high network bandwidth enables massively parallel *access* to [cloud-hosted data](#cloud-hosted-data).
+Fornax also provides built-in TB-scale temporary and long-term [storage options](#data-storage), giving users several choices for reading and writing large datasets.
+
+Users have access to the {term}`command line <Terminal>` where they can [install software](#install-additional-software) and launch jobs from scripts.
+
+Unlike typical HPC systems, Fornax does not have a job scheduler.
+We do plan to add support for batch or asynchronous job submission in a future release.
+
+Be aware that server sessions can be automatically terminated under certain circumstances.
+See [](#jupyterlab-session-information) for details.
+
+## What are the pre-installed directories and files used for?
+
+You can store files and data in the directories `~/` (home directory), `~/s3-storage`, `~/shared-storage`, and `/scratch`.
+See [](#data-storage) for details.
+
+The directory `~/fornax-notebooks` contains demo and tutorial notebooks.
+It is read-only.
+See [](#notebooks-in-fornax) for details.
+
+`$ENV_DIR` and `$USER_ENV_DIR` are aliases to directories where {term}`environments <Environment>` are stored.
+`$LOCK_DIR` is an alias to a directory where you'll find lists of the software installed in the built-in environments.
+See [](#compute-environments) for details.
+
+The file `~/.profile` is an initialization script that runs when a {term}`terminal <Terminal>` session starts.
+See [](#terminal-initialization) for details.
+
+## What software is pre-installed?
+
+[Software Overview](#software-overview) lists notable packages that are pre-installed.
+These and many other pre-installed packages are organized into several {term}`environments <Environment>`.
+[](#preinstalled-software) describes how to find complete lists of the packages in each environment and how to search for a particular package of interest.
+
+## How do I install compilers or other packages that require root access?
+
+We recommend installing these packages from conda, using miniconda, which avoids the need for root access.
+See [](#compilers) for more information.
+For security reasons, commands cannot be run using `sudo` because users don't have full root access.
+
+## How do I fix version conflicts when installing software?
+
+Version conflicts occur when two packages need incompatible versions of the same dependency.
+For example, one package might require `numpy<2` while another needs `numpy>=2`.
+To fix this, try [creating a new environment](#create-new-env), which isolates your packages from the pre-installed ones and gives the dependency solver a fresh start.
+Note that conda's solver can be better than pip's at finding a consistent set of package versions across dependencies.
+If two packages you need are truly incompatible, contact their maintainers to see if the conflict can be resolved upstream.
+
+## How do I change my email address or password?
+
+Please email the [](#helpdesk) to change the email address or password associated with your Fornax account.
+
 ## What is the difference between saving and downloading a file?
 
 "Saving" a file will place it in a location in your Fornax storage.
@@ -23,6 +78,42 @@ Similarly, tasks like injection-recovery tests, transit timing analyses across l
 Fornax is also co-located with NASA archive data on the cloud, making it easy to pull large datasets without the bottleneck of downloading to a local machine.
 Cloud-hosted NASA mission data are readily accessible at high bandwidth directly from the Fornax Science Console.
 
+(how-to-upload-download)=
+## How do I upload or download files and directories?
+
+:::{tip}
+By accessing NASA Astrophysics data through [APIs](#apis) (small to medium amounts of data) or reading it directly from [NASA's ODR buckets](#cloud-hosted-data) (unlimited), you can avoid having to upload it to the Fornax Science Console first.
+Note that [credits](#intro-best-practices) will be charged for data download out of Fornax (known as "data egress").
+:::
+
+There are two ways to move files in and out of the Fornax Science Console: connect with an external storage solution, or upload and download to your local computer
+Examples of external storage include GitHub repositories, cloud storage buckets, Box, and Google Drive.
+To use external storage, refer to the documentation for your chosen service.
+See also [](#data-access).
+
+To upload files from your local computer:
+
+-   Navigate to your destination directory using the **File Browser** panel on the left side of the Science Console.
+-   Click the **Upload Files** button (upward-arrow icon) in the **File Browser** toolbar.
+-   Select the file(s) you want to upload.
+    Hold down the **Shift** key to select multiple files.
+    To upload a directory, zip or tar it first (example below).
+- Click **Open**.
+
+To download a file to your local computer:
+
+-   Navigate to the file in the **File Browser**, right-click it, and select **Download**.
+-   Typically, the file will be saved to your downloads folder or you will be prompted to choose a location.
+    This depends on your browser settings.
+
+Only one file can be downloaded at a time.
+To download multiple files or an entire directory, first combine them into a single archive file using `tar` from the terminal, then download the archive file using the steps above.
+Here's a `tar` example that combines two files and a directory into an archive file called `my-files.tar.gz`:
+
+```sh
+tar -czvf my-files.tar.gz my-file1 my-file2 my-directory/
+```
+
 ## If my Internet connection goes away or is intermittent, what happens to the running notebook?
 
 If you have a running job and your Internet is disrupted, the job should continue to run as long as the {term}`session<Server Session>` does not expire (See {ref}`jupyterlab-session-information`).
@@ -37,31 +128,36 @@ To **access** that active {term}`Server Session` (to stop it or modify it),
 you need to be {term}`logged in<Login Session>`.
 So your running job will not be affected.
 
-## How will my analysis be affected by CPU and memory limitations?
+## Why is my server unavailable or unreachable?
 
-If your workload exceeds your server size, your server may be allowed to use additional resources temporarily.
-This can be convenient but should not be relied on.
-In particular, be aware that your job may be killed automatically and without warning if its {term}`RAM` needs exceed the allotted memory.
-This behavior is not specific to Fornax or AWS but users may encounter it more often on the science console due to the flexible machine sizing options.
-(Your laptop needs to have the max amount of {term}`memory <RAM>` that you will ever use while working on it.
-On the science console, you can choose a different server size every time you start it up – this is much more efficient, but also requires you to be more aware of how much {term}`CPU` and {term}`RAM` your tasks need.)
+If you see a pop-up dialog like the one below, it means that your {term}`server session <Server Session>` was automatically terminated.
 
-## Why was my session stopped?
+```{figure} ../_static/forsc_server_unavailable.png
+:alt: A pop-up dialog titled "Server unavailable or unreachable" with the message that the server is not running and buttons to Restart or Dismiss.
 
-The Fornax Science Console is currently intended for interactive use and will cull sessions which appear to be inactive.
-The team is working on tools to enable users to submit jobs to run asynchronously.
-For efficient resource usage, idle interactive sessions will be culled automatically.
-If you want to keep your session running for longer, you can use the Keep-alive feature in the Fornax menu.
-See the {ref}`jupyterlab-session-information` section for details.
+The "Server unavailable or unreachable" dialog appears when your session has been automatically terminated.
+```
+
+This can happen for two reasons: your server was either culled or it ran out of memory.
+There's no way to determine which was the cause after the server shuts down, but you can make an educated guess based on what you had running.
+
+Sessions may be culled if they appear inactive or reach the maximum time limit.
+[](#jupyterlab-session-information) explains the details.
+Sessions executing code might still appear inactive if, for example, they wait a long time to receive data.
+The Keep-Alive feature can be used to prevent culling due to inactivity.
+However, keep in mind that your credits are charged while your server is running, even if it is inactive.
+
+A session will run out of memory if the code or task(s) being executed require more {term}`RAM` than the server has.
+Starting a new session with a larger [server size](#server-and-env-options) will increase the available RAM.
 
 ## How long is the period of inactivity before a session gets culled?
 
 It is set to 15 minutes, but it can take a few minutes longer for the culling service to be triggered.
 
-## Why is my HTML page blank when opened inside Jupyterlab with Safari?
+## Why is my HTML page blank when opened inside JupyterLab with Safari?
 
-This is a known issue in displaying HTML files inside Jupyterlab in Safari.
-The workaround is to right-click (double finger tap) on the html file and select 'Open in New Browser Tab'.
+This is a known issue in displaying HTML files inside JupyterLab in Safari.
+The workaround is to right-click (double finger tap) on the HTML file and select 'Open in New Browser Tab'.
 The file should open correctly in a new browser tab.
 
 (using-git)=

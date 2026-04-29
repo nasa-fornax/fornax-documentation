@@ -2,6 +2,7 @@
 short_title: Tutorial Notebooks
 ----
 
+(fornax-tutorials)=
 # Fornax Python Tutorial Notebooks
 
 The Fornax Initiative has established a [github repository of Python Tutorial Notebooks](https://github.com/nasa-fornax/fornax-demo-notebooks) that demonstrate how to access and analyze NASA Astrophysics datasets.
@@ -19,6 +20,21 @@ The packages required to run the notebooks are already installed.
 
 The notebooks directory is read-only, and its content is reset with every session.
 If you want to make modifications to the notebooks, make your own copy or clone and modify it.
+For example, to copy the Light Curve Collector notebook (along with the directories it depends on) to your home directory, do:
+
+```sh
+notebook_dir=~/fornax-notebooks/fornax-demo-notebooks/light_curves
+# Use --no-preserve=mode so the notebook will be editable.
+cp --no-preserve=mode $notebook_dir/light_curve_collector.md ~/.
+# Also copy the directories it depends on.
+cp -r --no-preserve=mode $notebook_dir/code_src $notebook_dir/output ~/.
+```
+
+Or, to clone the entire fornax-demo-notebooks repo:
+
+```sh
+git clone https://github.com/nasa-fornax/fornax-demo-notebooks.git
+```
 
 ## Other NASA Astrophysics Notebooks
 

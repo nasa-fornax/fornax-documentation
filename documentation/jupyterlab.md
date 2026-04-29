@@ -24,23 +24,28 @@ This panel may be open by default when a session starts and a new one can be ope
 Many of the tools are standard for JupyterLab and more information about them can be found at the documentation linked above.
 Below we discuss some of the other tools available via the **Launcher**.
 
+Fornax
+:   The Fornax section contains links to the {ref}`forsc-dashboard`, documentation (this website), and the {ref}`intro-forum`.
+
+Notebook and Console
+:   These sections list a subset of the [](#preinstalled-software).
+    Clicking on one will open a {term}`Jupyter Notebook` or {term}`Jupyter Console` connected to the corresponding {term}`kernel`.
+    To connect to any other environment, see [](#select-environment).
+
 VS Code
-:   VS Code will open a new window where you can work in a web-based integrated development environment (IDE).
+:   VS Code (under **Notebook**) will open a new window where you can work in a web-based integrated development environment (IDE).
     It is powered by [code-server](https://github.com/coder/code-server) which runs [Visual Studio Code - Open Source](https://github.com/microsoft/vscode) in a remote environment.
     See those links for more information.
     Note: Microsoft-specific customizations like GitHub Copilot are only available in Microsoft's desktop version of VS Code and so cannot be accessed here.
     Note also that any `code-server` extensions you install are stored in your home directory, so they persist between sessions.
 
-Terminal
-:   Terminal provides a {term}`command line <terminal>`, which allows users to run Emacs, vi, Python, etc.
-
-Fornax
-:   The Fornax section contains links to the {ref}`forsc-dashboard`, documentation (this website), and the {ref}`intro-forum`.
-
 Firefly
 :   Firefly is a modern web-based GUI for accessing and exploring astronomical data with advanced data visualization capabilities.
     This extension ([jupyter_firefly_extensions](https://github.com/Caltech-IPAC/jupyter_firefly_extensions)) allows users to visualize interlinked images, catalogs, charts, and more from their notebooks in a Firefly viewer embedded within JupyterLab.
     Check out Firefly's Python API and full capabilities at [firefly-client documentation](https://caltech-ipac.github.io/firefly_client/) and the example notebooks demonstrating them at [IRSA tutorials](https://caltech-ipac.github.io/irsa-tutorials/).
+
+Terminal
+:   Terminal provides a {term}`command line <terminal>`, which allows users to run shell commands, Emacs, vi, Python, etc.
 
 ## Menu Bar (Topmost horizontal menu)
 

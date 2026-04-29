@@ -58,6 +58,7 @@ Storage Charges
 A key difference from typical cloud computing is that Fornax users spend free credits, courtesy of NASA.
 To help ensure that NASA can continue to provide these services to the community for a long time to come, we ask users to remain aware of their activity and data storage on Fornax and to spend their free credits wisely.
 
+(software-overview)=
 ## Software
 
 Fornax has a wide variety of [pre-installed software](#preinstalled-software), including:
