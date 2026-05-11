@@ -41,7 +41,7 @@ git clone https://github.com/nasa-fornax/fornax-demo-notebooks.git
 The [Fornax Tutorial Notebooks](https://nasa-fornax.github.io/fornax-demo-notebooks/) showcase science that can be carried out by combining data across the NASA Astrophysics Archives, and have been tested using the software environments offered in the Fornax Science Console.
 Each of the NASA Astrophysics Archives also offer notebook tutorials more focused on single-archive use cases:
 
-[MAST Science Tutorials](https://github.com/spacetelescope/tike_content/blob/main/markdown/science-examples.md)
+[MAST Science Tutorials](https://spacetelescope.github.io/mast_notebooks/)
 
 [HEASARC SciServer Cookbooks](https://github.com/HEASARC/sciserver_cookbooks/blob/main/README.md)
 
