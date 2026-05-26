@@ -5,13 +5,15 @@ The Fornax Science Console offers both private and shared data storage options.
 Users are also welcome to "bring your own storage".
 Basic specifications and usage tips are described below.
 
+(home-directory)=
 ## Private Home Directory
 
 The user's home directory (`~/`) is intended for most data storage use cases, including notebook, code, and data files.
 It uses a standard Unix filesystem (POSIX).
 
 By default, the home directory has a 200 GB limit.
-To request an increase, please contact the [](#helpdesk).
+If you need short-term (up to a few months) access to more space, please use the [](#temporary-storage) option.
+If you need permanent access to more space, you can request an increase to the size of your home directory by contacting the [](#helpdesk).
 
 It is backed up daily at midnight EST, and the backups are retained for 1 day.
 

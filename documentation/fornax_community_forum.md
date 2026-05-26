@@ -31,15 +31,22 @@ You will need a [Fornax account](#get-an-account) to post on the Helpdesk.
 If you are having trouble logging in to your account, you don't have an account, or you need to contact us privately, please email us at [fornax-helpdesk@lists.nasa.gov](mailto:fornax-helpdesk@lists.nasa.gov).
 
 
-```{dropdown} Request a large, temporary storage space
-If you need access to a large (TB scale) volume of storage space for a limited amount of time, please open a Helpdesk topic and include the following information:
+```{dropdown} Request more storage space
+If you need access to a large (TB scale) volume of storage space for a limited amount of time (up to a few months), request [**temporary** storage space](#temporary-storage) by opening a Helpdesk topic and including the following information:
 
+-   Request for temporary storage space.
 -   Amount of storage space needed.
 -   Amount of time you need it for.
 -   Brief description of your use case.
 
-Once approved, your [temporary storage space](#temporary-storage) will be expanded to the requested size for the agreed upon duration.
+Once approved, your temporary storage space will be expanded to the requested size for the agreed upon duration.
 Any files left in the temporary storage space after this period will be deleted.
+
+If you need **permanent** access to more storage space, request an increase to your [home directory storage space](#home-directory) by opening a Helpdesk topic and including the following information:
+
+-   Request for increased home directory storage space.
+-   Amount of storage space needed.
+-   Brief description of your use case.
 ```
 
 ```{dropdown} Submit an effective bug report for Fornax
