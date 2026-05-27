@@ -51,6 +51,12 @@ To fix this, try [creating a new environment](#create-new-env), which isolates y
 Note that conda's solver can be better than pip's at finding a consistent set of package versions across dependencies.
 If two packages you need are truly incompatible, contact their maintainers to see if the conflict can be resolved upstream.
 
+## Can I use a VoIP phone (Voice over Internet Protocol phone) to create my account?
+
+No.
+Please use a standard cell phone or landline when creating your account.
+We do not accept VoIP phone numbers because they can be auto-generated in large numbers by hackers.
+
 ## How do I change my email address or password?
 
 Please email the [](#helpdesk) to change the email address or password associated with your Fornax account.

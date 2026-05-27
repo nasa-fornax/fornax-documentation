@@ -17,6 +17,7 @@ The form will ask for the following:
     We use these for verification purposes only.
     You will need access to both your email and phone in order to complete the registration process.
     Your email address will also be used for ongoing Multi-Factor Authentication (MFA), so please choose one that receives messages quickly and reliably.
+    Please use a standard cell phone or landline; you will not be able to activate your account using a VoIP phone (Voice over Internet Protocol phone).
 -   Institute affiliation and career stage, for demographics.
 -   A brief description of the science analysis you would like to use Fornax for.
     We use this to verify that the proposed usage of Fornax is appropriate.
