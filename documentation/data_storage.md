@@ -39,13 +39,83 @@ When storing multiple files, consider using `tar` to collect them into a single 
 (temporary-storage)=
 ## Private Temporary Storage
 
-The directory `/scratch` is intended for short-term storage of large volumes of data (TB scale).
-For example, it's a good place to write large analysis outputs.
-(Then move to [S3](#private-s3) for long-term storage.)
-It uses a standard Unix filesystem (POSIX).
+The directory `/scratch` is private and uses a standard Unix filesystem (POSIX).
+It's intended as a working area for large data in cases where your [S3 storage](#private-s3) isn't performant enough, and your [home directory](#home-directory) is too small.
+For example, if your analysis writes many files and you find that writing to S3 is too slow, write to `/scratch` and then move the data you want to keep long-term over to S3 after your analysis is complete.
 
-By default, the directory exists but is limited to 1 GB.
-Users can contact the [](#helpdesk) to request additional space.
+This storage is not backed up.
+The storage system is highly reliable and should not lose data due to system error, but cannot protect against user error.
+Lost data are not recoverable.
+
+By default, `/scratch` exists but is limited to 1 GB.
+You can expand it up to 3 TB for a maximum of 90 days at a time.
+To manage this space, go to the [](#forsc-Dashboard) and click `Storage → Scratch`.
+Details are in the drop-down below.
+
+````{note} How to manage scratch storage space
+:class: dropdown
+
+On the [](#forsc-Dashboard), click `Storage → Scratch` to get to the Scratch Storage management page.
+
+```{figure} ../_static/forsc_dashboard_scratch_default.png
+:alt: Scratch Storage management page on the Fornax Dashboard, showing the default configuration (user has not created scratch space) and a Request Storage button.
+
+Scratch Storage Dashboard page with a button to request storage
+```
+
+Create scratch space (expand beyond the default 1 GB)
+: Go to the Scratch Storage Dashboard page and complete the following steps.
+  There is no limit on how many times you can do this, other than your remaining credits.
+
+  1. Click `Request Storage`.
+  2. Choose a size between 500 GB and 3 TB.
+     (You will be able to increase this later.)
+  3. Choose an expiration date of up to 60 days in the future.
+     (You will be able to increase or decrease this later.)
+  4. The total charge in credits will be displayed, along with the number of credits you currently have.
+     Be sure to leave yourself enough credits to run servers and anything else you want to do.
+  5. Click `Submit Request`.
+     If you have enough credits to cover the total, your scratch space will be expanded.
+     This can take a few minutes.
+     When it's complete, you'll receive a message via the [Forum](#intro-forum), and your Dashboard page will look similar to the screenshot below.
+
+```{figure} ../_static/forsc_dashboard_scratch_created.png
+:alt: Scratch Storage management page on the Fornax Dashboard, showing the configuration of the user's current scratch space (storage size, created date, expiration date, and days remaining) and buttons to modify or release the storage space.
+
+Scratch Storage Dashboard page after space has been created
+```
+
+Access scratch space
+: [Start a server session](#start-server-session) and navigate to the `/scratch` directory.
+  Note that you won't be able to see `/scratch` in the UI because it doesn't show up in your home directory.
+  However, you can access it by (for example) opening a {term}`terminal` and entering `ls /scratch`.
+
+Change scratch size or expiration date
+: Go to the Scratch Storage Dashboard page and click `Modify Allocation`.
+  From there you will be able to:
+
+  - Increase the storage size up to a maximum of 3 TB.
+    (Can't decrease the size.)
+  - Increase or decrease the expiration date.
+    It can be increased to up to 90 days total from the date it was initially expanded.
+
+Release (delete) scratch space
+: Release the scratch space as soon as you're done with it so your credits stop being charged.
+  Go to the Scratch Storage Dashboard page and click `Release Storage`.
+  You will be asked to confirm.
+
+  If you don't manually release the space, it will be automatically released on the expiration date you chose when creating or updating the space.
+
+  When the space is released, all files in `/scratch` will be **permanently deleted** and the directory will be resized back to 1 GB.
+````
+
+```{danger} Warning: Data is permanently deleted when scratch is released or expires
+All files in `/scratch` will be **permanently deleted** when the expanded scratch space is manually released through the Dashboard or the expiration date is reached, whichever comes first.
+The data is non-recoverable.
+
+You will receive a message via the [Forum](#intro-forum) halfway between the creation and expiration dates, and again 3 days and 1 day before the expiration date.
+The messages will include instructions for copying data out of `/scratch` to S3 or another permanent location.
+```
 
 ## Shared Storage
 
