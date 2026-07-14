@@ -5,9 +5,42 @@ The Fornax Science Console offers both private and shared data storage options.
 Users are also welcome to "bring your own storage".
 Basic specifications and usage tips are described below.
 
-## Private Home Directory
+## Private Storage
 
-The user's home directory (`~/`) is intended for most data storage use cases, including notebook, code, and data files.
+To cover a range of use cases, Fornax offers three options for private storage.
+They are summarized in the table below, with more detail in the sections that follow.
+
+```{list-table} Overview of private storage options
+:header-rows: 1
+
+* - Storage Type
+  - Max Size
+  - Duration
+  - Filesystem
+  - Typical Use Case
+* - [Home directory](#home-directory)
+  - 200 GB
+  - any
+  - POSIX (standard Unix)
+  - most daily needs
+* - [S3 bucket](#private-s3)
+  - limited only by user's credits
+  - any
+  - mounted AWS S3 bucket
+  - long-term storage, especially for large data
+* - [Scratch space](#temporary-storage)
+  - 3 TB
+  - up to 90 days
+  - POSIX (standard Unix)
+  - short-term working space for large data
+```
+
+For the cost (in credits) of each option, see [](change-controlled-documents/user-resource-allotments-and-costs.md).
+
+(home-directory)=
+### Home Directory
+
+The user's home directory (`~/`) is private and intended for most data storage use cases, including notebook, code, and data files.
 It uses a standard Unix filesystem (POSIX).
 
 By default, the home directory has a 200 GB limit.
@@ -21,7 +54,7 @@ Those do not actually live in the home directory (they are mounted or symlinked 
 ```
 
 (private-s3)=
-## Private S3 Bucket
+### S3 Bucket
 
 All users have access to a private {term}`AWS S3<s3>` bucket, which is mounted into the home directory at `~/s3-storage`.
 It is best suited for infrequently accessed data, such as archival storage of pipeline outputs (catalogs, spectra, images, etc.) needed for reproducibility.
@@ -37,7 +70,7 @@ In particular, it is inefficient for repeated access of many small files.
 When storing multiple files, consider using `tar` to collect them into a single file before saving to `~/s3-storage`.
 
 (temporary-storage)=
-## Private Temporary Storage
+### Temporary Scratch Space
 
 The directory `/scratch` is private and uses a standard Unix filesystem (POSIX).
 It's intended as a working area for large data in cases where your [S3 storage](#private-s3) isn't performant enough, and your [home directory](#home-directory) is too small.
