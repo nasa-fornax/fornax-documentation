@@ -4,19 +4,18 @@ short_title: User Resource Allotments and Costs
 
 # Fornax User Resource Allotments and Costs
 
-V.1.1  January 26, 2026
+V.1.3  July 17, 2026
 
 Upon your first login to the Fornax Science Console you will have:
 
-**1000 credits** for spending on cloud resources (compute, storage, and egress); this is renewed yearly, at the beginning of the fiscal year (Oct. 1). If you need more credits before the renewal date, contact the [Fornax Helpdesk](https://docs.fornax.sciencecloud.nasa.gov/fornax-community-forum/#helpdesk).
-
-**A 200 GB ceiling** to the private storage available in your Home Directory; if your work requires more, please contact the [Fornax Helpdesk](https://docs.fornax.sciencecloud.nasa.gov/fornax-community-forum/#helpdesk).
-
-**Access to additional, private S3 storage**, mounted as “s3-storage” under your Home Directory, for a cheaper storage option (see table, below)
+* **1000 credits** for spending on cloud resources (compute, storage, and egress); this is renewed yearly, at the beginning of the fiscal year (Oct. 1). If you need more credits before the renewal date, contact the [Fornax Helpdesk](https://docs.fornax.sciencecloud.nasa.gov/fornax-community-forum/#helpdesk).
+* **A 200 GB ceiling** to the private storage available in your Home Directory; if your work requires more, please see the options below or contact the [Fornax Helpdesk](https://docs.fornax.sciencecloud.nasa.gov/fornax-community-forum/#helpdesk).
+* **Access to additional, private S3 storage**, mounted as “s3-storage” under your Home Directory, for a cheaper storage option (see table, below)
+* **Additional /scratch storage** space that can be expanded to temporarily house very large datasets for software that expects data mounted as a traditional file system. See [Data Storage](https://docs.fornax.sciencecloud.nasa.gov/data-storage/) in the Fornax docs for more details
 
 The [Fornax Science Console Dashboard](https://docs.fornax.sciencecloud.nasa.gov/dashboard/) will help you keep track of what you have spent.
 
-**For more information**, see: [Fornax Resources and Best Practices](https://docs.fornax.sciencecloud.nasa.gov/intro-forsc/#intro-best-practices) in the Fornax docs
+**For more information**, see: [Compute and Storage](https://docs.fornax.sciencecloud.nasa.gov/intro-forsc/#intro-best-practices) in the Fornax docs
 
 **Typical usage costs**, for reference:
 
@@ -31,14 +30,15 @@ The [Fornax Science Console Dashboard](https://docs.fornax.sciencecloud.nasa.gov
 
 The table below shows the approximate costs of various compute, storage, and egress options.
 
-| Compute (\# CPU, GB RAM) | Cost (credits/hour) |
-| :---- | :---- |
-| Small (2, 8\) | 0.087 |
-| Medium (4, 8\) | 0.153 |
-| Large (16, 64\) | 0.768 |
-| XLarge (128, 512\) | 7.59 |
-| **Storage (AWS media)** | **Cost (credits/GB/month)** |
-| Home Directory (FSx) | 0.090 |
-| Additional private storage (S3)   | 0.023 |
-| **Egress** | **Cost (credits/GB)** |
-| Standard Egress rate | 0.090 |
+| Compute (\# CPU, GB RAM) | Cost (credits/hour) |  |
+| :---- | :---- | :---- |
+| Small (2, 8\) | 0.087 |  |
+| Medium (4, 8\) | 0.153 |  |
+| Large (16, 64\) | 0.768 |  |
+| XLarge (128, 512\) | 7.59 |  |
+| **Storage (AWS media)** | **Cost (credits/GB/month)** |  |
+| Home Directory (FSx) | 0.090 | User is charged for amount of storage in use. |
+| Additional private storage (S3)   | 0.023 | User is charged for amount of storage in use. |
+| /scratch storage (EBS) | 0.080 | User is charged for amount of storage requested \- see docs in link above. |
+| **Egress** | **Cost (credits/GB)** |  |
+| Standard Egress rate | 0.090 |  |
