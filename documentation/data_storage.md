@@ -98,7 +98,7 @@ Scratch Storage Dashboard page with a button to request storage
 
 Create scratch space (expand beyond the default 1 GB)
 : Go to the Scratch Storage Dashboard page and complete the following steps.
-  There is no limit on how many times you can do this, other than your remaining credits.
+  The only limit on how many times you can do this is the number of credits you have available.
 
   1. Click `Request Storage`.
   2. Choose a size between 500 GB and 3 TB.
@@ -121,7 +121,7 @@ Scratch Storage Dashboard page after space has been created
 Access scratch space
 : [Start a server session](#start-server-session) and navigate to the `/scratch` directory.
   Note that you won't be able to see `/scratch` in the UI because it doesn't show up in your home directory.
-  However, you can access it by (for example) opening a {term}`terminal` and entering `ls /scratch`.
+You can also access it by opening a {term}`terminal` and entering `ls /scratch`.
 
 Change scratch size or expiration date
 : Go to the Scratch Storage Dashboard page and click `Modify Allocation`.
@@ -134,17 +134,20 @@ Change scratch size or expiration date
 
 Release (delete) scratch space
 : Release the scratch space as soon as you're done with it so your credits stop being charged.
-  Go to the Scratch Storage Dashboard page and click `Release Storage`.
+  First, [shut down your server](#shutdown-server).
+  Then go to the Scratch Storage Dashboard page and click `Release Storage`.
   You will be asked to confirm.
 
-  If you don't manually release the space, it will be automatically released on the expiration date you chose when creating or updating the space.
+  When the space is released, **all files** in `~/scratch` will be **permanently deleted** and the directory will be resized back to 1 GB.
+  The process can take up to 20 minutes or more to complete.
+  You will receive a message via the [Forum](#intro-forum) when it's done.
 
-  When the space is released, all files in `/scratch` will be **permanently deleted** and the directory will be resized back to 1 GB.
+  If you don't manually release the space, it will be automatically released on the expiration date you chose when creating or updating the space.
 ````
 
 ```{danger} Warning: Data is permanently deleted when scratch is released or expires
-All files in `/scratch` will be **permanently deleted** when the expanded scratch space is manually released through the Dashboard or the expiration date is reached, whichever comes first.
-The data is non-recoverable.
+**All files** in `~/scratch` will be **permanently deleted** when the expanded scratch space is manually released through the Dashboard or the expiration date is reached, whichever comes first.
+The data are non-recoverable.
 
 You will receive a message via the [Forum](#intro-forum) halfway between the creation and expiration dates, and again 3 days and 1 day before the expiration date.
 The messages will include instructions for copying data out of `/scratch` to S3 or another permanent location.

@@ -45,6 +45,7 @@ Begin by testing your workflow on the smallest server that meets your needs.
 Limit initial runs in scope (e.g., fewer sources, shorter iterations, smaller datasets).
 Scale up to a larger server or full analysis only after verifying that your code runs successfully at smaller scale.
 
+(shutdown-server)=
 ### Shut down when done
 
 You are continuously charged credits for a running server regardless of whether you're actively using it.
