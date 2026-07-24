@@ -49,7 +49,7 @@ To request an increase, please contact the [](#helpdesk).
 It is backed up daily at midnight EST, and the backups are retained for 1 day.
 
 ```{tip}
-All users will see the following directories in their home directory: `fornax-notebooks`, `s3-storage`, and `shared-storage`.
+All users will see the following directories in their home directory: `fornax-notebooks`, `s3-storage`, `scratch`, and `shared-storage`.
 Those do not actually live in the home directory (they are mounted or symlinked in), and a user intending to save data to their home directory should **not** save it inside any of those directories.
 ```
 
@@ -72,15 +72,15 @@ When storing multiple files, consider using `tar` to collect them into a single 
 (temporary-storage)=
 ### Temporary Scratch Space
 
-The directory `/scratch` is private and uses a standard Unix filesystem (POSIX).
+The directory `~/scratch` is private and uses a standard Unix filesystem (POSIX).
 It's intended as a working area for large data in cases where your [S3 storage](#private-s3) isn't performant enough, and your [home directory](#home-directory) is too small.
-For example, if your analysis writes many files and you find that writing to S3 is too slow, write to `/scratch` and then move the data you want to keep long-term over to S3 after your analysis is complete.
+For example, if your analysis writes many files and you find that writing to S3 is too slow, write to `~/scratch` and then move the data you want to keep long-term over to S3 after your analysis is complete.
 
 This storage is not backed up.
 The storage system is highly reliable and should not lose data due to system error, but cannot protect against user error.
 Lost data are not recoverable.
 
-By default, `/scratch` exists but is limited to 1 GB.
+By default, `~/scratch` exists but is limited to 1 GB.
 You can expand it up to 3 TB for a maximum of 90 days at a time.
 To manage this space, go to the [](#forsc-Dashboard) and click `Storage → Scratch`.
 Details are in the drop-down below.
@@ -119,9 +119,8 @@ Scratch Storage Dashboard page after space has been created
 ```
 
 Access scratch space
-: [Start a server session](#start-server-session) and navigate to the `/scratch` directory.
-  Note that you won't be able to see `/scratch` in the UI because it doesn't show up in your home directory.
-You can also access it by opening a {term}`terminal` and entering `ls /scratch`.
+: [Start a server session](#start-server-session) and navigate to the `~/scratch` directory.
+  For example, you can click on it in the [File Browser](#left-sidebar) or open a {term}`terminal` and enter `cd ~/scratch`.
 
 Change scratch size or expiration date
 : Go to the Scratch Storage Dashboard page and click `Modify Allocation`.
@@ -150,7 +149,7 @@ Release (delete) scratch space
 The data are non-recoverable.
 
 You will receive a message via the [Forum](#intro-forum) halfway between the creation and expiration dates, and again 3 days and 1 day before the expiration date.
-The messages will include instructions for copying data out of `/scratch` to S3 or another permanent location.
+The messages will include instructions for copying data out of `~/scratch` to S3 or another permanent location.
 ```
 
 ## Shared Storage
