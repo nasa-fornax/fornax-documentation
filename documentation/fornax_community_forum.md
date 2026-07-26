@@ -20,6 +20,16 @@ The forum has three categories that serve different purposes:
 To post on the forum, you will need a [Fornax account](#get-an-account).
 The forum can be read without an account.
 
+````{attention} Important messages from Fornax
+Fornax sends important information about your account, such as notifications about your [scratch storage](#temporary-storage) expiring, via "personal messages" on the Forum.
+Personal messages show up in your `Notifications and account` menu (user icon near the top right) and are identified by a letter icon (✉️).
+They are also emailed to you by default.
+
+You can change your email and notification settings for personal messages and other Forum activity by going to `Notifications and account → Profile → Preferences`.
+However, we strongly recommend that you leave "Email me when I am sent a personal message" set to "always" so you get these important messages.
+The frequency of personal messages from Fornax is expected to be low.
+````
+
 (helpdesk)=
 ## Helpdesk
 
