@@ -51,6 +51,15 @@ To fix this, try [creating a new environment](#create-new-env), which isolates y
 Note that conda's solver can be better than pip's at finding a consistent set of package versions across dependencies.
 If two packages you need are truly incompatible, contact their maintainers to see if the conflict can be resolved upstream.
 
+## Can I use AI command line interfaces on Fornax?
+
+Yes!
+AI coding assistants such as Claude Code and OpenAI Codex work on Fornax, as do others.
+Just open a {term}`terminal <Terminal>`, follow the install instructions for your favorite AI assistant, and you should be off and running.
+
+Keep in mind that these tools send your prompts, and often the contents of your files, to an external service.
+You are responsible for the account, any usage costs, and for making sure the data you share is appropriate to send off-platform.
+
 ## Can I use a VoIP phone (Voice over Internet Protocol phone) to create my account?
 
 No.
