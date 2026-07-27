@@ -164,7 +164,6 @@ It is set to 15 minutes, but it can take a few minutes longer for the culling se
 
 This is a known issue in displaying HTML and PDF files inside JupyterLab in Safari.
 The workaround is to right-click (double finger tap) on the file and select 'Open in New Browser Tab'.
-The file should open correctly in a new browser tab.
 
 (using-git)=
 ## How do I use Git from Fornax?
