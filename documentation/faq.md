@@ -160,11 +160,10 @@ Starting a new session with a larger [server size](#server-and-env-options) will
 
 It is set to 15 minutes, but it can take a few minutes longer for the culling service to be triggered.
 
-## Why is my HTML page blank when opened inside JupyterLab with Safari?
+## Why is my HTML or PDF page blank when opened inside JupyterLab with Safari?
 
-This is a known issue in displaying HTML files inside JupyterLab in Safari.
-The workaround is to right-click (double finger tap) on the HTML file and select 'Open in New Browser Tab'.
-The file should open correctly in a new browser tab.
+This is a known issue in displaying HTML and PDF files inside JupyterLab in Safari.
+The workaround is to right-click (double finger tap) on the file and select 'Open in New Browser Tab'.
 
 (using-git)=
 ## How do I use Git from Fornax?
