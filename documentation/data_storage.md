@@ -46,8 +46,6 @@ It uses a standard Unix filesystem (POSIX).
 By default, the home directory has a 200 GB limit.
 To request an increase, please contact the [](#helpdesk).
 
-It is backed up daily at midnight EST, and the backups are retained for 1 day.
-
 ```{tip}
 All users will see the following directories in their home directory: `fornax-notebooks`, `s3-storage`, `scratch`, and `shared-storage`.
 Those do not actually live in the home directory (they are mounted or symlinked in), and a user intending to save data to their home directory should **not** save it inside any of those directories.
