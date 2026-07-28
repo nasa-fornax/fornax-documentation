@@ -13,26 +13,29 @@ To create a free Fornax Science Console and Community Forum account, complete th
 
 The form will ask for the following:
 
--   Name, email address, and phone number.
+-   **Name, email address, and phone number**.
     We use these for verification purposes only.
     You will need access to both your email and phone in order to complete the registration process.
     Your email address will also be used for ongoing Multi-Factor Authentication (MFA), so please choose one that receives messages quickly and reliably.
     Please use a standard cell phone or landline; you will not be able to activate your account using a VoIP phone (Voice over Internet Protocol phone).
--   Institute affiliation and career stage, for demographics.
--   A brief description of the science analysis you would like to use Fornax for.
+-   **Institute affiliation and career stage**, for demographics.
+-   A **brief description** of the science analysis you would like to use Fornax for.
     We use this to verify that the proposed usage of Fornax is appropriate.
--   Desired username and password.
+-   Desired **username and password**.
+
+```{tip} Use an institutional email address for faster approval
+For faster account approval, register using either a nasa.gov or academic institution email address if you have one.
+You can use other email addresses, but your request will take longer to be vetted.
+Accounts registered with nasa.gov addresses are approved immediately.
+All others require review by Fornax staff, which may take up to two US business days.
+```
+<!--Other types of email addresses are permitted but will take longer to go through our registration vetting process.-->
 
 Once you submit the form, a verification link will be sent to your email address.
 Click the link to verify your email address and then follow the instructions to verify your phone number.
 
-A human will then review your request.
+Fornax staff will then review your request.
 If approved, your account will be created and you will receive an email with further instructions and information, including the [User Agreement](change-controlled-documents/user-agreement) and [User Resource Allotments and Costs](change-controlled-documents/user-resource-allotments-and-costs).
-
-```{note}
-Email addresses from safelisted domains (currently, nasa.gov) are automatically approved.
-All other requests require human review, which may take up to 2 US business days.
-```
 
 If you have trouble getting an account, please contact the [Helpdesk](#helpdesk).
 
