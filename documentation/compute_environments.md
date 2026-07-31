@@ -220,7 +220,7 @@ Similarly, to use this environment in a {term}`notebook <Jupyter Notebook>`, you
 Deleting a user environment that was created either manually or with the scripts provided can be done with these two steps:
 
 - Delete the environment folder under `~/user-envs/` (or wherever else it is was installed).
-- Remove the kernel for that environment by deleting the the folder with the environment name from `~/.local/share/jupyter/kernels/`.
+- Remove the kernel for that environment by deleting the the folder with the environment name from `/scratch/.jupyter/kernels/`.
 
 As a tip, running the following in the terminal, will list all the installed kernels. It can be used to find the location of installed kernels:
 ```bash
