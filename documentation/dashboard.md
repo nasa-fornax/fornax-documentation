@@ -29,7 +29,7 @@ Storage Spend
     This includes all private [storage](#data-storage) areas, such as the home directory and S3 (based on amount used), and temporary storage (based on amount allocated).
 
 Storage in Use
-:   Storage in Use tracks the volume of storage in GB that you are currently using, including your home directory and S3 storage space.
+:   Storage in Use tracks the volume of storage in GB that you are currently using, including your home directory, S3, and temporary storage spaces.
 
 Compute Spend
 :   Compute Spend tracks the total number of credits spent on {term}`server sessions<Server Session>` so far this year.
