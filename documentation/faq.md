@@ -243,6 +243,33 @@ Cloud-hosted NASA mission data are readily accessible at high bandwidth directly
 
 ## Known Bugs
 
+(s3-copy-bug)=
+### How can I be sure that the files I moved to S3 are complete?
+
+There is a known bug in the `~/s3-storage` mount where a copy or move operation can exit early without finishing the write and without warning you that anything went wrong.
+We are working on a fix.
+
+In the meantime, always verify that a file was completely written to `~/s3-storage` before deleting it from its original location.
+Avoid the shell command `mv` or any other action that deletes the original data before you've checked whether the S3 copy is complete.
+
+You can verify copies using checksums.
+Here is an example:
+
+```bash
+# Calculate an MD5 checksum for every file in `my-directory`
+# and save the checksums to a file called `~/checksums.md5`.
+find my-directory -type f -exec md5sum {} + > ~/checksums.md5
+
+# Copy the directory to your S3 bucket storage.
+cp -r my-directory ~/s3-storage/
+
+# Verify the files copied to S3 against the saved checksums.
+cd ~/s3-storage
+md5sum -c ~/checksums.md5
+```
+
+If `md5sum -c` reports `OK` for every file, the copy is complete and it's safe to delete the original.
+
 ### Why is my HTML or PDF page blank when opened inside JupyterLab with Safari?
 
 This is a known issue in displaying HTML and PDF files inside JupyterLab in Safari.
