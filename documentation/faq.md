@@ -1,21 +1,84 @@
 # Frequently Asked Questions (FAQ)
 
-## Can I run high-performance computing (HPC) workflows?
+## Accounts
 
-Although the Fornax Science Console isn't a traditional HPC system, it provides many similar features and benefits.
-By selecting a very large [server size](#server-and-env-options), users can run highly parallelized workflows on a single node and achieve performance that often eliminates the need for a multi-node HPC system.
-In addition to the substantial compute power for data *processing*, the high network bandwidth enables massively parallel *access* to [cloud-hosted data](#cloud-hosted-data).
-Fornax also provides built-in TB-scale temporary and long-term [storage options](#data-storage), giving users several choices for reading and writing large datasets.
+### Can I use a VoIP phone (Voice over Internet Protocol phone) to create my account?
 
-Users have access to the {term}`command line <Terminal>` where they can [install software](#install-additional-software) and launch jobs from scripts.
+No.
+Please use a standard cell phone or landline when creating your account.
+We do not accept VoIP phone numbers because they can be auto-generated in large numbers by hackers.
 
-Unlike typical HPC systems, Fornax does not have a job scheduler.
-We do plan to add support for batch or asynchronous job submission in a future release.
+### How do I change my email address or password?
 
-Be aware that server sessions can be automatically terminated under certain circumstances.
-See [](#jupyterlab-session-information) for details.
+Please email the [](#helpdesk) to change the email address or password associated with your Fornax account.
 
-## What are the pre-installed directories and files used for?
+## Server Sessions and Connectivity
+
+### I was logged out while having a running job. What happens to it?
+
+Being logged-in and having a running job or server are independent.
+An active {term}`Server Session` is running in the cloud regardless of whether you logged in or not (See {ref}`jupyterlab-session-information`).
+To **access** that active {term}`Server Session` (to stop it or modify it),
+you need to be {term}`logged in<Login Session>`.
+So your running job will not be affected.
+
+### Why is my server unavailable or unreachable?
+
+If you see a pop-up dialog like the one below, it means that your {term}`server session <Server Session>` was automatically terminated.
+
+```{figure} ../_static/forsc_server_unavailable.png
+:alt: A pop-up dialog titled "Server unavailable or unreachable" with the message that the server is not running and buttons to Restart or Dismiss.
+
+The "Server unavailable or unreachable" dialog appears when your session has been automatically terminated.
+```
+
+This can happen for two reasons: your server was either culled or it ran out of memory.
+There's no way to determine which was the cause after the server shuts down, but you can make an educated guess based on what you had running.
+
+Sessions may be culled if they appear inactive or reach the maximum time limit.
+[](#jupyterlab-session-information) explains the details.
+Sessions executing code might still appear inactive if, for example, they wait a long time to receive data.
+The Keep-Alive feature can be used to prevent culling due to inactivity.
+However, keep in mind that your credits are charged while your server is running, even if it is inactive.
+
+A session will run out of memory if the code or task(s) being executed require more {term}`RAM` than the server has.
+Starting a new session with a larger [server size](#server-and-env-options) will increase the available RAM.
+
+### How long is the period of inactivity before a session gets culled?
+
+It is set to 15 minutes, but it can take a few minutes longer for the culling service to be triggered.
+
+### If my Internet connection goes away or is intermittent, what happens to the running notebook?
+
+If you have a running job and your Internet is disrupted, the job should continue to run as long as the {term}`session<Server Session>` does not expire (See {ref}`jupyterlab-session-information`).
+You can connect to a running session using the same browser or different browser.
+You can even connect to the same session from different machines.
+
+## Software and Environments
+
+### What software is pre-installed?
+
+[Software Overview](#software-overview) lists notable packages that are pre-installed.
+These and many other pre-installed packages are organized into several {term}`environments <Environment>`.
+[](#preinstalled-software) describes how to find complete lists of the packages in each environment and how to search for a particular package of interest.
+
+### How do I install compilers or other packages that require root access?
+
+We recommend installing these packages from conda, using miniconda, which avoids the need for root access.
+See [](#compilers) for more information.
+For security reasons, commands cannot be run using `sudo` because users don't have full root access.
+
+### How do I fix version conflicts when installing software?
+
+Version conflicts occur when two packages need incompatible versions of the same dependency.
+For example, one package might require `numpy<2` while another needs `numpy>=2`.
+To fix this, try [creating a new environment](#create-new-env), which isolates your packages from the pre-installed ones and gives the dependency solver a fresh start.
+Note that conda's solver can be better than pip's at finding a consistent set of package versions across dependencies.
+If two packages you need are truly incompatible, contact their maintainers to see if the conflict can be resolved upstream.
+
+## Files and Storage
+
+### What are the pre-installed directories and files used for?
 
 You can store files and data in the directories `~/` (home directory), `~/s3-storage`, `~/shared-storage`, and `/scratch`.
 See [](#data-storage) for details.
@@ -31,70 +94,8 @@ See [](#compute-environments) for details.
 The file `~/.profile` is an initialization script that runs when a {term}`terminal <Terminal>` session starts.
 See [](#terminal-initialization) for details.
 
-## What software is pre-installed?
-
-[Software Overview](#software-overview) lists notable packages that are pre-installed.
-These and many other pre-installed packages are organized into several {term}`environments <Environment>`.
-[](#preinstalled-software) describes how to find complete lists of the packages in each environment and how to search for a particular package of interest.
-
-## How do I install compilers or other packages that require root access?
-
-We recommend installing these packages from conda, using miniconda, which avoids the need for root access.
-See [](#compilers) for more information.
-For security reasons, commands cannot be run using `sudo` because users don't have full root access.
-
-## How do I fix version conflicts when installing software?
-
-Version conflicts occur when two packages need incompatible versions of the same dependency.
-For example, one package might require `numpy<2` while another needs `numpy>=2`.
-To fix this, try [creating a new environment](#create-new-env), which isolates your packages from the pre-installed ones and gives the dependency solver a fresh start.
-Note that conda's solver can be better than pip's at finding a consistent set of package versions across dependencies.
-If two packages you need are truly incompatible, contact their maintainers to see if the conflict can be resolved upstream.
-
-## Can I use AI command line interfaces on Fornax?
-
-Yes!
-AI coding assistants such as Claude Code and OpenAI Codex work on Fornax, as do others.
-Just open a {term}`terminal <Terminal>`, follow the install instructions for your favorite AI assistant, and you should be off and running.
-
-Keep in mind that these tools send your prompts, and often the contents of your files, to an external service.
-You are responsible for the account, any usage costs, and for making sure the data you share is appropriate to send off-platform.
-
-## Can I use a VoIP phone (Voice over Internet Protocol phone) to create my account?
-
-No.
-Please use a standard cell phone or landline when creating your account.
-We do not accept VoIP phone numbers because they can be auto-generated in large numbers by hackers.
-
-## How do I change my email address or password?
-
-Please email the [](#helpdesk) to change the email address or password associated with your Fornax account.
-
-## What is the difference between saving and downloading a file?
-
-"Saving" a file will place it in a location in your Fornax storage.
-To save a file, click on your notebook in your directory on the left side of the screen.
-Then go to the main menu and select `File → Save`.
-There are a few save options.
-Alternatively you can click the image of the disk under the tab on an open file.
-
-"Downloading" a file will move a copy to your local machine.
-To download a file, click on your notebook in your directory on the left side of the screen.
-Then go to the main menu and select `File → Download`.
-You can also right click on the file name and select `Download`.
-
-## Can I use Fornax for exoplanet research?
-
-Yes! Fornax is well-suited for many exoplanet workflows, especially computationally intensive tasks that parallelize well.
-Atmospheric retrievals are a prime example: tools like petitRADTRANS (pRT) require running thousands of forward models to sample parameter space, which maps naturally onto Fornax's scalable cloud compute.
-[Exoplanet Retrieval Quickstart](https://github.com/nasa-fornax/fornax-howtos/blob/main/tutorials/exoplanet_retrievals/quickstart.md) is a tutorial for setting up and running a pRT retrieval on Fornax.
-Similarly, tasks like injection-recovery tests, transit timing analyses across large light curve sets, and population-level modeling all benefit from the ability to spin up many parallel workers.
-
-Fornax is also co-located with NASA archive data on the cloud, making it easy to pull large datasets without the bottleneck of downloading to a local machine.
-Cloud-hosted NASA mission data are readily accessible at high bandwidth directly from the Fornax Science Console.
-
 (how-to-upload-download)=
-## How do I upload or download files and directories?
+### How do I upload or download files and directories?
 
 :::{tip}
 By accessing NASA Astrophysics data through [APIs](#apis) (small to medium amounts of data) or reading it directly from [NASA's ODR buckets](#cloud-hosted-data) (unlimited), you can avoid having to upload it to the Fornax Science Console first.
@@ -129,60 +130,30 @@ Here's a `tar` example that combines two files and a directory into an archive f
 tar -czvf my-files.tar.gz my-file1 my-file2 my-directory/
 ```
 
-## If my Internet connection goes away or is intermittent, what happens to the running notebook?
+### What is the difference between saving and downloading a file?
 
-If you have a running job and your Internet is disrupted, the job should continue to run as long as the {term}`session<Server Session>` does not expire (See {ref}`jupyterlab-session-information`).
-You can connect to a running session using the same browser or different browser.
-You can even connect to the same session from different machines.
+"Saving" a file will place it in a location in your Fornax storage.
+To save a file, click on your notebook in your directory on the left side of the screen.
+Then go to the main menu and select `File → Save`.
+There are a few save options.
+Alternatively you can click the image of the disk under the tab on an open file.
 
-## I was logged out while having a running job. What happens to it?
+"Downloading" a file will move a copy to your local machine.
+To download a file, click on your notebook in your directory on the left side of the screen.
+Then go to the main menu and select `File → Download`.
+You can also right click on the file name and select `Download`.
 
-Being logged-in and having a running job or server are independent.
-An active {term}`Server Session` is running in the cloud regardless of whether you logged in or not (See {ref}`jupyterlab-session-information`).
-To **access** that active {term}`Server Session` (to stop it or modify it),
-you need to be {term}`logged in<Login Session>`.
-So your running job will not be affected.
-
-## Why is my server unavailable or unreachable?
-
-If you see a pop-up dialog like the one below, it means that your {term}`server session <Server Session>` was automatically terminated.
-
-```{figure} ../_static/forsc_server_unavailable.png
-:alt: A pop-up dialog titled "Server unavailable or unreachable" with the message that the server is not running and buttons to Restart or Dismiss.
-
-The "Server unavailable or unreachable" dialog appears when your session has been automatically terminated.
-```
-
-This can happen for two reasons: your server was either culled or it ran out of memory.
-There's no way to determine which was the cause after the server shuts down, but you can make an educated guess based on what you had running.
-
-Sessions may be culled if they appear inactive or reach the maximum time limit.
-[](#jupyterlab-session-information) explains the details.
-Sessions executing code might still appear inactive if, for example, they wait a long time to receive data.
-The Keep-Alive feature can be used to prevent culling due to inactivity.
-However, keep in mind that your credits are charged while your server is running, even if it is inactive.
-
-A session will run out of memory if the code or task(s) being executed require more {term}`RAM` than the server has.
-Starting a new session with a larger [server size](#server-and-env-options) will increase the available RAM.
-
-## How long is the period of inactivity before a session gets culled?
-
-It is set to 15 minutes, but it can take a few minutes longer for the culling service to be triggered.
-
-## Why is my HTML or PDF page blank when opened inside JupyterLab with Safari?
-
-This is a known issue in displaying HTML and PDF files inside JupyterLab in Safari.
-The workaround is to right-click (double finger tap) on the file and select 'Open in New Browser Tab'.
+## Tools
 
 (using-git)=
-## How do I use Git from Fornax?
+### How do I use Git from Fornax?
 
 If you want to clone notebooks or code from a Git repository (repo) into the Fornax Science Console, you can use either the `git` command-line tool from the {term}`terminal <terminal>` or the {ref}`Git extension <git-extension>` UI.
 
 Basic instructions to get started using Git on Fornax are below, including details that are specific to Fornax.
 For a detailed tutorial about how to use Git in any context, see https://git-scm.com/docs/gittutorial.
 
-### One-time setup
+#### One-time setup
 
 To set up Git on Fornax for the first time, configure your username and email by opening a terminal and running the following commands:
 
@@ -211,7 +182,7 @@ In a terminal on Fornax, execute the following command:
 git config --global credential.helper cache
 ```
 
-### Clone a repository
+#### Clone a repository
 
 After setting up your credentials (if necessary; see above), you can clone a repo using a command similar to one of the following.
 
@@ -233,3 +204,46 @@ You will need to use HTTPS to authenticate with Git on the Fornax Science Consol
 In practice, this means you must clone the repo using a URL that starts with `https://`.
 Addresses that start with `git@` use an SSH connection, which will not work because SSH is disabled on the Fornax system.
 :::
+
+### Can I use AI command line interfaces on Fornax?
+
+Yes!
+AI coding assistants such as Claude Code and OpenAI Codex work on Fornax, as do others.
+Just open a {term}`terminal <Terminal>`, follow the install instructions for your favorite AI assistant, and you should be off and running.
+
+Keep in mind that these tools send your prompts, and often the contents of your files, to an external service.
+You are responsible for the account, any usage costs, and for making sure the data you share is appropriate to send off-platform.
+
+## Use Cases
+
+### Can I run high-performance computing (HPC) workflows?
+
+Although the Fornax Science Console isn't a traditional HPC system, it provides many similar features and benefits.
+By selecting a very large [server size](#server-and-env-options), users can run highly parallelized workflows on a single node and achieve performance that often eliminates the need for a multi-node HPC system.
+In addition to the substantial compute power for data *processing*, the high network bandwidth enables massively parallel *access* to [cloud-hosted data](#cloud-hosted-data).
+Fornax also provides built-in TB-scale temporary and long-term [storage options](#data-storage), giving users several choices for reading and writing large datasets.
+
+Users have access to the {term}`command line <Terminal>` where they can [install software](#install-additional-software) and launch jobs from scripts.
+
+Unlike typical HPC systems, Fornax does not have a job scheduler.
+We do plan to add support for batch or asynchronous job submission in a future release.
+
+Be aware that server sessions can be automatically terminated under certain circumstances.
+See [](#jupyterlab-session-information) for details.
+
+### Can I use Fornax for exoplanet research?
+
+Yes! Fornax is well-suited for many exoplanet workflows, especially computationally intensive tasks that parallelize well.
+Atmospheric retrievals are a prime example: tools like petitRADTRANS (pRT) require running thousands of forward models to sample parameter space, which maps naturally onto Fornax's scalable cloud compute.
+[Exoplanet Retrieval Quickstart](https://github.com/nasa-fornax/fornax-howtos/blob/main/tutorials/exoplanet_retrievals/quickstart.md) is a tutorial for setting up and running a pRT retrieval on Fornax.
+Similarly, tasks like injection-recovery tests, transit timing analyses across large light curve sets, and population-level modeling all benefit from the ability to spin up many parallel workers.
+
+Fornax is also co-located with NASA archive data on the cloud, making it easy to pull large datasets without the bottleneck of downloading to a local machine.
+Cloud-hosted NASA mission data are readily accessible at high bandwidth directly from the Fornax Science Console.
+
+## Known Bugs
+
+### Why is my HTML or PDF page blank when opened inside JupyterLab with Safari?
+
+This is a known issue in displaying HTML and PDF files inside JupyterLab in Safari.
+The workaround is to right-click (double finger tap) on the file and select 'Open in New Browser Tab'.
