@@ -1,7 +1,3 @@
-----
-short_title: Tutorial Notebooks
-----
-
 (fornax-tutorials)=
 # Fornax Python Tutorial Notebooks
 

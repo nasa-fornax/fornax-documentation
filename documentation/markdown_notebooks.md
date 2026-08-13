@@ -1,7 +1,3 @@
----
-short_title: Markdown Notebooks
----
-
 (working-with-markdown)=
 # Working with Notebooks in Markdown Format
 

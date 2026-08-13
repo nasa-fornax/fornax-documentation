@@ -1,7 +1,3 @@
----
-short_title: Data Access
----
-
 (data-access)=
 # Data Access from within Fornax
 
