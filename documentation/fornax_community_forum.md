@@ -1,7 +1,3 @@
----
-short_title: Forum and Helpdesk
----
-
 (intro-forum)=
 # Fornax Community Forum and Helpdesk
 
