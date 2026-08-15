@@ -56,7 +56,7 @@ This contains dropdown menus like File, Edit, etc., and the **Fornax** menu, whi
 - `Keep-alive` is used to request the current session not to be terminated. See {ref}`jupyterlab-session-information`.
 - `Release Notes` shows the changes in the software environment.
 
-
+(left-sidebar)=
 ## Left Sidebar
 
 The left sidebar is a vertical strip of icons, each representing a tool or extension that will open up in the left column of the interface.

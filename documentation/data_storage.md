@@ -67,6 +67,12 @@ Please be aware that `~/s3-storage` doesn't behave exactly like a traditional fi
 In particular, it is inefficient for repeated access of many small files.
 When storing multiple files, consider using `tar` to collect them into a single file before saving to `~/s3-storage`.
 
+```{warning}
+A known bug can cause a copy or move into `~/s3-storage` to exit early without finishing the write, and without warning you.
+Verify that a copy is complete before deleting the original data.
+See [](#s3-copy-bug) for details.
+```
+
 (temporary-storage)=
 ### Temporary Scratch Space
 
@@ -77,6 +83,12 @@ For example, if your analysis writes many files and you find that writing to S3 
 This storage is not backed up.
 The storage system is highly reliable and should not lose data due to system error, but cannot protect against user error.
 Lost data are not recoverable.
+
+```{warning}
+A known bug can cause a copy or move into `~/s3-storage` to exit early without finishing the write, and without warning you.
+If you transfer data from `~/scratch` to `~/s3-storage`, be sure to verify that the `~/s3-storage` copy is complete before deleting the data from `~/scratch`.
+See [](#s3-copy-bug) for details.
+```
 
 By default, `~/scratch` exists but is limited to 1 GB.
 You can expand it up to 3 TB for a maximum of 90 days at a time.
