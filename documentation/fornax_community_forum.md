@@ -38,14 +38,10 @@ If you are having trouble logging in to your account, you don't have an account,
 
 
 ```{dropdown} Request a large, temporary storage space
-If you need access to a large (TB scale) volume of storage space for a limited amount of time, please open a Helpdesk topic and include the following information:
-
--   Amount of storage space needed.
--   Amount of time you need it for.
--   Brief description of your use case.
-
-Once approved, your [temporary storage space](#temporary-storage) will be expanded to the requested size for the agreed upon duration.
-Any files left in the temporary storage space after this period will be deleted.
+You can now manage your own scratch storage space directly from the Fornax Dashboard!
+Scratch storage is a working area for large data in cases where your S3 storage isn’t performant enough and your home directory is too small.
+You can expand your scratch area up to 3 TB for days or weeks at a time while you process large data and release it when you’re done.
+See [](#temporary-storage) for details.
 ```
 
 ```{dropdown} Submit an effective bug report for Fornax
