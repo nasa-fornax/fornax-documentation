@@ -274,3 +274,22 @@ If `md5sum -c` reports `OK` for every file, the copy is complete and it's safe t
 
 This is a known issue in displaying HTML and PDF files inside JupyterLab in Safari.
 The workaround is to right-click (double finger tap) on the file and select 'Open in New Browser Tab'.
+
+### Why did my terminal prompt disappear?
+
+If a {term}`terminal <Terminal>` opens but the command prompt never appears, or the terminal stops responding to what you type, the JupyterLab frontend settings stored in your account are likely the cause.
+Deleting them and restarting your session usually fixes it:
+
+```bash
+rm -rf ~/scratch/.jupyter ~/.jupyter
+```
+
+Then [stop](#stop-server-session) and [restart](#start-server-session) your {term}`server session <Server Session>`.
+If the terminal is too broken to run the command, you can run it from a notebook cell instead by prefixing it with `!`.
+
+:::{warning} Warning: This resets your frontend settings
+Everything related to the settings of the frontend tools is saved in `~/scratch/.jupyter` and `~/.jupyter`.
+This includes anything you changed through the `Settings` menu of the JupyterLab interface, such as the theme, text editor preferences, and keyboard shortcuts.
+Deleting these directories returns all of it to the defaults.
+If there are settings you want to keep, copy the directories somewhere safe first so you can restore individual files later.
+:::
