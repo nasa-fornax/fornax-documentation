@@ -274,3 +274,16 @@ If `md5sum -c` reports `OK` for every file, the copy is complete and it's safe t
 
 This is a known issue in displaying HTML and PDF files inside JupyterLab in Safari.
 The workaround is to right-click (double finger tap) on the file and select 'Open in New Browser Tab'.
+
+### Why do I get a "403: Forbidden, XSRF cookie does not match POST argument" error when starting a server?
+
+This is a known browser issue.
+Stale or corrupted cookies stored for the Fornax Science Console site can cause the browser to send a cookie that no longer matches what the server expects, which blocks the request to start your {term}`server session <Server Session>`.
+
+To fix it, clear the site data for the Fornax Science Console and log in again:
+
+-   **Chrome**: Click the tune/padlock icon to the left of the web address, click **Site settings**, then under the "Usage" section click **Clear data**.
+-   **Firefox**: Click the padlock icon to the left of the web address, click **Clear cookies and site data…**, then click **Remove**.
+-   **Safari**: Open **Safari → Settings** (or **Preferences**), click the **Privacy** tab, click **Manage Website Data…**, search for the Fornax site, select it, and click **Remove**.
+
+If clearing site data doesn't help, try updating your browser to the latest version or using a different browser.
