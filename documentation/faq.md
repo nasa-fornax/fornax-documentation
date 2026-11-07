@@ -293,3 +293,16 @@ This includes anything you changed through the `Settings` menu of the JupyterLab
 Deleting these directories returns all of it to the defaults.
 If there are settings you want to keep, copy the directories somewhere safe first so you can restore individual files later.
 :::
+
+### Why do I get a "403: Forbidden, XSRF cookie does not match POST argument" error when starting a server?
+
+This is a known browser issue.
+Stale or corrupted cookies stored for the Fornax Science Console site can cause the browser to send a cookie that no longer matches what the server expects, which blocks the request to start your {term}`server session <Server Session>`.
+
+To fix it, clear the site data for the Fornax Science Console and log in again:
+
+-   **Chrome**: Click the tune/padlock icon to the left of the web address, click **Site settings**, then under the "Usage" section click **Clear data**.
+-   **Firefox**: Click the padlock icon to the left of the web address, click **Clear cookies and site data…**, then click **Remove**.
+-   **Safari**: Open **Safari → Settings** (or **Preferences**), click the **Privacy** tab, click **Manage Website Data…**, search for the Fornax site, select it, and click **Remove**.
+
+If clearing site data doesn't help, try updating your browser to the latest version or using a different browser.
