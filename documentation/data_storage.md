@@ -47,7 +47,7 @@ By default, the home directory has a 200 GB limit.
 To request an increase, please contact the [](#helpdesk).
 
 ```{tip}
-All users will see the following directories in their home directory: `fornax-notebooks`, `s3-storage`, `scratch`, and `shared-storage`.
+All users may see the following directories in their home directory: `collaboration`, `fornax-notebooks`, `s3-storage`, `scratch`, and `shared-storage`.
 Those do not actually live in the home directory (they are mounted or symlinked in), and a user intending to save data to their home directory should **not** save it inside any of those directories.
 ```
 
@@ -154,12 +154,91 @@ Release (delete) scratch space
   If you don't manually release the space, it will be automatically released on the expiration date you chose when creating or updating the space.
 ````
 
-```{danger} Warning: Data is permanently deleted when scratch is released or expires
+```{danger} Warning: Data are permanently deleted when scratch is released or expires
 **All files** in `~/scratch` will be **permanently deleted** when the expanded scratch space is manually released through the Dashboard or the expiration date is reached, whichever comes first.
 The data are non-recoverable.
 
 You will receive a message via the [Forum](#intro-forum) halfway between the creation and expiration dates, and again 3 days and 1 day before the expiration date.
 The messages will include instructions for copying data out of `~/scratch` to S3 or another permanent location.
+```
+
+(collaboration-storage)=
+## Collaboration Storage
+
+Collaboration Storage is a directory shared by a group of Fornax users.
+All group members will see it linked in their [home directory](#home-directory) at `~/collaboration/<group-name>` and will have read and write permissions.
+No one outside the group will be able to see or access it.
+It uses a standard Unix filesystem (POSIX).
+
+This storage is not backed up.
+The storage system is highly reliable and should not lose data due to system error, but cannot protect against user error.
+Lost data are not recoverable.
+
+To create or manage a group, or to manage your membership in a group, go to the [](#forsc-Dashboard) and click `Collaboration → Groups`.
+Details are in the drop-down below.
+
+```{important}
+The user who creates a collaboration group will be the owner of the group.
+You can be a *member* of many collaborations, but you can only *own* one at a time.
+Ownership cannot be transferred.
+
+The owner's credits are charged for the **full requested size** for the duration of its existence, regardless of how much space is actually used.
+Other members are not charged.
+```
+
+To access your group's shared storage space, [start a server session](#start-server-session) and navigate to the `~/collaboration/<group-name>` directory.
+For example, you can click on it in the [File Browser](#left-sidebar), or open a {term}`terminal` and enter `cd ~/collaboration/<group-name>`.
+To see how much space is in use, enter `du -sh ~/collaboration/<group-name>` in a terminal.
+Note that `du` can take a while to return, depending on the amount of data and other activity on the system.
+
+````{note} How to manage collaboration storage
+:class: dropdown
+
+```{figure} ../_static/forsc_dashboard_collaboration_group.png
+:alt: Collaboration management page on the Fornax Dashboard, showing a group with its created date, expiration date, member count, and size; Edit and Delete buttons; and a Team Members list with an Invite Member button.
+
+Collaboration management page after a group has been created, as seen by its owner
+```
+
+Create a collaboration
+: To create a group, go to the collaboration management page, click `New`, and fill in the form:
+
+  - `Group Name`: used as the directory name (`~/collaboration/<group-name>`).
+    The name can't be changed later.
+  - `Filesystem Size`: amount of space allocated for the collaboration.
+  - `Expiration Date`: up to 1 year away.
+    Once it expires, the collaboration space will be deleted.
+
+  The form shows your credits, the daily cost, and the total charge (`Total Reserved`).
+  By creating the space, you will be the collaboration owner and your credits will be charged for the full requested size while the storage space exists.
+  Be sure to leave yourself enough credits to run servers and anything else you want to do.
+  Then click `Create Group`.
+
+  Once your group is created, you can invite others to join by clicking `Invite Member` on the collaboration management page and entering their Fornax username.
+  They will receive a message via the [Forum](#intro-forum).
+
+Change or delete a collaboration
+: The collaboration owner can add and remove members, change the size and expiration date, and delete the group from the collaboration management page.
+  We recommend deleting the group as soon as it's no longer needed so your credits stop being charged.
+
+Accept or decline an invitation
+: When another Fornax user invites you to join their collaboration, you'll receive a message via the [Forum](#intro-forum) (emailed to you by default) with a link to accept or decline.
+  The link will take you to the Fornax Dashboard.
+  (You can also go directly to the Dashboard without using the link in the message.)
+  Navigate to `Collaboration → Groups → Invitations`.
+  Then click `Accept` or `Decline`.
+
+Leave a collaboration
+: To leave a group, go to the collaboration management page, select the group, and click `Leave`.
+  Owners cannot leave.
+````
+
+```{danger} Warning: Data are permanently deleted when the group is deleted or expires
+**All files** in `~/collaboration/<group-name>` will be **permanently deleted** for all members when the owner deletes the group or the expiration date is reached, whichever comes first.
+The data are non-recoverable.
+
+The owner will receive a message via the [Forum](#intro-forum) 3 days and 1 day before the expiration date.
+The owner can extend the expiration date up to one year from the date of creation.
 ```
 
 ## Shared Storage
