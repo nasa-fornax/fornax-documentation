@@ -10,3 +10,5 @@ updates:
           - "*"
     labels:
       - "infrastructure"
+    cooldown:
+      default-days: 7
