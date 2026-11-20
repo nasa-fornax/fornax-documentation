@@ -26,7 +26,8 @@ project:
     - file: documentation/acknowledgement.md
     - title: New User Documents
       children:
-        - file: documentation/change-controlled-documents/user-resource-allotments-and-costs.md
+        - title: Resource Allotments and Costs
+          file: documentation/change-controlled-documents/user-resource-allotments-and-costs.md
         - file: documentation/change-controlled-documents/user-agreement.md
     - file: documentation/more_resources.md
     - file: documentation/glossary.md
