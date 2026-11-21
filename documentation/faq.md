@@ -22,6 +22,17 @@ To **access** that active {term}`Server Session` (to stop it or modify it),
 you need to be {term}`logged in<Login Session>`.
 So your running job will not be affected.
 
+(why-did-my-process-die)=
+### Why did my notebook kernel or other process die unexpectedly?
+
+If your notebook kernel, script, or other process terminated unexpectedly, it may have tried to use too much memory for the server size you chose.
+Without intervention, a process that tries to use all available memory will crash your whole server.
+To prevent this, Fornax runs a memory watcher in the background that stops processes approaching the server's memory limit before the server crashes.
+
+To check if this was the cause, look for the file `~/_MEMORY_WATCH.txt`.
+When the memory watcher stops a process, it records the process ID, time, and memory usage in that file.
+If you see an entry for your process there, either change your code to use less memory or run it on a larger [server size](#server-and-env-options).
+
 ### Why is my server unavailable or unreachable?
 
 If you see a pop-up dialog like the one below, it means that your {term}`server session <Server Session>` was automatically terminated.
@@ -32,17 +43,14 @@ If you see a pop-up dialog like the one below, it means that your {term}`server 
 The "Server unavailable or unreachable" dialog appears when your session has been automatically terminated.
 ```
 
-This can happen for two reasons: your server was either culled or it ran out of memory.
-There's no way to determine which was the cause after the server shuts down, but you can make an educated guess based on what you had running.
-
-Sessions may be culled if they appear inactive or reach the maximum time limit.
+The most likely cause is that your session was culled because it appeared to be inactive or had reached the maximum time limit.
 [](#jupyterlab-session-information) explains the details.
 Sessions executing code might still appear inactive if, for example, they wait a long time to receive data.
 The Keep-Alive feature can be used to prevent culling due to inactivity.
 However, keep in mind that your credits are charged while your server is running, even if it is inactive.
 
-A session will run out of memory if the code or task(s) being executed require more {term}`RAM` than the server has.
-Starting a new session with a larger [server size](#server-and-env-options) will increase the available RAM.
+It's also possible that your server ran out of memory and crashed, though Fornax's [memory watcher](#why-did-my-process-die) prevents this in most cases.
+If you suspect this was the cause, either change your code to use less memory or run it on a larger [server size](#server-and-env-options).
 
 ### How long is the period of inactivity before a session gets culled?
 
@@ -80,19 +88,41 @@ If two packages you need are truly incompatible, contact their maintainers to se
 
 ### What are the pre-installed directories and files used for?
 
-You can store files and data in the directories `~/` (home directory), `~/s3-storage`, `~/shared-storage`, and `/scratch`.
-See [](#data-storage) for details.
+`~/` (home directory)
+: Private storage area, good for most day-to-day needs including notebooks, code, and a moderate amount of data.
+  The other `~/` directories listed here are linked in from separate storage and are not part of it.
+  See [](#home-directory).
 
-The directory `~/fornax-notebooks` contains demo and tutorial notebooks.
-It is read-only.
-See [](#notebooks-in-fornax) for details.
+`~/collaboration`
+: Storage space available for groups of Fornax users to share files.
+  If you belong to a collaboration, you'll see a subdirectory under here for your group.
+  See [](#collaboration-storage).
 
-`$ENV_DIR` and `$USER_ENV_DIR` are aliases to directories where {term}`environments <Environment>` are stored.
-`$LOCK_DIR` is an alias to a directory where you'll find lists of the software installed in the built-in environments.
-See [](#compute-environments) for details.
+`~/fornax-notebooks`
+: Python notebook tutorials and demos provided by Fornax and the three archives (HEASARC, IRSA, and MAST).
+  See [](#notebooks-in-fornax).
 
-The file `~/.profile` is an initialization script that runs when a {term}`terminal <Terminal>` session starts.
-See [](#terminal-initialization) for details.
+`~/s3-storage`
+: A mounted {term}`AWS S3<s3>` cloud storage bucket, private to you.
+  Good for long-term storage of large or infrequently accessed data.
+  See [](#private-s3).
+
+`~/scratch`
+: A private working space for storing large data temporarily.
+  It is very small by default but can be expanded on demand.
+  See [](#temporary-storage).
+
+`$ENV_DIR` and `$USER_ENV_DIR`
+: Aliases to the directories where {term}`environments <Environment>` are stored.
+  See [](#compute-environments).
+
+`$LOCK_DIR`
+: Alias to a directory containing lists of the software installed in the built-in environments.
+  See [](#compute-environments).
+
+`~/.profile`
+: Initialization script that runs when a {term}`terminal <Terminal>` session starts.
+  See [](#terminal-initialization).
 
 (how-to-upload-download)=
 ### How do I upload or download files and directories?
