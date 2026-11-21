@@ -80,19 +80,41 @@ If two packages you need are truly incompatible, contact their maintainers to se
 
 ### What are the pre-installed directories and files used for?
 
-You can store files and data in the directories `~/` (home directory), `~/s3-storage`, `~/shared-storage`, and `/scratch`.
-See [](#data-storage) for details.
+`~/` (home directory)
+: Private storage area, good for most day-to-day needs including notebooks, code, and a moderate amount of data.
+  The other `~/` directories listed here are linked in from separate storage and are not part of it.
+  See [](#home-directory).
 
-The directory `~/fornax-notebooks` contains demo and tutorial notebooks.
-It is read-only.
-See [](#notebooks-in-fornax) for details.
+`~/collaboration`
+: Storage space available for groups of Fornax users to share files.
+  If you belong to a collaboration, you'll see a subdirectory under here for your group.
+  See [](#collaboration-storage).
 
-`$ENV_DIR` and `$USER_ENV_DIR` are aliases to directories where {term}`environments <Environment>` are stored.
-`$LOCK_DIR` is an alias to a directory where you'll find lists of the software installed in the built-in environments.
-See [](#compute-environments) for details.
+`~/fornax-notebooks`
+: Python notebook tutorials and demos provided by Fornax and the three archives (HEASARC, IRSA, and MAST).
+  See [](#notebooks-in-fornax).
 
-The file `~/.profile` is an initialization script that runs when a {term}`terminal <Terminal>` session starts.
-See [](#terminal-initialization) for details.
+`~/s3-storage`
+: A mounted {term}`AWS S3<s3>` cloud storage bucket, private to you.
+  Good for long-term storage of large or infrequently accessed data.
+  See [](#private-s3).
+
+`~/scratch`
+: A private working space for storing large data temporarily.
+  It is very small by default but can be expanded on demand.
+  See [](#temporary-storage).
+
+`$ENV_DIR` and `$USER_ENV_DIR`
+: Aliases to the directories where {term}`environments <Environment>` are stored.
+  See [](#compute-environments).
+
+`$LOCK_DIR`
+: Alias to a directory containing lists of the software installed in the built-in environments.
+  See [](#compute-environments).
+
+`~/.profile`
+: Initialization script that runs when a {term}`terminal <Terminal>` session starts.
+  See [](#terminal-initialization).
 
 (how-to-upload-download)=
 ### How do I upload or download files and directories?

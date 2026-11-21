@@ -47,7 +47,7 @@ By default, the home directory has a 200 GB limit.
 To request an increase, please contact the [](#helpdesk).
 
 ```{tip}
-All users may see the following directories in their home directory: `collaboration`, `fornax-notebooks`, `s3-storage`, `scratch`, and `shared-storage`.
+All users may see the following directories in their home directory: `collaboration`, `fornax-notebooks`, `s3-storage`, and `scratch`.
 Those do not actually live in the home directory (they are mounted or symlinked in), and a user intending to save data to their home directory should **not** save it inside any of those directories.
 ```
 
@@ -240,13 +240,6 @@ The data are non-recoverable.
 The owner will receive a message via the [Forum](#intro-forum) 3 days and 1 day before the expiration date.
 The owner can extend the expiration date up to one year from the date of creation.
 ```
-
-## Shared Storage
-
-The directory `~/shared-storage` is a shared area that is visible to every Fornax user.
-It uses a standard Unix filesystem (POSIX).
-
-Users wishing to share data or code with collaborators should make a new directory called `~/shared-storage/users/$USER` (where `$USER` is their username) and save the files there.
 
 ## Bring Your Own Storage
 
