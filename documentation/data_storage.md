@@ -179,10 +179,10 @@ Details are in the drop-down below.
 
 On the [](#forsc-dashboard), click `Collaboration → Groups` to get to the collaboration management page.
 
-```{figure} ../_static/forsc_dashboard_collaboration_group.png
-:alt: Collaboration management page on the Fornax Dashboard, showing a group with its created date, expiration date, member count, and size; Edit and Delete buttons; and a Team Members list with an Invite Member button.
+```{figure} ../_static/forsc_dashboard_collaboration.png
+:alt: Collaboration management page on the Fornax Dashboard, showing the My Groups tab with no groups yet and a New button for creating a group, and an Invitations tab.
 
-Collaboration management page after a group has been created, as seen by its owner
+Collaboration management page with no groups yet and a button to create a new group
 ```
 
 Create a collaboration
@@ -213,6 +213,12 @@ Create a collaboration
   Once your group is created, you can invite others to join by clicking `Invite Member` on the collaboration management page and entering their Fornax username.
   They will receive a message via the [Forum](#intro-forum).
 
+  ```{figure} ../_static/forsc_dashboard_collaboration_group.png
+  :alt: Collaboration management page on the Fornax Dashboard, showing a group with its created date, expiration date, member count, and size; Edit and Delete buttons; and a Team Members list with an Invite Member button.
+
+  Collaboration management page after a group has been created, as seen by its owner
+  ```
+
 Change or delete a collaboration
 : From the collaboration management page, the owner can add and remove members, change the expiration date, increase the size, and delete the group.
   We recommend deleting the group as soon as it's no longer needed so your credits stop being charged.
@@ -224,6 +230,12 @@ Accept or decline an invitation
   (You can also go directly to the Dashboard without using the link in the message.)
   Navigate to `Collaboration → Groups → Invitations`.
   Then click `Accept` or `Decline`.
+
+  ```{figure} ../_static/forsc_dashboard_collaboration_invite.png
+  :alt: Invitations tab of the collaboration management page on the Fornax Dashboard, showing one pending invitation with the group name, who sent it, and the date, plus Accept and Decline buttons.
+
+  Collaboration invitation page with buttons to accept or decline
+  ```
 
 Leave a collaboration
 : To leave a group, go to the collaboration management page, select the group, and click `Leave`.
