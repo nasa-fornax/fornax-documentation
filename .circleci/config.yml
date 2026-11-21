@@ -4,29 +4,14 @@ version: 2.1
 jobs:
   build-docs:
     docker:
-      - image: cimg/python:3.13
+      - image: cimg/python:3.13-node
     steps:
       - checkout
 
-      - restore_cache:
-          keys:
-            - node-cache-v1
-
       - run:
-          name: Install Node.js
+          name: Install Python dependencies
           command: |
-            curl -fsSL https://deb.nodesource.com/setup_24.x | sudo -E bash -
-            sudo apt-get install -y nodejs
-
-      - run:
-          name: Install mystmd
-          command: |
-            npm install mystmd
-
-      - save_cache:
-          key: node-cache-v1
-          paths:
-            - node_modules
+            python -m pip install --upgrade pip tox
 
       - run:
           name: Build documentation
@@ -35,11 +20,7 @@ jobs:
             DOCS_PATH: _build/html
           command: |
             export BASE_URL="/output/job/$CIRCLE_WORKFLOW_JOB_ID/artifacts/0/$DOCS_PATH"
-
-            (npx myst build --html --check-links --strict)
-
-            ## Temporary hack to remove unused thebe JS
-            rm _build/html/*thebe*.js
+            python -m tox -e py313-buildhtml
 
       - store_artifacts:
           path: _build/html

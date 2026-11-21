@@ -1,0 +1,2 @@
+# We need JB>=2.1.5 as we use features first shipped in myst-cli 1.9.0
+jupyter-book>=2.1.5
