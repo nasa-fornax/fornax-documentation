@@ -24,7 +24,7 @@ project:
     - title: Forum and Helpdesk
       file: documentation/fornax_community_forum.md
     - file: documentation/acknowledgement.md
-    - title: New User Documents
+    - title: User Allotments & Agreement
       children:
         - title: Resource Allotments and Costs
           file: documentation/change-controlled-documents/user-resource-allotments-and-costs.md

@@ -88,8 +88,9 @@ If two packages you need are truly incompatible, contact their maintainers to se
 
 ### What are the pre-installed directories and files used for?
 
-`~/` (home directory)
-: Private storage area, good for most day-to-day needs including notebooks, code, and a moderate amount of data.
+`~/` or `$HOME`
+: Your private home directory.
+  Good for most day-to-day needs including notebooks, code, and a moderate amount of data.
   The other `~/` directories listed here are linked in from separate storage and are not part of it.
   See [](#home-directory).
 
@@ -112,7 +113,7 @@ If two packages you need are truly incompatible, contact their maintainers to se
   It is very small by default but can be expanded on demand.
   See [](#temporary-storage).
 
-`$ENV_DIR` and `$USER_ENV_DIR`
+`$ENV_DIR`, `$USER_ENV_DIR`
 : Aliases to the directories where {term}`environments <Environment>` are stored.
   See [](#compute-environments).
 
