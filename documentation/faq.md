@@ -115,6 +115,10 @@ If two packages you need are truly incompatible, contact their maintainers to se
 
 `$ENV_DIR`, `$USER_ENV_DIR`
 : Aliases to the directories where {term}`environments <Environment>` are stored.
+  `$ENV_DIR` holds the built-in environments and, by default, new ones you create with the `setup-pip-env` or `setup-conda-env` command.
+  Changes there are lost when your server restarts.
+  `$USER_ENV_DIR` holds environments you create with the `--user` flag added to either command.
+  Changes there persist across restarts.
   See [](#compute-environments).
 
 `$LOCK_DIR`
