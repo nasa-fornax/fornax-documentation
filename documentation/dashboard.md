@@ -1,15 +1,33 @@
 (forsc-dashboard)=
 # Dashboard
 
-The Fornax Science Console is free for users.
-NASA provides each user with a yearly allotment of credits to spend on compute and other resources.
-When users [log in](#forsc-login), they will see a Dashboard similar to the one below that details their resource and credit usage.
+The Fornax Science Console Dashboard is the page you see when you [log in](#forsc-login).
+From here you can start a server, manage your storage space and collaboration groups, get help, and track usage of the free credits that NASA provides.
 
 ```{figure} ../_static/forsc_dashboard.png
-:alt: The Fornax Science Console Dashboard listing the amount of credits available and spent, categorized by resource.
+:alt: The Fornax Science Console Dashboard, with a left menu of links and central tiles showing credits spent and remaining, categorized by resource.
 
 The Fornax Science Console Dashboard
 ```
+
+## Left Menu
+
+Compute
+:   Start a [server](#start-server-session).
+
+Storage
+:   Manage your [temporary scratch space](#temporary-storage).
+
+Collaboration
+:   Create and manage [collaboration groups](#collaboration-storage) and their shared storage.
+
+Documentation, Helpdesk, and Community
+:   Open the documentation, contact the [](#helpdesk), or visit the [Forum](#intro-forum) and the [`nasa-fornax` GitHub organization](https://github.com/nasa-fornax).
+
+## Credits and Usage
+
+NASA gives each user a yearly allotment of credits to spend on compute, storage, and egress.
+The Dashboard tiles track how many credits you've spent on each resource and how many remain.
 
 Total Spend
 :   Total Spend tracks the total number of credits spent on {term}`egress <egress>`, storage, and compute so far this year.
@@ -35,7 +53,7 @@ Compute Spend
 :   Compute Spend tracks the total number of credits spent on {term}`server sessions<Server Session>` so far this year.
 
 Running Jupyter Servers
-:   Running Jupyter Servers shows 0 if you are not running a compute environment, or 1 if you are.
+:   Running Jupyter Servers shows 0 if you don't have a server running, or 1 if you do.
     Note there is a delay in this value of about 1-2 minutes, so if you shut down your server, you will have to wait a bit before this number shows the update.
 
 To see changes, you can reload the Dashboard at any time without affecting a {term}`server <server>` you may have running, but note that there may be a delay of up to a few minutes before recent usage is reflected.
